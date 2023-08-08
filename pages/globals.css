@@ -1,0 +1,267 @@
+header {
+  position: fixed;
+  top: 10px;
+  z-index: 1000;
+  width: 100%;
+}
+.category_image {
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.category_body {
+  padding: 20px;
+  background: #f896291f;
+  border-top: 0px;
+  color: black;
+}
+
+.category_grid .col {
+  margin:20px 0px ;
+}
+
+
+section.home_sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.carousel-section h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 60px;
+  padding: 20px;
+  background: #323231ad;
+  color: white;
+  font-family: initial;
+
+}
+
+.carousel-caption {
+  top:40%;
+  padding:0px;
+ 
+}
+
+.carousel-caption h3 {
+  background:rgba(0, 0, 0, 0.263);
+  padding:20px 10px;
+  font-size:25px;
+  text-transform: capitalize;
+  font-weight:700;
+}
+
+
+
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f5f5f5;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.admin-sidebar.open {
+  transform: translateX(0);
+}
+
+.admin-sidebar__menu-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.admin-sidebar__content {
+  padding: 20px;
+}
+
+
+/* carosuel section */
+
+.row.admin_panel .dashboard {
+  padding: 0px;
+}
+
+.admin_sidebar .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.site-logo {
+  width: 200px;
+  object-fit: contain;
+  aspect-ratio: 16/7;
+}
+
+.site-logo img {
+  width: 200px;
+  object-fit: contain;
+  aspect-ratio: 16/7;
+}
+
+
+.nav_menu {
+  justify-content: end;
+}
+
+
+
+.menu_links a {
+  text-decoration: none;
+  color: white;
+  font-weight:500;
+  padding: 10px 15px;
+}
+
+/*  mobile menu */
+
+
+
+.admin_sidebar_menus {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+img.product_image {
+
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+button.admin_sidebar_button {
+  padding: 5px 10px;
+}
+
+
+.offcanvas-body a {
+  display: flex;
+  margin: 15px 0px;
+  text-decoration: none;
+  color: white;
+}
+
+.offcanvas {
+  background: black;
+}
+
+.offcanvas.offcanvas-start.show {
+  width: 250px;
+}
+
+.row.admin_header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.col-sm-6.col-md-4.col-lg-4.products_grid {
+  margin: 10px 0px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+section.banner_section {
+  width: 100%;
+  height: 700px;
+  background: #fffaf3;
+  background-image: url(/uploads/images/hero1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+div#responsive-navbar-nav {
+  justify-content: center;
+}
+
+button.navbar-toggler.collapsed {
+  border: 1px solid white;
+}
+
+section.banner_section h2 {
+  color: #f89629;
+  font-weight: 800;
+  font-size: 80px;
+  z-index: 1;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section.banner_section span.white {
+  color: white;
+}
+section.banner_section span.green {
+  color: #399238;
+}
+
+section.banner_section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  background: black;
+  opacity: 0.3;
+}
+
+.carousel-item img {
+  height:700px;
+  object-fit: cover;
+  width:100%;
+}
+
+.other_pages_banner {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/uploads/images/hero2.jpg);
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center center;
+}
+.other_pages_banner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  background: black;
+  opacity: 0.3;
+}
+
+
+
+

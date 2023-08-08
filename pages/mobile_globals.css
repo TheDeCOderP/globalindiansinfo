@@ -1,0 +1,32 @@
+@media only screen and (max-width:500px) {
+
+    .col-sm-6.col-md-4.col-lg-4.products_grid {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+        width: 50%;
+    }
+    .google_translate {
+      display: none;
+  }
+
+    .row.admin_header h2 {
+        font-size: 20px;
+    } 
+
+    .carousel-section {
+        height: 250px;
+    
+      }
+      .carousel-caption h3 {
+        
+        font-size:22px;
+        
+      }
+    
+      .carousel-section h2 {
+    
+        font-size: 30px;
+    
+      }
+    }
