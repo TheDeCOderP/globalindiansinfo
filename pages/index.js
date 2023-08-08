@@ -14,8 +14,8 @@ const HomePage = () => {
   <section className="banner_section">
 	  <h2>Global <br></br><span className="white">Indians</span> <span className="green">Info</span></h2>
     </section>
-    <section className="categories_section pt-4 pb-4">
-    <h1 className="text-center">Important Categories</h1>
+    <section className="categories_section">
+    <h1 className="text-center"><span className="green">Important</span> Categories</h1>
     <Categories/>
     </section>
 

@@ -9,6 +9,53 @@
     .google_translate {
       display: none;
   }
+  section.banner_section h2 {
+    color: #f89629;
+    font-weight: 800;
+    font-size: 50px;
+    z-index: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+img.site-logo {
+  width: 100px;
+  height: 90px;
+}
+
+
+
+img.category_image {
+    height: 100px;
+}
+
+section.categories_section {
+  padding: 20px 0px;
+  background: url(/uploads/images/blog_bg.png);
+  background-position: center;
+  background-size: cover;
+}
+
+section.banner_section {
+  width: 100%;
+  height: 500px;
+ 
+  
+}
+
+section.banner_section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background: black;
+  opacity: 0.3;
+}
+
+.category_grid.col-sm-6.col-md-4.col-lg-4 {
+  width: 50%;
+}
+
+
 
     .row.admin_header h2 {
         font-size: 20px;

@@ -31,6 +31,12 @@ const categories =
     'name': 'Events',
     'slug':'/uploads/images/categories/events.jpg'
   },
+        {
+
+    'id':6,
+    'name': 'News',
+    'slug':'/uploads/images/categories/news.jpg'
+  },
         
 ]
 

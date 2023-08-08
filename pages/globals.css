@@ -17,7 +17,7 @@ header {
   color: black;
 }
 
-.category_grid .col {
+.category_grid .category_grid {
   margin:20px 0px ;
 }
 
@@ -224,6 +224,17 @@ section.banner_section span.white {
 }
 section.banner_section span.green {
   color: #399238;
+}
+
+section.categories_section {
+  padding: 50px 0px;
+  background: url(/uploads/images/blog_bg.png);
+  background-position: center;
+  background-size: cover;
+}
+ span.green {
+  color: #399238;
+  font-weight:700;
 }
 
 section.banner_section::before {
