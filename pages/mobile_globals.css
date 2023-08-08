@@ -3,7 +3,7 @@
     .col-sm-6.col-md-4.col-lg-4.products_grid {
         display: flex;
         align-items: center;
-        margin: 20px 0px;
+        margin: 10px 0px;
         width: 50%;
     }
     .google_translate {
@@ -49,6 +49,17 @@ section.banner_section::before {
   height: 500px;
   background: black;
   opacity: 0.3;
+}
+.category_body {
+  padding: 10px;
+  background: #f896291f;
+  border-top: 0px;
+  color: black;
+}
+
+.category_body h2 {
+  font-size: 16px;
+  margin: 0px!important;
 }
 
 .category_grid.col-sm-6.col-md-4.col-lg-4 {
