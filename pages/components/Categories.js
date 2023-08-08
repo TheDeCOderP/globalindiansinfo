@@ -12,7 +12,7 @@ const AllCategories = () => {
               
                 <div  key = {item.id} className="category_grid col-sm-6 col-md-4 col-lg-4">
                     <div className="thumbnail">
-                    <img className="category_image" src={item.slug} />
+                    <img className="category_image" src={item.imagepath} />
                     </div>
                     <div className="category_body">
                         <h2 className="text-center">{item.name}</h2>

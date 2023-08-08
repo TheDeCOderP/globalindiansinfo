@@ -52,7 +52,7 @@ section.banner_section::before {
 }
 .category_body {
   padding: 10px;
-  background: #f896291f;
+  background: #ffedd8;
   border-top: 0px;
   color: black;
 }
@@ -87,4 +87,18 @@ section.banner_section::before {
         font-size: 30px;
     
       }
+
+      .other_pages_banner {
+        height: 300px;
+       
+      }
+      .other_pages_banner::before {
+        height: 300px;
+       
+      }
+      div#responsive-navbar-nav {
+        background: #1f1f1f;
+      }
+
+
     }

@@ -5,37 +5,37 @@ const categories =
 
     'id':1,
     'name': 'Travel',
-    'slug':'/uploads/images/categories/travel.jpg'
+    'imagepath':'/uploads/images/categories/travel.jpg'
   },
         {
 
     'id':2,
     'name': 'Jobs',
-    'slug':'/uploads/images/categories/job.jpg'
+    'imagepath':'/uploads/images/categories/job.jpg'
   },
         {
 
     'id':3,
     'name': 'Education',
-    'slug':'/uploads/images/categories/education.jpg'
+    'imagepath':'/uploads/images/categories/education.jpg'
   },
         {
 
     'id':4,
     'name': 'Business',
-    'slug':'/uploads/images/categories/business.jpg'
+    'imagepath':'/uploads/images/categories/business.jpg'
   },
         {
 
     'id':5,
     'name': 'Events',
-    'slug':'/uploads/images/categories/events.jpg'
+    'imagepath':'/uploads/images/categories/events.jpg'
   },
         {
 
     'id':6,
     'name': 'News',
-    'slug':'/uploads/images/categories/news.jpg'
+    'imagepath':'/uploads/images/categories/news.jpg'
   },
         
 ]
