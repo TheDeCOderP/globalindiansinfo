@@ -21,6 +21,11 @@ img.site-logo {
   width: 100px;
   height: 90px;
 }
+h2.page_title {
+  z-index: 1;
+  font-size: 30px;
+  font-weight: 700;
+}
 
 
 
