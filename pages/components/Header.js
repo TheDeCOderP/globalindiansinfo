@@ -25,7 +25,7 @@ function Header() {
           <Nav className="menu_links">
             {
              Menuitems.map((item) => (
-              <Link href={item.slug}>{item.name}</Link>
+              <Link  key={item.id}  href={item.slug}>{item.name}</Link>
 
              )
              
