@@ -12,7 +12,7 @@ const AllCategories = () => {
             Categories.map((item) => (
               
                 <div  key = {item.id} className="category_grid col-sm-6 col-md-4 col-lg-4">
-                <Link href={`/${item.name}`}>
+                <Link href={`/categories/${item.name.toLowerCase()}`}>
                     <div className="thumbnail">
                     <img className="category_image" src={item.imagepath} />
                     </div>
