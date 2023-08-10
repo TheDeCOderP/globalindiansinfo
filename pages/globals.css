@@ -296,6 +296,7 @@ section.banner_section::before {
   height:330px;
   margin-top:50px !important;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
 }
