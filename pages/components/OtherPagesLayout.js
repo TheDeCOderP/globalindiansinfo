@@ -1,6 +1,7 @@
 
 import React from 'react';
-import Header from './header/TopBar';
+import TopBar from './header/TopBar';
+import BottomBar from './header/BottomBar';
 import Footer from './Footer';
 import { useRouter } from 'next/router';
 
@@ -14,7 +15,9 @@ const pageName = pathname.substring(1); // Remove the leading slash if needed
 
   return (
     <>
-     <header> <Header/></header>
+     <header> <TopBar/>
+     <BottomBar/>
+     </header>
      <div className="other_pages">
      <div className='other_pages_banner'>
     
