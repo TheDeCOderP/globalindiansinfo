@@ -6,13 +6,16 @@ import AdminLayout from './admin/AdminLayout';
 import OtherPageLayout from './components/OtherPagesLayout';
 import Head from 'next/head';
 
-import 'typeface-poppins';
+import 'typeface-raleway';
+import 'typeface-league-spartan';
 
 
  
 
 
 import './globals.css';
+import './aanchal.css';
+import './sai.css';
 import './mobile_globals.css';
 
 const MyApp = ({ Component, pageProps }) => {
@@ -32,9 +35,12 @@ const MyApp = ({ Component, pageProps }) => {
        <title>Global Indians Info</title>
        <link rel="icon" href="/uploads/site-logo.png" />
     </Head>
+    
     <CustomLayout>
       <Component {...pageProps} />
     </CustomLayout>
+    
+    
     </>
   );
 };

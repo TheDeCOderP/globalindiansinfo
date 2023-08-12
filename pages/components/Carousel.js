@@ -7,6 +7,8 @@ function Carousels() {
     
       {'slug' : '/uploads/images/carousel/slide1.jpg' },
       {'slug': '/uploads/images/carousel/slide2.jpg' },
+      {'slug': '/uploads/images/carousel/slide3.jpg' },
+      {'slug': '/uploads/images/carousel/slide4.jpg' },
 
     
 
@@ -21,14 +23,14 @@ function Carousels() {
      {
       CarouselList.map((item) => (
       
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
           src={item.slug}
           alt="First slide"
         />
-        <Carousel.Caption >
-          <h3>Global Indians Info</h3>
+        <Carousel.Caption className="carousel_section" >
+        <h2>Global <br></br><span className="white">Indians</span> <span className="green">Info</span></h2>
 
         </Carousel.Caption>
       </Carousel.Item>

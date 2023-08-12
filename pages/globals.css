@@ -1,13 +1,17 @@
-header {
+/* header {
   position: absolute;
   top: 10px;
   z-index: 1000;
   width: 100%;
-}
+} */
 .category_image {
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
+}
+
+nav.header_nav.topbar {
+  background: #fafafa;
 }
 
 .category_body {
@@ -42,7 +46,8 @@ section.home_sections {
 
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'League Spartan', sans-serif;
+  font-weight:Normal;
 }
 
 
@@ -114,16 +119,22 @@ body {
   align-items: center;
 }
 
+
+
 img.site-logo {
-  width: 200px;
+  width: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
-  aspect-ratio: 16/7;
+  aspect-ratio: 16/10;
+
 }
 
-.site-logo img {
-  width: 200px;
-  object-fit: contain;
-  aspect-ratio: 16/7;
+.row {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -131,17 +142,23 @@ img.site-logo {
   justify-content: end;
 }
 
-
+.col.col-sm-6.col-md-6.col-lg-6.searchBar {
+  display: flex;
+}
 
 .menu_links a {
   text-decoration: none;
-  color: white;
-  font-weight:500;
-  padding: 10px 15px;
+  color: black;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-family: Raleway;
 }
 
 /*  mobile menu */
-
+input {
+  font-family: 'Raleway';
+  
+}
 
 
 .admin_sidebar_menus {
@@ -220,7 +237,7 @@ button.navbar-toggler.collapsed {
   border: 1px solid white;
 }
 
-section.banner_section h2 {
+.carousel_section h2 {
   color: #f89629;
   font-weight: 800;
   font-size: 80px;
@@ -229,10 +246,10 @@ section.banner_section h2 {
   padding-right: 50px;
 }
 
-section.banner_section span.white {
+.carousel_section span.white {
   color: white;
 }
-section.banner_section span.green {
+.carousel_section span.green {
   color: #399238;
 }
 
@@ -247,17 +264,19 @@ section.categories_section {
   font-weight:700;
 }
 
-section.banner_section::before {
+.carousel-item::before {
   content: '';
   position: absolute;
   width: 100%;
-  height: 700px;
+  height: 500px;
   background: black;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
+
+
 .carousel-item img {
-  height:700px;
+  height:500px;
   object-fit: cover;
   width:100%;
 }
@@ -289,35 +308,82 @@ section.banner_section::before {
   margin-left:50px;
   margin-right:50px;
 }
-
-
-
-.footer-container{
-  height:330px;
-  margin-top:50px !important;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
+footer {
+  padding:20px 0px 0px 0px;
+  background:#f8f9fa;
 }
 
+.site-footer-logo {
+  width:150px;
 
-.footer-titles{
+}
+footer h5 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.searchBar input , .searchBar button {
+  border-radius: 0px!important;
+}
+.col.col-sm-6.col-md-2.col-lg-2.google_translate {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+input.form-control {
+  padding: 10px;
+}
+button.search_button.btn.btn-dark {
+  padding: 0px 25px;
+}
+
+.bootombar .container {
+  display:flex;
+  justify-content:center!important;
+ }
+
+
+
+
+footer li {
+  padding: 10px 0px;
+  font-size:14px;
+}
+.social-icons svg {
+  color:  #273171;
+  font-size: 20px;
+  ;
+}
+footer svg {
+  color:  #273171;
+  font-size: 20px;
+  ;
+}
+footer li a  {
+
   color:#273171;
-  font-size:24px;
-  font-weight:bold;
-  margin-bottom:20px;
+  padding-left:10px;
+}
+
+.col.col-sm-6.col-md-2.col-lg-2.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.copyrights {
+  margin-top: 20px;
+  background: #273171;
+  padding: 10px 0px;
+  text-align:center;
+
   
 }
-.footer-des{
-  color:#273171;
 
-}
-.footer-icons{
-  color:#273171 !important;
-  height:17px !important;
-  width: 17px !important;
-  margin-top:-5px;
-  margin-right:5px;
+.copyrights a , .copyrights h4 {
 
+  font-size: 15px;
+  color: white;
+  margin:0px;
 }
+
+
