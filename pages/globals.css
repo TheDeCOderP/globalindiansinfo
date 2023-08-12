@@ -148,10 +148,11 @@ img.site-logo {
 
 .menu_links a {
   text-decoration: none;
-  color: black;
+  color: #000;
   font-weight: 600;
   padding: 10px 20px;
-  font-family: Raleway;
+  border-left: 2px solid #eee;
+  background:white;
 }
 
 /*  mobile menu */
