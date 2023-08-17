@@ -1,9 +1,10 @@
 // pages/_app.js
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from './components/MainLayout';
+import Layout from './components/layout/MainLayout';
 import AdminLayout from './admin/AdminLayout';
-import OtherPageLayout from './components/OtherPagesLayout';
+import OtherPageLayout from './components/layout/OtherPagesLayout';
+import CategoryLayout from './components/layout/CategoryPagesLayout';
 import Head from 'next/head';
 
 import 'typeface-raleway';
@@ -26,6 +27,9 @@ const MyApp = ({ Component, pageProps }) => {
   }
   else if (Component.layout === 'other') {
     CustomLayout = OtherPageLayout;
+  }
+  else if (Component.layout === 'category') {
+    CustomLayout = CategoryLayout;
   }
   
 

@@ -7,12 +7,12 @@ const menus = [
   {
     'id': 2,
     'name': 'About',
-    'slug': '/about'
+    'slug': 'about'
   },
   {
     'id': 3,
     'name': 'Education',
-    'slug': '/category/education'
+    'slug': 'category/education'
   },
   {
     'id': 4,
@@ -55,17 +55,17 @@ const menus = [
   {
     'id': 9,
     'name': 'Blogs',
-    'slug': '/blogs'
+    'slug': 'blogs'
   },
   {
     'id': 10,
     'name': 'Contact',
-    'slug': '/contact'
+    'slug': 'contact'
   },
   {
     'id': 11,
     'name': 'FAQs',
-    'slug': '/faqs'
+    'slug': 'faqs'
   },
 ];
 

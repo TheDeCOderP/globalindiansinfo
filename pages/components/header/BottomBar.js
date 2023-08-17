@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Link from 'next/link';
-import Menuitems from '../../api/menus/menus.js';
+import Menuitems from '@/api/menus/menus.js'
 import GoogleTranslate from '../GoogleTranslate.js';
 
 

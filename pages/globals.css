@@ -142,7 +142,7 @@ footer .row {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
 }
 
 
@@ -310,13 +310,6 @@ section.categories_section {
   background: black;
   opacity: 0.3;
 }
-.detailed-travel-info-container{
-  border-style:solid;
-  margin-top:120px;
-  min-height: 90vh;
-  margin-left:50px;
-  margin-right:50px;
-}
 footer {
   padding:20px 0px 0px 0px;
   background:#f8f9fa;
@@ -395,4 +388,8 @@ footer li a  {
   margin:0px;
 }
 
+.blog_image img {
+  width: 100%;
+  object-fit: cover;
+}
 

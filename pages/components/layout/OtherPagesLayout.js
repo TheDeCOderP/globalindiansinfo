@@ -1,8 +1,8 @@
 
 import React from 'react';
-import TopBar from './header/TopBar';
-import BottomBar from './header/BottomBar';
-import Footer from './Footer';
+import TopBar from '../header/TopBar';
+import BottomBar from '../header/BottomBar';
+import Footer from '../Footer';
 import { useRouter } from 'next/router';
 
 

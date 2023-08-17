@@ -21,7 +21,6 @@ const SearchComponent = () => {
           <Form.Control
             type="text"
             placeholder="Search..."
-            action
           />
           <Button variant="dark" type="submit" className="search_button">
                   <FaSearch />
