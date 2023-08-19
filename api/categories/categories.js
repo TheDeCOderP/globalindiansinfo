@@ -1,44 +1,29 @@
-const categories =  
-    [
-    
-        {
-
-    'id':1,
-    'name': 'Travel',
-    'imagepath':'/uploads/images/categories/travel.jpg'
+const Blogs = [
+  {
+    id: '1',
+    title: 'Blog No 1',
+    description: 'Blog description is here',
+    imagepath: 'uploads/images/blogs/blog1.jpg',
+    slug: 'blog1',
+    categories: ['business', 'technology'],
   },
-        {
-
-    'id':2,
-    'name': 'Jobs',
-    'imagepath':'/uploads/images/categories/job.jpg'
+  {
+    id: '2',
+    title: 'Blog No 2',
+    description: 'Blog description is here',
+    imagepath: 'uploads/images/blogs/blog1.jpg',
+    slug: 'blog2',
+    categories: ['events'],
   },
-        {
-
-    'id':3,
-    'name': 'Education',
-    'imagepath':'/uploads/images/categories/education.jpg'
+  {
+    id: '3',
+    title: 'Blog No 3',
+    description: 'Blog description is here',
+    imagepath: 'uploads/images/blogs/blog1.jpg',
+    slug: 'blog3',
+    categories: ['business'],
   },
-        {
+  // Add more blog entries with categories
+];
 
-    'id':4,
-    'name': 'Business',
-    'imagepath':'/uploads/images/categories/business.jpg'
-  },
-        {
-
-    'id':5,
-    'name': 'Events',
-    'imagepath':'/uploads/images/categories/events.jpg'
-  },
-        {
-
-    'id':6,
-    'name': 'News',
-    'imagepath':'/uploads/images/categories/news.jpg'
-  },
-        
-]
-
-
-export default categories;
+export default Blogs;

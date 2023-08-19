@@ -23,7 +23,7 @@ function Carousels() {
      {
       CarouselList.map((item) => (
       
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={1000} key={item.slug}>
         <img
           className="d-block w-100"
           src={item.slug}

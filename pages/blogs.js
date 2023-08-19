@@ -8,11 +8,11 @@ const AllBlogs = () => {
         <div className="row">
         {
             Blogs.map((item) =>
-            <div className="col-sm-12 col-lg-4 col-md-4">
+            <div className="col-sm-12 col-lg-4 col-md-4" key={item.id}>
 
                 <Link href={`/blogs/${item.slug}`}>
                 <div className="blog_image">
-                    <Image src={`/${item.imagepath}`} width={300} height={300}></Image>
+                    <Image src={`/${item.imagepath}`} width={300} height={300} alt="blogs"></Image>
                 </div>
                 <div className="blog_body">
                     <h4>{item.title}</h4>

@@ -344,6 +344,10 @@ button.search_button.btn.btn-dark {
   justify-content:center!important;
  }
 
+ .capitalize {
+  text-transform: capitalize;
+ }
+
 
 
 

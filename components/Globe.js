@@ -4,14 +4,14 @@ import { TextureLoader, DoubleSide } from 'three';
 
 const RotatingGlobe = ({ mouse }) => {
   const sphereRef = useRef();
-  const earthTexture = new TextureLoader().load('/uploads/images/map.jpg');
+  const earthTexture = new TextureLoader().load('/uploads/images/globe/globe3.png');
 
   useFrame((state, delta) => {
     if (sphereRef.current) {
       sphereRef.current.rotation.y += 0.0025 * delta;
 
-       const targetRotationX = (-mouse.current[1] - sphereRef.current.rotation.x) * 0.001; 
-      const targetRotationY = (mouse.current[0] - sphereRef.current.rotation.y) * 0.001;
+       const targetRotationX = (-mouse.current[1] - sphereRef.current.rotation.x) * 0.002; 
+      const targetRotationY = (mouse.current[0] - sphereRef.current.rotation.y) * 0.002;
 
        sphereRef.current.rotation.x += targetRotationX * 0.005;  // Adjust the speed by modifying the factor (0.1)
       sphereRef.current.rotation.y += targetRotationY * 0.005; // Adjust the speed by modifying the factor (0.1)
@@ -20,7 +20,7 @@ const RotatingGlobe = ({ mouse }) => {
 
   return (
     <mesh ref={sphereRef}>
-      <sphereGeometry args={[3, 128, 128]} />
+      <sphereGeometry args={[3, 300, 300]} />
       <meshPhongMaterial map={earthTexture} transparent opacity={1} side={DoubleSide} />
     </mesh>
   );
