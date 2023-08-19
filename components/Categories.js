@@ -1,4 +1,4 @@
-import Categories from '@/api/categories/list';
+import Categories from '@/api/articles/categories';
 import Link from 'next/link';
 
 const AllCategories = () => {
