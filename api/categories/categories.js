@@ -5,7 +5,7 @@ const Blogs = [
     description: 'Blog description is here',
     imagepath: 'uploads/images/blogs/blog1.jpg',
     slug: 'blog1',
-    categories: ['business', 'technology'],
+    categories: ['business', 'education' , 'jobs'],
   },
   {
     id: '2',

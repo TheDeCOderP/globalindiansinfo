@@ -11,8 +11,11 @@ const CategoryPage = () => {
   const categoryBlogs = Blogs.filter(blog => blog.categories.includes(category));
 
   return (
+    <section classname="category_page">
+  
+      
     <div className="container">
-      <h1 className="capitalize">{category} Category</h1>
+     
       <div className="row">
         {categoryBlogs.map(item => (
           <div key={item.id} className="col-sm-12 col-lg-4 col-md-4">
@@ -28,8 +31,11 @@ const CategoryPage = () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
+
+CategoryPage.layout = "category";
 
 
 export default CategoryPage;

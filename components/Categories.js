@@ -1,4 +1,4 @@
-import Categories from '@/api/categories/categories.js';
+import Categories from '@/api/categories/list';
 import Link from 'next/link';
 
 const AllCategories = () => {
@@ -7,12 +7,12 @@ const AllCategories = () => {
       <div className="row">
         {Categories.map((item) => (
           <div key={item.id} className="category_grid col-sm-6 col-md-4 col-lg-4">
-            <Link href={`/category/${item.name?.toLowerCase()}`}>
+            <Link href={`/category/${item.title?.toLowerCase()}`}>
               <div className="thumbnail">
-                <img className="category_image" src={item.imagepath} alt={item.name} />
+                <img className="category_image" src={item.imagepath} alt={item.title} />
               </div>
               <div className="category_body">
-                <h2 className="text-center">{item.name}</h2>
+                <h2 className="text-center">{item.title}</h2>
               </div>
             </Link>
           </div>

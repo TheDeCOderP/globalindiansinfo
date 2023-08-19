@@ -1,9 +1,12 @@
-/* header {
-  position: absolute;
-  top: 10px;
-  z-index: 1000;
-  width: 100%;
-} */
+:root {
+  --primary: #273171; /* Replace with your desired primary color hex value */
+  --secondary: #f89629; /* Replace with your desired secondary color hex value */
+  --accent: #389232; /* Replace with your desired accent color hex value */
+}
+
+
+
+
 .category_image {
   width:100%;
   aspect-ratio:4/3;
@@ -247,7 +250,7 @@ button.navbar-toggler.collapsed {
 }
 
 .carousel_section h2 {
-  color: #f89629;
+  color: var(--secondary);
   font-weight: 800;
   font-size: 80px;
   z-index: 1;
@@ -269,7 +272,7 @@ section.categories_section {
   background-size: cover;
 }
  span.green {
-  color: #399238;
+  color: var(--accent);
   font-weight:700;
 }
 
@@ -397,3 +400,17 @@ footer li a  {
   object-fit: cover;
 }
 
+.category_pages_banner {
+  height: 150px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+  color: white;
+  margin-bottom:30px;
+}
+
+.category_pages_banner h1 {
+  font-size:40px;
+}
