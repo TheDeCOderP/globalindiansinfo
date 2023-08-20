@@ -506,6 +506,16 @@ footer li a  {
   padding:40px 0px;
 }
 
+.single_article_body.container h1 {
+  margin: 30px 0px;
+}
+
+.single_article_body.container.pt-10 {
+  margin:30px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #eee;
+}
+
  
 
 

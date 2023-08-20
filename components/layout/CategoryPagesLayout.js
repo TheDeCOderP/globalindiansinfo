@@ -19,7 +19,7 @@ const CategoryPageLayout = ({ children }) => {
      </header>
      <div className='category_pages_banner'>
     
-     <h1 className="capitalize text-center">{category}</h1>
+     <h2 className="capitalize text-center">{category}</h2>
         </div>
       {children}
       <footer><Footer/></footer>

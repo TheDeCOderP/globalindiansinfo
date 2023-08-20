@@ -18,7 +18,7 @@ const SingleArticle = () => {
             </div>
             <div className="single_article_body container pt-10">
                 <h1 className="capitalize">{article.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: article.description }} />
+                <p dangerouslySetInnerHTML={{ __html: article.description }} />
             </div>
         </div>
     );
