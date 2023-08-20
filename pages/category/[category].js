@@ -11,6 +11,7 @@ const CategoryPage = () => {
   const categoryBlogs = Articles.filter(article => article.categories.includes(category));
  
 
+
    
   return (
     <section classname="category_page">
@@ -20,13 +21,13 @@ const CategoryPage = () => {
      
       <div className="row">
         {categoryBlogs.map(item => (
-          <div key={item.id} className="col-sm-12 col-lg-4 col-md-4">
+          <div key={item.id} className="article_column col-sm-12 col-lg-4 col-md-4">
             <Link href={`/article/${item.slug}`}>
               <div className="blog_image">
                 <Image src={`/${item.imagepath}`} width={300} height={300} alt="blog_image" />
               </div>
-              <div className="blog_body">
-                <h4>{item.title}</h4>
+              <div className="article_body">
+                <h3>{item.title}</h3>
               </div>
             </Link>
           </div>

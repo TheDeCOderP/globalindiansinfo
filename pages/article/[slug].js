@@ -12,13 +12,13 @@ const SingleArticle = () => {
     }
 
     return (
-        <div className="container">
+        <div className="article_single_page">
             <div className="article_single_image">
                 <Image src={`/${article.imagepath}`} width={600} height={400} />
             </div>
-            <div className="blog_body">
-                <h1>{article.title}</h1>
-                <p>{article.description}</p>
+            <div className="single_article_body container pt-10">
+                <h1 className="capitalize">{article.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: article.description }} />
             </div>
         </div>
     );

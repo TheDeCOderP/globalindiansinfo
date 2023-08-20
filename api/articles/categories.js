@@ -29,6 +29,11 @@ const AllCategories = [
     title: 'Events',
     imagepath: 'uploads/images/categories/events.jpg',
   },
+  {
+    id: '7',
+    title: 'Latest',
+    imagepath: 'uploads/images/categories/latest.jpg',
+  },
   
 ];
 

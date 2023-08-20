@@ -4,7 +4,7 @@ import { TextureLoader, DoubleSide } from 'three';
 
 const RotatingGlobe = ({ mouse }) => {
   const sphereRef = useRef();
-  const earthTexture = new TextureLoader().load('/uploads/images/globe/globe3.png');
+  const earthTexture = new TextureLoader().load('/uploads/images/globe/globe.png');
 
   useFrame((state, delta) => {
     if (sphereRef.current) {
@@ -20,8 +20,8 @@ const RotatingGlobe = ({ mouse }) => {
 
   return (
     <mesh ref={sphereRef}>
-      <sphereGeometry args={[3, 300, 300]} />
-      <meshPhongMaterial map={earthTexture} transparent opacity={1} side={DoubleSide} />
+      <sphereGeometry args={[2.5, 128, 128]} />
+      <meshPhongMaterial map={earthTexture} transparent opacity={2} side={DoubleSide} />
     </mesh>
   );
 };

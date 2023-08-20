@@ -1,29 +1,28 @@
-const Blogs = [
+
+ 
+
+const LatestArticles = [
   {
     id: '1',
-    title: 'Article No 1',
-    description: 'Article description is here',
-    imagepath: 'uploads/images/blogs/blog1.jpg',
-    slug: 'blog1',
-    categories: ['business', 'education' , 'jobs'],
+    title: 'Any panditji number who can do hawan',
+    description:'<a href="tel:1234567890">Hello</a>',
+    imagepath: 'uploads/images/articles/a1.jpg',
+    categories: ['featured', 'business', 'education', 'events'],
   },
+  
   {
     id: '2',
-    title: 'Article No 2',
-    description: 'Blog description is here',
-    imagepath: 'uploads/images/blogs/blog1.jpg',
-    slug: 'blog2',
-    categories: ['events'],
+    title: 'What is the alternative for MSeal here in UK',
+    description: 'Sugru',
+    imagepath: 'uploads/images/articles/sugru.jpg',
+    categories: ['featured', 'business', 'education', 'events'],
   },
-  {
-    id: '3',
-    title: 'Article No 3',
-    description: 'Blog description is here',
-    imagepath: 'uploads/images/blogs/blog1.jpg',
-    slug: 'blog3',
-    categories: ['business'],
-  },
-  // Add more blog entries with categories
+  // Add more articles here if needed
 ];
 
-export default Blogs;
+// Generate slugs and assign them to the articles
+LatestArticles.forEach(article => {
+  article.slug = `${article.title.toLowerCase().replace(/\s+/g, '-')}`;
+});
+
+export default LatestArticles;

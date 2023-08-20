@@ -18,7 +18,7 @@ const SingleBlog = () => {
             </div>
             <div className="blog_body">
                 <h1>{blog.title}</h1>
-                <p>{blog.description}</p>
+                <div dangerouslySetInnerHTML={{ __html: blog.description }} />
             </div>
         </div>
     );
