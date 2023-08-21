@@ -14,10 +14,11 @@ import 'typeface-league-spartan';
  
 
 
-import './globals.css';
-import './aanchal.css';
-import './sai.css';
-import './mobile_globals.css';
+import '@/styles/globals.css'
+import '@/styles/aanchal.css'
+import '@/styles/sai.css'
+import '@/styles/mobile_globals.css'
+
 
 const MyApp = ({ Component, pageProps }) => {
   // Determine if the Component has a custom layout
