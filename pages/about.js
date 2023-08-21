@@ -1,12 +1,12 @@
 // pages/index.js
 import React from 'react';
 import Link from 'next/link';
+import AboutUs from '../components/about/index';
 
 const About = () => {
   return (
     <div>
-      <h1>About Page</h1>
-      <Link href="/">Go to Home Page</Link>
+     <AboutUs/>
     </div>
   );
 };

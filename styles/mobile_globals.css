@@ -27,10 +27,9 @@ h2.page_title {
   font-weight: 700;
 }
 
-
-
 img.category_image {
-    height: 100px;
+  height: 100%;
+  aspect-ratio: 3/2;
 }
 
 section.categories_section {
@@ -38,6 +37,33 @@ section.categories_section {
   background: url(/uploads/images/blog_bg.png);
   background-position: center;
   background-size: cover;
+}
+
+h1.text-center {
+  margin-bottom: 10px;
+}
+
+header .row {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hide_on_mobile {
+  display:none!important;
+}
+
+.searchBar {
+  padding-bottom: 10px;
+}
+
+.logo_bar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
 }
 
 section.banner_section {
@@ -69,8 +95,13 @@ nav.header_nav.bottombar.navbar.navbar-expand-lg.navbar-dark.sticky-top {
   opacity: 0.2;
 }
 
-.article_column {
-  width: 90%;
+.latest_article_column.col-sm-12.col-md-4.col-lg-4 {
+  margin: 15px auto;
+}
+
+.article_column.col-sm-6.col-md-4.col-lg-4 {
+  width: 100%;
+  padding: 20px;
 }
 
 

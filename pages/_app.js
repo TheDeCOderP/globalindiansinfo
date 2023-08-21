@@ -32,7 +32,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
     <Head>
-       <title>Global Indians Info</title>
+       <title>Global Indians Info - Connecting Indians Globally</title>
        <link rel="icon" href="/uploads/images/site-logo.png" />
     </Head>
     

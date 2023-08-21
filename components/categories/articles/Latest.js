@@ -14,7 +14,7 @@ const LatestArticles = () => {
             <h1 className="text-center"><span className="green">Featured</span> News</h1>
             {latestArticles.map(article => (
 
-                <div key={article.id} className="article_column col-sm-12 col-md-4 col-lg-4">
+                <div key={article.id} className="latest_article_column col-sm-12 col-md-4 col-lg-4">
                     <Link href={`/article/${article.slug}`}>
 
                     <div className="article_thumbnail">

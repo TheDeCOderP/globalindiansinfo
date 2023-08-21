@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Form, Button , Card } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 import axios from "axios";
 import Link from "next/link";
+import { FaEnvelope, FaMobile, FaPhone } from 'react-icons/fa';
 
 
 function ContactForm() {
@@ -100,30 +101,27 @@ function ContactForm() {
                     </Form>
                 </div>
                 <div className="col-sm-12 col-lg-6 col-md-6">
-                <Card>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                
-                <Card>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                
+                    <Card className="contact_cards">
+
+                        <Card.Body >
+                            <FaEnvelope size={30} color={'var(--primary)'} />
+                            <Card.Title>info@prabisha.com</Card.Title>
+
+
+                            <Link href="mailto:info@prabisha.com"><Button className="global_buttons">Mail Now</Button></Link>
+                        </Card.Body>
+                    </Card>
+
+                    <Card className="contact_cards">
+
+                        <Card.Body  >
+                            <FaMobile size={30} color={'var(--primary)'} />
+                            <Card.Title>+44-7867090363</Card.Title>
+
+                            <Link href="tel:+44-7867090363">   <Button className="global_buttons">Call Now</Button></Link>
+                        </Card.Body>
+                    </Card>
+
 
                 </div>
             </div>

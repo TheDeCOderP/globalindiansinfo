@@ -15,7 +15,7 @@ function Header() {
     <Navbar collapseOnSelect expand="lg" variant="dark"  className="header_nav topbar ">
       <Container>
        <div className="row">
-        <div className="col col-sm-6 col-md-2 col-lg-2">
+        <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
         <Link href="/"><img
           className="site-logo"
           src="/uploads/images/site-logo.png"
@@ -26,7 +26,7 @@ function Header() {
         <SearchComponent  />
         </div>
 
-        <div className="col col-sm-6 col-md-2 col-lg-2 social-icons">
+        <div className="col col-sm-6 col-md-2 col-lg-2 social-icons hide_on_mobile">
         
               <a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank"><FaFacebook className="mr-2" /></a>
               <a href="https://twitter.com/globalindian_in" target="blank"><FaTwitter className="mr-2" /></a>
@@ -36,7 +36,7 @@ function Header() {
         </div>
        
         
-       <div className="col col-sm-6 col-md-2 col-lg-2 google_translate">
+       <div className="col col-sm-6 col-md-2 col-lg-2 google_translate hide_on_mobile">
         <GoogleTranslate/> 
         </div>
         </div>
