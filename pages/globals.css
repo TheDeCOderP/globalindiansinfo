@@ -477,7 +477,10 @@ footer li a  {
 
 .blog_image img {
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  height: auto;
+  aspect-ratio: 4/3;
 }
 
 .category_pages_banner {

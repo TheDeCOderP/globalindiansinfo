@@ -7,65 +7,52 @@ const menus = [
   {
     'id': 2,
     'name': 'About',
-    'slug': 'about'
+    'slug': '/about'
   },
   {
     'id': 3,
     'name': 'Education',
-    'slug': 'category/education'
+    'slug': '/category/education'
   },
   {
     'id': 4,
     'name': 'Jobs',
-    'slug': 'category/jobs'
+    'slug': '/category/jobs'
   },
   {
     'id': 5,
     'name': 'Business',
-    'slug': 'category/business',
-    'submenu': [
-      {
-        'id': 11,
-        'name': 'Listings',
-        'slug': '/business/listings'
-      },
-      {
-        'id': 12,
-        'name': 'Listings 2',
-        'slug': '/business/listings'
-      },
-
-    ]
+    'slug': '/category/business',
   },
   {
     'id': 6,
     'name': 'Travel',
-    'slug': 'category/travel'
+    'slug': '/category/travel'
   },
   {
     'id': 7,
     'name': 'News',
-    'slug': 'category/news'
+    'slug': '/category/news'
   },
   {
     'id': 8,
     'name': 'Events',
-    'slug': 'category/events'
+    'slug': '/category/events'
   },
   {
     'id': 9,
     'name': 'Blogs',
-    'slug': 'blogs'
+    'slug': '/blogs'
   },
   {
     'id': 10,
     'name': 'Contact',
-    'slug': 'contact'
+    'slug': '/contact'
   },
   {
     'id': 11,
     'name': 'FAQs',
-    'slug': 'faqs'
+    'slug': '/faqs'
   },
 ];
 

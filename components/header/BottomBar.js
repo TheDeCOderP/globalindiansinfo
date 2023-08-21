@@ -13,7 +13,7 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav" className="nav_menu">
           <Nav className="menu_links">
             {Menuitems.map((item) => (
-              <Link key={item.id} href={`/${item.slug}`}>
+              <Link key={item.id} href={`${item.slug}`}>
                 {item.name}
               </Link>
             ))}

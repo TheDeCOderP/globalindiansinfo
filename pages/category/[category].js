@@ -14,7 +14,7 @@ const CategoryPage = () => {
 
    
   return (
-    <section classname="category_page">
+    <section className="category_page">
   
       
     <div className="container">
