@@ -9,11 +9,6 @@ import Head from 'next/head';
 
 import 'typeface-raleway';
 import 'typeface-league-spartan';
-
-
- 
-
-
 import '@/styles/globals.css'
 import '@/styles/aanchal.css'
 import '@/styles/sai.css'
