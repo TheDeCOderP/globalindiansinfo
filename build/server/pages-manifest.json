@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/about": "pages/about.html",
+  "/admin/AdminLayout": "pages/admin/AdminLayout.html",
+  "/admin/components/UserData": "pages/admin/components/UserData.html",
+  "/admin/components/sideBar": "pages/admin/components/sideBar.html",
+  "/admin/dashboard": "pages/admin/dashboard.html",
+  "/admin": "pages/admin.html",
+  "/article/[slug]": "pages/article/[slug].html",
+  "/blogs": "pages/blogs.html",
+  "/blogs/[slug]": "pages/blogs/[slug].html",
+  "/category/[category]": "pages/category/[category].html",
+  "/contact": "pages/contact.html",
+  "/faqs": "pages/faqs.html",
+  "/": "pages/index.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
