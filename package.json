@@ -25,7 +25,7 @@
     "fs": "^0.0.1-security",
     "google-translate-api": "^2.3.0",
     "multer": "^1.4.5-lts.1",
-    "next": "13.4.5",
+    "next": "^13.4.5",
     "postcss": "8.4.24",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
