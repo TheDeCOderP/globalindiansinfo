@@ -35,10 +35,10 @@ const AboutUs = () => {
               </p>
               <div className="founder-icons">
                 <a href="link_to_pratyush_linkedin" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="linkedin-icon" />
+                  <FaLinkedin className="linkedin-icon" size={40} />
                 </a>
                 <a href="link_to_bidisha_linkedin" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="linkedin-icon" />
+                  <FaLinkedin className="linkedin-icon" size={40} />
                 </a>
               </div>
             </div>
