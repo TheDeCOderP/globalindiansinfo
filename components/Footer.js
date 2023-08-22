@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="copyrights">
        <h4>Global Indians Info © 2023 . All Rights Reserved . || Powered by <a href="https://prabisha.co.uk/">Prabisha Consulting Limited UK</a></h4>
       </div>
-      <div class="whatsapp-container">
+      <div className="whatsapp-container">
     <a href={`https://api.whatsapp.com/send?phone=+44-7867090363&text=I%20want%20to%20find%20out%20about%20your%20support%20and%20services`} target="_blank" rel="noopener noreferrer">
       <img src="/social/icons8-whatsapp.svg" alt="WhatsApp Logo" width="30" height="30"/>
     </a>
