@@ -1,4 +1,4 @@
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:767px) {
 
     .col-sm-6.col-md-4.col-lg-4.products_grid {
         display: flex;
@@ -66,9 +66,10 @@ header .row {
   padding: 10px 0px;
 }
 
-.article_column.col-sm-12.col-lg-4.col-md-4 {
+.article_column.col-sm-6.col-md-4.col-lg-4 {
   width: 100%;
-  padding: 0px 20px;
+  padding: 20px;
+  margin: auto;
 }
 
 section.banner_section {
