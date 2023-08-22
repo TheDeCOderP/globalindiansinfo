@@ -586,6 +586,10 @@ header .container {
   margin:40px 0px;
 }
 
+.category_grid.container .row {
+  justify-content: center;
+}
+
  
 
 
