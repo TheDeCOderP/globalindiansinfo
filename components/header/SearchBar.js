@@ -1,35 +1,44 @@
+// components/SearchBar.js
 import React, { useState } from 'react';
-import {Button,Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
+const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
 
-
-const SearchComponent = () => {
-  /* const [searchTerm, setSearchTerm] = useState('');
-  
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+    e.preventDefault();
+    if (searchQuery.trim() !== '') {
+      router.push(`/search-results/${encodeURIComponent(searchQuery)}`);
+    }
   };
 
-  const filteredHeadings = headings.filter((heading) =>
-    heading.toLowerCase().includes(searchTerm.toLowerCase())
-  ); */
-
   return (
+    <div className="container">
+       <Form inline="true" onSubmit={handleSearch}>
+      <div className="row">
+        
+   
+    <div className="col-11 searchBar">
+      <Form.Control
+        type="text"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      </div>
+      <div className="col-1 searchBar">
+      <Button variant="dark" type="submit" className="search_button">
+        <FaSearch />
+      </Button>
+      </div>
+      </div>
+    </Form>
     
-        <>
-          <Form.Control
-            type="text"
-            placeholder="Search..."
-          />
-          <Button variant="dark" type="submit" className="search_button">
-                  <FaSearch />
-                </Button>
-                </>
-       
-
-  
+    </div>
   );
 };
 
-export default SearchComponent;
+export default SearchBar;

@@ -4,6 +4,24 @@
   --accent: #389232; /* Replace with your desired accent color hex value */
 }
 
+.py-4{
+  padding: 40px 0px;
+}
+.px-4{
+  padding: 0px 40px;
+}
+.py-8{
+  padding: 80px 0px;
+}
+.px-8{
+  padding: 0px 80px;
+}
+
+.latest_article_column {
+  margin: 20px auto;
+ 
+}
+
 
 
 
@@ -93,6 +111,7 @@ section.featured_blogs_section {
   height: 250px;
   object-fit: cover;
   min-height: 250px;
+  border:1px solid #eee;
 }
 
 p {
@@ -151,6 +170,8 @@ section.featured_blogs_section h1 {
   margin: 10px;
   width: 30%;
   padding:0px;
+  background: #ffedd8;
+
 }
 section.featured_blogs_section .row {
   display: flex;
@@ -260,7 +281,7 @@ footer .row {
   justify-content: end;
 }
 
-.col.col-sm-6.col-md-6.col-lg-6.searchBar {
+.col.searchBar {
   display: flex;
 }
 
@@ -446,7 +467,7 @@ input.form-control {
   padding: 10px;
 }
 button.search_button.btn.btn-dark {
-  padding: 0px 25px;
+  padding: 10px 20px;
 }
 
 .bootombar .container {
@@ -590,6 +611,37 @@ header .container {
   justify-content: center;
 }
 
+/* SearchComponent.css */
+
+.card-deck-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+img.search_results_images {
+  width: 100%;
+  object-fit: cover;
+}
+
+h3.article-body {
+  color: var(--primary);
+  font-size: 15px;
+  text-align: center;
+  line-height: 22px;
+}
+
+a.categories {
+  padding: 5px 10px;
+  background: #273171;
+  margin: 10px;
+  color: white;
+  text-transform: capitalize;
+}
  
+.searchBar {
+  padding: 0px;
+}
 
 
