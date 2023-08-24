@@ -9,6 +9,7 @@ function Carousels() {
       {'slug': '/uploads/images/carousel/slide2.jpg' },
       {'slug': '/uploads/images/carousel/slide3.jpg' },
       {'slug': '/uploads/images/carousel/slide4.jpg' },
+      {'slug': '/uploads/images/carousel/slide5.jpg' },
 
     
 

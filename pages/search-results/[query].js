@@ -52,7 +52,7 @@ const SearchResultsPage = () => {
                       href={`/category/${category.toLowerCase()}`}
                       key={category}
                     >
-                      <a className="categories">{category}</a>
+                      <a className="categories capitalize">{category}</a>
                     </Link>
                   ))}
               </p>
