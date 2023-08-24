@@ -1,17 +1,7 @@
-/** @type {import('next').NextConfig} */
-
-
-const nextConfig = {
-
-  // next.config.js
+// next.config.js
 module.exports = {
-  // Your other configuration options here
+  // Other configuration options
   
-  // Example of a build-related configuration
-  distDir: 'build', // Customize the build output directory
+  // Customize the build output directory
+  distDir: 'build',
 };
-
-
-  };
-  
-  module.exports = nextConfig;
