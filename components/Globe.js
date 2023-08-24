@@ -21,7 +21,7 @@ const RotatingGlobe = ({ mouse }) => {
   return (
     <mesh ref={sphereRef}>
       <sphereGeometry args={[2.5, 128, 128]} />
-      <meshPhongMaterial map={earthTexture} transparent opacity={2} side={DoubleSide} />
+      <meshPhongMaterial map={earthTexture} transparent opacity={1} side={DoubleSide} />
     </mesh>
   );
 };
