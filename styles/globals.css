@@ -4,6 +4,12 @@
   --accent: #389232; /* Replace with your desired accent color hex value */
 }
 
+.py-2{
+  padding: 20px auto;
+}
+.px-2{
+  padding: 0px 10px;
+}
 .py-4{
   padding: 40px 0px;
 }
