@@ -33,7 +33,8 @@ const SearchResultsPage = () => {
         <h2 className="py-4">Search Results for "{query}"</h2>
 
         {searchResults.map((result) => (
-          <div className="col-sm-12 col-lg-4 col-md-4 py-2" key={result.id}>
+          <div className="col-sm-12 col-lg-4 col-md-4" key={result.id}>
+          <div className="articles_data" >
             <Link href={result.slug} as={`/article/${result.slug}`}>
               <Image
                 className="search_results_images"
@@ -58,6 +59,7 @@ const SearchResultsPage = () => {
               </p>
               </div>
             </Link>
+          </div>
           </div>
         ))}
       </div>

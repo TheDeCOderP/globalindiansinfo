@@ -2,6 +2,11 @@
   --primary: #273171; /* Replace with your desired primary color hex value */
   --secondary: #f89629; /* Replace with your desired secondary color hex value */
   --accent: #389232; /* Replace with your desired accent color hex value */
+  --link: #389232; /* Replace with your desired link color hex value */
+}
+
+a{
+  color:var(--link);
 }
 
 .py-2{
@@ -26,6 +31,15 @@
 .latest_article_column {
   margin: 20px auto;
  
+}
+
+
+.founders_social a {
+  margin: 10px;
+}
+
+.founders_social svg {
+  margin: 10px;
 }
 
 
@@ -649,5 +663,25 @@ a.categories {
 .searchBar {
   padding: 0px;
 }
+
+.about-us p {
+  text-align:center;
+}
+
+.founders img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: #fafafa;
+}
+
+.founders_social {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fafafa;
+}
+
+
+
 
 

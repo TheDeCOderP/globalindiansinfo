@@ -18,7 +18,7 @@ const SearchBar = () => {
   return (
     <div className="container">
        <Form inline="true" onSubmit={handleSearch}>
-      <div className="row">
+      <div className="row search_row">
         
    
     <div className="col-11 searchBar">

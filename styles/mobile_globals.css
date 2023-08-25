@@ -192,6 +192,40 @@ section.banner_section::before {
      display:flex;
      justify-content:center!important;
     }
+    .founders_column {
+      width: 100%;
+  }
+
+  
+.founders img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  height:300px;
+  background: #fafafa;
+}
+
+.founders_social {
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #fafafa;
+}
+.founders_social svg {
+  margin: 5px;
+}
+
+.founders_social a {
+  margin: 5px;
+}
+
+.row.search_row {
+  flex-direction: row;
+  width: 97%;
+}
+
+.col-sm-12.col-lg-4.col-md-4 {
+  padding: 0px;
+}
 
 
     }
