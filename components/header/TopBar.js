@@ -27,11 +27,12 @@ function Header() {
         </div>
 
         <div className="col col-sm-6 col-md-2 col-lg-2 social-icons hide_on_mobile">
-        
+        <a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank"> <FaLinkedin className="mr-2" /></a>
               <a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank"><FaFacebook className="mr-2" /></a>
-              <a href="https://twitter.com/globalindian_in" target="blank"><FaTwitter className="mr-2" /></a>
               <a href="https://www.instagram.com/global_indian_official/" target="blank"><FaInstagram className="mr-2" /></a>
-             <a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank"> <FaLinkedin className="mr-2" /></a>
+              <a href="https://twitter.com/globalindian_in" target="blank"><FaTwitter className="mr-2" /></a>
+              
+            
             
         </div>
        
