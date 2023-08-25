@@ -57,7 +57,7 @@ const menus = [
   {
     'id': 12,
     'name': 'Partner',
-    'slug': '/Partner'
+    'slug': '/partner'
   },
 ];
 

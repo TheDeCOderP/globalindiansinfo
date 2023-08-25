@@ -1,53 +1,21 @@
-import Container from 'react-bootstrap/Container';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt } from 'react-icons/fa';
-import Navbar from 'react-bootstrap/Navbar';
-import Link from 'next/link';
-import SearchComponent from './SearchBar';
-import GoogleTranslate from '../GoogleTranslate.js';
+import React from 'react'
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt,FaEnvelope,FaWhatsapp,FaPhone,FaFlag,FaGlobeAmericas  } from 'react-icons/fa';
 
-
-
-function Header() {
-  
-  
+function TopBar() {
   return (
     <>
-    <Navbar collapseOnSelect expand="lg" variant="dark"  className="header_nav topbar ">
-      <Container>
-       <div className="row">
-        <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
-        <Link href="/"><img
-          className="site-logo"
-          src="/uploads/images/site-logo.png"
-          alt="site_logo"
-        /></Link>
-        </div>
-         <div className="col col-sm-6 col-md-6 col-lg-6 searchBar">
-        <SearchComponent  />
-        </div>
-
-        <div className="col col-sm-6 col-md-2 col-lg-2 social-icons hide_on_mobile">
-        <a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank"> <FaLinkedin className="mr-2" /></a>
-              <a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank"><FaFacebook className="mr-2" /></a>
-              <a href="https://www.instagram.com/global_indian_official/" target="blank"><FaInstagram className="mr-2" /></a>
-              <a href="https://twitter.com/globalindian_in" target="blank"><FaTwitter className="mr-2" /></a>
-              
-            
-            
-        </div>
-       
-        
-       <div className="col col-sm-6 col-md-2 col-lg-2 google_translate hide_on_mobile">
-        <GoogleTranslate/> 
-        </div>
-        </div>
-      </Container>
-      
-       
-    </Navbar>
-     
-     </>
-  );
+    <div className='sociallinks' >
+        <a  href="mailto:info@prabisha.com" target="blank" style={{color:"white"}}><FaEnvelope className="mr-2" color='white'  /><span className='wordlinks' style={{marginLeft:"5px"}}>info@prabisha.com</span></a>
+        <div className="whatsapp-top-container wordlinks">
+        <span>Need any Help?</span>
+        <a href={`https://api.whatsapp.com/send?phone=+44-7867090363&text=I%20want%20to%20find%20out%20about%20your%20support%20and%20services`} target="_blank" rel="noopener noreferrer">
+      <img src="/social/icons8-whatsapp.svg" alt="WhatsApp Logo" width="30" height="30"/>
+      <span className='whatsapp'>Whatsapp Us</span>
+    </a>
+    </div>
+    </div>
+    </>
+  )
 }
 
-export default Header;
+export default TopBar;

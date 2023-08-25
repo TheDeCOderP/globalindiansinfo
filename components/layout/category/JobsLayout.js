@@ -16,6 +16,7 @@ const JobsLayout = () => {
     
     <h2 className="capitalize text-center">{category}</h2>
        </div>
+       <section className="category-body">
     <div className="container">
      <h3>my jobs</h3>
       <div className="row">
@@ -33,6 +34,7 @@ const JobsLayout = () => {
         ))}
       </div>
     </div>
+    </section>
     </section>
   );
 };

@@ -17,8 +17,66 @@ const JobsLayout = () => {
     <h2 className="capitalize text-center">{category}</h2>
        </div>
     <div className="container">
-   
-     <h3>my Business</h3>
+    
+    
+    <div class="row">
+        
+        <div class="col-md-4 mb-4 fade show">
+            <div class="card">
+                <img src="/uploads/images/categories/business/it.jpg" class="card-img-top" alt="IT Solutions"/>
+                <div class="card-body">
+                    <h5 class="card-title">IT Solutions</h5>
+                    <p class="card-text">Website & App development</p>
+                    <a href="#" class="btn button">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4 fade show">
+            <div class="card">
+                <img src="/uploads/images/categories/business/digital.jpg" class="card-img-top" alt="Digital Marketing"/>
+                <div class="card-body">
+                    <h5 class="card-title">Digital Marketing</h5>
+                    <p class="card-text">SEO, SMM, Graphic Design, Video & Animation</p>
+                    <a href="#" class="btn button">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4 mb-4 fade show">
+            <div class="card">
+                <img src="/uploads/images/categories/business/hr.jpg" class="card-img-top" alt="HR Solutions"/>
+                <div class="card-body">
+                    <h5 class="card-title">HR Solutions</h5>
+                    <p class="card-text ">Talent Acquisition, VA, Part-Time Staff, Contract Jobs, Interns</p>
+                    <a href="#" class="btn button ">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-12 m-4">
+            <h2 class="text-center mt-2">Business Networking</h2>
+            <h5 class="text-center mt-4">Presenting a fast-growing and vibrant UK based Business Network...</h5>
+            <div class="text-center mt-4">
+            <p>In this group, all group members are encouraged to promote their genuine businesses, their products and services without any charges. Members can share Business Tips, Business News and Customer Feedbacks. They can even request for Business References in this group or may ask any business-related queries in this group.
+Together, let's make a vibrant business community which promotes business growth. Share and Invite your friends to Join this “UK Businesses” Community.
+Note:
+Only genuine business owners are allowed to join this group. Company Name and Company Number needs to be provided and you should be one of the directors / officers listed there.
+This is an initiative by Prabisha Consulting and businesses working in similar areas will not be allowed due to conflict of interest: IT Solutions, Digital Marketing and HR Solutions.
+Admin’s decision on any matters will be final and binding. Any disrespect or deviation will lead to immediate removal from the group.
+Thanks for your kind understanding and support. Let’s grow this initiative together.
+</p>
+                <a href="https://chat.whatsapp.com/LHOc67IrYBUFq3BajpQdRZ" class="btn btn-success m-4">Join the Network</a>
+            </div>
+        </div>
+    </div>
+
+     
+     
       <div className="row">
         {categoryBlogs.map(item => (
           <div key={item.id} className="article_column col-sm-12 col-lg-4 col-md-4">
