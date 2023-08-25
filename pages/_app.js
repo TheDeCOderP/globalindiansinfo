@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout/MainLayout'
 import AdminLayout from './admin/AdminLayout';
 import OtherPageLayout from '../components/layout/OtherPagesLayout';
-import CategoryLayout from '../components/layout/CategoryPagesLayout';
+import CategoryLayout from '../components/layout/category/DefaultLayout';
 import Head from 'next/head';
 
 import 'typeface-raleway';
