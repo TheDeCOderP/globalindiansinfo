@@ -38,8 +38,8 @@ const SearchResultsPage = () => {
             <Link href={result.slug} as={`/article/${result.slug}`}>
               <Image
                 className="search_results_images"
-                width={300}
-                height={300}
+                width={1600}
+                height={500}
                 src={`/${result.imagepath}`}
                 alt={`image${result.id}`}
               />
