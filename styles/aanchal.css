@@ -1,0 +1,24 @@
+/* Sample FAQ Accordion CSS */
+
+.faq-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question.active {
+  background-color: #280f6e;
+  color: white;
+}
+
+.faq-answer {
+  padding: 10px;
+  background-color: #fff;
+}

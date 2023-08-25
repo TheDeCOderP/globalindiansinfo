@@ -54,6 +54,11 @@ const menus = [
     'name': 'FAQs',
     'slug': '/faqs'
   },
+  {
+    'id': 12,
+    'name': 'Partner',
+    'slug': '/Partner'
+  },
 ];
 
 export default menus;
