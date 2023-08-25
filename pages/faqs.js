@@ -1,43 +1,63 @@
-import React, { useState } from 'react';
+// pages/faq.js
+import { useState } from 'react';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-const FAQ = () => {
-  const faqs = [
-    {
-      question: "My parents are visiting from India for 3 months and I am thinking about taking insurance for them. Could anyone please suggest which one to take with their experience?",
-      answer: "Care is the only insurance offering cover for pre-existing conditions. Another one to consider is the insurance policy from Tata AIG."
-    },
-    // Add more FAQ entries as needed
-  ];
-
+const FAQPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleAccordionClick = (index) => {
-    if (index === activeIndex) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-    }
+  const handleAccordionToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const faqData = [
+    {
+      title: 'My parents are visiting from India for 3 months and I am thinking about taking insurance for them. Could anyone please suggest which one to take with their experience?',
+      content: 'Care is the only insurance offering cover for pre-existing conditions. Another one to consider is the insurance policy from Tata AIG.',
+    },
+    {
+      title: 'My parents are visiting from India for 3 months and I am thinking about taking insurance for them. Could anyone please suggest which one to take with their experience?',
+      content: 'Care is the only insurance offering cover for pre-existing conditions. Another one to consider is the insurance policy from Tata AIG.',
+    },
+    
+    
+  ];
+
   return (
-    <div>
+    <div className="container my-5">
      
-      {faqs.map((faq, index) => (
-        <div key={index} className="faq-item">
+      {faqData.map((item, index) => (
+        <div className={`accordion ${activeIndex === index ? 'active' : ''}`} key={index}>
           <div
-            className={`faq-question ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => handleAccordionClick(index)}
+            className="accordion-item"
+            onClick={() => handleAccordionToggle(index)}
           >
-            {faq.question}
+            <h2 className="accordion-header">
+              <button
+                className={`accordion-button ${activeIndex === index ? 'collapsed' : ''}`}
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={`#collapse${index}`}
+              >
+                <span className={`ml-auto rounded-circle bg-success p-2 m-2 ${activeIndex === index ? 'bg-white text-dark' : ''}`}>
+                  {activeIndex === index ? <AiOutlineMinus /> : <AiOutlinePlus />}
+                </span>
+                
+                {item.title}
+                
+              </button>
+            </h2>
+            <div
+              id={`collapse${index}`}
+              className={`accordion-collapse collapse ${activeIndex === index ? 'show' : ''}`}
+            >
+              <div className="accordion-body m-2">{item.content}</div>
+            </div>
           </div>
-          {activeIndex === index && (
-            <div className="faq-answer">{faq.answer}</div>
-          )}
         </div>
       ))}
     </div>
   );
-}
+};
+FAQPage.layout = "other";
 
-FAQ.layout = "other";
-export default FAQ;
+export default FAQPage;

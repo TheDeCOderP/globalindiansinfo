@@ -227,5 +227,9 @@ section.banner_section::before {
   padding: 0px;
 }
 
+button.accordion-button {
+  font-size:14px;
+}
+
 
     }

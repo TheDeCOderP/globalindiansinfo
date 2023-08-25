@@ -4,6 +4,13 @@
   --accent: #389232; /* Replace with your desired accent color hex value */
   --link: #389232; /* Replace with your desired link color hex value */
 }
+.button {
+  background:var(--primary);
+}
+
+.my-5 {
+  margin:50px auto;
+}
 
 a{
   color:var(--link);
@@ -680,6 +687,18 @@ a.categories {
   margin-bottom: 20px;
   background: #fafafa;
 }
+
+button.accordion-button {
+  font-family: 'Raleway';
+  color: #ffffff!important;
+  background: var(--primary)!important;
+  font-weight:600;
+}
+
+.accordion-button::after {
+  display:none;
+}
+
 
 
 

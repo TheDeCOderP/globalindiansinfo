@@ -30,7 +30,7 @@ const SearchBar = () => {
       />
       </div>
       <div className="col-1 searchBar">
-      <Button variant="dark" type="submit" className="search_button">
+      <Button  type="submit" className="button search_button">
         <FaSearch />
       </Button>
       </div>
