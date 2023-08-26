@@ -22,3 +22,41 @@
   padding: 10px;
   background-color: #fff;
 }
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    padding-left: 40px;   
+    padding-right: 40px;
+  }
+  
+  .benefit-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .benefit-item h3 {
+    margin-top: 10px;
+  }
+  
+  .benefit-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .partner-container h2{
+    text-align: center;
+  }
+.partner-container{
+  padding-left: 50px; 
+  padding-right: 50px;
+  padding-top: 10px;
+  }
+  .partner-container,h2{
+    padding-bottom: 20px;
+    
+  }

@@ -45,6 +45,11 @@ const menus = [
     'slug': '/blogs'
   },
   {
+    'id': 12,
+    'name': 'Partner',
+    'slug': '/Partner'
+  },
+  {
     'id': 10,
     'name': 'Contact',
     'slug': '/contact'
@@ -54,11 +59,7 @@ const menus = [
     'name': 'FAQs',
     'slug': '/faqs'
   },
-  {
-    'id': 12,
-    'name': 'Partner',
-    'slug': '/Partner'
-  },
+
 ];
 
 export default menus;
