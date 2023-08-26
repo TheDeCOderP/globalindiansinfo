@@ -28,13 +28,13 @@ const SearchResultsPage = () => {
   }, [query]);
 
   return (
-    <section className="search-results">
-    <div className="container text-center py-4">
+    <section className="section search-results">
+    <div className="container text-center ">
       <div className="row text-center">
-        <h2 className="py-4">Search Results for "{query}"</h2>
+        <h2 className="text-center">Search Results for "{query}"</h2>
 
         {searchResults.map((result) => (
-          <div className="col-sm-12 col-lg-4 col-md-4" key={result.id}>
+          <div className="col-sm-12 col-lg-4 col-md-4 mt-4" key={result.id}>
           <div className="articles_data" >
             <Link href={result.slug} as={`/article/${result.slug}`}>
               <Image

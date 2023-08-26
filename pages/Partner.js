@@ -5,13 +5,13 @@ import {MdOutlineContactPhone,GoGoal } from "react-icons/md";
 import{GiStairsGoal}from "react-icons/gi"
 
 
-import { Color } from "three"
-
 const BenefitItem = ({ title, description, image }) => (
+  <div className="contanier">
   <div className="benefit-item">
     <img src={image} alt={title} />
     <h3 className="one-line-heading">{title}</h3>
     <p>{description}</p>
+  </div>
   </div>
 );
 const Partner = () => {
@@ -57,7 +57,7 @@ const Partner = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="section container bg-fafafa pt-3">
         <h2 className="text-center">
           Unlock New Opportunities: Reach Indian Expats with Your Services on 
           <a href="https://www.globalindiansinfo.com"> GlobalIndiansInfo.com</a>
@@ -82,7 +82,7 @@ const Partner = () => {
         </p>
       </div>
       <div>
-        <div className="partner-container">
+        <div className="section container my-2">
   <div className="row">
     <div className="col-md-6">
       <div className="text-box">
@@ -118,24 +118,30 @@ const Partner = () => {
 </div>
 
       </div>
-
-      <div className="partner-container">
-        <h2>
+      <section className="section bg-fafafa">
+      <div className="partners container">
+        <div className="row text-center">
+        
+        <h2 className="text-center pb-3">
           Why Choose{" "}
           <a href="https://www.globalindiansinfo.com">GlobalIndiansInfo.com</a>
         </h2>
-        <div className="benefits-container">
+      
           {benefits.map((benefit, index) => (
+            <div className="col-sm-12 col-lg-4 col-md-4"  key={index}> 
             <BenefitItem
-              key={index}
+             
               title={benefit.title}
               description={benefit.description}
               image={benefit.image}
             />
+            </div>
           ))}
-        </div>
+       
+        </div> 
       </div>
-      <div className="container">
+      </section>
+      <div className="section container my-2">
         <Row>
           <Col md={6} className="text-center feature-col">
             <div className="mission-vision">

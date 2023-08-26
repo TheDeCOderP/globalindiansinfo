@@ -33,7 +33,6 @@ img.category_image {
 }
 
 section.categories_section {
-  padding: 20px 0px;
   background: url(/uploads/images/blog_bg.png);
   background-position: center;
   background-size: cover;
@@ -43,14 +42,7 @@ h1.text-center {
   margin-bottom: 10px;
 }
 
-header .row {
-  width: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
+
 
 .hide_on_mobile {
   display:none!important;
@@ -68,8 +60,7 @@ header .row {
 
 .article_column.col-sm-6.col-md-4.col-lg-4 {
   width: 100%;
-  padding: 20px;
-  margin: auto;
+  margin:10px auto;
 }
 
 section.banner_section {
@@ -88,9 +79,6 @@ section.banner_section {
   padding-right: 50px;
 }
 
-nav.header_nav.bottombar.navbar.navbar-expand-lg.navbar-dark.sticky-top {
-  background: black;
-}
 
 .carousel-item::before {
   content: '';
@@ -105,15 +93,11 @@ nav.header_nav.bottombar.navbar.navbar-expand-lg.navbar-dark.sticky-top {
   margin: 15px auto;
 }
 
-.article_column.col-sm-6.col-md-4.col-lg-4 {
-  width: 100%;
-  padding: 20px;
-}
 
 
 
 .carousel-item img {
-  height:250px;
+  height:200px;
   object-fit: cover;
   width:100%;
 }
@@ -193,6 +177,7 @@ section.banner_section::before {
      justify-content:center!important;
     }
     .founders_column {
+
       width: 100%;
   }
 
@@ -200,7 +185,7 @@ section.banner_section::before {
 .founders img {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: contain;
   height:300px;
   background: #fafafa;
 }
@@ -226,17 +211,26 @@ section.banner_section::before {
 .col-sm-12.col-lg-4.col-md-4 {
   padding: 0px;
 }
+.carousel-indicators {
+  display: none;
+}
 
 button.accordion-button {
   font-size:14px;
 }
+img.search_results_images {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 200px;
 
-section.featured_blogs_section , section.category-body  , section.search-results{
-  margin: 20px;
 }
-
 .article_column.col-sm-12.col-lg-4.col-md-4 {
   width: 100%;
+}
+
+button.button.search_button.btn.btn-primary {
+  padding: 10px 20px;
 }
 
     }

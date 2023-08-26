@@ -16,28 +16,26 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="container">
-       <Form inline="true" onSubmit={handleSearch}>
-      <div className="row search_row">
+    
+       <Form inline="true" onSubmit={handleSearch} width={'100%'}>
         
    
-    <div className="col-11 searchBar">
+    <div className="searchBar">
       <Form.Control
         type="text"
         placeholder="Search..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      </div>
-      <div className="col-1 searchBar">
       <Button  type="submit" className="button search_button">
         <FaSearch />
       </Button>
       </div>
-      </div>
+      
+      
     </Form>
     
-    </div>
+   
   );
 };
 

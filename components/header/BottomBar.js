@@ -7,8 +7,8 @@ import Menuitems from '@/api/menus/menus.js';
 
 function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" className="header_nav bottombar">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" className="header_nav bottombar hide_on_small">
+     <div className="container-fluid">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="nav_menu">
           <Nav className="menu_links">
@@ -19,7 +19,7 @@ function Header() {
             ))}
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      </div>
     </Navbar>
   );
 }

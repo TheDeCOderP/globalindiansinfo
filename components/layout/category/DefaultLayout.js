@@ -16,6 +16,7 @@ const JobsLayout = () => {
     
     <h2 className="capitalize text-center">{category}</h2>
        </div>
+       <section className="section">
     <div className="container">
       <div className="row">
         {categoryBlogs.map(item => (
@@ -32,6 +33,7 @@ const JobsLayout = () => {
         ))}
       </div>
     </div>
+    </section>
     </section>
   );
 };

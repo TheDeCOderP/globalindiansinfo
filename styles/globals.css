@@ -16,6 +16,9 @@
 .my-5 {
   margin:50px auto;
 }
+.bg-fafafa{
+  background:#fafafa;
+}
 
 a{
   color:var(--link);
@@ -45,6 +48,10 @@ a{
  
 }
 
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+  background: var(--primary);
+}
 
 
 
@@ -137,10 +144,6 @@ h1 , h2 , h3 , h4 , h5 , h6 {
 }
 
 
-section.featured_blogs_section {
-  padding: 50px 0px;
-}
-
 .article_thumbnail img {
   width: 100%;
   height: 250px;
@@ -187,7 +190,7 @@ section.globe_section p  {
 }
 
 section.featured_blogs_section h1 {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .person-card {
   margin: 15px;
@@ -288,10 +291,10 @@ section.featured_blogs_section .row {
 
 
 img.site-logo {
-  width: 100%;
+  width: 200px;
   -o-object-fit: contain;
   object-fit: contain;
-  aspect-ratio: 16/10;
+  height:100px;
 
 }
 
@@ -316,7 +319,7 @@ footer .row {
   justify-content: end;
 }
 
-.col.searchBar {
+.searchBar {
   display: flex;
 }
 
@@ -409,7 +412,8 @@ div#responsive-navbar-nav {
 }
 
 button.navbar-toggler.collapsed {
-  border: 1px solid white;
+  border: 1px solid var(--primary);
+  background: var(--primary);
 }
 
 .carousel_section h2 {
@@ -429,7 +433,6 @@ button.navbar-toggler.collapsed {
 }
 
 section.categories_section {
-  padding: 50px 0px;
   background: url(/uploads/images/blog_bg.png);
   background-position: center;
   background-size: cover;
@@ -493,7 +496,7 @@ footer h5 {
 }
 .col.col-sm-6.col-md-2.col-lg-2.google_translate {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -686,7 +689,7 @@ a.categories {
 .founders img {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: contain;
   background: #fafafa;
 }
 
@@ -759,7 +762,7 @@ a{
 .whatsapp-top-container.wordlinks a {
   text-decoration: none;
   align-items: center;
-  display: flex;
+ 
 }
 
 .carousel-inner {
@@ -780,12 +783,89 @@ a{
 
 .category_page .card {
   min-height: 380px;
+
 }
 
 
 button.button.search_button.btn.btn-primary {
-  padding: 10px 25px;
+  padding: 10px;
 }
 
+header .container-fluid {
+  justify-content: center!important;
+}
+
+.searchBar form {
+  width: 100%;
+}
+img {
+  max-width:100%;
+} 
+
+h3.one-line-heading {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+
+.partners img {
+  aspect-ratio: 4/3;
+  width:100%;
+  object-fit: cover;;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+.slick-next {
+  right: 0px!important;;
+}
+.slick-prev {
+  left:0px!important;
+}
+ 
+
+
+
+@media only screen and (max-width:992px) {
+  .hide_on_small {
+    display:none;
+  }
+  .navbar-toggler:hover {
+    background: var(--primary);
+}
+div#responsive-navbar-nav {
+  position: fixed;
+  top: 50px;
+  z-index: 1234567890;
+  left: 0px;
+  height: 100%;
+  width: 230px;
+  background: var(--primary);
+}
+
+header .row {
+  width: 100%;
+  flex-direction: row;
+}
+
+
+
+ 
+
+  .col-sm-6.menu_bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+  .col-sm-6.logo_bar, .col-sm-6.menu_bar  {
+    width: 50%;
+}
+}
+@media only screen and (min-width:992px) {
+  .hide_on_big {
+    display:none;
+  }
+}
 
 
