@@ -28,6 +28,7 @@ const SearchResultsPage = () => {
   }, [query]);
 
   return (
+    <section className="search-results">
     <div className="container text-center py-4">
       <div className="row text-center">
         <h2 className="py-4">Search Results for "{query}"</h2>
@@ -64,6 +65,7 @@ const SearchResultsPage = () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

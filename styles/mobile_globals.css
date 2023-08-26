@@ -231,5 +231,12 @@ button.accordion-button {
   font-size:14px;
 }
 
+section.featured_blogs_section , section.category-body  , section.search-results{
+  margin: 20px;
+}
+
+.article_column.col-sm-12.col-lg-4.col-md-4 {
+  width: 100%;
+}
 
     }

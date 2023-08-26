@@ -58,7 +58,7 @@ const Partner = () => {
     <>
       <div className="container">
         <h2>
-          Unlock New Opportunities: Reach Indian Expats with Your Services on{" "}
+          Unlock New Opportunities: Reach Indian Expats with Your Services on
           <a href="https://www.globalindiansinfo.com">GlobalIndiansInfo.com</a>
         </h2>
         <p>
@@ -70,7 +70,7 @@ const Partner = () => {
           At Global Indians Info., we understand the importance of tapping into
           diverse markets and creating meaningful connections. Today, we present
           you with an avenue to do just that—by advertising your services and
-          products directly to Indian expats through the platform of{" "}
+          products directly to Indian expats through the platform of
           <a
             href="https://www.globalindiansinfo.com"
             style={{ color: "blue", textDecoration: "none" }}
@@ -165,14 +165,14 @@ const Partner = () => {
                 of opportunities is as simple as reaching out to us. We are
                 excited to share more details about our advertising packages,
                 answer your queries, and assist you in embarking on this
-                rewarding journey. Kindly reach out to us at{" "}
+                rewarding journey. Kindly reach out to us at
                 <a href="tel:+447867090363" style={{ color: "green" }}>
                   wa.me/+447867090363
-                </a>{" "}
-                or send a mail to{" "}
+                </a>
+                or send a mail to
                 <a href="mailto:info@prabisha.com" style={{ color: "orange" }}>
                   info@prabisha.com
-                </a>{" "}
+                </a>
                 to initiate the conversation. We look forward to the opportunity
                 to partner with you and propel your business's growth on the
                 global stage.

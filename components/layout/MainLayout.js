@@ -1,13 +1,17 @@
 // components/MainLayout.js
 import React from 'react';
-import TopBar from '../header/TopBar'
+import MiddleBar from '../header/MiddleBar'
 import BottomBar from '../header/BottomBar';
+import TopBar from '../header/TopBar';
+
 import Footer from '../Footer';
 
 const MainLayout = ({ children }) => {
   return (
     <>
-     <header> <TopBar/>
+     <header> 
+      <TopBar/>
+      <MiddleBar/>
      <BottomBar/>
      </header>
       {children}

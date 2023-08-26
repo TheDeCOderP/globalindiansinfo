@@ -1,3 +1,7 @@
+
+
+
+
 :root {
   --primary: #273171; /* Replace with your desired primary color hex value */
   --secondary: #f89629; /* Replace with your desired secondary color hex value */
@@ -6,6 +10,7 @@
 }
 .button {
   background:var(--primary);
+  color:#ffffff;
 }
 
 .my-5 {
@@ -39,6 +44,9 @@ a{
   margin: 20px auto;
  
 }
+
+
+
 
 
 .founders_social a {
@@ -98,7 +106,7 @@ h2.page_title {
 }
 
 .category_page .row {
-  justify-: center;
+  justify-content: center;
 }
 
 h1.text-center {
@@ -650,6 +658,7 @@ header .container {
 img.search_results_images {
   width: 100%;
   object-fit: cover;
+  height:400px;
 }
 
 h3.article-body {
@@ -699,8 +708,85 @@ button.accordion-button {
   display:none;
 }
 
+.sociallinks{
+  height:50px;
+  display:flex;
+  background-color:var(--primary);
+  align-items:center;
+  padding-left:10px;
+  gap:30px;
+  top: 0;
+  justify-content: space-around;
+
+}
+.wordlinks{
+  color: #ffffff;
+  
+}
+
+nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
+  margin-top: 50px;
+}
+a{
+  text-decoration: none;
+}
+
+.midsection{
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+  margin-top: 70px;
+}
+
+.whatsapp-top-container.wordlinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.whatsapp-top-container.wordlinks span{
+  margin-right: 10px;
+}
+
+.whatsapp-top-container.wordlinks img {
+  margin-right: 5px;
+}
+
+.whatsapp {
+  font-weight:700;
+  color:white;
+}
+
+.whatsapp-top-container.wordlinks a {
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+}
+
+.carousel-inner {
+  z-index: 1;
+}
+
+.sociallinks{
+  position:fixed;
+  width:100%;
+  top:0px;
+  z-index:9999;
+}
+
+.card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.category_page .card {
+  min-height: 380px;
+}
 
 
+button.button.search_button.btn.btn-primary {
+  padding: 10px 25px;
+}
 
 
 

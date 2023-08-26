@@ -4,13 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout/MainLayout'
 import AdminLayout from './admin/AdminLayout';
 import OtherPageLayout from '../components/layout/OtherPagesLayout';
-import CategoryLayout from '../components/layout/CategoryPagesLayout';
+import CategoryLayout from '../components/layout/category/DefaultLayout';
 import Head from 'next/head';
 
 import 'typeface-raleway';
 import 'typeface-league-spartan';
-import '@/styles/globals.css'
-import '@/styles/aanchal.css'
+ import '@/styles/globals.css'
+ import '@/styles/aanchal.css'
 import '@/styles/sai.css'
 import '@/styles/mobile_globals.css'
 

@@ -45,21 +45,20 @@ const menus = [
     'slug': '/blogs'
   },
   {
-    'id': 12,
+    'id': 10,
     'name': 'Partner',
-    'slug': '/Partner'
+    'slug': '/partner'
   },
   {
-    'id': 10,
+    'id': 11,
     'name': 'Contact',
     'slug': '/contact'
   },
   {
-    'id': 11,
+    'id': 12,
     'name': 'FAQs',
     'slug': '/faqs'
   },
 
-];
-
+]
 export default menus;

@@ -1,10 +1,11 @@
-import ContactForm from '../components/ContactForm';
+'use client'
+import ContactPage from '../components/contact/Contact';
 
 const Contact = () => {
 
     return (
     <section className="contact_details">
-      <ContactForm/>
+      <ContactPage/>
       </section>
     )
 
