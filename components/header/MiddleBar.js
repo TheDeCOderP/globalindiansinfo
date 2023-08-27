@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt } from 'react-icons/fa';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { useState } from 'react';
-
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import SearchComponent from './SearchBar';
 import GoogleTranslate from '../GoogleTranslate.js';
@@ -11,6 +11,10 @@ import Menuitems from '@/api/menus/menus.js';
 
 
 function Header() {
+
+  
+
+
  
   
   return (
