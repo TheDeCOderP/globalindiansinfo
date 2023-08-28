@@ -4,7 +4,7 @@ import Articles from '@/api/articles/articles'
 import Image from 'next/image';
 import Link from 'next/link';
 
-const JobsLayout = () => {
+const MainLayout = () => {
   const router = useRouter();
   const { category } = router.query;
   const categoryBlogs = Articles.filter(article => article.categories.includes(category));
@@ -39,4 +39,4 @@ const JobsLayout = () => {
 };
 
 
-export default JobsLayout;
+export default MainLayout;

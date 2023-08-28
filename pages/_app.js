@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout/MainLayout'
 import AdminLayout from './admin/AdminLayout';
 import OtherPageLayout from '../components/layout/OtherPagesLayout';
+
 import CategoryLayout from '../components/layout/category/DefaultLayout';
 import Head from 'next/head';
 
@@ -27,6 +28,7 @@ const MyApp = ({ Component, pageProps }) => {
   else if (Component.layout === 'category') {
     CustomLayout = CategoryLayout;
   }
+ 
   
 
   return (

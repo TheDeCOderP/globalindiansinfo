@@ -14,7 +14,7 @@ const SingleArticle = () => {
     return (
         <div className="article_single_page">
             <div className="article_single_image">
-                <Image src={`/${article.imagepath}`} width={600} height={400} />
+                <Image src={`/${article.imagepath}`} width={1600} height={550} />
             </div>
             <div className="single_article_body container pt-10">
                 <h1 className="capitalize">{article.title}</h1>

@@ -5,13 +5,14 @@ import {MdOutlineContactPhone,GoGoal } from "react-icons/md";
 import{GiStairsGoal}from "react-icons/gi"
 import Image from "next/image";
 const BenefitItem = ({ title, description, image }) => (
-  <div className="contanier">
-  <div className="benefit-item">
-    <Image src={image} alt={title} width={300} height={300} />
+  
+  <div className="benefit-item text-center mb-4">
+    <Image src={image} alt={title} width={300} height={300} className="aspect-ratio" />
+   <div className="body text-dark">
     <h3 className="one-line-heading">{title}</h3>
-    <p>{description}</p>
-  </div>
-  </div>
+    <p className="text-center">{description}</p>
+  </div></div>
+ 
 );
 const Partner = () => {
   const benefits = [

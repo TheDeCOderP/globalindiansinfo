@@ -3,6 +3,12 @@
 
 const LatestArticles = [
   {
+    title:"PSLV-C57 -The launch of Aditya-L1 ",
+    description:"The launch of Aditya-L1,  the first space-based Indian observatory to study the Sun ☀️, is scheduled for  🗓️September 2, 2023, at  🕛11:50 Hrs IST from Sriharikota.<p>The realization works of Space Theme Park are under progress to enable the citizens of this nation to witness the launches taking place from the space port of India. The major attractions of Space Theme Park include:<br><b>Rocket Garden</b> <br>All the beautiful ISRO launch vehicles - Sounding Rocket, SLV, ASLV, PSLV, GSLV, Mk-III models will be realised. Lawns will be developed along with photo points. Fountain will be realised at the middle of the rocket garden.<br><b>Launch View Gallery</b><br>The Space Port of India, naturally attracts the visitors to witness the launch activities and cheer for the pride of our Nation. Launch view gallery would allow thousands of viewers to witness the launch.<br><b> Space Museum</b><br> Space Museum provides a tell-tale account of the Indian Space Programme frominfancy. The story of the Indian Space Programme is unfurled in six sections, comprising of history, education, technology, applications, global and the future.</p> ",
+    imagepath: 'uploads/images/articles/pslv.jpg',
+    categories: ['featured', 'news'],
+  },
+  {
     id: '1',
     title: 'Any panditji number who can do hawan in UK',
     description:`'<div class="container">

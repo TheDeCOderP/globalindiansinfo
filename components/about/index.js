@@ -2,8 +2,59 @@ import React from 'react';
 import { FaLinkedin, FaBullseye, FaTasks, FaGlobe } from 'react-icons/fa';
 import { Container, Row, Col } from 'react-bootstrap';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutUs = () => {
+const WhatweOffer = [
+  
+         {
+        "id": 1,
+        "title": "Knowledge",
+        "description": "Stay informed and empowered with the latest news, articles, and insights on all things related to global opportunities.",
+        "imagePath": "uploads/images/about/knowledge.jpg",
+        "link":"/events"
+      },
+      {
+        "id": 2,
+        "title": "Education",
+        "description": "Discover a world of educational possibilities with our guidance on studying abroad, scholarships, and career development.",
+        "imagePath": "uploads/images/about/education.jpg",
+        "link":"/education"
+      },
+      {
+        "id": 3,
+        "title": "Jobs",
+        "description": "Explore the international job market with confidence, from job search tips to career advice.",
+        "imagePath": "uploads/images/about/jobs.jpg",
+        "link":"/jobs"
+      },
+      {
+        "id": 4,
+        "title": "Business",
+        "description": "Explore the global business landscape with strategies, success stories, and resources to help you expand your ventures.",
+        "imagePath": "uploads/images/about/business.jpg",
+        "link":"/business"
+      },
+      {
+        "id": 5,
+        "title": "Travel",
+        "description": "Satiate your wanderlust with travel guides, tips, and personal stories from fellow global Indians.",
+        "imagePath": "uploads/images/about/travel.jpg",
+        "link":"/travel"
+      },
+      
+      {
+        "id": 6,
+        "title": "Blogs",
+        "description": "Explore a diverse range of thought-provoking blogs, covering a wide array of topics related to our global journey.",
+        "imagePath": "uploads/images/about/blogs.jpg",
+        "link":"/blogs"
+      }
+    
+  
+  
+]
+
   return (
     <section className="about-us">
       <Container>
@@ -69,6 +120,30 @@ const AboutUs = () => {
           </Col>
         </Row>
       </Container>
+      <div className="container">
+        <div className="row">
+          {
+            WhatweOffer.map((item)=>(
+            
+                <div className="col-sm-12 col-md-4 col-lg-4 mb-4" key={item.id}>
+                  <Link href={item.link}>
+                  <div className="image">
+                    <Image src={`/${item.imagePath}`} width={400} height={300} className="aspect-ratio"></Image>
+                </div>
+                <div className="body text-dark">
+                  <h4 className="text-center">{item.title}</h4>
+                  <p>{item.description}</p>
+                  </div>
+                  </Link>
+                  </div>
+
+              )
+            )
+          
+          }
+        
+        </div>
+      </div>
       
     </section>
   );

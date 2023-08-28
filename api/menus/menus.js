@@ -12,17 +12,17 @@ const menus = [
   {
     'id': 3,
     'name': 'Education',
-    'slug': '/category/education'
+    'slug': '/education'
   },
   {
     'id': 4,
     'name': 'Jobs',
-    'slug': '/category/jobs'
+    'slug': '/jobs'
   },
   {
     'id': 5,
     'name': 'Business',
-    'slug': '/category/business',
+    'slug': '/business',
   },
   {
     'id': 6,
