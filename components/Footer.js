@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt, FaGlobe } from 'react-icons/fa';
 import { FiHome, FiInfo, FiBriefcase, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
@@ -8,14 +8,14 @@ const Footer = () => {
     <footer className="bg-light text-dark">
       <div className="container">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
           <Link href="/"><img
           className="site-footer-logo"
           src="/uploads/images/site-logo.png"
           alt="site_logo"
         /></Link>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
               <li><FiHome className="mr-2" /><Link href="/">Home</Link></li>
@@ -24,7 +24,8 @@ const Footer = () => {
               <li><FiMail className="mr-2" /><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
-          <div className="col-md-3">
+          
+          <div className="col-md-2">
             <h5>Follow Us</h5>
             <ul className="list-unstyled">
               <li><FaFacebook className="mr-2" /><a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank">Facebook</a></li>
@@ -33,7 +34,16 @@ const Footer = () => {
               <li><FaLinkedin className="mr-2" /><a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank">Linkedin</a></li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
+          <h5 style={{ whiteSpace: 'nowrap' }}>Our Associates</h5>
+            <ul className="list-unstyled">
+              <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.co.uk">Prabisha UK</Link></li>
+              <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.com/">Prabisha India</Link></li>
+              <li><FaGlobe className="mr-2" /><Link href="https://bidisharay.com/">Bidisha Ray</Link></li>
+              <li><FaGlobe className="mr-2" /><Link href="https://www.prishatheexplorer.com/">PTE</Link></li>
+            </ul>
+          </div>
+          <div className="col-md-2">
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+44-7867090363">+44-7867090363</a></li> 
