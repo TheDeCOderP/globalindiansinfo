@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
 import { FiHome, FiInfo, FiBriefcase, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
@@ -40,7 +40,7 @@ const Footer = () => {
               <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.co.uk">Prabisha UK</Link></li>
               <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.com/">Prabisha India</Link></li>
               <li><FaGlobe className="mr-2" /><Link href="https://bidisharay.com/">Bidisha Ray</Link></li>
-              <li><FaGlobe className="mr-2" /><Link href="https://www.prishatheexplorer.com/">PTE</Link></li>
+              <li><FaGlobe className="mr-2" /><Link href="https://www.prishatheexplorer.com/">Prisha The Explorer</Link></li>
             </ul>
           </div>
           <div className="col-md-2">
@@ -48,6 +48,9 @@ const Footer = () => {
             <ul className="list-unstyled">
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+44-7867090363">+44-7867090363</a></li> 
             <li>  <FiMail className="mr-2" /> <a href="mailto:info@prabisha.com">info@prabisha.com</a></li>
+            <li>  <FaMapMarkerAlt className="mr-2 " /> <a href="https://www.google.com/maps?q=71-75+Shelton+St.,+Covent+Garden,+London,+UK+-+WC2H9JQ" target="_blank">71-75 Shelton St., Covent Garden, London, UK - WC2H9JQ
+                </a>
+                </li>
             </ul>
           </div>
         </div>
