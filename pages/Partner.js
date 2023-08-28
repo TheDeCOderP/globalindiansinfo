@@ -3,12 +3,11 @@ import Head from "next/head";
 import { Container, Row, Col } from "react-bootstrap";
 import {MdOutlineContactPhone,GoGoal } from "react-icons/md";
 import{GiStairsGoal}from "react-icons/gi"
-
-
+import Image from "next/image";
 const BenefitItem = ({ title, description, image }) => (
   <div className="contanier">
   <div className="benefit-item">
-    <img src={image} alt={title} />
+    <Image src={image} alt={title} width={300} height={300} />
     <h3 className="one-line-heading">{title}</h3>
     <p>{description}</p>
   </div>
@@ -20,37 +19,37 @@ const Partner = () => {
       title: "Targeted Reach",
       description:
         "Reach a highly focused audience of Indian expats actively seeking services and products that align with their preferences and requirements.",
-      image:'/uploads/images/target reach.jpg', 
+      image:'/uploads/images/partner/target reach.jpg', 
     },
     {
       title: "Cultural Alignment",
       description:
         "Connect with your audience on a deeper level by understanding and acknowledging their cultural nuances and preferences. ",
-      image:'/uploads/images/culture alignment.jpeg', 
+      image:'/uploads/images/partner/culture alignment.jpeg', 
     },
     {
       title: "Expanded Brand Presence",
       description:
         " Elevate your brand visibility on a platform that resonates with the Indian expat community, fostering brand loyalty and recognition.",
-      image:'/uploads/images/brand.jpg', 
+      image:'/uploads/images/partner/brand.jpg', 
     },
     {
       title: "Tailored Engagement",
       description:
         "Tailor your offerings to the specific needs and interests of Indian expats, positioning your business as a reliable and relatable choice.",
-      image:'/uploads/images/Engagement.jpg', 
+      image:'/uploads/images/partner/Engagement.jpg', 
     },
     {
       title: "Diverse Advertising Formats",
       description:
         "Choose from a range of advertising formats such as banners, articles, and featured listings to showcase your services and products effectively.",
-      image:'/uploads/images/advertising.jpeg', 
+      image:'/uploads/images/partner/advertising.jpeg', 
     },
     {
       title: "Expats Experiences",
       description:
       "Dive into stories shared by Indian expats who have benefited from our services. Their journey highlights our dedication to catering to their unique needs and fostering a seamless transition.",
-      image:'/uploads/images/ab.jpg', 
+      image:'/uploads/images/partner/ab.jpg', 
     },
    
   ];
@@ -107,9 +106,10 @@ const Partner = () => {
     </div>
     <div className="col-md-6">
       <div className="image-box">
-        <img
-          src='/uploads/images/abc.jpg'
+        <Image
+          src='/uploads/images/partner/abc.jpg'
           alt="Partner with Us"
+          width={500} height={500}
           className="img-fluid"
         />
       </div>

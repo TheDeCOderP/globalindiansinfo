@@ -10,7 +10,7 @@ const TranslatePage = () => {
 
     // Function to initialize the Google Translate Element
     window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,fr,hi,pa,gu,te,ta,kn'}, 'google_translate_element');
+      new window.google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,fr,hi,pa,gu,te,ta,kn,ar,it,ml,pa,bn'}, 'google_translate_element');
     };
   }, []);
 
