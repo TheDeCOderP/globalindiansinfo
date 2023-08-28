@@ -8,7 +8,7 @@ const BenefitItem = ({ title, description, image }) => (
   
   <div className="benefit-item text-center mb-4">
     <Image src={image} alt={title} width={300} height={300} className="aspect-ratio" />
-   <div className="body text-dark">
+   <div className="body">
     <h3 className="one-line-heading">{title}</h3>
     <p className="text-center">{description}</p>
   </div></div>
