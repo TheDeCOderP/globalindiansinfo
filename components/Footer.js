@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="list-unstyled">
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+44-7867090363">+44-7867090363</a></li> 
             <li>  <FiMail className="mr-2" /> <a href="mailto:info@prabisha.com">info@prabisha.com</a></li>
-            <li>  <FaMapMarkerAlt className="mr-2 " /> <a href="https://www.google.com/maps?q=71-75+Shelton+St.,+Covent+Garden,+London,+UK+-+WC2H9JQ" target="_blank">71-75 Shelton St., Covent Garden, London, UK - WC2H9JQ
+            <li>  <FaMapMarkerAlt className="mr-2 " /> <a href="https://www.google.com/maps?q=71-75+Shelton+St.,+Covent+Garden,+London,+UK+-+WC2H9JQ" target="_blank">71-75 Shelton St., <br />Covent Garden, London, UK - WC2H9JQ
                 </a>
                 </li>
             </ul>
