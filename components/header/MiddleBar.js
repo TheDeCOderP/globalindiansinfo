@@ -8,10 +8,11 @@ import Link from 'next/link';
 import SearchComponent from './SearchBar';
 import GoogleTranslate from '../GoogleTranslate.js';
 import Menuitems from '@/api/menus/menus.js';
-
+import MobileMenuBar from '@/components/header/mobilenav'
+import { ChakraProvider } from '@chakra-ui/react'
 
 function Header() {
-
+  
   
 
 
@@ -64,20 +65,11 @@ function Header() {
         /></Link>
         </div>
         <div className="col-sm-6 menu_bar ">
-        <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" className="header_nav bottombar hide_on_big">
-     
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className="nav_menu">
-          <Nav className="menu_links">
-            {Menuitems.map((item) => (
-              <Link key={item.id} href={`${item.slug}`}  id="responsive-navbar-nav">
-                {item.name}
-              </Link>
-            ))}
-          </Nav>
-        </Navbar.Collapse>
-      
-    </Navbar>
+        
+        {
+      <MobileMenuBar/>
+       }
+ 
         </div>
         </div></div>
      

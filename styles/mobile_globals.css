@@ -199,6 +199,13 @@ section.banner_section::before {
   margin: 5px;
 }
 
+.mobile_menu {
+  font-family: raleway;
+  padding: 10px 0px ;
+ 
+  text-align: center;
+}
+
 .founders_social a {
   margin: 5px;
 }
@@ -214,6 +221,25 @@ section.banner_section::before {
 .carousel-indicators {
   display: none;
 }
+
+.whatsapp_icon {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.site-menu-logo{
+  width:100%;
+  height:90px;
+  object-fit:contain;
+  margin:20px 0px;
+}
+
+.sociallinks a {
+  display: flex;
+}
+
+
 
 button.accordion-button {
   font-size:14px;

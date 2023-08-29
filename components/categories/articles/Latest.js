@@ -12,9 +12,9 @@ const LatestArticles = () => {
         <div className="container">
             <div className="row">
             <h1 className="text-center"><span className="green">Featured</span> News</h1>
-            {latestArticles.slice(0,6).map(article => (
+            {latestArticles.slice(0,6).map((article , index) => (
 
-                <div key={article.id} className="latest_article_column col-sm-12 col-md-4 col-lg-4">
+                <div key={index} className="latest_article_column col-sm-12 col-md-4 col-lg-4">
                     <Link href={`/article/${article.slug}`}>
 
                     <div className="article_thumbnail">

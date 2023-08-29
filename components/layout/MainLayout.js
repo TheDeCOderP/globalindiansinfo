@@ -7,12 +7,14 @@ import TopBar from '../header/TopBar';
 import Footer from '../Footer';
 
 const MainLayout = ({ children }) => {
+  
   return (
     <>
      <header> 
       <TopBar/>
       <MiddleBar/>
      <BottomBar/>
+     
      </header>
       {children}
       <footer><Footer/></footer>

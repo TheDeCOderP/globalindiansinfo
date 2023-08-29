@@ -875,8 +875,45 @@ h3.one-line-heading {
 .slick-prev {
   left:0px!important;
 }
+.whatsapp_icon {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
 
- 
+.sociallinks a {
+  display: flex;
+}
+
+div#google_translate_element span {
+  display: none;
+}
+
+.google_translate.hide_on_mobile:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background: #fafafa;
+  bottom: 35px;
+}
+
+.chakra-slide {
+  background: white!important;
+  width: 220px!important;
+  top: 50px!important;
+}
+.home_slider{
+  z-index:-1;
+}
+button.chakra-button {
+  padding: 10px;
+  border-radius: 20px;
+}
+button.chakra-button svg {
+font-size:30px;
+}
 
 
 
@@ -884,6 +921,11 @@ h3.one-line-heading {
   .hide_on_small {
     display:none;
   }
+
+  div#chakra-modal-\:Rlbqkcm\: {
+    width: 220px!important;
+    top: 50px!important;
+}
   .navbar-toggler:hover {
     background: var(--primary);
 }
