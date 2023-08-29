@@ -900,8 +900,8 @@ div#google_translate_element span {
 }
 
 .chakra-slide {
-  background: white!important;
-  width: 220px!important;
+  background: #fafafa!important;
+  width: 240px!important;
   top: 50px!important;
 }
 .home_slider{
@@ -909,7 +909,7 @@ div#google_translate_element span {
 }
 button.chakra-button {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 100%;
 }
 button.chakra-button svg {
 font-size:30px;

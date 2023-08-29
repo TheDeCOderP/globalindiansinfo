@@ -10,6 +10,7 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Modal , ModalOverlay } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Menus from "@/api/menus/menus";
 import Link from "next/link";
@@ -42,6 +43,8 @@ const MobileMenu = () => {
     }
   };
 
+ 
+
   return (
     <Box>
       {/* Mobile menu button */}
@@ -53,10 +56,14 @@ const MobileMenu = () => {
           color={"white"}
         />
       )}
-
+     
       {/* Drawer for mobile menu */}
       <Drawer isOpen={isOpen} placement="left" onClose={handleDrawerClose}>
-        <DrawerOverlay />
+      <DrawerOverlay
+  onClick={onClose}
+  pointerEvents={isOpen ? "auto" : "none"} // Allow clicks only when open
+/>
+
         <DrawerContent>
           <DrawerHeader>
             <Link href="/">
