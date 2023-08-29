@@ -893,10 +893,14 @@ div#google_translate_element span {
 .google_translate.hide_on_mobile:before {
   content: "";
   position: absolute;
-  width: 50px;
+  width: 100px;
   height: 20px;
   background: #fafafa;
-  bottom: 35px;
+  bottom: 20px;
+}
+
+div#google_translate_element {
+  margin-top: 20px;
 }
 
 .chakra-slide {
