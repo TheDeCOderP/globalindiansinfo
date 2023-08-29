@@ -20,13 +20,13 @@ const Partner = () => {
       title: "Targeted Reach",
       description:
         "Reach a highly focused audience of Indian expats actively seeking services and products that align with their preferences and requirements.",
-      image:'/uploads/images/partner/target reach.jpg', 
+      image:'/uploads/images/partner/target-reach.jpg', 
     },
     {
       title: "Cultural Alignment",
       description:
         "Connect with your audience on a deeper level by understanding and acknowledging their cultural nuances and preferences. ",
-      image:'/uploads/images/partner/culture alignment.jpeg', 
+      image:'/uploads/images/partner/culture-alignment.jpeg', 
     },
     {
       title: "Expanded Brand Presence",
