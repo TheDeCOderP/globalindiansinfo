@@ -182,7 +182,7 @@ section.globe_section p  {
   background:#eee;
 }
 
-.article_body h3 {
+.article_body h3 , .blog_body h3 {
   color: var(--primary);
   font-size: 15px;
   text-align: center;
