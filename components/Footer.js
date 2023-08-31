@@ -37,10 +37,10 @@ const Footer = () => {
           <div className="col-md-2">
           <h5 style={{ whiteSpace: 'nowrap' }}>Our Associates</h5>
             <ul className="list-unstyled">
-              <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.co.uk">Prabisha UK</Link></li>
-              <li><FaGlobe className="mr-2" /><Link href="https://www.prabisha.com/">Prabisha India</Link></li>
-              <li><FaGlobe className="mr-2" /><Link href="https://bidisharay.com/">Bidisha Ray</Link></li>
-              <li><FaGlobe className="mr-2" /><Link href="https://www.prishatheexplorer.com/">Prisha The Explorer</Link></li>
+              <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.co.uk" target="_blank">Prabisha UK</a></li>
+              <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.com/" target="_blank">Prabisha India</a></li>
+              <li><FaGlobe className="mr-2" /><a href="https://bidisharay.com/" target="_blank">Bidisha Ray</a></li>
+              <li><FaGlobe className="mr-2" /><a href="https://www.prishatheexplorer.com/" target="_blank">Prisha The Explorer</a></li>
             </ul>
           </div>
           <div className="col-md-2">

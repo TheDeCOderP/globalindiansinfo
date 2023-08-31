@@ -18,7 +18,7 @@ const Jobs = () => {
         <JobsLayout/>
         <div className="container">
           <div className="row">
-          <h1 className="text-center mb-4 mt-3">Latest <span className="green">Articals</span></h1>
+          <h1 className="text-center mb-4 mt-3">Latest <span className="green">Articles</span></h1>
          
             {categoryBlogs.slice(0,3).map(item => (
               <div key={item.id} className="article_column col-sm-12 col-lg-4 col-md-4">

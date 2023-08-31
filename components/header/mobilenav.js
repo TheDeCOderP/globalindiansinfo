@@ -14,6 +14,7 @@ import { Modal , ModalOverlay } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Menus from "@/api/menus/menus";
 import Link from "next/link";
+import Image from "next/image";
 
 const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -67,7 +68,7 @@ const MobileMenu = () => {
         <DrawerContent>
           <DrawerHeader>
             <Link href="/">
-              <img
+              <Image
                 className="site-menu-logo"
                 src="/uploads/images/site-logo.png"
                 alt="site_logo"

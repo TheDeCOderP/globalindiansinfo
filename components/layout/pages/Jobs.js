@@ -1,4 +1,27 @@
 import { FaWhatsapp, FaLinkedin } from 'react-icons/fa';
+import Image from 'next/image';
+const sections = [
+  {
+    title: 'Job Search Tips',
+    content: 'Expert guidance on finding and applying for jobs abroad.',
+    imagePath: 'uploads/images/jobs/j1.jpg',
+  },
+  {
+    title: 'Career Development',
+    content: 'Strategies to help you excel in your international career.',
+    imagePath: 'uploads/images/jobs/3.jpg',
+  },
+  {
+    title: 'Success Stories',
+    content: 'Real-life stories of Indian professionals who have made it big globally.',
+    imagePath: 'uploads/images/jobs/5.jpg',
+  },
+  {
+    title: 'Networking',
+    content: 'Connect with global Indian professionals and expand your professional network.',
+    imagePath: 'uploads/images/jobs/networking.webp',
+  },
+];
 
 const JobsLayout = () => {
   const sections = [
@@ -31,26 +54,33 @@ const JobsLayout = () => {
       icon: <FaWhatsapp className="ml-1" />,
     },
   ];
-
   return (
-    <div className="container">
+    <div className="container text-center">
+      <div className="row">
+        <div className="col-md-12">
+          <section className="mb-5">
+            <h2>Exploring International Career Opportunities</h2>
+            <p className="text-center">Are you a professional looking to take your career to the global stage? "Global Indians Info" is your trusted resource for international job opportunities, career advice, and professional growth. Our Jobs section is designed to empower you on your path to success.</p>
+          </section>
+        </div>
+      </div>
+
       <div className="row">
         {sections.map((section, index) => (
-          <div className="col-md-6 text-center mb-4 " key={index}>
-            <div className="body text-dark jobs_bg">
-            <h4>{section.title}</h4>
-            <p className="text-center">{section.content}</p>
-            {section.buttonLink && (
-              <a href={section.buttonLink} className="btn button">
-                {section.buttonText} {section.icon}
-              </a>
-            )}
-          </div>
+          <div className="col-md-6 text-center" key={index}>
+            <section className="mb-5">
+              <Image src={`/${section.imagePath}`} alt={section.title} className="aspect-ratio" width={400} height={300} />
+              <div className="body text-dark">
+              <h4>{section.title}</h4>
+              <p className="text-center">{section.content}</p>
+              </div>
+            </section>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
 
 export default JobsLayout;
