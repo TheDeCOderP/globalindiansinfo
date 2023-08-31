@@ -331,7 +331,7 @@ header .row {
   width: 100%;
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -339,7 +339,7 @@ footer .row {
   width: 100%;
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
 }
 
@@ -966,5 +966,6 @@ header .row {
     display:none;
   }
 }
+
 
 
