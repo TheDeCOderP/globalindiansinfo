@@ -1,29 +1,34 @@
 import { FaWhatsapp, FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
-const sections = [
-  {
-    title: 'Job Search Tips',
-    content: 'Expert guidance on finding and applying for jobs abroad.',
-    imagePath: 'uploads/images/jobs/j1.jpg',
-  },
-  {
-    title: 'Career Development',
-    content: 'Strategies to help you excel in your international career.',
-    imagePath: 'uploads/images/jobs/3.jpg',
-  },
-  {
-    title: 'Success Stories',
-    content: 'Real-life stories of Indian professionals who have made it big globally.',
-    imagePath: 'uploads/images/jobs/5.jpg',
-  },
-  {
-    title: 'Networking',
-    content: 'Connect with global Indian professionals and expand your professional network.',
-    imagePath: 'uploads/images/jobs/networking.webp',
-  },
-];
+import Link from 'next/link';
+
 
 const JobsLayout = () => {
+  const JobTitles = [
+    {
+      title: 'Job Search Tips',
+      content: 'Expert guidance on finding and applying for jobs abroad.',
+      imagePath: 'uploads/images/jobs/j1.jpg',
+    },
+    {
+      title: 'Career Development',
+      content: 'Strategies to help you excel in your international career.',
+      imagePath: 'uploads/images/jobs/3.jpg',
+    },
+    {
+      title: 'Success Stories',
+      content: 'Real-life stories of Indian professionals who have made it big globally.',
+      imagePath: 'uploads/images/jobs/5.jpg',
+    },
+    {
+      title: 'Networking',
+      content: 'Connect with global Indian professionals and expand your professional network.',
+      imagePath: 'uploads/images/jobs/networking.webp',
+    },
+  ];
+
+
+
   const sections = [
     {
       title: "Join UK Jobs WhatsApp Group",
@@ -37,6 +42,7 @@ const JobsLayout = () => {
       title: "Enhance Your Resume with Expert Review & Writing Support",
       content:
         "Elevate your chances of success with the guidance of a skilled resume writer. To Access Professional Assistance, Connect with Bidisha at wa.me/447867090359. Get a FREE RESUME REVIEW by reaching out to Bidisha. Explore additional job-searching tools and insights at www.bidisharay.com. She can also help with Interview Preparation. Prepare for interviews with confidence and make strides in your career journey.",
+        buttonLink: " ",
     },
     {
       title: "Join UK Jobs & Internships LinkedIn Group",
@@ -66,7 +72,7 @@ const JobsLayout = () => {
       </div>
 
       <div className="row">
-        {sections.map((section, index) => (
+        {JobTitles.map((section, index) => (
           <div className="col-md-6 text-center" key={index}>
             <section className="mb-5">
               <Image src={`/${section.imagePath}`} alt={section.title} className="aspect-ratio" width={400} height={300} />
@@ -77,7 +83,21 @@ const JobsLayout = () => {
             </section>
           </div>
         ))}
+      <div className="row">
+        {sections.map((section, index) => (
+          <div className="col-md-6 text-center" key={index}>
+            <section className="mb-5">
+             
+              <div className="body text-dark">
+              <h4>{section.title}</h4>
+              <p className="text-center">{section.content}</p>
+              <Link href={section.buttonLink}> <button className="button">{section.icon}{section.buttonText}</button></Link>
+              </div>
+            </section>
+          </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 };
