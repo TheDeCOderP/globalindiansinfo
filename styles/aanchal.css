@@ -1,0 +1,36 @@
+.jobs_page .job {
+    background-color: var(--boxbg);
+    padding: 20px;
+    padding-bottom: 50px;
+    
+}
+.jobs_page .box {
+    background-color: #ffffff; 
+    border: 1px solid #ccc;
+    padding: 20px; 
+    margin: 10px; 
+    text-align: center; 
+    height: 100%;
+  }
+
+.jobs_page .box h4 {
+    margin-top: 10px; 
+  }
+
+  .jobs_page .box p {
+    margin-bottom: 10px;
+  }
+  .jobs_page  .job .container {
+    background-color: #f0f0f0;
+  }
+ .jobs_page  .page h2{
+    padding-bottom: 20px;
+   
+    
+  }
+  .jobs_page .page h4{
+    padding-top: 20px;
+  }
+  .jobs_page .button{
+    margin-top: 10px;
+  }
