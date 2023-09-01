@@ -14,7 +14,7 @@ const SingleBlog = () => {
     return (
         <div className="container">
             <div className="blog_single_image">
-                <Image src={`/${blog.imagepath}`} width={600} height={400} />
+                <Image src={`/${blog.imagepath}`} width={1920} height={500}/>
             </div>
             <div className="blog_body">
                 <h1>{blog.title}</h1>

@@ -15,7 +15,7 @@ const AllBlogs = () => {
                 <div className="blog_image">
                     <Image src={`/${item.imagepath}`} width={300} height={300} alt={`blog$(item.id)`} className="aspect-ratio"></Image>
                 </div>
-                <div className="blog_body">
+                <div className="blog_body article_body mb-4">
                     <h3 className="text-center text-dark">{item.title}</h3>
                 </div>
                 </Link>
