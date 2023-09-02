@@ -55,7 +55,7 @@ function BlogForm({ onAddBlog }) {
 
     try {
       // Send the form data to the backend API (replace with your actual API endpoint)
-      const response = await axios.post('http://localhost:5001/api/blogs', formData);
+      const response = await axios.post('https://server.globalindiansinfo.com/api/blogs', formData);
 
       console.log('Response:', response); // Log the response
 

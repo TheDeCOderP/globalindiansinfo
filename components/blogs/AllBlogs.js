@@ -6,7 +6,7 @@ export default function AllBlogs() {
 
   useEffect(() => {
     // Fetch blogs from your Express API
-    fetch('http://localhost:5001/api/blogs')
+    fetch('https://server.globalindiansinfo.com/api/blogs')
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error(error));

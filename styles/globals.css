@@ -547,7 +547,7 @@ footer h5 {
 }
 .col.col-sm-6.col-md-2.col-lg-2.google_translate {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -898,14 +898,14 @@ div#google_translate_element span {
 .google_translate.hide_on_mobile:before {
   content: "";
   position: absolute;
-  width: 100px;
+  width: 130px;
   height: 20px;
   background: #fafafa;
-  bottom: 20px;
+  bottom: 25px;
 }
 
 div#google_translate_element {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .chakra-slide {

@@ -46,7 +46,7 @@ const AllBlogs = () => {
 
   const handleUpdate = async (updatedBlog) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/blogs/${updatedBlog.id}`, {
+      const response = await fetch(`https://server.globalindiansinfo.com/api/blogs/${updatedBlog.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
