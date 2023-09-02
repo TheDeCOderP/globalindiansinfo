@@ -25,6 +25,11 @@ const menus = [
     'slug': '/business',
   },
   {
+    'id': 5,
+    'name': 'Tech',
+    'slug': '/technology',
+  },
+  {
     'id': 6,
     'name': 'Travel',
     'slug': '/travel'
@@ -32,12 +37,12 @@ const menus = [
   {
     'id': 7,
     'name': 'News',
-    'slug': '/category/news'
+    'slug': '/news'
   },
   {
     'id': 8,
     'name': 'Events',
-    'slug': '/category/events'
+    'slug': '/events'
   },
   {
     'id': 9,

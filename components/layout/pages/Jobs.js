@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaLinkedin,FaArrowRight, FaLightbulb , FaBolt,FaFlag} from 'react-icons/fa';
+import { FaWhatsapp, FaLinkedin, FaPencilAlt, FaLightbulb , FaBolt,FaFlag} from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,9 +47,9 @@ const JobsLayout = () => {
 
     {
       title: "Enhance Your Resume with Expert Review & Writing Support",
-        buttonText: " Read More ",
-        buttonLink: " #  ",
-        icon: <FaArrowRight size={20} className="ml-1" />,
+      buttonText: " Get Started",
+      buttonLink: "https://www.bidisharay.com",
+      icon: <FaPencilAlt size={20} className="ml-1" />,
     },
     {
       title: "Join UK Jobs & Internships LinkedIn Group",
