@@ -1,11 +1,11 @@
 
 import Articles from '@/api/articles/articles'
-import BusinessLayout from '@/components/layout/pages/Business';
+import TravelLayout from '../components/layout/Travel';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Business = () => {
-    const  category  = "business";
+const Travel = () => {
+    const  category  = "travel";
     
 
     let categoryBlogs = [];
@@ -15,7 +15,7 @@ const Business = () => {
     }
     return (
         <section className="section">
-        <BusinessLayout/>
+        <TravelLayout/>
         <div className="container">
           <div className="row">
           <h1 className="text-center mb-4 mt-3">Latest <span className="green">Articals</span></h1>
@@ -41,5 +41,5 @@ const Business = () => {
     )
 }
 
-Business.layout = "other";
-export default Business;
+Travel.layout = "other";
+export default Travel;

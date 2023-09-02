@@ -27,7 +27,7 @@ const menus = [
   {
     'id': 6,
     'name': 'Travel',
-    'slug': '/category/travel'
+    'slug': '/travel'
   },
   {
     'id': 7,
