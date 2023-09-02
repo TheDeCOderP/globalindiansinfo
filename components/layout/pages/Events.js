@@ -8,7 +8,7 @@ import Link from 'next/link';
       <div className="container ">
         <div className="row">
           <div className="col-md-12">
-            <Image src="/uploads/images/jobs/aa.jpeg" alt="Image Description" width={400} height={400} />
+            <Image src="/uploads/images/jobs/aa.jpeg" alt="Image Description" width={500} height={700} />
           </div>
         </div>
       </div>
