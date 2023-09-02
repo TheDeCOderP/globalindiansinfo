@@ -12,9 +12,9 @@ const cors = require('cors');
 app.use(cors());
 const db = mysql.createPool({
   host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'globalindians',
+  user: 'prabisha',
+  password: 'Prabisha@2024!',
+  database: 'prabisha_globalindiansinfo',
 });
 
 // Multer configuration for handling image uploads

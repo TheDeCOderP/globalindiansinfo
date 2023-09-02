@@ -7,6 +7,7 @@ import Globes from '../components/GlobeSection';
 import FeaturedBlogs from '../components/categories/articles/Latest'
 import Sponsors from '../components/Sponsers'
 import AdBanner from '../components/AdBanners'
+import FAQs from '../pages/faqs';
 
 const HomePage = () => {
   return (
@@ -27,6 +28,10 @@ const HomePage = () => {
     </section>
     <section className="section globe_section">
      <Globes/>
+    </section>
+    <section className="section faq_section">
+    <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
+     <FAQs/>
     </section>
     
     <section className="sponsors_section">

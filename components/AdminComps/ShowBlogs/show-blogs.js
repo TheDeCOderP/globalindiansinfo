@@ -17,7 +17,7 @@ const AllBlogs = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/blogs');
+      const response = await fetch('https://server.globalindiansinfo.com/api/blogs');
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -29,7 +29,7 @@ const AllBlogs = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this user?');
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost:5001/api/blogs/${userId}`, {
+        const response = await fetch(`https://server.globalindiansinfo.com/api/blogs/${userId}`, {
           method: 'DELETE'
         });
         if (response.ok) {
@@ -46,7 +46,7 @@ const AllBlogs = () => {
 
   const handleUpdate = async (updatedBlog) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/blogs/${updatedBlog.id}`, {
+      const response = await fetch(`https://server.globalindiansinfo.com/api/blogs/${updatedBlog.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

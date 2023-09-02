@@ -60,7 +60,7 @@ const LatestArticles = [
     </div>
   </div>'`,
     imagepath: 'uploads/images/articles/havan.jpg',
-    categories: ['featured', 'business', 'events' , 'news'],
+    categories: ['business', 'events' , 'news'],
   },
   
   {
@@ -96,7 +96,7 @@ const LatestArticles = [
     
     <p><i>Disclaimer: Sugaru is a fictional product created for the purpose of this content and is not an actual product available for purchase.</i></p>'`,
     imagepath: 'uploads/images/articles/sugru.jpg',
-    categories: ['featured', 'business', 'education', 'news'],
+    categories: ['business', 'education', 'news'],
   },
   
   {

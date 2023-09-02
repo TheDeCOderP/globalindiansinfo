@@ -28,7 +28,7 @@ const Blog = ({ blog }) => {
 
 export async function getStaticPaths() {
   // Replace with your API endpoint to fetch all blog slugs
-  const res = await fetch(`http://localhost:5001/api/blogSlugs`);
+  const res = await fetch(`https://server.globalindiansinfo.com/api/blogSlugs`);
   const slugs = await res.json();
 
   // Generate paths for all slugs
@@ -44,7 +44,7 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
 
   // Replace with your API endpoint to fetch the individual blog by slug
-  const res = await fetch(`http://localhost:5001/api/blogs/${slug}`);
+  const res = await fetch(`https://server.globalindiansinfo.com/api/blogs/${slug}`);
   const blog = await res.json();
 
   return {
