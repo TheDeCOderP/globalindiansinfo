@@ -4,6 +4,13 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt,FaEnvelope,
 function TopBar() {
   return (
     <>
+    <div className='sociallinks1' >
+      
+       
+        <span>Looking for Trusted Solutions for your IT, Digital Marketing, and Hiring needs? Visit <a href="https://www.prabisha.co.uk" target="_blank">Prabisha Consulting</a></span>
+       
+    
+    </div>
     <div className='sociallinks' >
       
         <a  href="mailto:info@prabisha.com" target="blank" style={{color:"white"}}><FaEnvelope className="mr-4" color='white' size={24}  /><span className='wordlinks hide_on_mobile' style={{marginLeft:"5px"}}>info@prabisha.com</span></a>

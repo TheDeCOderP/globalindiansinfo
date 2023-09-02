@@ -174,7 +174,7 @@ const JobsLayout = () => {
               <div className="body text-dark" style={{ backgroundColor: 'ffedd8' }}>
               <h4>{section.title}</h4>
               {/* <p className="text-center">{section.content}</p> */}
-              <Link href={section.buttonLink}> <button className="button">{section.icon}{section.buttonText}</button></Link>
+              <Link href={section.buttonLink} target="_blank"> <button className="button">{section.icon}{section.buttonText}</button></Link>
               </div>
             </section>
           </div>

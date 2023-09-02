@@ -1,17 +1,16 @@
 
-import JobsLayout from '@/components/layout/pages/Jobs';
 
 
-const Jobs = () => {
+const Tech = () => {
     
     return (
         <section className="section">
-        <JobsLayout/>
+       <h1 className="text-center">Content will be Added Soon...</h1>
        
       </section>
       
     )
 }
 
-Jobs.layout = "other";
-export default Jobs;
+Tech.layout = "other";
+export default Tech;

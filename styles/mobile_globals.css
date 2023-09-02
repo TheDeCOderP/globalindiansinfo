@@ -238,6 +238,16 @@ section.banner_section::before {
 .sociallinks a {
   display: flex;
 }
+.sociallinks1 {
+  display: none;
+}
+.sociallinks {
+  top: 0px;
+}
+
+nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
+  margin-top: 50px;
+}
 
 
 

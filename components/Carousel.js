@@ -48,7 +48,7 @@ function Carousels() {
       </style>
       <Carousel className="home_slider" fade>
         {CarouselList.map((item) => (
-          <Carousel.Item interval={5000} key={item.slug}>
+          <Carousel.Item interval={2000} key={item.slug}>
             <img className="d-block w-100" src={item.slug} alt="First slide" />
             <Carousel.Caption className="carousel_section">
               <h2>
@@ -56,7 +56,7 @@ function Carousels() {
                 <span className="green"> {item.green} </span>
               </h2>
               <Link href={item.link}>
-                <button className="button carousel_button p-2">Read More</button>
+                <button className="button carousel_button p-2 hide_on_mobile">Read More</button>
               </Link>
             </Carousel.Caption>
           </Carousel.Item>

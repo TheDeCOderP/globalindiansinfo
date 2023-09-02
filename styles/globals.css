@@ -766,7 +766,7 @@ button.accordion-button {
   display:none;
 }
 
-.sociallinks{
+.sociallinks  {
   height:50px;
   display:flex;
   background-color:var(--primary);
@@ -777,13 +777,17 @@ button.accordion-button {
   justify-content: space-around;
 
 }
+
+.sociallinks1 {
+  background:#fafafa;
+}
 .wordlinks{
   color: #ffffff;
   
 }
 
 nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 a{
   text-decoration: none;
@@ -834,8 +838,18 @@ a{
 .sociallinks{
   position:fixed;
   width:100%;
-  top:0px;
+  top:30px;
   z-index:9999;
+}
+.sociallinks1 {
+  position: fixed;
+  height: 30px;
+  width: 100%;
+  top: 0px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card img {
