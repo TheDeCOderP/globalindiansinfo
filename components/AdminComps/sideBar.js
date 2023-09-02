@@ -27,8 +27,9 @@ function SideBar() {
           alt="Third slide"
         /></Link>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-       
+        <Offcanvas.Body className="text-dark">
+       <Link href="/pcsadmin/add-blogs">Add New Blog</Link>
+       <Link href="/pcsadmin/all-blogs">All Blogs</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>

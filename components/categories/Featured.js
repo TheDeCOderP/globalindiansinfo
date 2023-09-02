@@ -8,7 +8,7 @@ const AllCategories = () => {
       <div className="row">
         {FeaturedCategories.map((item) => (
           <div key={item.id} className="article_column col-sm-6 col-md-4 col-lg-4">
-            <Link href={`/category/${item.title?.toLowerCase()}`}>
+            <Link href={`/${item.title?.toLowerCase()}`}>
               <div className="thumbnail">
                 <img className="category_image" src={item.imagepath} alt={item.title} />
               </div>

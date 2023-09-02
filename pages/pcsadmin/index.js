@@ -1,15 +1,14 @@
-import Usersdata from '../pcsadmin/components/UserData';
-const LoginPage = () => {
+
+const AdminPage = () => {
  
   return (
     
     <div className="pt-3 pb-3">
  
-  <Usersdata/>
-   
     </div>
   )
   };
-LoginPage.layout = "admin";
+AdminPage.layout = "admin";
 
-export default LoginPage;
+export default AdminPage;
+;
