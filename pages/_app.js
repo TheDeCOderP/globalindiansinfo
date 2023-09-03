@@ -8,7 +8,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
 
-
 import CategoryLayout from '../components/layout/category/DefaultLayout';
 import Head from 'next/head';
 
