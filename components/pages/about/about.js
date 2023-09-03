@@ -128,7 +128,7 @@ const WhatweOffer = [
                 <div className="col-sm-12 col-md-4 col-lg-4 mb-4" key={item.id}>
                   <Link href={item.link}>
                   <div className="image">
-                    <Image src={`/${item.imagePath}`} width={400} height={300} className="aspect-ratio"></Image>
+                    <Image src={`/${item.imagePath}`} width={400} height={300} className="aspect-ratio" alt="what-we-offer"></Image>
                 </div>
                 <div className="body text-dark">
                   <h4 className="text-center">{item.title}</h4>

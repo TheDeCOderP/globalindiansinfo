@@ -1,6 +1,6 @@
 // config.js
 const globalConfig = {
-   Port: "https://server.globalindiansinfo.com/",
+   port: "http://localhost:5001",
   };
   
   export default globalConfig;

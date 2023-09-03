@@ -1,7 +1,7 @@
 // components/MainLayout.js
 
 import React from "react";
-import SideBar from '@/components/AdminComps/sideBar';
+import SideBar from '@/components/admin/sideBar';
 const AdminLayout = ({ children }) => {
   return (
     <section className="">

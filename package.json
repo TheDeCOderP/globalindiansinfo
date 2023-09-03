@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"nodemon app.js\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -54,5 +54,8 @@
     "typeface-league-spartan": "^1.1.15",
     "typeface-poppins": "^1.1.13",
     "typeface-raleway": "^1.1.13"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
   }
 }

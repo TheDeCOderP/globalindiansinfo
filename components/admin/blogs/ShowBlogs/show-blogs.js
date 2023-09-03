@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import EditBlogs from "../EditBlogs";
+import EditBlogs from "./EditBlogs";
 import { Button } from 'react-bootstrap';
-
+import globalConfig from '@/config';
+const port = globalConfig.port;
 const AllBlogs = () => {
   const [data, setData] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
@@ -17,7 +18,7 @@ const AllBlogs = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://server.globalindiansinfo.com/api/blogs');
+      const response = await fetch(`${port}/api/blogs`);
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -29,7 +30,7 @@ const AllBlogs = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this user?');
     if (confirmDelete) {
       try {
-        const response = await fetch(`https://server.globalindiansinfo.com/api/blogs/${userId}`, {
+        const response = await fetch(`${port}/api/blogs/${userId}`, {
           method: 'DELETE'
         });
         if (response.ok) {
@@ -46,7 +47,7 @@ const AllBlogs = () => {
 
   const handleUpdate = async (updatedBlog) => {
     try {
-      const response = await fetch(`https://server.globalindiansinfo.com/api/blogs/${updatedBlog.id}`, {
+      const response = await fetch(`${port}/api/blogs/${updatedBlog.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -117,12 +118,10 @@ const AllBlogs = () => {
                     <Card.Title>
                       <h3 className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></h3>
                     </Card.Title>
-                    <span>
-                    {item.categories}
-                    </span>
+                    
                     <div className="edit_delete">
-                      <button onClick={() => handleEdit(item.id)} className="button m-3">Edit</button>
-                      <button onClick={() => handleDelete(item.id)} className="button m-3">Delete</button>
+                     {/*  <button onClick={() => handleEdit(item.id)} className="button p-2 m-3">Edit</button> */}
+                      <button onClick={() => handleDelete(item.id)} className="button p-2 m-3">Delete</button>
                     </div>
                   </>
                 )}

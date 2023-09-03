@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 const EditBlog = ({ blog, updateBlogs, onCancelEdit }) => {
   const [title, setTitle] = useState(blog?.title || '');
   const [content, setContent] = useState(blog?.content || '');
+  const [slug, setSlug] = useState(blog?.slug || '');
  
 
   const handleSubmit = (e) => {
@@ -14,6 +15,7 @@ const EditBlog = ({ blog, updateBlogs, onCancelEdit }) => {
       id: blog.id,
       title,
       content,
+      slug,
     };
     updateBlogs(updatedBlogs);
   };
@@ -25,11 +27,11 @@ const EditBlog = ({ blog, updateBlogs, onCancelEdit }) => {
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formName">
+          <Form.Group controlId="formTitle">
             <Form.Label>Title:</Form.Label>
             <Form.Control type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Group>
-          <Form.Group controlId="formEmail">
+          <Form.Group controlId="formContent">
             <Form.Label>Content:</Form.Label>
             <Form.Control type="text" value={content} onChange={(e) => setContent(e.target.value)} />
           </Form.Group>

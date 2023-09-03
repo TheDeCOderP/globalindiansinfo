@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout/MainLayout'
-import AdminLayout from '@/components/AdminComps/layout/AdminLayout';
+import AdminLayout from '@/components/admin/layout/AdminLayout';
 import OtherPageLayout from '../components/layout/OtherPagesLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

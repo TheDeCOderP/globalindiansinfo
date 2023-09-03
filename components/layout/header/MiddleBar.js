@@ -1,16 +1,12 @@
-import Container from 'react-bootstrap/Container';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt } from 'react-icons/fa';
+
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import SearchComponent from './SearchBar';
-import GoogleTranslate from '../GoogleTranslate.js';
-import Menuitems from '@/api/menus/menus.js';
-import MobileMenuBar from '@/components/header/mobilenav'
+import GoogleTranslate from '../header/GoogleTranslate';
+import MobileMenuBar from '../header/mobilenav'
 import Image from 'next/image';
-// import { ChakraProvider } from '@chakra-ui/react';
 
 function Header() {
   
@@ -22,10 +18,10 @@ function Header() {
       <div className="container-fluid">
        <div className="row">
         <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
-        <Link href="/"><Image  width={400} height={400}
+        <Link href="/"><Image  width={200} height={100}
            className="site-logo"
           src="/uploads/images/site-logo.png"
-          alt="site_logo"
+          alt="site_logo" priority
         /></Link>
         </div>
          <div className="col col-sm-6 col-md-5 col-lg-5 searchBar">

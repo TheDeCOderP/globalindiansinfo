@@ -12,8 +12,8 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="nav_menu">
           <Nav className="menu_links">
-            {Menuitems.map((item) => (
-              <Link key={item.id} href={`${item.slug}`}>
+            {Menuitems.map((item , index) => (
+              <Link key={index} href={`${item.slug}`}>
                 {item.name}
               </Link>
             ))}

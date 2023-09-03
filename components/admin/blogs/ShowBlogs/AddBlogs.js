@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'; // Import axios for HTTP requests
-
+import globalConfig from '@/config';
+const port = globalConfig.port;
 const ReactQuill = dynamic(() => import('react-quill'), {
   ssr: false,
 });
@@ -11,6 +12,9 @@ const ReactQuill = dynamic(() => import('react-quill'), {
 const categories = [
   { label: 'Technology', value: 'technology' },
   { label: 'Travel', value: 'travel' },
+  { label: 'Events', value: 'events' },
+  { label: 'Business', value: 'business' },
+  { label: 'Education', value: 'education' },
   { label: 'Food', value: 'food' },
   // Add more categories as needed
 ];
@@ -55,7 +59,7 @@ function BlogForm({ onAddBlog }) {
 
     try {
       // Send the form data to the backend API (replace with your actual API endpoint)
-      const response = await axios.post('https://server.globalindiansinfo.com/api/blogs', formData);
+      const response = await axios.post(`${port}/api/blogs`, formData);
 
       console.log('Response:', response); // Log the response
 

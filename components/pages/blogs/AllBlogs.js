@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import globalConfig from '@/config';
+const port = globalConfig.port;
 
 export default function AllBlogs() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     // Fetch blogs from your Express API
-    fetch('https://server.globalindiansinfo.com/api/blogs')
+    fetch(`${port}/api/blogs`)
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error(error));
@@ -23,7 +25,7 @@ export default function AllBlogs() {
               <img
                 src={`/uploads/images/blogs/${blog.image_path}`}
                 alt={blog.title}
-                className="img-fluid rounded"
+                className="aspect-ratio"
               />
             )}
             <div className="blog_body">

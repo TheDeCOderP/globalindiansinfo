@@ -1,36 +1,44 @@
-import React from 'react';
-import Blogs from '@/api/articles/articles';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import globalConfig from '@/config';
+const port = globalConfig.port;
 
+export default function AllBlogs() {
+  const [blogs, setBlogs] = useState([]);
 
-const LatestArticles = () => {
-    const name = 'featured';
-   const latestArticles = Blogs.filter(blog => blog.categories.includes(name));
-    
+  useEffect(() => {
+    // Fetch blogs from your Express API
+    fetch(`${port}/api/articles`)
+      .then((response) => response.json())
+      .then((data) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
 
-    return (
-        <div className="container">
-            <div className="row">
-            <h1 className="text-center"><span className="green">Featured</span> News</h1>
-            {latestArticles.slice(0,6).map((article , index) => (
+  return (
+    <div className="section mt-5">
+        <div className="row">
+      
+        {blogs.map((blog) => (
 
-                <div key={index} className="latest_article_column col-sm-12 col-md-4 col-lg-4">
-                    <Link href={`/article/${article.slug}`}>
-
-                    <div className="article_thumbnail">
-                        <img src={article.imagepath} width={300} height={300}></img>
-                    </div>
-                    <div className="article_body">
-                    <h3>{article.title}</h3>
-        
-                    </div>
-                    </Link>
-                </div>
-                
-            ))}
-        </div>
-        </div>
-    );
+          <div key={blog.id} className="col-sm-12 col-md-4 col-lg-4">
+          <Link href={`/blogs/${blog.slug}`}> {blog.image_path && (
+              <img
+                src={`/uploads/images/blogs/${blog.image_path}`}
+                alt={blog.title}
+                className="aspect-ratio"
+              />
+            )}
+            <div className="blog_body">
+            <h3 className="text-center mb-2">{blog.title}</h3>
+            </div>
+            </Link> 
+            
+          </div>
+        ))}
+      
+    </div>
+    </div>
+  );
 }
 
-export default LatestArticles;
+

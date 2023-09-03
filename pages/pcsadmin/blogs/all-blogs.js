@@ -1,4 +1,4 @@
-import AllBlogs from "../../components/AdminComps/ShowBlogs/show-blogs";
+import AllBlogs from "../../../components/AdminComps/ShowBlogs/show-blogs";
 
 const ShowAllBlogs = () => {
     return (

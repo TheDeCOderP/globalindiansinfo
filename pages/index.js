@@ -1,12 +1,12 @@
 // pages/index.js
 'use client'
 import React from 'react';
-import Carousel from '../components/Carousel';
-import Categories from '../components/categories/Featured';
-import Globes from '../components/GlobeSection';
+import Carousel from '../components/pages/home/Carousel';
+import Categories from '../components/categories/articles/Featured';
+import Globes from '../components/pages/home/GlobeSection';
 import FeaturedBlogs from '../components/categories/articles/Latest'
-import Sponsors from '../components/Sponsers'
-import AdBanner from '../components/AdBanners'
+import Sponsors from '../components/pages/home/Sponsers'
+import AdBanner from '../components/pages/home/AdBanners'
 import FAQs from '../pages/faqs';
 
 const HomePage = () => {

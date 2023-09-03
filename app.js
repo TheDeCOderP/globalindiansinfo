@@ -12,8 +12,8 @@ const cors = require('cors');
 app.use(cors());
 const db = mysql.createPool({
   host: 'localhost',
-  user: 'prabisha',
-  password: 'Prabisha@2024!',
+  user: 'root',
+  password: '',
   database: 'prabisha_globalindiansinfo',
 });
 
@@ -134,16 +134,44 @@ app.get('/api/blogs/:slug', async (req, res) => {
 
 
 
+ // Endpoint to get all blogs
+app.get('/api/articles', async (req, res) => {
+  try {
+    const category = "latest"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ?', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
+
+
 // Endpoint to get all blogs
 app.get('/api/blogs', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM blogs');
+    
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM blogs ORDER BY id DESC');
+
     res.json(rows);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
+
 
 
     

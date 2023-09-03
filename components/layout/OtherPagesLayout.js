@@ -1,9 +1,10 @@
 
 import React from 'react';
-import MiddleBar from '../header/MiddleBar';
-import BottomBar from '../header/BottomBar';
-import TopBar from '../header/TopBar';
-import Footer from '../Footer';
+import MiddleBar from '../layout/header/MiddleBar'
+import BottomBar from '../layout/header/BottomBar';
+import TopBar from '../layout/header/TopBar';
+
+import Footer from '../layout/footer/Footer';
 import { useRouter } from 'next/router';
 
 
