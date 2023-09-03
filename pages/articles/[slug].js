@@ -2,9 +2,10 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import globalConfig from '@/config';
+
 const port = globalConfig.port;
 
-const Articles = ({ article }) => {
+const Article = ({ article }) => {
   const router = useRouter();
 
   // Check if the data is still being fetched
@@ -33,28 +34,43 @@ const Articles = ({ article }) => {
 
 export async function getStaticPaths() {
   // Fetch the slugs for all articles from your API
-  const res = await fetch(`${port}/api/articleSlugs`);
-  const slugs = await res.json();
+  try {
+    const res = await fetch(`${port}/api/articleSlugs`);
+    const slugs = await res.json();
 
-  // Generate paths for all article slugs
-  const paths = slugs.map((slug) => ({ params: { slug } }));
+    // Generate paths for all article slugs
+    const paths = slugs.map((slug) => ({ params: { slug } }));
 
-  return {
-    paths,
-    fallback: true, // Set to true to generate pages on-demand for missing slugs
-  };
+    return {
+      paths,
+      fallback: true, // Set to true to generate pages on-demand for missing slugs
+    };
+  } catch (error) {
+    console.error('Error fetching slugs:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
   // Fetch the article data for the specific slug from your API
-  const res = await fetch(`${port}/api/articles/${slug}`);
-  const article = await res.json();
+  try {
+    const res = await fetch(`${port}/api/articles/${slug}`);
+    const article = await res.json();
 
-  return {
-    props: { article },
-  };
+    return {
+      props: { article },
+    };
+  } catch (error) {
+    console.error(`Error fetching article for slug ${slug}:`, error);
+    return {
+      notFound: true, // Handle 404 errors gracefully
+    };
+  }
 }
 
-export default Articles;
+export default Article;
