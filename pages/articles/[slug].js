@@ -1,8 +1,8 @@
 // pages/blogs/[slug].js
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-/* import globalConfig from '@/config';
-const port = globalConfig.port; */
+import globalConfig from '@/config';
+const port = globalConfig.port;
 
 const Articles = ({ article }) => {
   const router = useRouter();
@@ -33,7 +33,7 @@ const Articles = ({ article }) => {
 
 export async function getStaticPaths() {
   // Fetch the slugs for all articles from your API
-  const res = await fetch('https://server.globalindiansinfo.com/api/articleSlugs');
+  const res = await fetch(`${port}/api/articleSlugs`);
   const slugs = await res.json();
 
   // Generate paths for all article slugs
@@ -49,7 +49,7 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
 
   // Fetch the article data for the specific slug from your API
-  const res = await fetch(`https://server.globalindiansinfo.com/api/articleSlugs/api/articles/${slug}`);
+  const res = await fetch(`${port}/api/articles/${slug}`);
   const article = await res.json();
 
   return {
