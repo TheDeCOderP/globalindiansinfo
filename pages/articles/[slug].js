@@ -18,7 +18,7 @@ const Article = ({ article }) => {
       {/* Use Next.js Image component for optimized image rendering */}
       <Image
         className="single_blog"
-        src={`/uploads/images/articles/${article.imagepath}`}
+        src={`${port}/uploads/images/articles/${article.imagepath}`}
         height={400}
         width={1920}
         alt={article.title} // Add alt text for accessibility

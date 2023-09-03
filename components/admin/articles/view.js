@@ -114,7 +114,7 @@ const AllArticles = () => {
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
                   <>
-                    <img src={`/uploads/images/articles/${item.image_path}`}></img>
+                    <img src={`${port}/uploads/images/articles/${item.image_path}`}></img>
                    
                     <Card.Title >
                       <p className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></p>

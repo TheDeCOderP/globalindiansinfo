@@ -23,7 +23,7 @@ export default function AllBlogs() {
           <div key={blog.id} className="col-sm-12 col-md-4 col-lg-4">
           <Link href={`/blogs/${blog.slug}`}> {blog.image_path && (
               <img
-                src={`/uploads/images/blogs/${blog.image_path}`}
+                src={`${port}/uploads/images/blogs/${blog.image_path}`}
                 alt={blog.title}
                 className="aspect-ratio"
               />

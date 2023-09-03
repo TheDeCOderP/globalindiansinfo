@@ -23,13 +23,13 @@ export default function Articles() {
           <div key={article.id} className="col-sm-12 col-md-4 col-lg-4">
           <Link href={`/articles/${article.slug}`}> {article.imagepath && (
               <img
-                src={`/uploads/images/articles/${article.imagepath}`}
+                src={`${port}/uploads/images/articles/${article.imagepath}`}
                 alt={article.title}
                 className="aspect-ratio"
               />
             )}
             <div className="blog_body">
-            <h3 className="text-center mb-2">{article.title}</h3>
+            <h3 className="text-center mb-2">{article.title}</h3><br></br>
             <button className="button">Read More</button>
             </div>
             </Link> 

@@ -15,7 +15,7 @@ const Blog = ({ blog }) => {
     <div className="section">
       <Image
         className="single_blog"
-        src={`/uploads/images/blogs/${blog.image_path}`}
+        src={`${port}/uploads/images/blogs/${blog.image_path}`}
         height={400}
         width={1920}
         alt={blog.title}

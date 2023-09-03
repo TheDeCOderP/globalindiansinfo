@@ -102,6 +102,7 @@ h2.page_title {
   background: var(--boxbg);
   min-height: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
