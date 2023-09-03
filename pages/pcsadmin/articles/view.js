@@ -1,4 +1,4 @@
-import Articles from '@/components/pages/articles/articles.js';
+import Articles from '@/components/admin/articles/view';
 
 const AllArticles = () => {
     return (

@@ -1,4 +1,4 @@
-import AllBlogs from '@/components/pages/blogs/blogs';
+import AllBlogs from '@/components/admin/blogs/view';
 
 const ShowAllBlogs = () => {
     return (

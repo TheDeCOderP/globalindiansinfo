@@ -5,7 +5,7 @@ import EditBlogs from '../blogs/edit';
 import { Button } from 'react-bootstrap';
 import globalConfig from '@/config';
 const port = globalConfig.port;
-const AllBlogs = () => {
+const AllArticles = () => {
   const [data, setData] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,7 +18,7 @@ const AllBlogs = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${port}/api/blogs`);
+      const response = await fetch(`${port}/api/articles`);
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -27,10 +27,10 @@ const AllBlogs = () => {
   };
 
   const handleDelete = async (userId) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this user?');
+    const confirmDelete = window.confirm('Are you sure you want to delete this article?');
     if (confirmDelete) {
       try {
-        const response = await fetch(`${port}/api/blogs/${userId}`, {
+        const response = await fetch(`${port}/api/articles/${userId}`, {
           method: 'DELETE'
         });
         if (response.ok) {
@@ -47,7 +47,7 @@ const AllBlogs = () => {
 
   const handleUpdate = async (updatedBlog) => {
     try {
-      const response = await fetch(`${port}/api/blogs/${updatedBlog.id}`, {
+      const response = await fetch(`${port}/api/articles/${updatedBlog.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ const AllBlogs = () => {
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
                   <>
-                    <img src={`/uploads/images/blogs/${item.image_path}`}></img>
+                    <img src={`/uploads/images/articles/${item.image_path}`}></img>
                    
                     <Card.Title >
                       <p className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></p>
@@ -136,4 +136,4 @@ const AllBlogs = () => {
   );
 };
 
-export default AllBlogs;
+export default AllArticles;
