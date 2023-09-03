@@ -1,4 +1,4 @@
-// pages/blogs/[slug].js
+
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import globalConfig from '@/config';
