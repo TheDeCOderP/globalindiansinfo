@@ -30,6 +30,7 @@ export default function Articles() {
             )}
             <div className="blog_body">
             <h3 className="text-center mb-2">{article.title}</h3>
+            <button className="button">Read More</button>
             </div>
             </Link> 
             
