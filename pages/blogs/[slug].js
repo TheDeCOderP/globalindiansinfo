@@ -3,12 +3,11 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import globalConfig from '@/config';
 const port = globalConfig.port;
+
 // Create a function to render HTML content safely
 const renderHtmlContent = (htmlString) => {
-    return { __html: htmlString };
-  };
-
-
+  return { __html: htmlString };
+};
 
 const Blog = ({ blog }) => {
   const router = useRouter();
@@ -19,10 +18,17 @@ const Blog = ({ blog }) => {
 
   return (
     <div className="section">
-      <Image className="single_blog" src={`/uploads/images/blogs/${blog.image_path}`} height={400} width={1920} />
-      <div className="blog_single_content mt-4 ">
-      <h3 className="text-center p-4">{blog.title}</h3>
-      <div dangerouslySetInnerHTML={renderHtmlContent(blog.content)} />
+      <Image
+        className="single_blog"
+        src={`/uploads/images/blogs/${blog.image_path}`}
+        height={400}
+        width={1920}
+        alt={blog.title} // Add alt text for accessibility
+      />
+      <div className="blog_single_content mt-4">
+        <h3 className="text-center p-4">{blog.title}</h3>
+        {/* Safely render HTML content using dangerouslySetInnerHTML */}
+        <div dangerouslySetInnerHTML={renderHtmlContent(blog.content)} />
       </div>
     </div>
   );
@@ -38,7 +44,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: true, // Set to true to generate pages on-demand for missing slugs
   };
 }
 

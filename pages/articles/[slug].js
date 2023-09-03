@@ -3,49 +3,52 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import globalConfig from '@/config';
 const port = globalConfig.port;
-// Create a function to render HTML content safely
-const renderHtmlContent = (htmlString) => {
-    return { __html: htmlString };
-  };
-
-
 
 const Articles = ({ article }) => {
   const router = useRouter();
 
+  // Check if the data is still being fetched
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className="section">
-      <Image className="single_blog" src={`/uploads/images/articles/${article.imagepath}`} height={400} width={1920} />
-      <div className="blog_single_content mt-4 ">
-      <h3 className="text-center p-4">{article.title}</h3>
-      <div dangerouslySetInnerHTML={renderHtmlContent(article.description)} />
+      {/* Use Next.js Image component for optimized image rendering */}
+      <Image
+        className="single_blog"
+        src={`/uploads/images/articles/${article.imagepath}`}
+        height={400}
+        width={1920}
+        alt={article.title} // Add alt text for accessibility
+      />
+      <div className="blog_single_content mt-4">
+        <h3 className="text-center p-4">{article.title}</h3>
+        {/* Safely render HTML content using dangerouslySetInnerHTML */}
+        <div dangerouslySetInnerHTML={{ __html: article.description }} />
       </div>
     </div>
   );
 };
 
 export async function getStaticPaths() {
-  // Replace with your API endpoint to fetch all blog slugs
+  // Fetch the slugs for all articles from your API
   const res = await fetch(`${port}/api/articleSlugs`);
   const slugs = await res.json();
 
-  // Generate paths for all slugs
+  // Generate paths for all article slugs
   const paths = slugs.map((slug) => ({ params: { slug } }));
 
   return {
     paths,
-    fallback: true,
+    fallback: true, // Set to true to generate pages on-demand for missing slugs
   };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  // Replace with your API endpoint to fetch the individual blog by slug
+  // Fetch the article data for the specific slug from your API
   const res = await fetch(`${port}/api/articles/${slug}`);
   const article = await res.json();
 
