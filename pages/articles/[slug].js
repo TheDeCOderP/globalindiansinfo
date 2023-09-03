@@ -16,7 +16,7 @@ const Article = ({ article }) => {
   return (
     <div className="section">
       {/* Use Next.js Image component for optimized image rendering */}
-      <Image
+      <img
         className="single_blog"
         src={`${port}/uploads/images/articles/${article.imagepath}`}
         height={400}
