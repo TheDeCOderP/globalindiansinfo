@@ -4,11 +4,6 @@ import Image from 'next/image';
 import globalConfig from '@/config';
 const port = globalConfig.port;
 
-// Create a function to render HTML content safely
-const renderHtmlContent = (htmlString) => {
-  return { __html: htmlString };
-};
-
 const Blog = ({ blog }) => {
   const router = useRouter();
 
@@ -23,41 +18,56 @@ const Blog = ({ blog }) => {
         src={`/uploads/images/blogs/${blog.image_path}`}
         height={400}
         width={1920}
-        alt={blog.title} // Add alt text for accessibility
+        alt={blog.title}
       />
       <div className="blog_single_content mt-4">
         <h3 className="text-center p-4">{blog.title}</h3>
         {/* Safely render HTML content using dangerouslySetInnerHTML */}
-        <div dangerouslySetInnerHTML={renderHtmlContent(blog.content)} />
+        <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </div>
     </div>
   );
 };
 
 export async function getStaticPaths() {
-  // Replace with your API endpoint to fetch all blog slugs
-  const res = await fetch(`${port}/api/blogSlugs`);
-  const slugs = await res.json();
+  try {
+    // Fetch all blog slugs from your API
+    const res = await fetch(`${port}/api/blogSlugs`);
+    const slugs = await res.json();
 
-  // Generate paths for all slugs
-  const paths = slugs.map((slug) => ({ params: { slug } }));
+    // Generate paths for all slugs
+    const paths = slugs.map((slug) => ({ params: { slug } }));
 
-  return {
-    paths,
-    fallback: true, // Set to true to generate pages on-demand for missing slugs
-  };
+    return {
+      paths,
+      fallback: true, // Set to true to generate pages on-demand for missing slugs
+    };
+  } catch (error) {
+    console.error('Error fetching blog slugs:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  // Replace with your API endpoint to fetch the individual blog by slug
-  const res = await fetch(`${port}/api/blogs/${slug}`);
-  const blog = await res.json();
+  try {
+    // Fetch the individual blog by slug from your API
+    const res = await fetch(`${port}/api/blogs/${slug}`);
+    const blog = await res.json();
 
-  return {
-    props: { blog },
-  };
+    return {
+      props: { blog },
+    };
+  } catch (error) {
+    console.error(`Error fetching blog for slug ${slug}:`, error);
+    return {
+      notFound: true, // Handle 404 errors gracefully
+    };
+  }
 }
 
 export default Blog;
