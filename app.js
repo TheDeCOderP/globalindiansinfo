@@ -42,7 +42,7 @@ app.post('/api/blogs', upload.single('image'), async (req, res) => {
     // Generate a slug from the title
     const slug = title.toLowerCase().replace(/ /g, '-'); // Converts spaces to hyphens
 
-    const [results] = await db.query('INSERT INTO blogs (title, content,categories, image_path, slug) VALUES (?, ?, ?, ? , ?)', [title, content, categories,  imagePath, slug]);
+    const [results] = await db.query('INSERT INTO blogs (id , title, content,categories, image_path, slug) VALUES (?,?, ?, ?, ? , ?)', [title, content, categories,  imagePath, slug]);
     const blogId = results.insertId;
     res.status(201).json({ message: 'Blog post created successfully', blogId });
   } catch (error) {
