@@ -293,8 +293,8 @@ app.get('/api/articles/:slug', async (req, res) => {
     }
 
     // If a blog with the slug exists, return it
-    const blog = results[0];
-    res.status(200).json(blog);
+    const article = results[0];
+    res.status(200).json(article);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
