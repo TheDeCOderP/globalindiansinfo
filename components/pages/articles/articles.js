@@ -3,14 +3,14 @@ import Link from 'next/link';
 import globalConfig from '@/config';
 const port = globalConfig.port;
 
-export default function AllBlogs() {
-  const [blogs, setBlogs] = useState([]);
+export default function Articles() {
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     // Fetch blogs from your Express API
     fetch(`${port}/api/articles`)
       .then((response) => response.json())
-      .then((data) => setBlogs(data))
+      .then((data) => setArticles(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -18,18 +18,18 @@ export default function AllBlogs() {
     <div className="section mt-5">
         <div className="row">
       
-        {blogs.map((blog) => (
+        {articles.map((article) => (
 
-          <div key={blog.id} className="col-sm-12 col-md-4 col-lg-4">
-          <Link href={`/blogs/${blog.slug}`}> {blog.image_path && (
+          <div key={article.id} className="col-sm-12 col-md-4 col-lg-4">
+          <Link href={`/articles/${article.slug}`}> {article.imagepath && (
               <img
-                src={`/uploads/images/blogs/${blog.image_path}`}
-                alt={blog.title}
+                src={`/uploads/images/articles/${article.imagepath}`}
+                alt={article.title}
                 className="aspect-ratio"
               />
             )}
             <div className="blog_body">
-            <h3 className="text-center mb-2">{blog.title}</h3>
+            <h3 className="text-center mb-2">{article.title}</h3>
             </div>
             </Link> 
             

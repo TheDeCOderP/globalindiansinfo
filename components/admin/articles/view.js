@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import EditBlogs from "./EditBlogs";
+import EditBlogs from '../blogs/edit';
 import { Button } from 'react-bootstrap';
 import globalConfig from '@/config';
 const port = globalConfig.port;
@@ -86,7 +86,7 @@ const AllBlogs = () => {
 
   return (
     <div className="container product_grid">
-      <div className="row contact_search_form">
+     {/*  <div className="row contact_search_form">
         <div className="col-sm-12 col-md-3 col-lg-3 ">
           <input
             type="text"
@@ -103,26 +103,28 @@ const AllBlogs = () => {
             View All Blogs
           </Button>
         </div>
-      </div>
+      </div> */}
 
       <div className="row">
         {filteredData.map((item) => (
-          <div className="col-sm-12 col-md-6 col-lg-6 products_grid" key={item.id}>
-            <Card className="products_card">
+          <div className="col-sm-12 col-md-4 col-lg-4 products_grid" key={item.id}>
+            <Card className="products_card ">
               <Card.Body>
                 {editingUserId === item.id ? (
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
                   <>
                     <img src={`/uploads/images/blogs/${item.image_path}`}></img>
-                    <Card.Title>
-                      <h3 className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></h3>
+                   
+                    <Card.Title >
+                      <p className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></p>
                     </Card.Title>
                     
                     <div className="edit_delete">
                      {/*  <button onClick={() => handleEdit(item.id)} className="button p-2 m-3">Edit</button> */}
                       <button onClick={() => handleDelete(item.id)} className="button p-2 m-3">Delete</button>
                     </div>
+                   
                   </>
                 )}
               </Card.Body>

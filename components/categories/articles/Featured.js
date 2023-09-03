@@ -1,26 +1,44 @@
-import Categories from '@/api/articles/categories';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import globalConfig from '@/config';
+const port = globalConfig.port;
 
-const AllCategories = () => {
-  const FeaturedCategories = Categories.slice(0,6);
+export default function AllArticles() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Fetch blogs from your Express API
+    fetch(`${port}/api/articles`)
+      .then((response) => response.json())
+      .then((data) => setBlogs(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
-    <div className="category_grid container">
-      <div className="row">
-        {FeaturedCategories.map((item) => (
-          <div key={item.id} className="article_column col-sm-6 col-md-4 col-lg-4">
-            <Link href={`/${item.title?.toLowerCase()}`}>
-              <div className="thumbnail">
-                <img className="category_image" src={item.imagepath} alt={item.title} />
-              </div>
-              <div className="category_body">
-                <h3 className="text-center">{item.title}</h3>
-              </div>
-            </Link>
+    <div className="section mt-5">
+        <div className="row">
+      
+        {blogs.map((blog) => (
+
+          <div key={blog.id} className="col-sm-12 col-md-4 col-lg-4">
+          <Link href={`/blogs/${blog.slug}`}> {blog.image_path && (
+              <img
+                src={`/uploads/images/blogs/${blog.image_path}`}
+                alt={blog.title}
+                className="aspect-ratio"
+              />
+            )}
+            <div className="blog_body">
+            <h3 className="text-center mb-2">{blog.title}</h3>
+            </div>
+            </Link> 
+            
           </div>
         ))}
-      </div>
+      
+    </div>
     </div>
   );
-};
+}
 
-export default AllCategories;
+

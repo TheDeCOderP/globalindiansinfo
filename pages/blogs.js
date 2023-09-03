@@ -1,4 +1,4 @@
-import AllBlogs from "@/components/blogs/AllBlogs";
+import AllBlogs from '@/components/pages/blogs/blogs';
 
 const Blogs = () => {
     return (
@@ -6,6 +6,6 @@ const Blogs = () => {
     )
 }
 
-AllBlogs.layout = "other"
+Blogs.layout = "other"
 
-export default AllBlogs;
+export default Blogs;

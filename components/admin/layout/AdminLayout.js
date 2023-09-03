@@ -1,9 +1,14 @@
 // components/MainLayout.js
-
+import Head from "next/head";
 import React from "react";
 import SideBar from '@/components/admin/sideBar';
 const AdminLayout = ({ children }) => {
   return (
+    <>
+    <Head>
+       <title> Admin Panel</title>
+       <link rel="icon" href="/uploads/images/site-logo1.png" />
+    </Head>
     <section className="">
       <div className="row admin_panel">
         
@@ -21,6 +26,7 @@ const AdminLayout = ({ children }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -12,6 +12,8 @@
 .button {
   background:var(--primary);
   color:#ffffff;
+  padding:10px 15px;
+  border:none;
 }
 
 .my-5 {
@@ -69,6 +71,8 @@ a{
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
+  border: 1px solid var(--boxbg);
+  border-bottom: none;
 }
 
 nav.header_nav.topbar {
@@ -97,6 +101,9 @@ h2.page_title {
   border-radius: 0px 0px 10px 10px;
   background: var(--boxbg);
   min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mission-vision {
   padding: 20px;

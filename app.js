@@ -131,11 +131,132 @@ app.get('/api/blogs/:slug', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+// Endpoint to get all blogs
+app.get('/api/blogs', async (req, res) => {
+  try {
+    
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM blogs ORDER BY id DESC');
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 
 
- // Endpoint to get all blogs
-app.get('/api/articles', async (req, res) => {
+
+
+
+
+
+
+
+/**   articles api  */
+
+
+
+// Multer configuration for handling image uploads
+let Articlestorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'public/uploads/images/articles'); // Specify your image upload folder
+  },
+  filename: (req, file, callback) => {
+    const uniqueSuffix2 = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix2 + path.extname(file.originalname));
+  },
+});
+
+const articleupload = multer({ storage : Articlestorage });
+
+app.use(express.json());
+app.use(express.static('public'));
+
+// Endpoint to post a new blog
+app.post('/api/articles', articleupload.single('image1'), async (req, res) => {
+  try {
+    const { title, content , categories } = req.body;
+    const articleimagePath = req.file ? req.file.filename : null;
+
+    // Generate a slug from the title
+    const slug = title.toLowerCase().replace(/ /g, '-'); // Converts spaces to hyphens
+
+    const [results] = await db.query('INSERT INTO articles (title, description,categories, imagepath, slug) VALUES (?, ?, ?, ? , ?)', [title,content, categories,  articleimagePath, slug]);
+    const articleId = results.insertId;
+    res.status(201).json({ message: 'Article created successfully', articleId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// Endpoint to edit an existing blog by ID
+app.put('/api/articles/:id', articleupload.single('image'), async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, content } = req.body;
+    const imagePath = req.file ? req.file.filename : null;
+
+    // Generate a slug from the title (if needed)
+     const slug = title.toLowerCase().replace(/ /g, '-');
+
+    // Update the blog in the database
+    await db.query('UPDATE articles SET title = ?, description = ? , slug = ?, imagepath = ? WHERE id = ?', [title, content, imagePath, id , slug]);
+    res.status(200).json({ message: 'Blog post updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// Endpoint to delete an existing blog by ID
+app.delete('/api/articles/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Delete the blog from the database
+    await db.query('DELETE FROM articles WHERE id = ?', [id]);
+    res.status(200).json({ message: 'Article deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+// Endpoint to get all blog slugs
+app.get('/api/articleSlugs', async (req, res) => {
+  try {
+    // Query the database to fetch all blog slugs
+    const [rows] = await db.query('SELECT slug FROM articles'); // Adjust the query as per your database structure
+
+    // Extract the slugs from the database response
+    const slugs = rows.map((row) => row.slug);
+
+    res.json(slugs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+ app.get('/api/articles', async (req, res) => {
   try {
     const category = "latest"; // Get the category from the query parameters
 
@@ -155,20 +276,52 @@ app.get('/api/articles', async (req, res) => {
 }); 
 
 
-// Endpoint to get all blogs
-app.get('/api/blogs', async (req, res) => {
+
+
+
+// Endpoint to get a single blog by slug
+app.get('/api/articles/:slug', async (req, res) => {
   try {
-    
+    const { slug } = req.params;
 
-    // Use the SQL LIKE operator to search for the category within the categories column
-    const [rows] = await db.query('SELECT * FROM blogs ORDER BY id DESC');
+    // Query the database to find the blog by its slug
+    const [results] = await db.query('SELECT * FROM articles WHERE slug = ?', [slug]);
 
-    res.json(rows);
+    // Check if a blog with the given slug exists
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Article not found' });
+    }
+
+    // If a blog with the slug exists, return it
+    const blog = results[0];
+    res.status(200).json(blog);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

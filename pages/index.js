@@ -2,9 +2,9 @@
 'use client'
 import React from 'react';
 import Carousel from '../components/pages/home/Carousel';
-import Categories from '../components/categories/articles/Featured';
+import Categories from '../components/pages/home/Categories';
 import Globes from '../components/pages/home/GlobeSection';
-import FeaturedBlogs from '../components/categories/articles/Latest'
+import FeaturedNews from '../components/pages/articles/articles'
 import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
 import FAQs from '../pages/faqs';
@@ -17,7 +17,8 @@ const HomePage = () => {
 	  <Carousel />
     </section>
   <section className="section featured_blogs_section">
-	  <FeaturedBlogs />
+  <h1 className="text-center"><span className="green">Featured</span> News</h1>
+	  <FeaturedNews />
     </section>
     <section className="section categories_section">
     <h1 className="text-center"><span className="green">Important</span> Categories</h1>

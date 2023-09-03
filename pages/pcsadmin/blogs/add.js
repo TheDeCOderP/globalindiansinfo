@@ -1,4 +1,4 @@
-import BlogForm from '@/components/AdminComps/AddBlogs';
+import BlogForm from '@/components/admin/blogs/add';
 
 const LoginPage = () => {
  

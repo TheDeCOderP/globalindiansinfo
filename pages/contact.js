@@ -1,5 +1,5 @@
 'use client'
-import ContactPage from '../components/contact/Contact';
+import ContactPage from '../components/pages/contact/Contact';
 
 const Contact = () => {
 

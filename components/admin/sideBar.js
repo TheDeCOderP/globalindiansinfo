@@ -21,15 +21,15 @@ function SideBar() {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-        <Link href="/"><img
+        <Link href="/pcsadmin" onClick={handleClose}><img
           className="site-logo"
           src="/uploads/images/site-logo.png"
           alt="Third slide"
         /></Link>
         </Offcanvas.Header>
         <Offcanvas.Body className="text-dark">
-       <Link href="/pcsadmin/add-blogs">Add New Blog</Link>
-       <Link href="/pcsadmin/all-blogs">All Blogs</Link>
+       <Link href="/pcsadmin/blogs" onClick={handleClose}>Blogs</Link>
+       <Link href="/pcsadmin/articles" onClick={handleClose}>Articles</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
