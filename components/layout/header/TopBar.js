@@ -20,7 +20,7 @@ function TopBar() {
         <a href={`https://api.whatsapp.com/send?phone=+44-7867090363&text=I%20want%20to%20find%20out%20about%20your%20support%20and%20services`} target="_blank" rel="noopener noreferrer">
         <div className="whatsapp_icon">
       <img src="/social/icons8-whatsapp.svg" alt="WhatsApp Logo" width="30" height="30"/>
-      <span className='whatsapp'>Whatsapp Us</span>
+      <span className='whatsapp'>WhatsApp Us</span>
       </div>
     </a>
     </div>

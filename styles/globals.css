@@ -512,7 +512,6 @@ section.categories_section {
 }
 
 .carousel_section {
-  margin-top: -209px;
   max-height:600px;
 }
 
@@ -957,7 +956,6 @@ div#google_translate_element {
 }
 .home_slider{
   z-index:-1;
-  padding-top:39px;
 }
 button.chakra-button {
   padding: 10px;
@@ -1028,7 +1026,7 @@ header .row {
 
 .typing-text {
   position: relative;
-  top: -350px;
+  top: -500px;
   display: flex;
   align-items: center;
   justify-content: center;
