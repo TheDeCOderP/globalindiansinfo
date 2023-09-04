@@ -5,8 +5,10 @@ const HomeCategories = () => {
     return (
         
             <div className="row">
+               
         {
            Categories.map((item) => (
+            
             <div className="col-sm-12 col-lg-4 col-md-4 mb-4" key={item.id}>
                 
                     <Link href={`/${item.link}`}>
@@ -20,9 +22,10 @@ const HomeCategories = () => {
                 
 
             </div>
+           
            )) 
         }
-        </div>
+        </div> 
     )
 }
 

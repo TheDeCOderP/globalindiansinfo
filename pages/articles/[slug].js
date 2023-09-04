@@ -24,7 +24,7 @@ const Article = ({ article }) => {
         alt={article.title} // Add alt text for accessibility
       />
       <div className="blog_single_content mt-4">
-        <h3 className="text-center p-4">{article.title}</h3>
+        <h3 className=" pt-4 pb-4">{article.title}</h3>
         {/* Safely render HTML content using dangerouslySetInnerHTML */}
         <div dangerouslySetInnerHTML={{ __html: article.description }} />
       </div>

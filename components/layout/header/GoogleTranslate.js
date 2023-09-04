@@ -10,16 +10,15 @@ const TranslatePage = () => {
 
     // Function to initialize the Google Translate Element
     window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,fr,hi,pa,gu,te,ta,kn,ar,it,ml,pa,bn'}, 'google_translate_element');
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,hi,pa,gu,te,ta,kn,ar,it,ml,pa,bn,ru,de,ro,zh-CN,ko,pt',
+      }, 'google_translate_element');
     };
   }, []);
 
-  
-
   return (
-
-      <div id="google_translate_element"></div>
-
+    <div id="google_translate_element"></div>
   );
 };
 

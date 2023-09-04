@@ -23,7 +23,7 @@ const FAQPage = () => {
   ];
 
   return (
-    <div className="container my-5">
+    <div className="">
      
       {faqData.map((item, index) => (
         <div className={`accordion ${activeIndex === index ? 'active' : ''}`} key={index}>

@@ -10,21 +10,13 @@ function Carousels() {
       'green': 'Info',
       'link': '/travel',
     },
-    {
-      'slug': '/uploads/images/carousel/slide6.jpg',
-      'white': 'Business',
-      'link': '/business',
-    },
+    
     {
       'slug': '/uploads/images/carousel/slide8.jpg',
       'title': 'Jobs',
       'link': '/jobs',
     },
-    {
-      'slug': '/uploads/images/carousel/slide9.jpg',
-      'white': 'Events',
-      'link': '/events',
-    },
+   
     {
       'slug': '/uploads/images/carousel/slide10.jpg',
       'green': 'Education',
@@ -39,18 +31,12 @@ function Carousels() {
 
   return (
     <>
-      <style>
-        {`
-          .custom-carousel-item {
-            transition: transform 2s ease-in-out, opacity 2s ease-in-out;
-          }
-        `}
-      </style>
+     
       <Carousel className="home_slider" fade>
         {CarouselList.map((item) => (
           <Carousel.Item interval={2000} key={item.slug}>
             <img className="d-block w-100" src={item.slug} alt="First slide" />
-            <Carousel.Caption className="carousel_section">
+            {/* <Carousel.Caption className="carousel_section">
               <h2>
                 {item.title} <span className="white">{item.white} </span>
                 <span className="green"> {item.green} </span>
@@ -58,7 +44,7 @@ function Carousels() {
               <Link href={item.link}>
                 <button className="button carousel_button p-2 hide_on_mobile">Read More</button>
               </Link>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>

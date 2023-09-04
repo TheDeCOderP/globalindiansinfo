@@ -2,6 +2,7 @@
 'use client'
 import React from 'react';
 import Carousel from '../components/pages/home/Carousel';
+import RotatingTextBanner from '../components/pages/home/RotatingText';
 import Categories from '../components/pages/home/Categories';
 import Globes from '../components/pages/home/GlobeSection';
 import FeaturedNews from '../components/pages/articles/articles'
@@ -15,6 +16,7 @@ const HomePage = () => {
   <div className="home_page">
   <section className="carousel_section">
 	  <Carousel />
+    <RotatingTextBanner/>
     </section>
   <section className="section featured_blogs_section">
   <h1 className="text-center"><span className="green">Featured</span> News</h1>

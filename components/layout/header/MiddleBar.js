@@ -20,11 +20,11 @@ function Header() {
         <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
         <Link href="/"><Image  width={200} height={100}
            className="site-logo"
-          src="/uploads/images/site-logo.png"
+          src="/uploads/images/site-logo3.png"
           alt="site_logo" priority
         /></Link>
         </div>
-         <div className="col col-sm-6 col-md-5 col-lg-5 searchBar">
+         <div className="col col-sm-6 col-md-6 col-lg-6 searchBar">
         <SearchComponent  />
         </div>
 
@@ -53,7 +53,7 @@ function Header() {
         <div className="col-sm-6 logo_bar ">
         <Link href="/"><Image  width={400} height = {400}
           className="site-logo"
-          src="/uploads/images/site-logo.png"
+          src="/uploads/images/site-logo3.png"
           alt="site_logo"
         /></Link>
         </div>

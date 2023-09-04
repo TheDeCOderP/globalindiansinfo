@@ -72,6 +72,8 @@ const MobileMenu = () => {
                 className="site-menu-logo"
                 src="/uploads/images/site-logo.png"
                 alt="site_logo"
+                width={200}
+                height={100}
               />
             </Link>
           </DrawerHeader>

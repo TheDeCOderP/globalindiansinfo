@@ -5,7 +5,7 @@ const port = globalConfig.port;
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
-
+  
   useEffect(() => {
     // Fetch blogs from your Express API
     fetch(`${port}/api/articles`)
@@ -15,11 +15,14 @@ export default function Articles() {
   }, []);
 
   return (
-    <div className="section mt-5">
+    <div className="mt-5">
         <div className="row">
       
-        {articles.map((article) => (
+        {
+        
+        articles.map((article) => (
 
+           
           <div key={article.id} className="col-sm-12 col-md-4 col-lg-4">
           <Link href={`/articles/${article.slug}`}> {article.imagepath && (
               <img
@@ -28,9 +31,11 @@ export default function Articles() {
                 className="aspect-ratio"
               />
             )}
-            <div className="blog_body">
-            <h3 className="text-center mb-2">{article.title}</h3><br></br>
-            <button className="button">Read More</button>
+            <div className="blog_body latest-articles">
+             
+            <h3 className="text-center mb-2">{article.title}</h3>
+{/*             <div dangerouslySetInnerHTML={{ __html: article.description }} />
+ */}            <button className="button">Read More</button>
             </div>
             </Link> 
             

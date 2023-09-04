@@ -5,13 +5,14 @@ import { FiHome, FiInfo, FiBriefcase, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   return (
+    <section className="mx-2">
     <footer className="bg-light text-dark">
-      <div className="container">
+      <div className="">
         <div className="row">
           <div className="col-md-2">
           <Link href="/"><img
           className="site-footer-logo"
-          src="/uploads/images/site-logo.png"
+          src="/uploads/images/site-logo3.png"
           alt="site_logo"
         /></Link>
           </div>
@@ -64,6 +65,7 @@ const Footer = () => {
     </a>
   </div>
     </footer>
+    </section>
   );
 };
 
