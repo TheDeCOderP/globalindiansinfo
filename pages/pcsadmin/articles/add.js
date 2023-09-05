@@ -1,15 +1,15 @@
-import BlogForm from '@/components/admin/articles/add';
+import AddArticle from '@/components/admin/articles/add';
 
-const LoginPage = () => {
+const Add = () => {
  
   return (
     
     <div className="section pt-5 pb-5">
  
- <BlogForm  />  
+ <AddArticle  />  
     </div>
   )
   };
-LoginPage.layout = "admin";
+  Add.layout = "admin";
 
-export default LoginPage;
+export default Add;

@@ -113,7 +113,7 @@ function ArticleForm({ onAddArticle }) {
 
   return (
     <div>
-      <h2 className="text-center">Add a New Blog Post</h2>
+      <h2 className="text-center">Add a New Article</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">

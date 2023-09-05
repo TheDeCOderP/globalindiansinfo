@@ -13,9 +13,10 @@ const Blog = ({ blog }) => {
 
   return (
     <div className="section">
-      <Image
+    <div className="single_page">
+      <img
         className="single_blog"
-        src={`${port}/uploads/images/blogs/${blog.image_path}`}
+        src={`${port}/uploads/blogs/${blog.image_path}`}
         height={400}
         width={1920}
         alt={blog.title}
@@ -25,6 +26,7 @@ const Blog = ({ blog }) => {
         {/* Safely render HTML content using dangerouslySetInnerHTML */}
         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </div>
+    </div>
     </div>
   );
 };

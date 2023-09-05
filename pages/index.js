@@ -5,10 +5,10 @@ import Carousel from '../components/pages/home/Carousel';
 import RotatingTextBanner from '../components/pages/home/RotatingText';
 import Categories from '../components/pages/home/Categories';
 import Globes from '../components/pages/home/GlobeSection';
-import FeaturedNews from '../components/pages/articles/articles'
+import FeaturedNews from '../components/pages/articles/latest3'
 import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
-import LimitedFAQs from '@/components/LimitedFAQs';
+import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import { useRouter } from 'next/router'; 
 
 
@@ -45,11 +45,7 @@ const HomePage = () => {
       <LimitedFAQs />
       <button onClick={handleClick}>Show All FAQs</button>
     </section>
-    {/* <section className="section faq_section">
-    <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
-     <FAQs/>
-    </section>
-     */}
+  
     <section className="sponsors_section">
      <Sponsors/>
     </section>

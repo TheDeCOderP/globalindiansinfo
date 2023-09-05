@@ -74,11 +74,7 @@ const AllArticles = () => {
     setEditingUserId(null);
   };
 
-  const handleResetSearch = () => {
-    setSearchQuery('');
-    setSearchQuery1('');
-    setSearchQuery2('');
-  };
+ 
 
   const filteredData = data.filter((item) =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase()) 
@@ -86,24 +82,8 @@ const AllArticles = () => {
 
   return (
     <div className="container product_grid">
-     {/*  <div className="row contact_search_form">
-        <div className="col-sm-12 col-md-3 col-lg-3 ">
-          <input
-            type="text"
-            placeholder="Search By Name"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="form-control"
-          />
-        </div>
-        
+     
        
-        <div className="col-sm-12 col-md-3 col-lg-3 ">
-          <Button variant="dark" onClick={handleResetSearch} className="pt-2 pb-2">
-            View All Blogs
-          </Button>
-        </div>
-      </div> */}
 
       <div className="row">
         {filteredData.map((item) => (
@@ -114,7 +94,7 @@ const AllArticles = () => {
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
                   <>
-                    <img src={`${port}/uploads/images/articles/${item.image_path}`}></img>
+                    <img src={`${port}/uploads/articles/${item.imagepath}`}></img>
                    
                     <Card.Title >
                       <p className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></p>

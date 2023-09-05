@@ -1,0 +1,22 @@
+name: Build on Push
+
+on:
+  push:
+    branches:
+      - main # Replace with the name of the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    # You can add additional steps here, like deploying the built code.

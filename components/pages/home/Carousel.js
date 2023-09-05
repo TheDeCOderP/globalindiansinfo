@@ -4,28 +4,34 @@ import Link from 'next/link';
 function Carousels() {
   const CarouselList = [
     {
-      'slug': '/uploads/images/carousel/slide7.jpg',
-      'title': 'Global',
-      'white': 'Indians',
-      'green': 'Info',
-      'link': '/travel',
+      'slug': '/uploads/images/carousel/slide3.jpg',
+      
     },
-    
+    {
+      'slug': '/uploads/images/carousel/slide4.jpg',
+      
+    },
+    {
+      'slug': '/uploads/images/carousel/slide6.jpg',
+      
+    },
+    {
+      'slug': '/uploads/images/carousel/slide7.jpg',
+      
+    },
     {
       'slug': '/uploads/images/carousel/slide8.jpg',
-      'title': 'Jobs',
-      'link': '/jobs',
+      
     },
-   
+    {
+      'slug': '/uploads/images/carousel/slide9.jpg',
+      
+    },
     {
       'slug': '/uploads/images/carousel/slide10.jpg',
-      'green': 'Education',
-      'link': '/education',
     },
     {
       'slug': '/uploads/images/carousel/slide11.jpg',
-      'white': 'News',
-      'link': '/news',
     },
   ];
 

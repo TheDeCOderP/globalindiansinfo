@@ -2,6 +2,7 @@
 import Head from "next/head";
 import React from "react";
 import SideBar from '@/components/admin/sideBar';
+import Link from "next/link";
 const AdminLayout = ({ children }) => {
   return (
     <>
@@ -17,7 +18,9 @@ const AdminLayout = ({ children }) => {
           <header className="bg-primary text-light p-4">
             <div className="row admin_header">
               <div className="col-3"><SideBar/></div>
-              <div className="col-9"><h2>Welcome To Admin Panel</h2></div>
+              <div className="col-9 menu_links">
+                <Link href="/pcsadmin/blogs" >Blogs</Link>
+       <Link href="/pcsadmin/articles" >Articles</Link></div>
             </div>
           </header>
 

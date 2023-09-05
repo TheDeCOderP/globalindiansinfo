@@ -15,12 +15,11 @@ const Article = ({ article }) => {
 
   return (
     <div className="section">
+    <div className="single_page">
       {/* Use Next.js Image component for optimized image rendering */}
       <img
         className="single_blog"
-        src={`${port}/uploads/images/articles/${article.imagepath}`}
-        height={400}
-        width={1920}
+        src={`${port}/uploads/articles/${article.imagepath}`}
         alt={article.title} // Add alt text for accessibility
       />
       <div className="blog_single_content mt-4">
@@ -28,6 +27,7 @@ const Article = ({ article }) => {
         {/* Safely render HTML content using dangerouslySetInnerHTML */}
         <div dangerouslySetInnerHTML={{ __html: article.description }} />
       </div>
+    </div>
     </div>
   );
 };
