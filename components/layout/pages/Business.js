@@ -1,29 +1,30 @@
 import Image from "next/image";
 import { FaGlobe, FaEnvelope, FaMobile } from 'react-icons/fa';
 import Link from "next/link"
-const sections = [
-  {
-    title: 'Business Expansion Strategies',
-    content: 'Expert guidance on taking your business global, including market research and international partnerships.',
-    imagePath: 'uploads/images/jobs/2.webp',
-  },
-  {
-    title: 'Success Stories',
-    content: 'Inspiring stories of Indian entrepreneurs who have achieved global success.',
-    imagePath: 'uploads/images/jobs/1.jpg',
-  },
-  {
-    title: 'Resources',
-    content: 'Tools and resources to help you navigate the complexities of international business.',
-    imagePath: 'uploads/images/jobs/R.jpg',
-  },
-  {
-    title: 'Networking',
-    content: 'Connect with fellow Indian entrepreneurs who share your global ambitions.',
-    imagePath: 'uploads/images/jobs/networking.webp',
-  },
-];
+
 const BusinessLayout  = () => {
+  const sections = [
+    {
+      title: 'Business Expansion Strategies',
+      content: 'Expert guidance on taking your business global, including market research and international partnerships.',
+      imagePath: 'uploads/images/jobs/2.webp',
+    },
+    {
+      title: 'Success Stories',
+      content: 'Inspiring stories of Indian entrepreneurs who have achieved global success.',
+      imagePath: 'uploads/images/jobs/1.jpg',
+    },
+    {
+      title: 'Resources',
+      content: 'Tools and resources to help you navigate the complexities of international business.',
+      imagePath: 'uploads/images/jobs/R.jpg',
+    },
+    {
+      title: 'Networking',
+      content: 'Connect with fellow Indian entrepreneurs who share your global ambitions.',
+      imagePath: 'uploads/images/jobs/networking.webp',
+    },
+  ];
   return (
     <div className="container text-center">
       <div className="row">
@@ -50,27 +51,7 @@ const BusinessLayout  = () => {
     </div>
   );
 };
-// const  = () => {
-//     const cards = [
-//       {
-//         imageSrc: "/uploads/images/categories/business/it.jpg",
-//         title: "IT Solutions",
-//         description: "Website & App development",
-//         buttonText: "Learn More",
-//       },
-//       {
-//         imageSrc: "/uploads/images/categories/business/digital.jpg",
-//         title: "Digital Marketing",
-//         description: "SEO, SMM, Graphic Design, Video & Animation",
-//         buttonText: "Learn More",
-//       },
-//       {
-//         imageSrc: "/uploads/images/categories/business/hr.jpg",
-//         title: "HR Solutions",
-//         description: "Talent Acquisition, VA, Part-Time Staff, Contract Jobs, Interns",
-//         buttonText: "Learn More",
-//       },
-//     ];
+
 
 //     const prabishacontact = [
 //       {

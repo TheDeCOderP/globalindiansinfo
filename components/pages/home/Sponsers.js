@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const Sponsors = () => {
   const logos = [
     '/uploads/images/sponsers/image1.png',
-    '/uploads/images/sponsers/image2.jpg',
+    '/uploads/images/sponsers/image2.png',
     '/uploads/images/sponsers/image3.png',
     '/uploads/images/sponsers/image4.png',
     '/uploads/images/sponsers/image5.png',

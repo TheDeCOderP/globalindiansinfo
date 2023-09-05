@@ -69,7 +69,7 @@ const WhatweOffer = [
                   </div>
                   <h3>Our Vision</h3>
                   <p>
-                    Our vision is to bring the Global Indian Community together and to keep India’s culture and heritage alive across the world following the principle of Vasudev Kutumbkam (The Whole World Is Our Family).
+                  Our vision is to bring the Global Indian Community together and to keep India’s culture and heritage alive across the world following the principle of Vasudev Kutumbkam (The Whole World Is Our Family). We strive to create a world where the Global Indian Community unites, celebrates, and preserves India's rich culture and heritage on a global canvas. Our ultimate goal is to provide an interactive and user-friendly platform that serves as the central hub for all essential information needed by today's mobile Indians.  our mission and vision guide us in serving the Global Indian Community.
                   </p>
                   </div>
                 </Col>
@@ -81,19 +81,23 @@ const WhatweOffer = [
           
                   <h3>Our Mission</h3>
                   <p>
-                    Developing a vibrant and user-friendly platform that acts as a single source of all relevant information needed by the Indians on the move. Bringing Indians together to help each other by networking.
+                  Our mission is to unite the Global Indian Community, preserving and celebrating India's rich culture and heritage on a global canvas, guided by the timeless principle of Vasudev Kutumbkam (The Whole World Is Our Family). We aim to create an interactive and user-friendly platform that serves as the ultimate hub for all essential information needed by today's mobile Indians. Our goal is to foster a strong sense of community among Indians, facilitating mutual support, networking, and a profound connection that transcends borders.
+
                   </p>
                   </div>
                 </Col>
               </Row>
               <h1 className='py-4'>Founders</h1>
               <p>
-                Our founders, Pratyush Kumar and Bidisha Ray come from New Delhi and are currently based in London. They have traveled, worked, and lived in 12+ countries and fully understand the needs of the ever-growing Indian community. This website is their endeavor to help the Global Indian Community with relevant and timely information.
+              Our founders, Pratyush Kumar and Bidisha Ray, originally hailing from New Delhi, now call London their home. Having traversed, worked, and resided in over 12 countries, they possess a deep understanding of the evolving requirements of the continually expanding Indian diaspora. This website represents their commitment to assisting the Global Indian Community by providing pertinent and up-to-the-minute information.
+
               </p>
+             
               <div className="founder-icons row py-4">
                 <div className="founders_column col-lg-6 col-md-6">
                   <div className="founders">
                     <Image src="/uploads/images/founders/pk2.jpeg" alt="founder" width={500} height={500}></Image>
+                    
                     <div className="founders_social">
                 <a href="https://www.linkedin.com/in/pratyushk/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="linkedin-icon" size={30} />Visit Linkedin
@@ -101,6 +105,27 @@ const WhatweOffer = [
                 <a href="https://www.pratyushkumar.co.uk/" target="_blank" rel="noopener noreferrer">
                 <FaGlobe className="linkedin-icon" size={30} /> Visit Website
                   </a></div></div></div>
+                <div className="founders_column col-lg-6 col-md-6">
+                <div className="founders">
+              <p ><h1 className='py-4'>Pratyush Kumar</h1>
+              Pratyush Kumar, a seasoned globetrotter and corporate professional with over two decades of experience, is on a remarkable mission. His passport bears witness to adventures across ten diverse countries, where he's embraced diverse cultures and breathtaking landscapes. Beyond his corporate accomplishments, Pratyush's compassionate spirit shines through his founding of a non-profit dedicated to empowering marginalized children. Based in London, Pratyush excels in IT solutions, digital marketing, and HR solutions. 
+            With a diverse background, including leadership roles at HSBC and S&P Global, he brings 22+ years of global corporate experience.
+           He serves as a guiding force for numerous startups and small businesses, nurturing their path to unstoppable growth. Moreover, he's embarked on initiatives to assist thousands of jobseekers and students, amplifying his positive impact in the global community.
+</p>
+                    
+                </div>
+                </div>
+              </div>
+              <div className="founder-icons row py-4">
+              <div className="founders_column col-lg-6 col-md-6">
+                <div className="founders">
+              <p><h1 className='py-4'>Bidisha Ray</h1>
+              Bidisha Ray is a seasoned professional with expertise in resume writing, resume review, and mock interviews and career counselling. Fluent in English, Hindi, Mandarin, Bengali, and Marathi, she holds certifications in leadership excellence and Six Sigma Green Belt. Based in London, Bidisha offers comprehensive resume assessments and LinkedIn profile enhancements. With a diverse background spanning HR consulting, talent acquisition, business development, and project management, she brings a wealth of experience to help clients achieve their career goals. She has held leadership roles at BT, MetLife, JP Morgan Chase, and Wipro. Bidisha holds an M.Phil. in International Economics. 
+
+</p>
+                    
+                </div>
+                </div>
                 <div className="founders_column col-lg-6 col-md-6">
                 <div className="founders">
                 <Image src="/uploads/images/founders/bidisha-ray.jpg" alt="founder1" width={500} height={500}></Image>
@@ -115,6 +140,8 @@ const WhatweOffer = [
                 </div>
                 </div>
               </div>
+
+
             </div>
             
           </Col>
@@ -132,7 +159,7 @@ const WhatweOffer = [
                 </div>
                 <div className="body text-dark">
                   <h4 className="text-center">{item.title}</h4>
-                  <p>{item.description}</p>
+                  <p className="text-center">{item.description}</p>
                   </div>
                   </Link>
                   </div>

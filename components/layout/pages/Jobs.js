@@ -32,7 +32,7 @@ const JobsLayout = () => {
   const sections = [
     {
       title: " Join UK Jobs WhatsApp Group",
-     
+      content:"",
       buttonText: " Join WhatsApp Group",
       buttonLink: "https://chat.whatsapp.com/H2kjm74Dao9FNT0xWn6P9s",
       icon: <FaWhatsapp size={20}  className="ml-1" />,
@@ -40,6 +40,8 @@ const JobsLayout = () => {
     },
     {
       title: "For Hiring Support - UK Recruiters Group",
+      content:"  ",
+      
       buttonText: " Join Recruiters Group",
       buttonLink: "https://chat.whatsapp.com/E0fXMDA3NsnH7EsMaESWw3",
       icon: <FaWhatsapp size={20} className="ml-1" />,
@@ -173,7 +175,7 @@ const JobsLayout = () => {
             <section className="mb-5">
               <div className="body text-dark" style={{ backgroundColor: 'ffedd8' }}>
               <h4>{section.title}</h4>
-              {/* <p className="text-center">{section.content}</p> */}
+              <p className="text-center">{section.content}</p>
               <Link href={section.buttonLink} target="_blank"> <button className="button">{section.icon}{section.buttonText}</button></Link>
               </div>
             </section>
