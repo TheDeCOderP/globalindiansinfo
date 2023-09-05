@@ -34,3 +34,81 @@
   .jobs_page .button{
     margin-top: 10px;
   }
+
+
+
+  .event-categories-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .event-categories-section h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-boxes {
+    display: flex;
+    justify-content: space-between;
+  
+   
+  }
+  
+  .icon-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  
+  .icon-box:hover {
+    background-color: #ddd;
+  }
+  
+  .icon-box i {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .icon-box p {
+    font-size: 16px;
+  }
+  
+
+
+
+
+
+.event_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
+.event_content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  text-align: left;
+  max-width: 50%; 
+  box-sizing: border-box;
+}
+
+.get_i p {
+
+ padding: 10px;
+margin: 8px;
+
+}
+.get_i.container .body {
+  height: 290px;
+}
+.event_icon {
+   color: #273171;
+}

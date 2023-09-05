@@ -1,17 +1,14 @@
 
-import BusinessLayout from '@/components/layout/pages/Business';
-
-
-const Business = () => {
-  
-    return (
-        <section className="section">
-        <BusinessLayout/>
-        
-      </section>
-      
-    )
+const News = () => {
+    
+  return (
+      <section className="section">
+     <h1 className="text-center">Content will be Added Soon...</h1>
+     
+    </section>
+    
+  )
 }
 
-Business.layout = "other";
-export default Business;
+News.layout = "other";
+export default News;

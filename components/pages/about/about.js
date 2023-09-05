@@ -93,7 +93,7 @@ const WhatweOffer = [
               <div className="founder-icons row py-4">
                 <div className="founders_column col-lg-6 col-md-6">
                   <div className="founders">
-                    <Image src="/uploads/images/founders/pk1.jpg" alt="founder" width={500} height={500}></Image>
+                    <Image src="/uploads/images/founders/pk2.jpeg" alt="founder" width={500} height={500}></Image>
                     <div className="founders_social">
                 <a href="https://www.linkedin.com/in/pratyushk/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="linkedin-icon" size={30} />Visit Linkedin
