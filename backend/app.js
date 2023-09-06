@@ -210,12 +210,19 @@ app.put('/api/articles/:id', articleupload.single('image'), async (req, res) => 
   }
 });
 
-// Endpoint to delete an existing blog by ID
+// Endpoint to delete an existing article by ID
 app.delete('/api/articles/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Delete the blog from the database
+    // Check if the article with the given ID exists
+    const [article] = await db.query('SELECT * FROM articles WHERE id = ?', [id]);
+
+    if (article.length === 0) {
+      return res.status(404).json({ message: 'Article not found' });
+    }
+
+    // Delete the article from the database
     await db.query('DELETE FROM articles WHERE id = ?', [id]);
     res.status(200).json({ message: 'Article deleted successfully' });
   } catch (error) {
@@ -223,6 +230,7 @@ app.delete('/api/articles/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 
 
 

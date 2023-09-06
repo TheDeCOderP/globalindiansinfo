@@ -92,7 +92,7 @@ const LimitedFAQs = () => {
           </div>
         </div>
       ))}
-      <div classname="view_all_faqs text-center "><button className="button mt-3"><Link href="/faqs" className="button">View All FAQs</Link></button></div>
+      <div className="view_all_faqs text-center "><button className="button mt-3"><Link href="/faqs" className="button">View All FAQs</Link></button></div>
     </div>
   );
 };

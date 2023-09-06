@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt,FaEnvelope,FaWhatsapp,FaPhone,FaFlag,FaGlobeAmericas  } from 'react-icons/fa';
+import {FaEnvelope } from 'react-icons/fa';
 
 function TopBar() {
   return (
