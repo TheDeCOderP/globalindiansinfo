@@ -326,6 +326,24 @@ app.get('/api/articles', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 }); 
+ app.get('/api/articles/education', async (req, res) => {
+  try {
+    const category = "education"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ? ORDER BY id DESC', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
 
 
 

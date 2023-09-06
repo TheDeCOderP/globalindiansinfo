@@ -97,12 +97,12 @@ const AllArticles = () => {
                     <img src={`${port}/uploads/articles/${item.imagepath}`}></img>
                    
                     <Card.Title >
-                      <p className="text-center"><Link href={`/blogs/${item.slug}`}>{item.title}  </Link></p>
+                     <Link href={`/blogs/${item.slug}`}>{item.title}  </Link>
                     </Card.Title>
                     
                     <div className="edit_delete">
                      {/*  <button onClick={() => handleEdit(item.id)} className="button p-2 m-3">Edit</button> */}
-                      <button onClick={() => handleDelete(item.id)} className="button p-2 m-3">Delete</button>
+                      <button onClick={() => handleDelete(item.id)} className="button p-2 ">Delete</button>
                     </div>
                    
                   </>
