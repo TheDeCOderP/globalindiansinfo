@@ -813,7 +813,7 @@ button.accordion-button {
 }
 
 nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
-  padding-top: 70px;
+  padding: 80px 10px 10px 10px;
 }
 a{
   text-decoration: none;
