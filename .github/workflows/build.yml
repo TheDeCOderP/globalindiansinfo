@@ -19,7 +19,7 @@ jobs:
         node-version: 16 # Adjust to your Node.js version
 
     - name: Install Dependencies
-      run: npm install
+      run: npm install  --force
 
     - name: Build
       run: npm run build
