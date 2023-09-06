@@ -1,9 +1,9 @@
-name: Build on Push
+name: Build and Test
 
 on:
   push:
     branches:
-      - main # Replace with the name of the branch you want to trigger the workflow on
+      - main
 
 jobs:
   build:
@@ -13,11 +13,19 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16 # Adjust to your Node.js version
+
     - name: Install Dependencies
-      run: npm install --force
+      run: npm install
 
     - name: Build
       run: npm run build
 
-        # Restart the application with PM2
-        pm2 restart 0
+    - name: Test
+      run: npm test
+
+    # You can add more steps here, like deploying the built code or publishing artifacts.
+
