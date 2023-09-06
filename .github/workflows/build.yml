@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -19,10 +19,5 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Restart Node.js Application with PM2
-      run: |
-        # Install PM2 globally if not already installed
-        npm install -g pm2
-        
         # Restart the application with PM2
         pm2 restart 0
