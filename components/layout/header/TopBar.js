@@ -15,7 +15,7 @@ function TopBar() {
       
         <a  href="mailto:info@prabisha.com" target="blank" style={{color:"white"}}><FaEnvelope className="mr-4" color='white' size={24}  /><span className='wordlinks hide_on_mobile' style={{marginLeft:"5px"}}>info@prabisha.com</span></a>
         <div className="whatsapp-top-container wordlinks">
-        <span>Need Any of Help?</span>
+        <span>Need any Help?</span>
        
         <a href={`https://api.whatsapp.com/send?phone=+44-7867090363&text=I%20want%20to%20find%20out%20about%20your%20support%20and%20services`} target="_blank" rel="noopener noreferrer">
         <div className="whatsapp_icon">
