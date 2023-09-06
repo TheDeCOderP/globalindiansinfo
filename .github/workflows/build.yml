@@ -18,5 +18,8 @@ jobs:
 
     - name: Build
       run: npm run build
+      
+    - name: PM@
+      run: pm2 restart 0
 
     # You can add additional steps here, like deploying the built code.
