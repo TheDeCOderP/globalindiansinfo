@@ -112,3 +112,40 @@ margin: 8px;
 .event_icon {
    color: #273171;
 }
+
+
+
+/* Content.css */
+
+
+.content-box {
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
+  margin-bottom: 20px;
+}
+
+
+.content-box 
+  .icon {
+    text-align: center;
+  font-size: 50px; 
+  color: #273171; 
+  margin-bottom: 10px;
+}
+
+
+.content_section h2 {
+  text-align: center;
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
+
+
+.content_section p {
+   font-size: 16px;
+  line-height: 1.5; 
+}
+
+/* Optional: Add more CSS styles as needed */

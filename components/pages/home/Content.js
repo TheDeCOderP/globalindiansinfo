@@ -1,0 +1,119 @@
+import React from "react";
+import Image from "next/image";
+import { FaGlobe, FaUsers, FaBullhorn, FaUserTie } from "react-icons/fa";
+
+const Content = () => {
+  return (
+    <div className="content_section">
+      <div className="row">
+        <div className="col-sm-12 col-md-6 col-lg-6">
+          <div className="content-box">
+            <div className="icon">
+              <FaGlobe />
+            </div>
+            <h2>Introducing GlobalIndiansInfo.com</h2>
+            <p>
+              Connecting the Global Indian Diaspora across the globe! Are you a
+              proud member of the Indian diaspora, living and thriving across
+              the globe? Do you believe in the power of connection and
+              collaboration? Then we've got some exciting news for you!
+            </p>
+          </div>
+        </div>
+        <div className="col-sm-12 col-md-6 col-lg-6">
+          <div className="content-box">
+            <div className="icon">
+              <FaBullhorn />
+            </div>
+            <h2>Welcome to www.GlobalIndiansInfo.com</h2>
+            <p>
+              Your Gateway to Connect, Network, and Grow together! Our mission
+              is clear: We want to bring together the vibrant and diverse
+              Indian diaspora like never before. Whether you're a student,
+              professional, entrepreneur, or just someone who's passionate about
+              your Indian roots, this is YOUR platform.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-12 col-md-6 col-lg-6">
+          <div className="content-box">
+            <div className="icon">
+              <FaUsers />
+            </div>
+            <h2>Connect with a Global Network</h2>
+            <p>
+              Join our WhatsApp community group and engage with like-minded
+              individuals who share your background, interests, and goals. Share
+              your stories, experiences, and ideas with fellow Global Indians
+              from around the world. Let's foster a sense of belonging and unity
+              like never before!
+             
+            </p>
+            <div className="text-center">
+            <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " class="button btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
+            </div>
+            
+          </div>
+        </div>
+        <div className="col-sm-12 col-md-6 col-lg-6">
+          <div className="content-box">
+            <div className="icon">
+              <FaUserTie />
+            </div>
+            <h2>Become an Ambassador</h2>
+            <p>
+              Are you passionate about representing the Indian diaspora in your
+              corner of the world? We're looking for Ambassadors who will
+              proudly carry the torch of our culture and heritage in their
+              workplaces, universities, colleges, cities, and beyond. Fill in
+              this form to join us as Global Indian Ambassador
+            </p>
+            <div className="text-center">
+            <a href="https://forms.gle/3DRyhs1iTsJbHYdK7 " class="button btn-lg active" role="button" aria-pressed="true">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row align-items-center">
+  <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>
+  <div className="col-sm-12 col-md-6 col-lg-6">
+    <div className="p-4">
+      <ul>
+        <li>Network with a diverse, global community.</li>
+        <li>Stay updated on diaspora events and news.</li>
+        <li>Showcase your talents and achievements.</li>
+        <li>Make a positive impact on your community.</li>
+        <li>Discover exciting opportunities for growth.</li>
+      </ul>
+      <p>
+        Ready to make a difference and connect with Global Indians worldwide? Join us at www.globalindiansinfo.com today! Let's unite, inspire, and empower each other as we proudly represent the Indian diaspora on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
+        Tag your friends, share this post, and let's build a global community like no other! <br /><b>#GlobalIndiansInfo #IndianDiaspora #ConnectUniteImpact</b>
+      </p>
+    </div>
+  </div>
+  <div className="col-sm-12 col-md-6 col-lg-6 ">
+    <div className="image-content text-center ">
+      <Image
+        src="/uploads/images/jobs/join.jpg"
+        alt="Partner with Us"
+        width={500} height={600}
+        className="img-fluid mb-3" 
+      />
+    
+    </div>
+    <div className="text-center mb-3 ">
+        <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT" className="button ">Join Group</a>
+      </div>
+  </div>
+</div>
+
+
+ </div>
+
+  );
+};
+
+export default Content;

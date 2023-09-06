@@ -8,6 +8,7 @@ import Globes from '../components/pages/home/GlobeSection';
 import FeaturedNews from '../components/pages/articles/latest3'
 import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
+import Content from '../components/pages/home/Content'
 import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import { useRouter } from 'next/router'; 
 
@@ -21,6 +22,9 @@ const HomePage = () => {
   <section className="carousel_section">
 	  <Carousel />
     <RotatingTextBanner/>
+    </section>
+    <section className='content_section'>
+      <Content />
     </section>
   <section className="section featured_blogs_section">
   <h1 className="text-center"><span className="green">Featured</span> News</h1>
