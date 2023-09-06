@@ -13,12 +13,8 @@ import { useRouter } from 'next/router';
 
 
 const HomePage = () => {
-  const router = useRouter(); 
 
-  const handleClick = () => {
-   
-    router.push('/faqs');
-  };
+
   return (
   
   <div className="home_page">
@@ -43,7 +39,7 @@ const HomePage = () => {
     <section className="section faq_section">
       <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
       <LimitedFAQs />
-      <button onClick={handleClick}>Show All FAQs</button>
+   
     </section>
   
     <section className="sponsors_section">
