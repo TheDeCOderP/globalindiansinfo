@@ -18,8 +18,11 @@ jobs:
 
     - name: Build
       run: npm run build
-      
-    - name: PM@
-      run: pm2 restart 0
 
-    # You can add additional steps here, like deploying the built code.
+    - name: Restart Node.js Application with PM2
+      run: |
+        # Install PM2 globally if not already installed
+        npm install -g pm2
+        
+        # Restart the application with PM2
+        pm2 restart 0
