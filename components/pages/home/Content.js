@@ -4,14 +4,14 @@ import { FaGlobe, FaUsers, FaBullhorn, FaUserTie } from "react-icons/fa";
 
 const Content = () => {
   return (
-    <div className="content_section">
+    <div className="home_content_section ">
       <div className="row">
         <div className="col-sm-12 col-md-6 col-lg-6">
           <div className="content-box">
             <div className="icon">
               <FaGlobe />
             </div>
-            <h2>Introducing GlobalIndiansInfo.com</h2>
+            <h2>Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
             <p>
               Connecting the Global Indian Diaspora across the globe! Are you a
               proud member of the Indian diaspora, living and thriving across
@@ -23,9 +23,9 @@ const Content = () => {
         <div className="col-sm-12 col-md-6 col-lg-6">
           <div className="content-box">
             <div className="icon">
-              <FaBullhorn />
+              <FaBullhorn color={'orange'} />
             </div>
-            <h2>Welcome to www.GlobalIndiansInfo.com</h2>
+            <h2>Welcome to <span className="green">www.GlobalIndiansInfo.com</span></h2>
             <p>
               Your Gateway to Connect, Network, and Grow together! Our mission
               is clear: We want to bring together the vibrant and diverse
@@ -38,11 +38,11 @@ const Content = () => {
       </div>
       <div className="row">
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box">
+          <div className="content-box2">
             <div className="icon">
               <FaUsers />
             </div>
-            <h2>Connect with a Global Network</h2>
+            <h2>Connect with a <span className="green">Global Network</span></h2>
             <p>
               Join our WhatsApp community group and engage with like-minded
               individuals who share your background, interests, and goals. Share
@@ -51,18 +51,18 @@ const Content = () => {
               like never before!
              
             </p>
-            <div className="text-center">
-            <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " class="button btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
+            <div className="text-center pt-3">
+            <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Join Our Community</a>
             </div>
             
           </div>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box">
+          <div className="content-box2">
             <div className="icon">
               <FaUserTie />
             </div>
-            <h2>Become an Ambassador</h2>
+            <h2>Become an<span className="green"> Ambassador</span></h2>
             <p>
               Are you passionate about representing the Indian diaspora in your
               corner of the world? We're looking for Ambassadors who will
@@ -70,14 +70,14 @@ const Content = () => {
               workplaces, universities, colleges, cities, and beyond. Fill in
               this form to join us as Global Indian Ambassador
             </p>
-            <div className="text-center">
-            <a href="https://forms.gle/3DRyhs1iTsJbHYdK7 " class="button btn-lg active" role="button" aria-pressed="true">Apply Now</a>
+            <div className="text-center pt-3">
+            <a href="https://forms.gle/3DRyhs1iTsJbHYdK7 " className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="row align-items-center">
+      <div className="row align-items-center mt-4">
   <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>
   <div className="col-sm-12 col-md-6 col-lg-6">
     <div className="p-4">
@@ -99,14 +99,12 @@ const Content = () => {
       <Image
         src="/uploads/images/jobs/join.jpg"
         alt="Partner with Us"
-        width={500} height={600}
-        className="img-fluid mb-3" 
+        width={500} height={400}
+        className="cover" 
       />
     
     </div>
-    <div className="text-center mb-3 ">
-        <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT" className="button ">Join Group</a>
-      </div>
+   
   </div>
 </div>
 

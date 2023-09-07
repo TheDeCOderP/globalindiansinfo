@@ -124,7 +124,7 @@ h2.page_title {
 }
 
 h1.text-center {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .category_grid .category_grid {
@@ -148,6 +148,14 @@ body {
 
 h1 , h2 , h3 , h4 , h5 , h6 {
   font-family: 'League Spartan', sans-serif;
+  color:var(--primary);
+}
+
+.whatsapp_button {
+  background:var(--link);
+  color:white;
+  padding:10px 20px;
+
 }
 
 
@@ -821,9 +829,6 @@ a{
   text-decoration: none;
 }
 
-section.section.featured_blogs_section {
-  margin-top: 35px;
-}
 
 .midsection{
   display:flex;

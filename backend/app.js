@@ -334,9 +334,9 @@ app.get('/api/articles', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 }); 
- app.get('/api/articles/education', async (req, res) => {
+ app.get('/api/articles/travel', async (req, res) => {
   try {
-    const category = "education"; // Get the category from the query parameters
+    const category = "travel"; // Get the category from the query parameters
 
     if (!category) {
       // Handle the case when no category is provided

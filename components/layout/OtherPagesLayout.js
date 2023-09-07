@@ -25,7 +25,7 @@ const pageName = pathname.substring(1); // Remove the leading slash if needed
      <div className="other_pages">
      <div className='other_pages_banner'>
     
-        <h2 className="page_title">{pageName}</h2>
+        <h2 className="page_title text-light">{pageName}</h2>
         </div>
      </div>
       {children}

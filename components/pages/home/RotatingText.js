@@ -5,7 +5,7 @@ const AnimatedText = () => {
     <div className="typing-text">
      
       <div className="body">
-      <h4 className="p-1">Get All Global Information Related to </h4>
+      <h4 className="text-light p-1">Get All Global Information Related to </h4>
 <h2 className="white">
 <Typical
                 steps={[

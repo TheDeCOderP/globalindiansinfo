@@ -23,7 +23,7 @@ const HomePage = () => {
 	  <Carousel />
     <RotatingTextBanner/>
     </section>
-    <section className='content_section'>
+    <section className='section content_section'>
       <Content />
     </section>
   <section className="section featured_blogs_section">
@@ -31,7 +31,7 @@ const HomePage = () => {
 	  <FeaturedNews />
     </section>
     <section className="section categories_section">
-    <h1 className="text-center"><span className="green">Important</span> Categories</h1>
+    <h1 className="text-center pb-2"><span className="green">Important</span> Categories</h1>
     <Categories/>
     </section>
     <section className="section adbanner">

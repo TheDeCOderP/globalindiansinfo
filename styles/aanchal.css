@@ -122,17 +122,38 @@ margin: 8px;
   background-color: #fff; 
   border-radius: 10px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  padding: 20px; 
+  padding: 30px; 
   margin-bottom: 20px;
+  height:300px;
+}
+.content-box2 {
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 30px; 
+  margin-bottom: 20px;
+  
 }
 
 
+
+
+
+
+
 .content-box 
+  .icon , .content-box2 
   .icon {
     text-align: center;
   font-size: 50px; 
-  color: #273171; 
+  --secondary: #f89629; /* Replace with your desired secondary color hex value */
+  color:var(--secondary) ; 
   margin-bottom: 10px;
+}
+.content-box 
+  p , .content-box2 
+  p {
+    text-align: center;
 }
 
 
