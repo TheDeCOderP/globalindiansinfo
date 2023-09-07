@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import getConfig from 'next/config';
+const port = getConfig.port;
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -14,7 +16,7 @@ const Form = () => {
     setSubmitting(true);
 
     try {
-      await axios.post('http://localhost:5000/submit', { name, email, phone, message });
+      await axios.post(`${port}/submit`, { name, email, phone, message });
       setSuccessMessage('Form submitted successfully');
       setName('');
       setEmail('');

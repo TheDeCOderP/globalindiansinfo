@@ -58,35 +58,41 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className=" section about-us">
-      <Container>
+    <section className="section about-us">
+     
         <Row className="justify-content-center text-center">
-          <Col md={12}>
-            <div className="content">
+         
+            
               <Row>
                 <Col md={6} className=" text-center feature-col  ">
                   <div className="mission-img mt-4 ">
+                  <div className="feature-icon box-shadow p-2 mb-3">
+                     
+                   
+                  <FaBullseye />
+                  <h3>Our<span className="green">  Vision</span></h3>
+                    <p className="text-center">
+                      Empowering the Global Indian Community to Thrive Together
+                    </p>
+                    </div>
                     <Image
                       src="/uploads/images/jobs/photo.jpeg"
                       alt="founder"
-                      width={500}
-                      height={500}
+                      width={600}
+                      height={190}
+                      className="apsect-ratio box-shadow"
+                      
                     ></Image>
                   </div>
                 </Col>
                 <Col md={6} className="text-center feature-col">
                   <div className="mission-vision">
+                    
+                    
                     <div className="feature-icon">
-                      <FaTasks />
+                     <FaTasks/>
                     </div>
-                    <h3>Our Vision</h3>
-                    <p className="text-center">
-                      Empowering the Global Indian Community to Thrive Together
-                    </p>
-                    <div className="feature-icon">
-                      <FaBullseye />
-                    </div>
-                    <h3>Our Mission</h3>
+                    <h3>Our<span className="green">  Mission </span></h3>
                     <p className="text-center"> 
                       Our mission is to unite the Global Indian Community,
                       preserving and celebrating India's rich culture and
@@ -102,7 +108,8 @@ const AboutUs = () => {
                   </div>
                 </Col>
               </Row>
-              <h1 className="py-4 pt-12">Founders</h1>
+              <div className="box-shadow p-4 m-3">
+              <h1 className="text-center">Founders</h1>
               <p className="text-center">
                 Our founders, Pratyush Kumar and Bidisha Ray, originally hailing
                 from New Delhi, now call London their home. Having traversed,
@@ -112,9 +119,10 @@ const AboutUs = () => {
                 commitment to assisting the Global Indian Community by providing
                 pertinent and up-to-the-minute information.
               </p>
+              </div>
 
               <div className="founder-icons row py-4">
-                <div className="founders_column col-lg-6 col-md-6">
+                <div className="founders_column col-lg-6 col-md-6 ">
                   <div className="founders">
                     <Image
                       src="/uploads/images/founders/pk2.jpeg"
@@ -143,7 +151,7 @@ const AboutUs = () => {
                     </div>
                   </div>
                 </div>
-                <div className="founders_column col-lg-6 col-md-6">
+                <div className="founders_column col-lg-6 col-md-6 ">
                   <div className="founders">
                   <h1 className="py-4">Pratyush Kumar</h1>
                     <p>
@@ -221,11 +229,11 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </Col>
+           
+        
         </Row>
-      </Container>
-      <div className="container">
+      
+      
         <div className="row">
           {WhatweOffer.map((item) => (
             <div className="col-sm-12 col-md-4 col-lg-4 mb-4" key={item.id}>
@@ -247,7 +255,7 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-      </div>
+      
     </section>
   );
 };

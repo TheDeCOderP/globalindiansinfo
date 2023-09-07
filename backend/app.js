@@ -334,9 +334,87 @@ app.get('/api/articles', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 }); 
+
+ app.get('/api/articles/jobs', async (req, res) => {
+  try {
+    const category = "jobs"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ? ORDER BY id DESC', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
+
+ app.get('/api/articles/business', async (req, res) => {
+  try {
+    const category = "business"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ? ORDER BY id DESC', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
+
+
+ app.get('/api/articles/tech', async (req, res) => {
+  try {
+    const category = "tech"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ? ORDER BY id DESC', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
+
  app.get('/api/articles/travel', async (req, res) => {
   try {
     const category = "travel"; // Get the category from the query parameters
+
+    if (!category) {
+      // Handle the case when no category is provided
+      return res.status(400).json({ message: 'Category parameter is required' });
+    }
+
+    // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM articles WHERE categories LIKE ? ORDER BY id DESC', [`%${category}%`]);
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}); 
+
+ app.get('/api/articles/news', async (req, res) => {
+  try {
+    const category = "news"; // Get the category from the query parameters
 
     if (!category) {
       // Handle the case when no category is provided

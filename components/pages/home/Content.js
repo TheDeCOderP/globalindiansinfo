@@ -7,7 +7,7 @@ const Content = () => {
     <div className="home_content_section ">
       <div className="row">
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box">
+          <div className="content-box box-shadow">
             <div className="icon">
               <FaGlobe />
             </div>
@@ -21,7 +21,7 @@ const Content = () => {
           </div>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box">
+          <div className="content-box box-shadow">
             <div className="icon">
               <FaBullhorn color={'orange'} />
             </div>
@@ -38,7 +38,7 @@ const Content = () => {
       </div>
       <div className="row">
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box2">
+          <div className="content-box2 box-shadow">
             <div className="icon">
               <FaUsers />
             </div>
@@ -58,7 +58,7 @@ const Content = () => {
           </div>
         </div>
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box2">
+          <div className="content-box2 box-shadow ">
             <div className="icon">
               <FaUserTie />
             </div>
@@ -80,7 +80,7 @@ const Content = () => {
       <div className="row align-items-center mt-4">
   <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>
   <div className="col-sm-12 col-md-6 col-lg-6">
-    <div className="p-4">
+    <div className="p-4 box-shadow">
       <ul>
         <li>Network with a diverse, global community.</li>
         <li>Stay updated on diaspora events and news.</li>
@@ -96,7 +96,7 @@ const Content = () => {
   </div>
   <div className="col-sm-12 col-md-6 col-lg-6 ">
     <div className="image-content text-center ">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/niDNEeZYDMM?si=Rm0s8GNGNnP2hEY5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="100%" height="370" src="https://www.youtube.com/embed/niDNEeZYDMM?si=Rm0s8GNGNnP2hEY5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
     </div>
    

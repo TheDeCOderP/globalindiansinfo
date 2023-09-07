@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import TechArticle from '@/components/pages/articles/categories/tech'
+
 
 import { Container, Row, Col } from 'react-bootstrap';
 const Tech = () => {
@@ -17,7 +19,7 @@ const Tech = () => {
       </div>
    
 
-    <Container className='tech'>
+    <div className='tech'>
       <Row>
         <Col md={12}>
           <h1 className='text-center'>Stay Informed</h1>
@@ -25,32 +27,35 @@ const Tech = () => {
       </Row>
       <Row>
         <Col md={6}>
+          <Link href="/news">
         <Image
           src='/uploads/images/jobs/t1.jpg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
-          <h3>News and Updates</h3>
-          <p>
+          <h3 >News and Updates</h3>
+          < p className="text-dark">
             Stay up-to-date with the latest tech trends and developments in India. Our news section covers everything from emerging startups to government initiatives, ensuring you're well-informed about the tech landscape in the homeland.
           </p>
-        
+          </Link>
         </Col>
         <Col md={6}>
+        <Link href="/technology">
         <Image
           src='/uploads/images/jobs/t2.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="aspect-ratio "
+          className="aspect-ratio cover "
         />
           <h3>Tech Blogs</h3>
         
       
      
-          <p>
+          <p className="text-dark">
             Dive deep into tech topics that matter to you. Explore thought-provoking articles on subjects like artificial intelligence, blockchain, and e-commerce, all written with the Indian diaspora in mind.
           </p>
+          </Link>
         </Col>
       </Row>
       <Row>
@@ -64,7 +69,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t3.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="aspect-ratio "
+          className="aspect-ratio cover "
         />
           <h3>Tech Jobs</h3>
           <p>
@@ -76,7 +81,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t5.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="aspect-ratio "
+          className="aspect-ratio cover "
         />
           <h3>Entrepreneurial Resources</h3>
           <p>
@@ -86,7 +91,7 @@ const Tech = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <h1>Cultural Preservation</h1>
+          <h1 className='text-center'>Cultural Preservation</h1>
         </Col>
       </Row>
       <Row>
@@ -95,7 +100,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t6.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
           <h3>Language and Culture Apps</h3>
           <p>
@@ -107,7 +112,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t7.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
           <h3>Virtual Festivals</h3>
           <p>
@@ -117,7 +122,7 @@ const Tech = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <h1>Tech for Good</h1>
+          <h1 className='text-center' >Tech for Good</h1>
         </Col>
       </Row>
       <Row>
@@ -126,7 +131,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t8.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
 
           <h3>Social Impact Initiatives</h3>
@@ -139,9 +144,9 @@ const Tech = () => {
           src='/uploads/images/jobs/t10.jpg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
-          <h3>Volunteer Opportunities</h3>
+          <h3 >Volunteer Opportunities</h3>
           <p>
             Find opportunities to give back to your homeland or local community through technology-related volunteer work. Your skills can make a significant difference in the lives of those in need.
           </p>
@@ -149,7 +154,7 @@ const Tech = () => {
       </Row>
       <Row>
         <Col md={12}>
-          <h1>Community Building</h1>
+          <h1 className='text-center'>Community Building</h1>
         </Col>
       </Row>
       <Row>
@@ -158,7 +163,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t11.jpeg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
           <h3>Forums and Discussion Boards</h3>
           <p>
@@ -170,7 +175,7 @@ const Tech = () => {
           src='/uploads/images/jobs/t12.jpg'
           alt="Partner with Us"
           width={500} height={500}
-          className="img-fluid"
+          className="aspect-ratio cover"
         />
           <h3>Events and Webinars</h3>
           <p>
@@ -178,7 +183,9 @@ const Tech = () => {
           </p>
         </Col>
       </Row>
-    </Container>
+    </div>
+
+    <TechArticle/>
  
   
       </section>

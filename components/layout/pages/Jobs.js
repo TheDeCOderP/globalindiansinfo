@@ -62,7 +62,7 @@ const JobsLayout = () => {
     },
   ];
   return (
-    <div className="jobs_page container text-center">
+    <div className="jobs_page text-center">
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
@@ -85,9 +85,9 @@ const JobsLayout = () => {
           </div>
         ))}
 
-        <div className="container">
+        <div className="">
           <section className=" job mb-5">
-            <div className="row ">
+            <div className="row pt-4 pb-2 ">
               <div className=" col-md-4">
               <div className="box">
               <div className="text-center">
@@ -123,20 +123,20 @@ const JobsLayout = () => {
         <div className=" page row">
         <div className="col-md-12">
           <section className=" mb-5">
-            <h2>🚀 Why Choose Our Job Page?</h2>
-            <div className="row">
+            <h1 className="text-center">🚀 Why Choose Our Job Page?</h1>
+            <div className="row pt-3">
               <div className="col-md-4">
-                <Image src="/uploads/images/jobs/global.jpeg" alt="Image 1" width={300} height={200} />
+                <Image src="/uploads/images/jobs/global.jpeg" alt="Image 1" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Global Reach</h4>
                 <p className="text-center">Explore openings from across the globe, ensuring you have access to diverse job markets.</p>
               </div>
               <div className="col-md-4">
-                <Image src="/uploads/images/jobs/expert.jpg" alt="Image 2" width={300} height={200} />
+                <Image src="/uploads/images/jobs/expert.jpg" alt="Image 2" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Expert Insights</h4>
                 <p className="text-center">Gain valuable insights from career experts who understand the dynamics of international job markets.</p>
               </div>
               <div className="col-md-4">
-              <Image src="/uploads/images/jobs/box.png" alt="Image 3" width={300} height={200} />
+              <Image src="/uploads/images/jobs/box.png" alt="Image 3" width={400} height={400} className="aspect-ratio cover"/>
                 <h4 className="text-center">Easy Navigation</h4>
                 <p className="text-center">Our user-friendly platform ensures you find the perfect job with just a few clicks.</p>
               </div>
@@ -147,20 +147,20 @@ const JobsLayout = () => {
       <div className=" page row">
         <div className="col-md-12">
           <section className=" mb-5">
-            <h2>🌐 Discover a World of Possibilities</h2>
-            <div className="row">
+            <h1 className="text-center">🌐 Discover a World of Possibilities</h1>
+            <div className="row pt-3">
               <div className="col-md-4">
-                <Image src="/uploads/images/jobs/a.webp" alt="Image 1" width={300} height={200} />
+                <Image src="/uploads/images/jobs/a.webp" alt="Image 1" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Career Odyssey</h4>
                 <p className="text-center"> Explore job openings that span industries and sectors, connecting you with your desired role.</p>
               </div>
               <div className="col-md-4">
-                <Image src="/uploads/images/jobs/b.jpeg" alt="Image 2" width={300} height={200} />
+                <Image src="/uploads/images/jobs/b.jpeg" alt="Image 2" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Virtual Ventures</h4>
                 <p className="text-center">Embrace remote work opportunities that break down geographical barriers.</p>
               </div>
               <div className="col-md-4">
-              <Image src="/uploads/images/jobs/n.jpeg" alt="Image 3" width={300} height={200} />
+              <Image src="/uploads/images/jobs/n.jpeg" alt="Image 3" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">NRI Success Stories</h4>
                 <p className="text-center">Read inspiring stories of NRIs who triumphed in global job markets.</p>
               </div>
@@ -171,9 +171,9 @@ const JobsLayout = () => {
       <div className="jobs_page row" 
 >
         {sections.map((section, index) => (
-          <div className="col-md-6 text-center" key={index}>
+          <div className="col-md-6 text-center " key={index}>
             <section className="mb-5">
-              <div className="body text-dark" style={{ backgroundColor: 'ffedd8' }}>
+              <div className="body text-dark h-165" style={{ backgroundColor: 'ffedd8' }}>
               <h4>{section.title}</h4>
               <p className="text-center">{section.content}</p>
               <Link href={section.buttonLink} target="_blank"> <button className="button">{section.icon}{section.buttonText}</button></Link>

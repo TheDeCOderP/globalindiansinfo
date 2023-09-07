@@ -735,8 +735,12 @@ header .container {
   margin: 10px 0px;
 }
 
-.contact_details{
-  margin:40px 0px;
+.h-165 {
+  min-height:165px;
+}
+
+.jobs_page p {
+  font-size: 14px;
 }
 
 .category_grid.container .row {
@@ -844,6 +848,21 @@ a{
 
 .whatsapp-top-container.wordlinks span{
   margin-right: 10px;
+}
+
+.cover {
+  object-fit: cover;
+}
+.contain {
+  object-fit: contain;
+}
+img.apsect-ratio.box-shadow {
+  object-fit: cover;
+}
+
+.box-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
 }
 
 .whatsapp-top-container.wordlinks img {

@@ -12,12 +12,12 @@ const ReactQuill = dynamic(() => import('react-quill'), {
 const categories = [
   { label: 'Technology', value: 'technology' },
   { label: 'Latest', value: 'latest' },
-  { label: 'Featured', value: 'featured' },
+  { label: 'Jobs', value: 'jobs' },
   { label: 'Travel', value: 'travel' },
   { label: 'Events', value: 'events' },
   { label: 'Business', value: 'business' },
   { label: 'Education', value: 'education' },
-  { label: 'Food', value: 'food' },
+  { label: 'News', value: 'news' },
   // Add more categories as needed
 ];
 
@@ -167,7 +167,7 @@ function ArticleForm({ onAddArticle }) {
           </div>
         </div>
         <button type="submit" className="btn btn-primary">
-          Add Blog Post
+          Add New Article
         </button>
       </form>
       <ToastContainer />

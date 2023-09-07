@@ -1,6 +1,7 @@
 
 
 import EducationLayout from '@/components/layout/pages/Education';
+import EducationArticle from '@/components/pages/articles/categories/education'
 
 
 const Education = () => {
@@ -8,6 +9,7 @@ const Education = () => {
     return (
         <section className="section">
         <EducationLayout/>
+        <EducationArticle/>
         
       </section>
       

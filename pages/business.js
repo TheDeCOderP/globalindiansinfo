@@ -1,5 +1,6 @@
 
 import BusinessLayout from '@/components/layout/pages/Business';
+import BusinessArticle from '@/components/pages/articles/categories/business'
 
 const Business = () => {
    
@@ -10,6 +11,7 @@ const Business = () => {
    
         <section className="section">
         <BusinessLayout/>
+        <BusinessArticle/>
         
       </section>
     

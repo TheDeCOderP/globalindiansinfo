@@ -9,13 +9,13 @@ const HomeCategories = () => {
         {
            Categories.map((item) => (
             
-            <div className="col-sm-12 col-lg-4 col-md-4 mb-4" key={item.id}>
+            <div className="col-sm-12 col-lg-4 col-md-4 mb-4 " key={item.id}>
                 
                     <Link href={`/${item.link}`}>
                     <div className="category_image">
                         <Image className="aspect-ratio" src={`/${item.imagepath}`} width={500} height={400}></Image>
                     </div>
-                    <div className="category_body">
+                    <div className="category_body box-shadow">
                         <h3 className="text-center">{item.title}</h3>
                     </div>
                         </Link>               

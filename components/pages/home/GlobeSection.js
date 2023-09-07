@@ -3,7 +3,7 @@ const GlobeSection = () => {
     return (
  <div className="globe_section">
     <div className="row">
-        <div className="about_us col-sm-12 col-md-6 col-lg-6">
+        <div className="about_us col-sm-12 col-md-6 col-lg-6 box-shadow">
          <h1 className="text-center">We Are <span className="green">Global Indians</span></h1>
          <p><b>Welcome to "Global Indians Info"! </b> 
         At Global Indians Info, we believe in the power of the global Indian community. We are a vibrant and diverse group of individuals, brought together by our shared passion for going global, building careers overseas, and embracing the opportunities that the world has to offer.<br />

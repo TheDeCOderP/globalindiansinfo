@@ -1,10 +1,9 @@
-'use client'
-import ContactPage from '../components/pages/contact/Contact';
 
+import ContactPage from '@/components/pages/contact/Contact'
 const Contact = () => {
 
     return (
-    <section className="contact_details">
+    <section className="section contact_details">
       <ContactPage/>
       </section>
     )
