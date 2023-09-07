@@ -58,14 +58,14 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className="about-us">
+    <section className=" section about-us">
       <Container>
         <Row className="justify-content-center text-center">
           <Col md={12}>
             <div className="content">
               <Row>
-                <Col md={6} className="text-center feature-col">
-                  <div className="mission-vision">
+                <Col md={6} className=" text-center feature-col  ">
+                  <div className="mission-img mt-4 ">
                     <Image
                       src="/uploads/images/jobs/photo.jpeg"
                       alt="founder"
@@ -80,14 +80,14 @@ const AboutUs = () => {
                       <FaTasks />
                     </div>
                     <h3>Our Vision</h3>
-                    <p>
+                    <p className="text-center">
                       Empowering the Global Indian Community to Thrive Together
                     </p>
                     <div className="feature-icon">
                       <FaBullseye />
                     </div>
                     <h3>Our Mission</h3>
-                    <p>
+                    <p className="text-center"> 
                       Our mission is to unite the Global Indian Community,
                       preserving and celebrating India's rich culture and
                       heritage on a global canvas, guided by the timeless
@@ -103,7 +103,7 @@ const AboutUs = () => {
                 </Col>
               </Row>
               <h1 className="py-4 pt-12">Founders</h1>
-              <p>
+              <p className="text-center">
                 Our founders, Pratyush Kumar and Bidisha Ray, originally hailing
                 from New Delhi, now call London their home. Having traversed,
                 worked, and resided in over 12 countries, they possess a deep
@@ -189,16 +189,6 @@ const AboutUs = () => {
                       Morgan Chase, and Wipro. Bidisha holds an M.Phil. in
                       International Economics.
                     </p>
-                  </div>
-                </div>
-                <div className="founders_column col-lg-6 col-md-6">
-                  <div className="founders">
-                    <Image
-                      src="/uploads/images/founders/bidisha-ray.jpg"
-                      alt="founder1"
-                      width={500}
-                      height={500}
-                    ></Image>
                     <div className="founders_social">
                       <a
                         href="https://www.linkedin.com/in/bidisharay/"
@@ -217,6 +207,17 @@ const AboutUs = () => {
                         Website
                       </a>
                     </div>
+                  </div>
+                </div>
+                <div className="founders_column col-lg-6 col-md-6">
+                  <div className="founders">
+                    <Image
+                      src="/uploads/images/founders/bidisha-ray.jpg"
+                      alt="founder1"
+                      width={500}
+                      height={500}
+                    ></Image>
+                 
                   </div>
                 </div>
               </div>

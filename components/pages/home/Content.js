@@ -96,12 +96,7 @@ const Content = () => {
   </div>
   <div className="col-sm-12 col-md-6 col-lg-6 ">
     <div className="image-content text-center ">
-      <Image
-        src="/uploads/images/jobs/join.jpg"
-        alt="Partner with Us"
-        width={500} height={400}
-        className="cover" 
-      />
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/niDNEeZYDMM?si=Rm0s8GNGNnP2hEY5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
     </div>
    
