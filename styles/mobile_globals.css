@@ -99,6 +99,9 @@ section.banner_section {
 .carousel_section  {
   max-height:300px;
 }
+h2{
+  font-size: 18px;
+}
 
 .typing-text {
   position: relative;
