@@ -46,7 +46,7 @@ const EventsLayout = () => {
       </div>
       <div className="event_page container">
       <div className="event_row">
-        <div className="col-md-6">
+        <div className=" col-md-6">
       <div className="image-box">
         <Image
           src="/uploads/images/jobs/upp.jpg"
@@ -56,7 +56,7 @@ const EventsLayout = () => {
         />
       </div>
     </div>
-        <div className="event_content col-md-6">
+        <div className="event_content  col-md-6">
           <h2>Upcoming Events</h2>
           <p>
           Stay in the loop with our list of upcoming events that you won't want to miss. From celebratory festivals to thought-provoking webinars, discover exciting opportunities to connect with fellow Global Indians and engage with our vibrant community.
@@ -71,7 +71,7 @@ const EventsLayout = () => {
           Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking experiences that have enriched the Global Indians Info community.
           </p>
         </div>
-        <div className="col-md-6">
+        <div className=" col-md-6">
       <div className="image-box">
         <Image
           src="/uploads/images/jobs/ideas.jpg" 
@@ -83,41 +83,7 @@ const EventsLayout = () => {
     </div>
       </div>
     </div>
- {/* <section class="event-categories-section">
-  <h1>Event Categories</h1>
-  <div class="icon-boxes">
-    <div class="icon-box">
-    <FaFlag  size={50}/>
-      <h4>Cultural Celebrations</h4>
-      <p> Explore our rich cultural heritage through festivals, music, dance, and art events.
-</p>
-    </div>
-    <div class="icon-box">
-    <FaBusinessTime size={50} />
-      <h4>Networking and Business</h4>
-      <p> Discover networking events, workshops and conferences designed to foster professional growth and collaboration.
-</p>
-    </div>
-    <div class="icon-box">
- <FaGraduationCap  size={50} /> 
-      <h4>Educational Seminars</h4>
-      <p>Stay informed about educational and informational seminars that empower the Global Indians community with knowledge and skills.
-</p>
-    </div>
-    <div class="icon-box">
-  <FaUsers size={50}/>
-      <h4>Community Initiatives</h4>
-      <p> Learn about initiatives that support and uplift the Global Indians diaspora worldwide.
 
-</p>
-    </div>
-    <div class="icon-box">
-    <FaStar  size={50} />
-      <h4>Featured Events</h4>
-      <p> Highlight special events or partnerships that are particularly noteworthy or timely.</p>
-    </div>
-  </div>
-</section> */}
 
 <div className="container">
 <h1 className="mt-5 mb-5">Event Categories</h1>
