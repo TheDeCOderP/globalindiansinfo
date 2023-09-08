@@ -13,7 +13,7 @@ const Tech = () => {
         <section className="section">
          <div className="row">
          <div className="col-md-12">
-            <p className="text-center"><b> Welcome to the Technology Connect Page for the vibrant and diverse Indian Diaspora spread across the globe. Explore the fusion of cutting-edge innovation and our rich cultural heritage. Stay updated on tech trends, job opportunities, and cultural preservation. Join us on this digital journey that connects the world while celebrating our roots.</b>
+            <p className="text-center"> Welcome to the Technology Connect Page for the vibrant and diverse Indian Diaspora spread across the globe. Explore the fusion of cutting-edge innovation and our rich cultural heritage. Stay updated on tech trends, job opportunities, and cultural preservation. Join us on this digital journey that connects the world while celebrating our roots.
 </p>
         </div>
       </div>
@@ -35,9 +35,9 @@ const Tech = () => {
           className="aspect-ratio cover"
         />
           <h3 >News and Updates</h3>
-          < p className="text-dark">
+          <p className="text-dark">
             Stay up-to-date with the latest tech trends and developments in India. Our news section covers everything from emerging startups to government initiatives, ensuring you're well-informed about the tech landscape in the homeland.
-          </p>
+     </p>
           </Link>
         </Col>
         <Col md={6}>

@@ -42,7 +42,7 @@ const AboutUs = () => {
       id: 5,
       title: "Travel",
       description:
-        "Satiate your wanderlust with travel guides, tips, and personal stories from fellow global Indians.",
+        "Satiate your wanderlust with travel guides, tips, and personal stories from         fellow global Indians. ",
       imagePath: "uploads/images/about/travel.jpg",
       link: "/travel",
     },
@@ -249,7 +249,7 @@ const AboutUs = () => {
                 </div>
                 <div className="body text-dark">
                   <h4 className="text-center">{item.title}</h4>
-                  <p className="text-center">{item.description}</p>
+                  <p className=" text-center">{item.description}</p>
                 </div>
               </Link>
             </div>
