@@ -141,6 +141,14 @@ margin: 8px;
 
 
 
+.contact .icon {
+    text-align: center;
+    font-size: 50px;
+    --secondary: #f89629;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
 
 
 

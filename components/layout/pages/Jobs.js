@@ -136,7 +136,7 @@ const JobsLayout = () => {
                 <p className="text-center">Gain valuable insights from career experts who understand the dynamics of international job markets.</p>
               </div>
               <div className="col-md-4">
-              <Image src="/uploads/images/jobs/box.png" alt="Image 3" width={400} height={400} className="aspect-ratio cover"/>
+              <Image src="/uploads/images/jobs/Navigation.jpg" alt="Image 3" width={400} height={400} className="aspect-ratio cover"/>
                 <h4 className="text-center">Easy Navigation</h4>
                 <p className="text-center">Our user-friendly platform ensures you find the perfect job with just a few clicks.</p>
               </div>

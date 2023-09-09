@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Card } from 'react-bootstrap';
+import { FaQuestionCircle, FaUsers, FaBullhorn, FaUserTie , FaHandshake, FaNewspaper, FaGlobe} from "react-icons/fa";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -63,23 +65,29 @@ const Contact =() => {
             <div className="row mt-5">
               <div className="col-md-4">
                 <div className="box-shadow p-3">
-               
-                <h4 className="text-center">General Inquiries</h4>
+                <div className="icon">
+              <FaQuestionCircle color={'orange'} />
+            </div>
+                <h4 className="text-center">General <span className="green"> Inquiries</span></h4>
                 <p className="text-center"> If you have any general questions, suggestions, or feedback, please feel free to reach out to our dedicated team at info@prabisha.com. We're here to assist you with any information you may need.</p>
                 </div>
               </div>
               
               <div className="col-md-4">
               <div className="box-shadow p-3">
-              
-                <h4 className="text-center">WhatsApp Community Group</h4>
+              <div className="icon">
+              <FaUsers color={'orange'} />
+            </div>
+                <h4 className="text-center">WhatsApp <span className="green"> Community Group</span></h4>
                 <p className="text-center">Join our lively WhatsApp community group to connect with fellow Global Indians from around the world. Share your stories, experiences, and insights.</p>
               </div>
               </div>
               <div className="col-md-4">
               <div className="box-shadow p-3">
-              
-                <h4 className="text-center"> Ambassador Program</h4>
+              <div className="icon">
+              <FaUserTie color={'orange'} />
+            </div>
+                <h4 className="text-center"> Ambassador<span className="green"> Program</span> </h4>
                 <p className="text-center"> If you're interested in becoming an Ambassador for the Indian diaspora in your workplace, university, city, or any other community, please click here and provide some basic information</p>
               </div>
               </div>
@@ -92,8 +100,10 @@ const Contact =() => {
             <div className="row">
               <div className="col-md-4">
               <div className="box-shadow p-3">
-             
-                <h4 className="text-center">Partner with Us</h4>
+              <div className="icon">
+              <FaHandshake color={'orange'} />
+            </div>
+                <h4 className="text-center">Partner <span className="green"> with Us</span></h4>
                 <p className="text-center"> If you are an organization, business, or entity interested in collaborating or partnering with us to support the Indian diaspora community, please reach out to us at info@prabisha.com
 </p>
               </div>
@@ -101,16 +111,20 @@ const Contact =() => {
 
               <div className="col-md-4">
               <div className="box-shadow p-3">
-             
-                <h4 className="text-center">Media and Press Inquiries</h4>
+              <div className="icon">
+              <FaNewspaper color={'orange'} />
+            </div>
+                <h4 className="text-center">Media and <span className="green"> Press Inquiries</span> </h4>
                 <p className="text-center">For media and press inquiries, interviews, or collaborations, please contact our media relations team at info@prabisha.com
 We're happy to provide information, interviews, and resources related to the Indian diaspora.</p>
               </div>
               </div>
               <div className="col-md-4">
               <div className="box-shadow p-3">
-             
-                <h4 className="text-center">  Social Media</h4>
+              <div className="icon">
+              <FaGlobe color={'orange'} />
+            </div>
+                <h4 className="text-center">  Social<span className="green"> Media</span> </h4>
                 <p className="text-center"> Stay updated and engage with us on our social media platforms. Follow us on Facebook, Twitter, Instagram, and LinkedIn, where we share news, stories, and updates related to the Indian diaspora community.</p>
               </div>
               </div>
@@ -121,7 +135,8 @@ We're happy to provide information, interviews, and resources related to the Ind
       <div className="">
         <p className="text-center">Connecting with the Indian diaspora is at the heart of our mission, and we are eager to hear from you. Whether you have questions, ideas, or simply want to say hello, we encourage you to reach out using one of the contact methods mentioned above. Your engagement is vital to building a strong and vibrant community, and we look forward to connecting with you. 
      Thank you for being a part of our journey at www.globalindiansinfo.com</p>
-        <Link href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT "><Button className="global_buttons">Join Group</Button></Link>
+        
+        <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " className=" whatsapp_button " role="button" aria-pressed="true" target="_blank">Join Group</a>
       </div>
 
 
