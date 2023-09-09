@@ -9,6 +9,12 @@
   --link: #389232; /* Replace with your desired link color hex value */
   --boxbg:#ffedd8;
 }
+
+
+.content_box {
+  background-color: var(--boxbg);
+  padding:10px;
+}
 .button {
   background:var(--primary);
   color:#ffffff;

@@ -7,7 +7,7 @@ function TopBar() {
     <div className='sociallinks1' >
       
        
-        <span>Looking for Trusted Solutions for your IT, Digital Marketing, and Hiring needs? Visit <a href="https://www.prabisha.co.uk" target="_blank">Prabisha Consulting</a></span>
+        <span>Looking for Trusted Solutions for your IT, Digital Marketing, and Hiring needs? Visit <b><a href="https://www.prabisha.co.uk" target="_blank">Prabisha Consulting</a></b></span>
        
     
     </div>
