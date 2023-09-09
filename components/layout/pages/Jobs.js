@@ -85,7 +85,7 @@ const JobsLayout = () => {
         <div className="col-md-12">
           <section className="mb-5">
             <h1 className='text-center'>Exploring International Career Opportunities</h1>
-            <p className="text-center">Are you a professional looking to take your career to the global stage? "Global Indians Info" is your trusted resource for international job opportunities, career advice, and professional growth. Our Jobs section is designed to empower you on your path to success.</p>
+            <p className="text-center">Are you a professional looking to take your career to the global stage? <span className='green'> "Global Indians Info" </span> is your trusted resource for international job opportunities, career advice,<br />  and professional growth.Our Jobs section is designed to empower you on your path to success.</p>
           </section>
         </div>
       </div>

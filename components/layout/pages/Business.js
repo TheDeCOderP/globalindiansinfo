@@ -6,7 +6,7 @@ const BusinessLayout  = () => {
   const sections = [
     {
       title: 'Business Expansion Strategies',
-      content: 'Expert guidance on taking your business global, including market research and international partnerships.',
+      content: 'Expert guidance on taking your business global, including market research<br /> and international partnerships.',
       imagePath: 'uploads/images/jobs/2.webp',
     },
     {

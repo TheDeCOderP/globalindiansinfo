@@ -34,10 +34,11 @@ const Tech = () => {
           width={500} height={500}
           className="aspect-ratio cover"
         />
+        <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3 >News and Updates</h3>
           <p className="text-dark">
             Stay up-to-date with the latest tech trends and developments in India. Our news section covers everything from emerging startups to government initiatives, ensuring you're well-informed about the tech landscape in the homeland.
-     </p>
+     </p></div>
           </Link>
         </Col>
         <Col md={6}>
@@ -48,13 +49,14 @@ const Tech = () => {
           width={500} height={500}
           className="aspect-ratio cover "
         />
+        <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Tech Blogs</h3>
         
       
      
           <p className="text-dark">
             Dive deep into tech topics that matter to you. Explore thought-provoking articles on subjects like artificial intelligence, blockchain, and e-commerce, all written with the Indian diaspora in mind.
-          </p>
+          </p></div>
           </Link>
         </Col>
       </Row>
@@ -70,11 +72,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover "
-        />
+        />      <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Tech Jobs</h3>
           <p>
             Are you seeking career opportunities in the tech sector? Browse through our job listings to find exciting openings in India, the United States, Canada, the United Kingdom, and other countries with significant Indian communities.
-          </p>
+          </p></div>
         </Col>
         <Col md={6}>
         <Image
@@ -82,11 +84,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover "
-        />
+        />      <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Entrepreneurial Resources</h3>
           <p>
             If you're an aspiring entrepreneur, discover resources to help you turn your tech startup dreams into reality. Explore funding options, mentorship programs, and success stories from fellow Indian diaspora entrepreneurs.
-          </p>
+          </p></div>
         </Col>
       </Row>
       <Row>
@@ -101,11 +103,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
+        />      <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Language and Culture Apps</h3>
           <p>
             Embrace and preserve your cultural heritage through language learning and cultural appreciation apps. We recommend a curated list of apps that can help you and your children stay connected to your roots.
-          </p>
+          </p></div>
         </Col>
         <Col md={6}>
         <Image
@@ -113,12 +115,12 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
+        />      <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Virtual Festivals</h3>
           <p>
             Can't make it home for Diwali or Holi? We've got you covered with virtual celebrations and tips on how to make these cultural festivals feel like home, no matter where you are.
-          </p>
-        </Col>
+          </p> </div>
+        </Col> 
       </Row>
       <Row>
         <Col md={12}>
@@ -132,12 +134,13 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
-
+        /> 
+      <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Social Impact Initiatives</h3>
           <p>
             Learn about tech-driven initiatives aimed at making a positive impact in India and beyond. Discover how you can contribute to projects related to education, healthcare, and sustainability.
-          </p>
+          </p> </div>
+
         </Col>
         <Col md={6}>
         <Image
@@ -145,11 +148,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
+        /> <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3 >Volunteer Opportunities</h3>
           <p>
             Find opportunities to give back to your homeland or local community through technology-related volunteer work. Your skills can make a significant difference in the lives of those in need.
-          </p>
+          </p> </div>
         </Col>
       </Row>
       <Row>
@@ -164,11 +167,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
+        /> <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Forums and Discussion Boards</h3>
-          <p>
-            Connect with fellow members of the Indian diaspora who share your tech interests. Discuss the latest gadgets, programming languages, and more.
-          </p>
+          <p className='text-center'>
+            Connect with fellow members of the Indian diaspora who share your tech <br/>interests. Discuss the latest gadgets, programming languages,<br/>  and more.
+          </p> </div>
         </Col>
         <Col md={6}>
         <Image
@@ -176,11 +179,11 @@ const Tech = () => {
           alt="Partner with Us"
           width={500} height={500}
           className="aspect-ratio cover"
-        />
+        /> <div className=''style={{ backgroundColor: '#ffedd8' }}>
           <h3>Events and Webinars</h3>
-          <p>
+          <p className='text-center'> 
             Stay connected with the Indian diaspora tech community through online events, webinars, and conferences. Network with like-minded individuals and industry experts.
-          </p>
+          </p> </div>
         </Col>
       </Row>
     </div>

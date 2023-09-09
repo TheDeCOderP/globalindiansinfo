@@ -13,7 +13,7 @@ const Content = () => {
             </div>
             <h2>Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
             <p>
-              Connecting the Global Indian Diaspora across the globe! Are you a
+              Connecting the<span className="green"> Global Indian</span>  Diaspora across the globe! Are you a
               proud member of the Indian diaspora, living and thriving across
               the globe? Do you believe in the power of connection and
               collaboration? Then we've got some exciting news for you!
@@ -46,7 +46,7 @@ const Content = () => {
             <p>
               Join our WhatsApp community group and engage with like-minded
               individuals who share your background, interests, and goals. Share
-              your stories, experiences, and ideas with fellow Global Indians
+              your stories, experiences, and ideas with fellow <span className="green"> Global Indians </span>
               from around the world. Let's foster a sense of belonging and unity
               like never before!
              
@@ -68,7 +68,7 @@ const Content = () => {
               corner of the world? We're looking for Ambassadors who will
               proudly carry the torch of our culture and heritage in their
               workplaces, universities, colleges, cities, and beyond. Fill in
-              this form to join us as Global Indian Ambassador
+              this form to join us as<span className="green"> Global Indian</span> Ambassador
             </p>
             <div className="text-center pt-3">
             <a href="https://forms.gle/3DRyhs1iTsJbHYdK7 " className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
@@ -89,7 +89,7 @@ const Content = () => {
         <li>Discover exciting opportunities for growth.</li>
       </ul>
       <p>
-        Ready to make a difference and connect with Global Indians worldwide? Join us at www.globalindiansinfo.com today! Let's unite, inspire, and empower each other as we proudly represent the Indian diaspora on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
+        Ready to make a difference and connect with Global Indians worldwide? Join us at <a href="www.globalindiansinfo.com">www.globalindiansinfo.com</a> today! Let's unite, inspire, and empower each other as we proudly represent the Indian diaspora on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
         Tag your friends, share this post, and let's build a global community like no other! <br /><b>#GlobalIndiansInfo #IndianDiaspora #ConnectUniteImpact</b>
       </p>
     </div>

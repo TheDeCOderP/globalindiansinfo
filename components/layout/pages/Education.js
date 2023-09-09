@@ -31,7 +31,8 @@ const EducationalJourney = () => {
         <div className="col-md-12">
           <section className="mb-5">
             <h1 className='text-center'>Empowering Your Educational Journey</h1>
-            <p className="text-center">Are you an Indian student aspiring to study abroad? We at Global Indians info are your dedicated partner in making your dreams of international education a reality. Our Education section is designed to provide you with valuable insights, resources, and support as you get on this life-changing journey.</p>
+            <p className="text-center">Are you an Indian student aspiring to study abroad? We at <span className='green'>Global Indians </span>info are your dedicated partner in making your dreams of international education a reality.<br />
+             Our Education section is designed to provide you with valuable insights, resources, and support as you get on this life-changing journey.</p>
           </section>
         </div>
       </div>

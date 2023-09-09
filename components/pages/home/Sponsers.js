@@ -13,6 +13,13 @@ const Sponsors = () => {
     '/uploads/images/sponsers/image5.png',
   ];
 
+  const sponsorWebsites = [
+    'https://www.prabisha.com/',
+    'https://www.prishatheexplorer.com/',
+    'https://www.jaimeprisha.com/',
+    'https://www.pratyushkumar.co.uk/',
+    'https://bidisharay.com/',
+  ];
   const settings = {
     dots: false,
     infinite: true,
@@ -24,6 +31,9 @@ const Sponsors = () => {
     centerMode: true,
     arrows: false,
   };
+  const handleLogoClick = (websiteURL) => {
+    window.open(websiteURL, '_blank');
+  };
 
   return (
     <div className="marquee_container">
@@ -31,7 +41,9 @@ const Sponsors = () => {
       <Slider {...settings}>
         {logos.map((item, index) => (
           <div key={index} className="logo">
+          <div key={index} className="logo" onClick={() => handleLogoClick(sponsorWebsites[index])}  style={{ cursor: 'pointer' }}>
             <img src={item} alt={`Logo ${index}`}  className="sponsores_logo"/>
+            </div>
           </div>
         ))}
       </Slider>

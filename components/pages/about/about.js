@@ -18,7 +18,7 @@ const AboutUs = () => {
       id: 2,
       title: "Education",
       description:
-        "Discover a world of educational possibilities with our guidance on studying abroad, scholarships, and career development.",
+        "Discover a world of educational possibilities with our guidance on studying abroad, scholarships, <br />and career development.",
       imagePath: "uploads/images/about/education.jpg",
       link: "/education",
     },
@@ -26,7 +26,7 @@ const AboutUs = () => {
       id: 3,
       title: "Jobs",
       description:
-        `Explore the international job market with confidence, from job search <br />tips to career advice.`,
+        `Explore the international job market<br /> with confidence, from job search tips to <br /> career advice.`,
       imagePath: "uploads/images/about/jobs.jpg",
       link: "/jobs",
     },
@@ -42,7 +42,7 @@ const AboutUs = () => {
       id: 5,
       title: "Travel",
       description:
-        "Satiate your wanderlust with travel guides, tips, and personal  stories from         <br />fellow global Indians. ",
+        "Satiate your wanderlust with travel <br /> guides, tips,   and personal stories from    <br /> fellow global Indians. ",
       imagePath: "uploads/images/about/travel.jpg",
       link: "/travel",
     },
@@ -51,7 +51,7 @@ const AboutUs = () => {
       id: 6,
       title: "Blogs",
       description:
-        "Explore a diverse range of thought-provoking blogs, covering a wide array of topics related to our global journey.",
+        "Explore a diverse range of thought-provoking <br /> blogs, covering a wide array of topics related  <br />to our global journey.",
       imagePath: "uploads/images/about/blogs.jpg",
       link: "/blogs",
     },
@@ -72,7 +72,7 @@ const AboutUs = () => {
                   <FaBullseye />
                   <h3>Our<span className="green">  Vision</span></h3>
                     <p className="text-center">
-                      Empowering the Global Indian Community to Thrive Together
+                      Empowering the <b> Global Indian Community </b> to Thrive Together
                     </p>
                     </div>
                     <Image
@@ -97,8 +97,8 @@ const AboutUs = () => {
                       Our mission is to unite the Global Indian Community,
                       preserving and celebrating India's rich culture and
                       heritage on a global canvas, guided by the timeless
-                      principle of <b> Vasudev Kutumbkam </b> (The Whole World Is Our
-                      Family). We aim to create an interactive and user-friendly
+                      principle of <b> Vasudev Kutumbkam (The Whole World Is Our
+                      Family) </b> . We aim to create an interactive and user-friendly
                       platform that serves as the ultimate hub for all essential
                       information needed by today's mobile Indians. Our goal is
                       to foster a strong sense of community among Indians,
@@ -111,12 +111,12 @@ const AboutUs = () => {
               <div className="box-shadow p-4 m-3">
               <h1 className="text-center">Founders</h1>
               <p className="text-center">
-                Our founders, Pratyush Kumar and Bidisha Ray, originally hailing
+                Our founders, <b> Pratyush Kumar and Bidisha Ray </b>, originally hailing
                 from New Delhi, now call London their home. Having traversed,
                 worked, and resided in over 12 countries, they possess a deep
                 understanding of the evolving requirements of the continually
                 expanding Indian diaspora. This website represents their
-                commitment to assisting the Global Indian Community by providing
+                commitment to assisting the <span className="green">Global Indian Community</span> by providing
                 pertinent and up-to-the-minute information.
               </p>
               </div>
