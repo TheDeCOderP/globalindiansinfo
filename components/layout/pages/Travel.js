@@ -35,8 +35,8 @@ const TravelsLayout = () => {
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
-            <h2>Exploring the World as a Global Indian</h2>
-            <p className="text-center">Are you a travel enthusiast eager to explore the world? Global Indians Info is your travel companion, providing you with travel guides, tips, and personal stories from fellow global Indians who have traversed the globe.</p>
+            <h1 className='text-center'>Exploring the World as a Global Indian</h1>
+            <p className="text-center">Are you a travel enthusiast eager to explore the world? Global Indians Info is your travel companion, providing you<br /> with travel guides, tips, and personal stories from fellow global Indians who have traversed the globe.</p>
           </section>
         </div>
       </div>

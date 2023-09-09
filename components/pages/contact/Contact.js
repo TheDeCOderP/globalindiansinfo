@@ -19,7 +19,7 @@ const Contact =() => {
         <div className="col-md-12">
           <section className="mb-5">
             <h1 className="text-center">Connect with Us</h1>
-            <p className="text-center">Thank you for visiting our website dedicated to the Indian diaspora. We value your interest and welcome your inquiries, feedback, and contributions. Connecting with our community is essential to us, and we look forward to hearing from you. Below, you'll find various ways to get in touch with us.</p>
+            <p className="text-center">Thank you for visiting our website dedicated to the Indian diaspora. We value your interest and welcome your inquiries, feedback, and contributions. <br/>Connecting with our community is essential to us, and we look forward to hearing from you. Below, you'll find various ways to get in touch with us.</p>
           </section>
         </div>
       </div>
@@ -69,7 +69,7 @@ const Contact =() => {
               <FaQuestionCircle color={'orange'} />
             </div>
                 <h4 className="text-center">General <span className="green"> Inquiries</span></h4>
-                <p className="text-center"> If you have any general questions, suggestions, or feedback, please feel free to reach out to our dedicated team at info@prabisha.com. We're here to assist you with any information you may need.</p>
+                <p className="text-center"> If you have any general questions, <br/>suggestions, or feedback, please feel free to reach out to our dedicated team <br /> at info@prabisha.com.</p>
                 </div>
               </div>
               
@@ -79,7 +79,7 @@ const Contact =() => {
               <FaUsers color={'orange'} />
             </div>
                 <h4 className="text-center">WhatsApp <span className="green"> Community Group</span></h4>
-                <p className="text-center">Join our lively WhatsApp community group to connect with fellow Global Indians from around the world. Share your stories, experiences, and insights.</p>
+                <p className="text-center">Join our lively WhatsApp community group <br />to connect with fellow Global Indians from around the world. Share your stories, <br />experiences, and insights.</p>
               </div>
               </div>
               <div className="col-md-4">
@@ -104,7 +104,7 @@ const Contact =() => {
               <FaHandshake color={'orange'} />
             </div>
                 <h4 className="text-center">Partner <span className="green"> with Us</span></h4>
-                <p className="text-center"> If you are an organization, business, or entity interested in collaborating or partnering with us to support the Indian diaspora community, please reach out to us at info@prabisha.com
+                <p className="text-center"> If you are an organization, business, or entity interested in collaborating or partnering with us to support the Indian diaspora community, please reach out to us <br /> at info@prabisha.com
 </p>
               </div>
               </div>
@@ -133,7 +133,7 @@ We're happy to provide information, interviews, and resources related to the Ind
         </div>
       </div>
       <div className="">
-        <p className="text-center">Connecting with the Indian diaspora is at the heart of our mission, and we are eager to hear from you. Whether you have questions, ideas, or simply want to say hello, we encourage you to reach out using one of the contact methods mentioned above. Your engagement is vital to building a strong and vibrant community, and we look forward to connecting with you. 
+        <p className="text-center">Connecting with the Indian diaspora is at the heart of our mission, and we are eager to hear from you. Whether you have questions, ideas, or simply , <br />want to say hellowe encourage you to reach out using one of the contact methods mentioned above. Your engagement is vital to building a strong<br/> and vibrant community, and we look forward to connecting with you. 
      Thank you for being a part of our journey at www.globalindiansinfo.com</p>
         
         <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " className=" whatsapp_button " role="button" aria-pressed="true" target="_blank">Join Group</a>

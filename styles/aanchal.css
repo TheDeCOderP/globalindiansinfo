@@ -1,7 +1,7 @@
 .jobs_page .job {
     background-color: var(--boxbg);
-    
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     
 }
 .jobs_page .box {

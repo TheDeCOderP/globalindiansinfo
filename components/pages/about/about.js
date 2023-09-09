@@ -26,7 +26,7 @@ const AboutUs = () => {
       id: 3,
       title: "Jobs",
       description:
-        "Explore the international job market with confidence, from job search tips to career advice.",
+        `Explore the international job market with confidence, from job search <br />tips to career advice.`,
       imagePath: "uploads/images/about/jobs.jpg",
       link: "/jobs",
     },
@@ -34,7 +34,7 @@ const AboutUs = () => {
       id: 4,
       title: "Business",
       description:
-        "Explore the global business landscape with strategies, success stories, and resources to help you expand your ventures.",
+        "Explore the global business landscape with strategies, success stories, and resources to help you expand  ventures.",
       imagePath: "uploads/images/about/business.jpg",
       link: "/business",
     },
@@ -42,7 +42,7 @@ const AboutUs = () => {
       id: 5,
       title: "Travel",
       description:
-        "Satiate your wanderlust with travel guides, tips, and personal stories from         fellow global Indians. ",
+        "Satiate your wanderlust with travel guides, tips, and personal  stories from         <br />fellow global Indians. ",
       imagePath: "uploads/images/about/travel.jpg",
       link: "/travel",
     },
@@ -97,7 +97,7 @@ const AboutUs = () => {
                       Our mission is to unite the Global Indian Community,
                       preserving and celebrating India's rich culture and
                       heritage on a global canvas, guided by the timeless
-                      principle of Vasudev Kutumbkam (The Whole World Is Our
+                      principle of <b> Vasudev Kutumbkam </b> (The Whole World Is Our
                       Family). We aim to create an interactive and user-friendly
                       platform that serves as the ultimate hub for all essential
                       information needed by today's mobile Indians. Our goal is
@@ -132,7 +132,7 @@ const AboutUs = () => {
                     ></Image>
 
                     <div className="founders_social">
-                      <a
+                      <a className="button p-3"
                         href="https://www.linkedin.com/in/pratyushk/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -140,13 +140,12 @@ const AboutUs = () => {
                         <FaLinkedin className="linkedin-icon" size={30} />
                         Visit Linkedin
                       </a>
-                      <a
+                      <a className="button p-3"
                         href="https://www.pratyushkumar.co.uk/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaGlobe className="linkedin-icon" size={30} /> Visit
-                        Website
+                        <FaGlobe className="linkedin-icon" size={30} /> www.pratyushkumar.co.uk
                       </a>
                     </div>
                   </div>
@@ -198,7 +197,7 @@ const AboutUs = () => {
                       International Economics.
                     </p>
                     <div className="founders_social">
-                      <a
+                      <a className="button p-3"
                         href="https://www.linkedin.com/in/bidisharay/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -206,13 +205,12 @@ const AboutUs = () => {
                         <FaLinkedin className="linkedin-icon" size={30} />
                         Visit Linkedin
                       </a>
-                      <a
+                      <a className="button p-3"
                         href="https://bidisharay.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaGlobe className="linkedin-icon" size={30} /> Visit
-                        Website
+                        <FaGlobe className="linkedin-icon" size={30} />www.bidisharay.com
                       </a>
                     </div>
                   </div>
@@ -234,7 +232,7 @@ const AboutUs = () => {
         </Row>
       
       
-        <div className="row">
+        <div className="row mt-5">
           {WhatweOffer.map((item) => (
             <div className="col-sm-12 col-md-4 col-lg-4 mb-4" key={item.id}>
               <Link href={item.link}>
@@ -249,7 +247,10 @@ const AboutUs = () => {
                 </div>
                 <div className="body text-dark">
                   <h4 className="text-center">{item.title}</h4>
-                  <p className=" text-center">{item.description}</p>
+                  <div
+     className="text-center"
+         dangerouslySetInnerHTML={{ __html: item.description }}
+  />
                 </div>
               </Link>
             </div>

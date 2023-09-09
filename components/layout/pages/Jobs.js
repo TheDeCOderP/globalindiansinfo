@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaLinkedin, FaPencilAlt, FaLightbulb , FaBolt,FaFlag} from 'react-icons/fa';
+import { FaWhatsapp, FaLinkedin, FaGlobe, FaLightbulb , FaBolt,FaFlag} from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -31,7 +31,7 @@ const JobsLayout = () => {
 
   const sections = [
     {
-      title: " Join UK Jobs WhatsApp Group",
+      title: " Join UK Jobs<br/> WhatsApp Group",
       content:"",
       buttonText: " Join WhatsApp Group",
       buttonLink: "https://chat.whatsapp.com/H2kjm74Dao9FNT0xWn6P9s",
@@ -39,7 +39,7 @@ const JobsLayout = () => {
  
     },
     {
-      title: "For Hiring Support - UK Recruiters Group",
+      title: "For Hiring Support<br /> UK Recruiters Group",
       content:"  ",
       
       buttonText: " Join Recruiters Group",
@@ -48,13 +48,14 @@ const JobsLayout = () => {
     },
 
     {
-      title: "Enhance Your Resume with Expert Review & Writing Support",
-      buttonText: " Get Started",
+      title: "Enhance Your Resume with <br />Expert Review & Writing Support",
+      
+      buttonText: " Visit Website",
       buttonLink: "https://www.bidisharay.com",
-      icon: <FaPencilAlt size={20} className="ml-1" />,
+      icon: <FaGlobe  size={20} className="ml-1" />,
     },
     {
-      title: "Join UK Jobs & Internships LinkedIn Group",
+      title: "Join UK Jobs & Internships <br /> LinkedIn Group",
 
       buttonText: " Join LinkedIn Group",
       buttonLink: "https://www.linkedin.com/groups/12883381/",
@@ -62,11 +63,28 @@ const JobsLayout = () => {
     },
   ];
   return (
+    <>
+    <div className="jobs_page row" 
+    >
+            {sections.map((section, index) => (
+              <div className="col-md-6 text-center " key={index}>
+                <section className="mb-5">
+                  <div className="body text-dark h-165" style={{ backgroundColor: 'ffedd8' }}>
+                  
+                  <div className="text-center"
+         dangerouslySetInnerHTML={{ __html: section.title }} />
+                  <Link href={section.buttonLink} target="_blank"> <button className="button">{section.icon}{section.buttonText}</button></Link>
+                  </div>
+                </section>
+              </div>
+            ))}
+          </div> 
+    
     <div className="jobs_page text-center">
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
-            <h2>Exploring International Career Opportunities</h2>
+            <h1 className='text-center'>Exploring International Career Opportunities</h1>
             <p className="text-center">Are you a professional looking to take your career to the global stage? "Global Indians Info" is your trusted resource for international job opportunities, career advice, and professional growth. Our Jobs section is designed to empower you on your path to success.</p>
           </section>
         </div>
@@ -84,7 +102,7 @@ const JobsLayout = () => {
             </section>
           </div>
         ))}
-
+   
         <div className="">
           <section className=" job mb-5">
             <div className="row pt-4 pb-2 ">
@@ -168,21 +186,9 @@ const JobsLayout = () => {
           </section>
         </div>
       </div>
-      <div className="jobs_page row" 
->
-        {sections.map((section, index) => (
-          <div className="col-md-6 text-center " key={index}>
-            <section className="mb-5">
-              <div className="body text-dark h-165" style={{ backgroundColor: 'ffedd8' }}>
-              <h4>{section.title}</h4>
-              <p className="text-center">{section.content}</p>
-              <Link href={section.buttonLink} target="_blank"> <button className="button">{section.icon}{section.buttonText}</button></Link>
-              </div>
-            </section>
-          </div>
-        ))}
-      </div>  
+ 
     </div>
+    </>
   );
 };
 export default JobsLayout;

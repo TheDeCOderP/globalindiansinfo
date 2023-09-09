@@ -58,10 +58,10 @@ const Partner = () => {
   return (
     <>
       <div className="section container bg-fafafa pt-3">
-        <h2 className="text-center">
+        <h1 className="text-center">
           Unlock New Opportunities: Reach Indian Expats with Your Services on 
           <a href="https://www.globalindiansinfo.com"> GlobalIndiansInfo.com</a>
-        </h2>
+        </h1>
         <p>
           <b>Dear Esteemed Business Owners,</b>
           <br />
@@ -123,10 +123,10 @@ const Partner = () => {
       <div className="partners container">
         <div className="row text-center">
         
-        <h2 className="text-center pb-3">
+        <h1 className="text-center pb-3">
           Why Choose{" "}
           <a href="https://www.globalindiansinfo.com">GlobalIndiansInfo.com</a>
-        </h2>
+        </h1>
       
           {benefits.map((benefit, index) => (
             <div className="col-sm-12 col-lg-4 col-md-4"  key={index}> 

@@ -11,17 +11,17 @@ const BusinessLayout  = () => {
     },
     {
       title: 'Success Stories',
-      content: 'Inspiring stories of Indian entrepreneurs who have achieved global success.',
+      content: 'Inspiring stories of Indian entrepreneurs who have achieved <br />global success.',
       imagePath: 'uploads/images/jobs/1.jpg',
     },
     {
       title: 'Resources',
-      content: 'Tools and resources to help you navigate the complexities of international business.',
+      content: 'Tools and resources to help you navigate the complexities of <br />international business.',
       imagePath: 'uploads/images/jobs/R.jpg',
     },
     {
       title: 'Networking',
-      content: 'Connect with fellow Indian entrepreneurs who share your global ambitions.',
+      content: 'Connect with fellow Indian entrepreneurs who share your<br/> global ambitions.',
       imagePath: 'uploads/images/jobs/networking.webp',
     },
   ];
@@ -55,8 +55,8 @@ const BusinessLayout  = () => {
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
-            <h2>Globalizing Your Business Ventures</h2>
-            <p className="text-center">Are you an Indian entrepreneur with dreams of taking your business to international markets we are your dedicated partner in helping you expand and thrive on a global scale. Our Business section provides you with the insights and resources you need to succeed in the global business landscape.</p>
+            <h1 className="text-center">Globalizing Your Business Ventures</h1>
+            <p className="text-center">Are you an Indian entrepreneur with dreams of taking your business to international markets we are your dedicated partner in helping you expand and <br />thrive on a global scale. Our Business section provides you with the insights and resources you need to succeed in the global business landscape.</p>
           </section>
         </div>
       </div>
@@ -67,7 +67,10 @@ const BusinessLayout  = () => {
               <Image src={`/${section.imagePath}`} alt={section.title} className="aspect-ratio" width={400} height={300} />
               <div className="body text-dark">
               <h4>{section.title}</h4>
-              <p className="text-center">{section.content}</p>
+              <div
+     className="text-center"
+         dangerouslySetInnerHTML={{ __html: section.content }}
+  />
               </div>
             </section>
           </div>
@@ -103,7 +106,7 @@ const BusinessLayout  = () => {
   
         <div className="row">
           <div className="col-md-12 m-4">
-            <h2 className="text-center mt-2">Business Networking</h2>
+            <h1 className="text-center mt-2">Business Networking</h1>
             <h5 className="text-center mt-4">Presenting a fast-growing and vibrant UK based Business Network...</h5>
             <div className="text-center mt-4">
               <p className="text-center"> 

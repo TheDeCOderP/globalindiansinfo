@@ -7,7 +7,7 @@ const EventsLayout = () => {
     {
    "id": 1,
    "title": "Submit an Event",
-   "description": "Do you have an event catering to the Global Indians community? Mail us the details of the events and we'll consider featuring it on our Events page, helping you reach a broader audience.",
+   "description": "Do you have an event catering to the Global Indians community? Mail us the details of the events and we'll consider featuring it on our Events page.",
    "imagePath":"uploads/images/jobs/submit-button.png",
    "email": "Email: info@prabisha.com.",
 
@@ -16,7 +16,7 @@ const EventsLayout = () => {
  {
    "id": 2,
    "title": "Stay Connected",
-   "description": "Follow us on social media, subscribe to our newsletter, or join our community forum to stay up-to-date with the latest event announcements, highlights, and     discussions .",
+   "description": "Follow us on social media, subscribe to our newsletter, or join our community forum to stay up-to-date with the latest event announcements, highlights, and     discussions",
    "imagePath": "uploads/images/jobs/stay.jpeg",
    "socialMediaLink":"https://www.facebook.com/groups/globalindiansinfo/",
   
@@ -25,7 +25,7 @@ const EventsLayout = () => {
  {
    "id": 3,
    "title": "Contact Us",
-   "description":"If you have any questions, suggestions, or if you're interested in partnering with us for an event, please feel free to reach out to our team. We're here to assist you.",
+   "description":"If you have any questions, suggestions, or if you're interested in partnering with us for an event, please feel free to reach out to our team. We're here to assist you. ",
    "imagePath": "uploads/images/jobs/contact.jpg",
    "email": "Email: info@prabisha.com."
   
@@ -34,12 +34,12 @@ const EventsLayout = () => {
   return (
     
  <>
- <div className="jobs_page container text-center">
+ <div className="jobs_page   text-center">
     <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
-            <h2>Welcome to the Global Indians Info Events Page!</h2>
-            <p className="text-center"> Here, we keep you updated on a wide range of events that cater to the Indian diaspora worldwide. Whether you're interested in cultural festivals, networking opportunities, educational seminars, or business conferences, you'll find it all right here.
+            <h1 className="text-center">Welcome to the Global Indians Info Events Page!</h1>
+            <p className="text-center"> Here, we keep you updated on a wide range of events that cater to the Indian diaspora worldwide. Whether you're interested in cultural  <br/>festivals,networking opportunities, educational seminars, or business conferences, you'll find it all right here.
 </p>
           </section>
         </div>
@@ -86,7 +86,7 @@ const EventsLayout = () => {
 
 
 <div className="container">
-<h1 className="mt-5 mb-5">Event Categories</h1>
+<h1 className=" text-center mt-5 mb-5">Event Categories</h1>
           <section className=" job mb-5">
             <div className="row ">
               <div className=" col-sm-12 col-md-3">
