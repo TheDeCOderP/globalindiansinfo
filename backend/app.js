@@ -457,6 +457,130 @@ app.get('/api/articles/:slug', async (req, res) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* business listing api start */
+
+
+// Multer configuration for handling image uploads
+let businessStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads/business'); // Specify your image upload folder
+  },
+  filename: (req, file, callback) => {
+    const uniqueSuffix2 = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix2 + path.extname(file.originalname));
+  },
+});
+
+const businessupload = multer({ storage : businessStorage });
+
+app.use(express.json());
+app.use(express.static('public'));
+
+// Endpoint to post a new blog
+app.post('/api/business', businessupload.single('image'), async (req, res) => {
+  try {
+    const { name, type , location } = req.body;
+    const status  = false;
+    const businessimagepath = req.file ? req.file.filename : null;
+
+    const [results] = await db.query('INSERT INTO business_listings ( name, type,location, status , imagepath) VALUES ( ?, ?, ?, ? , ?)', [name,type, location, status,  businessimagepath,]);
+    const businessId = results.id;
+    res.status(201).json({ message: 'Business Listing Uploaded Successfully ', businessId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+app.get('/api/business', async (req, res) => {
+  try {
+    
+ // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM business_listings ORDER BY id DESC');
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+// PUT route to update the status of a business listing by businessId
+app.put('/api/business/:businessId', async (req, res) => {
+  try {
+    const { businessId } = req.params; // Get the businessId from the URL parameter
+    const { status } = req.body; // Get the new status from the request body
+
+    // You can add validation logic here to ensure the status is either 'Active' or 'Inactive'
+
+
+    // Update the status in the database based on businessId
+    const [results] = await db.execute('UPDATE business_listings SET status = ? WHERE id = ?', [status, businessId]);
+
+   // Release the connection back to the pool
+
+    if (results.affectedRows === 1) {
+      res.status(200).json({ message: 'Business listing status updated successfully' });
+    } else {
+      res.status(404).json({ message: 'Business listing not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// DELETE route to delete a business listing by businessId
+app.delete('/api/business/:businessId', async (req, res) => {
+  try {
+    const { businessId } = req.params; // Get the businessId from the URL parameter
+
+
+    // Delete the business listing from the database based on businessId
+    const [results] = await db.execute('DELETE FROM business_listings WHERE id = ?', [businessId]);
+
+
+
+    if (results.affectedRows === 1) {
+      res.status(204).send(); // No Content
+    } else {
+      res.status(404).json({ message: 'Business listing not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
+
+
+/* business listing api end */
+
+
+
     
 
 
