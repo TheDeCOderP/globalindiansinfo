@@ -191,11 +191,11 @@ section.banner_section::before {
       }
 
       .other_pages_banner {
-        height: 300px;
+        height: 150px;
        
       }
       .other_pages_banner::before {
-        height: 300px;
+        height: 150px;
        
       }
       div#responsive-navbar-nav {

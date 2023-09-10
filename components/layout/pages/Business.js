@@ -51,7 +51,7 @@ const BusinessLayout  = () => {
 
 
   return (
-    <div className="section text-center">
+    <div className=" text-center">
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">
