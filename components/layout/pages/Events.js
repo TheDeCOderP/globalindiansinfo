@@ -44,9 +44,9 @@ const EventsLayout = () => {
           </section>
         </div>
       </div>
-      <div className="event_page container">
-      <div className="event_row">
-        <div className=" col-md-6">
+      <div className="event_page">
+      <div className="event_row row">
+        <div className="col-sm-12 col-md-6">
       <div className="image-box">
         <Image
           src="/uploads/images/jobs/upp.jpg"
@@ -56,7 +56,7 @@ const EventsLayout = () => {
         />
       </div>
     </div>
-        <div className="event_content  col-md-6">
+        <div className="event_content col-sm-12  col-md-6">
           <h2>Upcoming Events</h2>
           <p>
           Stay in the loop with our list of upcoming events that you won't want to miss. From celebratory festivals to thought-provoking webinars, discover exciting opportunities to connect with fellow Global Indians and engage with our vibrant community.
@@ -65,13 +65,13 @@ const EventsLayout = () => {
         </div>
       </div>
       <div className="event_row">
-        <div className="event_content col-md-6">
+        <div className="event_content col-sm-12 col-md-6">
           <h2>Past Events</h2>
           <p>
           Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking experiences that have enriched the Global Indians Info community.
           </p>
         </div>
-        <div className=" col-md-6">
+        <div className="col-sm-12 col-md-6">
       <div className="image-box">
         <Image
           src="/uploads/images/jobs/ideas.jpg" 
