@@ -2,7 +2,7 @@ import AllArticles from '../../components/pages/articles/all';
 
 const Articles = () => {
     return (
-        <><AllArticles/></>
+        <div className="section"><AllArticles/></div>
     )
 }
 Articles.layout = "other"
