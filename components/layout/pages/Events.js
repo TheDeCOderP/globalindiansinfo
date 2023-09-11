@@ -35,7 +35,7 @@ const EventsLayout = () => {
   return (
     
  <>
- <div className="jobs_page   text-center">
+ <div className="jobs_page  text-center">
     <div className="row">
         <div className="col-md-12 ">
           <section className="mb-5">
@@ -65,7 +65,7 @@ const EventsLayout = () => {
           </p>
         </div>
       </div>
-      <div className="event_row">
+      <div className="event_row ">
         <div className="event_content col-sm-12 col-md-6">
           <h2>Past Events</h2>
           <p>

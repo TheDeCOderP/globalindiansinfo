@@ -133,6 +133,7 @@ const Partner = () => {
             <BenefitItem
               title={benefit.title}
               description={benefit.description}
+              
               image={benefit.image}
             />
             </div>
