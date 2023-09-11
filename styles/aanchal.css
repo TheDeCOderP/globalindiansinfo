@@ -82,24 +82,6 @@
 
 
 
-.event_row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0;
-}
-
-
-.event_content {
-  flex: 1;
-  padding: 20px;
-  background-color: #f5f5f5; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-  text-align: left;
-  max-width: 50%; 
-  box-sizing: border-box;
-}
-
 
 .get_i p {
 
@@ -114,7 +96,9 @@ margin: 8px;
    color: #273171;
 }
 
-
+.event_para{
+  padding: 10px;
+}
 
 /* Content.css */
 
