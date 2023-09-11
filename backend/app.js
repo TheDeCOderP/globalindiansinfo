@@ -6,6 +6,24 @@ const bodyParser = require('body-parser');
 const cors = require('cors'); 
 const port = process.env.PORT || 5001;
 const db = require('./db.js');
+const fs = require('fs');
+
+const port1 = 'http://localhost:5001';
+const app = express();
+
+
+
+
+app.use('/uploads', express.static('uploads'));
+app.use(cors({
+  origin: "*"
+}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
+
+
+app.use(cors());
+
 
 
 // Configure Nodemailer for sending emails
@@ -20,16 +38,59 @@ const transporter = nodemailer.createTransport({
 });
 
 
-const app = express();
-app.use('/uploads', express.static('uploads'));
-app.use(cors({
-  origin: "*"
-}));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
 
 
-app.use(cors());
+
+// Multer configuration for handling media uploads
+const mediaStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads/media'); // Specify your media upload folder
+  },
+  filename: (req, file, callback) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  },
+});
+
+const mediaUpload = multer({ storage: mediaStorage });
+
+// Endpoint to upload media files
+app.post('/api/media', mediaUpload.single('file'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    const mediaPath = req.file.filename;
+    res.status(201).json({ message: 'Media file uploaded successfully', mediaPath });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+// Endpoint to get the list of media files
+app.get('/api/media', async (req, res) => {
+  try {
+    // You should list the files in the 'uploads/media' directory
+    const mediaDirectory = path.join(__dirname, 'uploads', 'media');
+    const files = await fs.promises.readdir(mediaDirectory);
+
+    // Return the list of media files
+    res.json(files);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
 
 
 // Multer configuration for handling image uploads
