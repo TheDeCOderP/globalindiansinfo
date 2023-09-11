@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import Link from 'next/link';
 import { FaFlag, FaBusinessTime, FaStar,FaUsers, FaGraduationCap} from 'react-icons/fa';
 const EventsLayout = () => {
@@ -36,7 +37,7 @@ const EventsLayout = () => {
  <>
  <div className="jobs_page   text-center">
     <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 ">
           <section className="mb-5">
             <h1 className="text-center">Welcome to the Global Indians Info Events Page!</h1>
             <p className="text-center"> Here, we keep you updated on a wide range of events that cater to the Indian diaspora worldwide. Whether you're interested in cultural  <br/>festivals,networking opportunities, educational seminars, or business conferences, you'll find it all right here.
@@ -56,7 +57,7 @@ const EventsLayout = () => {
         />
       </div>
     </div>
-        <div className="event_content col-sm-12  col-md-6">
+        <div className="event_content col-sm-12 col-md-6">
           <h2>Upcoming Events</h2>
           <p>
           Stay in the loop with our list of upcoming events that you won't want to miss. From celebratory festivals to thought-provoking webinars, discover exciting opportunities to connect with fellow Global Indians and engage with our vibrant community.

@@ -31,7 +31,7 @@ const TravelsLayout = () => {
 
  
   return (
-    <div className="jobs_page container text-center">
+    <div className="jobs_page  text-center">
       <div className="row">
         <div className="col-md-12">
           <section className="mb-5">

@@ -142,7 +142,7 @@ const JobsLayout = () => {
         <div className="col-md-12">
           <section className=" mb-5">
             <h1 className="text-center">🚀 Why Choose Our Job Page?</h1>
-            <div className="row pt-3">
+            <div className=" body text-dark row pt-3">
               <div className="col-md-4">
                 <Image src="/uploads/images/jobs/global.jpeg" alt="Image 1" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Global Reach</h4>
@@ -166,7 +166,7 @@ const JobsLayout = () => {
         <div className="col-md-12">
           <section className=" mb-5">
             <h1 className="text-center">🌐 Discover a World of Possibilities</h1>
-            <div className="row pt-3">
+            <div className="body text-dark row pt-3">
               <div className="col-md-4">
                 <Image src="/uploads/images/jobs/a.webp" alt="Image 1" width={400} height={400} className="aspect-ratio cover" />
                 <h4 className="text-center">Career Odyssey</h4>

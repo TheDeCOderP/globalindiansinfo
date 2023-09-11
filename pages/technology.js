@@ -37,7 +37,7 @@ const Tech = () => {
         <div className='content_box'>
           <h3 >News and Updates</h3>
           <p className="text-dark text-center">
-            Stay up-to-date with the latest tech trends and developments in India. Our news section covers everything from emerging startups to government initiatives, ensuring you're well-informed about the tech landscape in the homeland.
+            Stay up-to-date with the latest tech trends and developments in India. Our news section covers everything from emerging startups to government initiatives, ensuring you're well-informed about the tech landscape in<br /> the homeland.
      </p></div>
           </Link>
         </Col>
@@ -75,7 +75,7 @@ const Tech = () => {
         />      <div className='content_box'>
           <h3>Tech Jobs</h3>
           <p className="text-center">
-            Are you seeking career opportunities in the tech sector? Browse through our job listings to find exciting openings in India, the United States, Canada, the United Kingdom, and other countries with significant Indian communities.
+            Are you seeking career opportunities in the tech sector? Browse through our job listings to find exciting openings in India, the United States, Canada, the United Kingdom, and other countries with significant<br /> Indian communities.
           </p></div>
         </Col>
         <Col md={6}>

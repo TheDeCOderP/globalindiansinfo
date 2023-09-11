@@ -129,9 +129,8 @@ const Partner = () => {
         </h1>
       
           {benefits.map((benefit, index) => (
-            <div className="col-sm-12 col-lg-4 col-md-4"  key={index}> 
+            <div className=" col-sm-12 col-lg-4 col-md-4"  key={index}> 
             <BenefitItem
-             
               title={benefit.title}
               description={benefit.description}
               image={benefit.image}
