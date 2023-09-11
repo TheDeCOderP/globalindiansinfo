@@ -45,15 +45,15 @@ const EventsLayout = () => {
           </section>
         </div>
       </div>
-      <div className="event_page">
+      {/* <div className="event_page">
       <div className="event_row row">
         <div className="col-sm-12 col-md-6">
       <div className="image-box">
         <Image
           src="/uploads/images/jobs/upp.jpg"
           alt="Partner with Us"
-          width={400} height={300}
-          className="img-fluid"
+          width={400} height={400}
+          className="aspect-ratio"
         />
       </div>
     </div>
@@ -78,13 +78,53 @@ const EventsLayout = () => {
           src="/uploads/images/jobs/ideas.jpg" 
           alt="Partner with Us"
           width={400} height={300}
-          className="img-fluid"
+          className="aspect-ratio"
         />
       </div>
     </div>
       </div>
+    </div> */}
+<div className="container">
+    <div className="event_page">
+  <div className="event_row row">
+    <div className="col-sm-12 col-md-6">
+      <div className="image-box">
+        <Image
+          src="/uploads/images/jobs/upp.jpg"
+          alt="Partner with Us"
+          width={400}
+          height={400}
+          className="aspect-ratio"
+        />
+      </div>
+      <div className="body text-dark ">
+      <h2>Upcoming Events</h2>
+      <p className="event_para text-center">
+        Stay in the loop with our list of upcoming events that you won't want to miss. From celebratory festivals to thought-provoking webinars, discover exciting opportunities to connect with fellow Global Indians and engage with our vibrant community.
+      </p>
+      </div>
     </div>
-
+    
+    <div className="col-sm-12 col-md-6">
+      <div className="image-box">
+        <Image
+          src="/uploads/images/jobs/ideas.jpg"
+          alt="Partner with Us"
+          width={400}
+          height={300}
+          className="aspect-ratio"
+        />
+      </div>
+      <div className="body text-dark">
+      <h2>Past Events</h2>
+      <p className="event_para text-center">
+        Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking  experiences that have enriched the Global Indians Info <br /> community.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 <div className="container">
 <h1 className=" text-center mt-5 mb-5">Event Categories</h1>
