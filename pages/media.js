@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import globalConfig from '@/config';
-import { Container, Row, Col, Form, Button, Card, Image } from 'react-bootstrap'; // Import Bootstrap components
+import 'react-image-lightbox/style.css'; // Import the CSS for react-image-lightbox
+import Lightbox from 'react-image-lightbox'; // Import the Lightbox component
 
 const port = globalConfig.port;
+
 
 function MediaUpload() {
   const [file, setFile] = useState(null);
   const [mediaFiles, setMediaFiles] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     async function fetchMedia() {
@@ -51,47 +55,75 @@ function MediaUpload() {
     alert('Image link copied to clipboard');
   };
 
-  return (
-    <Container>
-      <h1 className="mt-5">Media Upload and Display</h1>
-      <Row className="mt-4">
-        <Col>
-          <Form>
-            <Form.Group>
-              <Form.File
-                id="mediaFile"
-                label="Choose an image"
-                accept="image/*"
-                onChange={handleFileChange}
-              />
-            </Form.Group>
-          </Form>
-        </Col>
-        <Col>
-          <Button variant="primary" onClick={handleUpload}>
-            Upload
-          </Button>
-        </Col>
-      </Row>
+  const handleDelete = async (mediaPath) => {
+    try {
+      await axios.delete(`${port}/api/media/${mediaPath}`);
+      // After successful delete, fetch the updated media list
+      const response = await axios.get(`${port}/api/media`);
+      setMediaFiles(response.data);
+      alert('Media file deleted successfully');
+    } catch (error) {
+      console.error('Error deleting media file', error);
+      alert('Error deleting media file');
+    }
+  };
 
-      <Row className="mt-4">
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxIndex(-1);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="container">
+      <h1 className="mt-4">Media Upload and Display</h1>
+      <div className="mt-4 mb-3">
+        <input type="file" accept="image/*" onChange={handleFileChange} className="form-control-file" />
+        <button onClick={handleUpload} className="btn btn-primary mt-3">
+          Upload
+        </button>
+      </div>
+
+      <div className="row">
         {mediaFiles.map((mediaPath, index) => (
-          <Col key={index} md={4} className="mb-4">
-            <Card>
-              <Card.Img src={`${port}/uploads/media/${mediaPath}`} alt={`Media ${index}`} />
-              <Card.Body>
-                <Button
-                  variant="secondary"
-                  onClick={() => copyLinkToClipboard(`${port}/uploads/media/${mediaPath}`)}
-                >
+          <div key={index} className="col-md-4 mb-4">
+            <div className="card">
+              <img
+                src={`${port}/uploads/media/${mediaPath}`}
+                alt={`Media ${index}`}
+                className="card-img-top"
+                onClick={() => openLightbox(index)} // Open the Lightbox on image click
+                style={{ cursor: 'pointer' }} // Add pointer cursor to indicate clickability
+              />
+              <div className="card-body">
+                <button onClick={() => copyLinkToClipboard(`${port}/uploads/media/${mediaPath}`)} className="btn btn-primary mr-2">
                   Copy Link
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
+                </button>
+                <button onClick={() => handleDelete(mediaPath)} className="btn btn-danger">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
-      </Row>
-    </Container>
+      </div>
+
+      {/* Lightbox component */}
+      {isOpen && (
+        <Lightbox
+          mainSrc={`${port}/uploads/media/${mediaFiles[lightboxIndex]}`}
+          nextSrc={`${port}/uploads/media/${mediaFiles[(lightboxIndex + 1) % mediaFiles.length]}`}
+          prevSrc={`${port}/uploads/media/${mediaFiles[(lightboxIndex + mediaFiles.length - 1) % mediaFiles.length]}`}
+          onCloseRequest={closeLightbox}
+          onMovePrevRequest={() => setLightboxIndex((lightboxIndex + mediaFiles.length - 1) % mediaFiles.length)}
+          onMoveNextRequest={() => setLightboxIndex((lightboxIndex + 1) % mediaFiles.length)}
+        />
+      )}
+    </div>
   );
 }
 

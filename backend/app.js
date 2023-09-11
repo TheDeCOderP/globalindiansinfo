@@ -89,6 +89,34 @@ app.get('/api/media', async (req, res) => {
 
 
 
+// Add this code to your existing Express.js application
+
+// Endpoint to delete a media file by filename
+app.delete('/api/media/:filename', async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const mediaPath = path.join(__dirname, 'uploads', 'media', filename);
+
+    // Check if the file exists
+    const fileExists = await fs.promises.access(mediaPath, fs.constants.F_OK).then(() => true).catch(() => false);
+
+    if (!fileExists) {
+      return res.status(404).json({ message: 'Media file not found' });
+    }
+
+    // Delete the file
+    await fs.promises.unlink(mediaPath);
+
+    res.status(200).json({ message: 'Media file deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
 
 
 
