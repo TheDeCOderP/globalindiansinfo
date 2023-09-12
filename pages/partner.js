@@ -86,7 +86,7 @@ const Partner = () => {
   <div className="row">
     <div className="col-md-6">
       <div className="text-box">
-        <h2 className="mb-5">
+        <h2 className="mb-5 text-center">
           About{" "}
           <a
             href="https://www.globalindiansinfo.com"
