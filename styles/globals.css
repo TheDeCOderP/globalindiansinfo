@@ -11,6 +11,11 @@
 }
 
 
+.blog_single_content a {
+    overflow: hidden!important;
+    display: block;
+}
+
 .content_box {
   background-color: var(--boxbg);
   padding:10px;
