@@ -10,10 +10,9 @@
   --boxbg:#ffedd8;
 }
 
-
 .blog_single_content a {
-    overflow: hidden!important;
-    display: block;
+  overflow: hidden;
+  display: block;
 }
 
 .content_box {
