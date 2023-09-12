@@ -31,7 +31,7 @@ const JobsLayout = () => {
 
   const sections = [
     {
-      title: " Join UK Jobs<br/> WhatsApp Group",
+      title: "  <b>Join UK Jobs<br/>WhatsApp Group<b/>",
       content:"",
       buttonText: " Join WhatsApp Group",
       buttonLink: "https://chat.whatsapp.com/H2kjm74Dao9FNT0xWn6P9s",
@@ -39,7 +39,7 @@ const JobsLayout = () => {
  
     },
     {
-      title: "For Hiring Support<br /> UK Recruiters Group",
+      title: "<b>For Hiring Support<br /> UK Recruiters Group</b>",
       content:"  ",
       
       buttonText: " Join Recruiters Group",
@@ -48,14 +48,14 @@ const JobsLayout = () => {
     },
 
     {
-      title: "Enhance Your Resume with <br />Expert Review & Writing Support",
+      title: "<b>Enhance Your Resume with <br />Expert Review & Writing Support</b>",
       
       buttonText: " Visit Website",
       buttonLink: "https://www.bidisharay.com",
       icon: <FaGlobe  size={20} className="ml-1" />,
     },
     {
-      title: "Join UK Jobs & Internships <br /> LinkedIn Group",
+      title: "<b>Join UK Jobs & Internships <br /> LinkedIn Group</b>",
 
       buttonText: " Join LinkedIn Group",
       buttonLink: "https://www.linkedin.com/groups/12883381/",
