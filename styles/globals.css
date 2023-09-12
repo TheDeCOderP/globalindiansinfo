@@ -1102,7 +1102,15 @@ h1.text-center:after {
   margin: 20px auto;
   animation: expandContract 4s linear infinite; /* 2s duration, linear timing, infinite loop */
 }
-
+span.rounded-circle {
+  padding: .5rem!important;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 @keyframes expandContract {
   0% {
     width: 100px;

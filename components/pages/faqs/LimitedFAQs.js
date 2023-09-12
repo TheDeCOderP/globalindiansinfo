@@ -56,6 +56,12 @@ const LimitedFAQs = () => {
       title: 'My parents are visiting from India for 3 months and I am thinking about taking insurance for them. Could anyone please suggest which one to take with their experience?',
       content: 'Care is the only insurance offering cover for pre-existing conditions. Another one to consider is the insurance policy from Tata AIG.',
     },
+    {
+      title: 'My mother-in-law has run out of a prescription and she can only get it on Monday.It is for blood pressure medicine Amilodapine 5mg. The pharmacy isn’t issuing it without a prescription.',
+      content: 'Call 111 and on her NHS number they will send a prescription to the pharmacy.',
+    },
+    
+
     
   ];
 
