@@ -89,7 +89,7 @@ const EventsLayout = () => {
   <div className="event_row row">
     <div className="col-sm-12 col-md-6">
       <div className="image-box">
-        <img
+        <Image
           src="/uploads/images/jobs/upp.jpg"
           alt="Partner with Us"
           width={400}
@@ -107,8 +107,8 @@ const EventsLayout = () => {
     
     <div className="col-sm-12 col-md-6">
       <div className="image-box">
-        <img
-          src="/uploads/images/jobs/ideas.jpg"
+        <Image
+          src="/uploads/images/jobs/Ideas.jpg"
           alt="Partner with Us"
           width={400}
           height={300}
