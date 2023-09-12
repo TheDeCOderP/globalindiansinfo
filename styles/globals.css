@@ -496,7 +496,7 @@ button.navbar-toggler.collapsed {
   color: #399238;
 }
 
-section.categories_section {
+section.categories_section , section.blogs_section {
   background: url(/uploads/images/blog_bg.png);
   background-position: center;
   background-size: cover;
