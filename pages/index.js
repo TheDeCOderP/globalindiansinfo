@@ -10,7 +10,7 @@ import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
 import Content from '../components/pages/home/Content'
 import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
-import { useRouter } from 'next/router'; 
+import HomePageBlogs from '../components/pages/blogs/home-blogs'
 
 
 const HomePage = () => {
@@ -43,7 +43,9 @@ const HomePage = () => {
     <section className="section faq_section">
       <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
       <LimitedFAQs />
-   
+    </section>
+    <section className="section blogs_section">
+      <HomePageBlogs />
     </section>
   
     <section className="sponsors_section">
