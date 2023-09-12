@@ -109,7 +109,7 @@ const EventsLayout = () => {
     <div className="col-sm-12 col-md-6">
       <div className="image-box">
         <Image
-          src="/uploads/images/jobs/ideas.jpg"
+          src="/uploads/images/jobs/Ideas.jpg"
           alt="Partner with Us"
           width={400}
           height={300}
@@ -119,7 +119,7 @@ const EventsLayout = () => {
       <div className="body text-dark">
       <h2>Past Events</h2>
       <p className="event_para text-center">
-        Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking  experiences that have enriched the Global Indians Info <br /> community.
+        Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking  experiences that have enriched the Global Indians Info community.
       </p>
       </div>
     </div>

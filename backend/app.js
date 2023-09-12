@@ -1,18 +1,124 @@
 const express = require('express');
 const multer = require('multer');
-const mysql = require('mysql2/promise');
+const nodemailer = require('nodemailer');
 const path = require('path');
-const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors'); 
 const port = process.env.PORT || 5001;
 const db = require('./db.js');
+const fs = require('fs');
+
+const port1 = 'http://localhost:5001';
+const app = express();
 
 
-// Serve static files from the 'uploads' directory
+
+
 app.use('/uploads', express.static('uploads'));
+app.use(cors({
+  origin: "*"
+}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
-const cors = require('cors'); 
 
 app.use(cors());
+
+
+
+// Configure Nodemailer for sending emails
+const transporter = nodemailer.createTransport({
+  host: 'consulting.prabisha.com', // SMTP server hostname
+  port: 587, // Port for the SMTP server (587 is commonly used for TLS)
+  secure: false, // Set to true if your SMTP server uses SSL/TLS
+  auth: {
+    user: 'info@prabisha.com', // Your email address
+    pass: 'ElzAeL6n', // Your email password
+  },
+});
+
+
+
+
+
+// Multer configuration for handling media uploads
+const mediaStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads/media'); // Specify your media upload folder
+  },
+  filename: (req, file, callback) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  },
+});
+
+const mediaUpload = multer({ storage: mediaStorage });
+
+// Endpoint to upload media files
+app.post('/api/media', mediaUpload.single('file'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    const mediaPath = req.file.filename;
+    res.status(201).json({ message: 'Media file uploaded successfully', mediaPath });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+// Endpoint to get the list of media files
+app.get('/api/media', async (req, res) => {
+  try {
+    // You should list the files in the 'uploads/media' directory
+    const mediaDirectory = path.join(__dirname, 'uploads', 'media');
+    const files = await fs.promises.readdir(mediaDirectory);
+
+    // Return the list of media files
+    res.json(files);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+// Add this code to your existing Express.js application
+
+// Endpoint to delete a media file by filename
+app.delete('/api/media/:filename', async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const mediaPath = path.join(__dirname, 'uploads', 'media', filename);
+
+    // Check if the file exists
+    const fileExists = await fs.promises.access(mediaPath, fs.constants.F_OK).then(() => true).catch(() => false);
+
+    if (!fileExists) {
+      return res.status(404).json({ message: 'Media file not found' });
+    }
+
+    // Delete the file
+    await fs.promises.unlink(mediaPath);
+
+    res.status(200).json({ message: 'Media file deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
 
 
 // Multer configuration for handling image uploads
@@ -579,6 +685,73 @@ app.delete('/api/business/:businessId', async (req, res) => {
 
 /* business listing api end */
 
+
+
+
+
+
+
+app.post('/contactus', (req, res) => {
+  const { name, email, phone, message } = req.body;
+  const query = 'INSERT INTO contact_forms (name, email, phone, message) VALUES (?, ?, ?, ?)';
+  
+  db.query(query, [name, email, phone, message], (err, results) => {
+    if (err) {
+      console.error('Error inserting data:', err);
+      res.json({ error: 'failed' });
+      return;
+    }
+
+    const mailOptions = {
+      from: `${email}`,
+      to: ['info@prabisha.com'],
+      subject: 'Global Indians Info Contact Form Submission',
+      html: `
+        <html>
+          <head>
+            <!-- Include Bootstrap CSS -->
+            <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            >
+            <style>
+              /* Add custom styles here */
+              body {
+                background-color: #f0f0f0; /* Background color */
+                padding: 20px;
+              }
+              .container {
+                background-color: #ffffff; /* Content background color */
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h2 class="mb-4">Global Indians Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${phone}</p> <!-- Corrected variable name here -->
+              <p><strong>Message:</strong> ${message}</p>
+            </div>
+          </body>
+        </html>
+      `,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+        res.json({ error: 'Email not sent' });
+      } else {
+        console.log('Email sent:', info.response);
+        res.json({ message: 'Entry created successfully and email sent', id: results.insertId });
+      }
+    });
+  });
+});
 
 
     

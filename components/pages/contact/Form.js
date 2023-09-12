@@ -1,101 +1,130 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import getConfig from 'next/config';
-const port = getConfig.port;
+import { useState, useRef } from "react";
+import { Form, Button } from 'react-bootstrap';
+import axios from "axios";
+import { toast } from "react-toastify";
+import Link from "next/link";
+import globalConfig from '@/config';
+const port = globalConfig.port;
 
-const Form = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitting, setSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
+function ContactForm() {
+    const [formData, setFormData] = useState({
+        from_name: '',
+        reply_to: '',
+        from_number: '',
+        message: '',
+    });
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    setSubmitting(true);
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-    try {
-      await axios.post(`${port}/submit`, { name, email, phone, message });
-      setSuccessMessage('Form submitted successfully');
-      setName('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
-      setTimeout(() => {
-        setSuccessMessage('');
-        // Redirect to home page after 3 seconds
-        window.location.href = '/';
-      }, 3000);
-    } catch (error) {
-      console.error('Submit error:', error);
+    const form = useRef();
+
+    async function sendEmail(e) {
+        e.preventDefault(); // Prevent the default form submission behavior
+
+        const payload = {
+            "name": formData.from_name,
+            "email": formData.reply_to,
+            "phone": formData.from_number,
+            "message": formData.message
+        }
+
+        if (formData.from_name && formData.reply_to && formData.from_number && formData.message) {
+            try {
+                let res = await axios.post(`${port}/contactus`, payload)
+                console.log(res, "res")
+
+                toast.success("Thanks for contacting us", {
+                    position: toast.POSITION.TOP_CENTER,
+                })
+
+                setFormSubmitted(true); // Mark the form as submitted
+            } catch (error) {
+                console.log("Error", error);
+                toast.error("Sorry! Form Not sent", {
+                    position: toast.POSITION.TOP_CENTER,
+                })
+            }
+        } else {
+            toast.error("Please fill all the fields!", {
+                position: toast.POSITION.TOP_CENTER,
+            })
+        }
     }
 
-    setSubmitting(false);
-  };
+    if (formSubmitted) {
+        return (
+            <div style={{ textAlign: "center" }}>
+                <h3>Form Submitted Successfully!</h3>
+                <p>Thank you for your submission.</p>
+                <Link href="/">Go to Home Page</Link>
+            </div>
+        );
+    }
 
-  return (
-    <div>
-      <h4>Fill Below Form to Hear from us</h4>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group mt-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-        </div>
-        <div className="form-group mt-3">
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group mt-3">
-          <input
-            type="tel"
-            className="form-control"
-            placeholder="Phone"
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
-          />
-        </div>
-        <div className="form-group mt-3">
-          <textarea
-            className="form-control"
-            placeholder="Message"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="button text-light mt-3 p-2" disabled={submitting}>
-          {submitting ? 'Submitting...' : 'Submit'}
-        </button>
-      </form>
-      {successMessage && (
-        <div className="popup">
-          <p>{successMessage}</p>
-        </div>
-      )}
-      <style jsx>{`
-        /* Add your CSS styling here */
-        .popup {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #fff;
-          padding: 20px;
-          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-        }
-      `}</style>
-    </div>
-  );
-};
+    return (
+        <div>
+            <div className="contact_banner"></div>
+            <h2 style={{ textAlign: "center", marginTop: "30px" }}>Contact Us</h2>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12 col-lg-12 col-md-12">
+                        <Form onSubmit={sendEmail} ref={form}>
+                            <Form.Group controlId="name">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="from_name"
+                                    onChange={handleChange}
+                                    required
+                                    className="input_resume"
+                                />
+                            </Form.Group>
 
-export default Form;
+                            <Form.Group controlId="email">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    type="email"
+                                    name="reply_to"
+                                    onChange={handleChange}
+                                    required
+                                    className="input_resume"
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="phone">
+                                <Form.Label>Phone</Form.Label>
+                                <Form.Control
+                                    type="tel"
+                                    name="from_number"
+                                    onChange={handleChange}
+                                    required
+                                    className="input_resume"
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="message">
+                                <Form.Label>Message</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    name="message"
+                                    onChange={handleChange}
+                                    required
+                                    className="input_resume"
+                                />
+                            </Form.Group>
+
+                            <Button variant="success" className="mt-3 submitform" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default ContactForm;
