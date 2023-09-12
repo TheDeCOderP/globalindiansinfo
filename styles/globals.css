@@ -114,6 +114,7 @@ h2.page_title {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  min-height: 110px;
 }
 .mission-vision {
   padding: 10px;
