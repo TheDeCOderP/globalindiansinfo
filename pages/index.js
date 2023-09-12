@@ -45,6 +45,7 @@ const HomePage = () => {
       <LimitedFAQs />
     </section>
     <section className="section blogs_section">
+    <h1 className="text-center"><span className="green">Recent</span> Blogs</h1>
       <HomePageBlogs />
     </section>
   
