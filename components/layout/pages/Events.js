@@ -45,6 +45,7 @@ const EventsLayout = () => {
           </section>
         </div>
       </div>
+      
       {/* <div className="event_page">
       <div className="event_row row">
         <div className="col-sm-12 col-md-6">

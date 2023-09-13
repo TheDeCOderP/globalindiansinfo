@@ -13,3 +13,12 @@ const Contact = () => {
 Contact.layout = 'other';
 
 export default Contact;
+
+
+
+
+
+
+
+
+
