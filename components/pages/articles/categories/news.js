@@ -24,8 +24,16 @@ const  EventsArticles = () =>{
   console.log("Rendering Articles component with articles:", articles); // Log the articles data
 
   return (
-    <div className="mt-5">
-      <div className="row">
+    <div className="mt-2 row ">
+    <h1 className="text-center"><span className="green">Related</span> News</h1>
+     <div class="book col-sm-12 col-md-3">
+        <img class="book-image" src="/uploads/images/jobs/book.jpeg" alt="Image Alt Text" width={400} height={300}  />
+        <h2 class="book-title">Bharat- Mother of Democracy</h2>
+        <a class="book-button" href="https://ebook.g20.org/ebook/bharatmod/index.html" target="_blank" rel="noopener noreferrer">Read More</a>
+    </div>
+  
+  
+      <div className="row mt-5">
       <h1 className="text-center"><span className="green">Related</span> Articles</h1>
         {articles.slice(0, 6).map((article) => (
           <div key={article.id} className="col-sm-12 col-md-4 col-lg-4">
