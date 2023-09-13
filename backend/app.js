@@ -1,6 +1,5 @@
 const express = require('express');
 const multer = require('multer');
-const nodemailer = require('nodemailer');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
@@ -8,11 +7,10 @@ const port = process.env.PORT || 5001;
 const db = require('./db.js');
 const fs = require('fs');
 
-const port1 = 'http://localhost:5001';
 const app = express();
 
 
-
+app.use(cors());
 
 app.use('/uploads', express.static('uploads'));
 app.use(cors({
@@ -22,20 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
-app.use(cors());
 
 
-
-// Configure Nodemailer for sending emails
-const transporter = nodemailer.createTransport({
-  host: 'consulting.prabisha.com', // SMTP server hostname
-  port: 587, // Port for the SMTP server (587 is commonly used for TLS)
-  secure: false, // Set to true if your SMTP server uses SSL/TLS
-  auth: {
-    user: 'info@prabisha.com', // Your email address
-    pass: 'ElzAeL6n', // Your email password
-  },
-});
 
 
 
@@ -686,72 +672,6 @@ app.delete('/api/business/:businessId', async (req, res) => {
 /* business listing api end */
 
 
-
-
-
-
-
-app.post('/contactus', (req, res) => {
-  const { name, email, phone, message } = req.body;
-  const query = 'INSERT INTO contact_forms (name, email, phone, message) VALUES (?, ?, ?, ?)';
-  
-  db.query(query, [name, email, phone, message], (err, results) => {
-    if (err) {
-      console.error('Error inserting data:', err);
-      res.json({ error: 'failed' });
-      return;
-    }
-
-    const mailOptions = {
-      from: `${email}`,
-      to: ['info@prabisha.com'],
-      subject: 'Global Indians Info Contact Form Submission',
-      html: `
-        <html>
-          <head>
-            <!-- Include Bootstrap CSS -->
-            <link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-            >
-            <style>
-              /* Add custom styles here */
-              body {
-                background-color: #f0f0f0; /* Background color */
-                padding: 20px;
-              }
-              .container {
-                background-color: #ffffff; /* Content background color */
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-              }
-            </style>
-          </head>
-          <body>
-            <div class="container">
-              <h2 class="mb-4">Global Indians Contact Form Submission</h2>
-              <p><strong>Name:</strong> ${name}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Phone:</strong> ${phone}</p> <!-- Corrected variable name here -->
-              <p><strong>Message:</strong> ${message}</p>
-            </div>
-          </body>
-        </html>
-      `,
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error sending email:', error);
-        res.json({ error: 'Email not sent' });
-      } else {
-        console.log('Email sent:', info.response);
-        res.json({ message: 'Entry created successfully and email sent', id: results.insertId });
-      }
-    });
-  });
-});
 
 
     
