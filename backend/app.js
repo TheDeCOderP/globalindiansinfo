@@ -9,8 +9,6 @@ const fs = require('fs');
 const app = express();
 
 
-// Allow requests from 'http://localhost:3000'
-app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(cors({ origin: 'https://globalindiansinfo.com' }));
 
 // Middleware to parse JSON requests
