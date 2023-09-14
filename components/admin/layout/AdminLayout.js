@@ -20,7 +20,9 @@ const AdminLayout = ({ children }) => {
               <div className="col-3"><SideBar/></div>
               <div className="col-9 menu_links">
                 <Link href="/pcsadmin/blogs" >Blogs</Link>
-       <Link href="/pcsadmin/articles" >Articles</Link></div>
+                <Link href="/pcsadmin/articles" >Articles</Link>
+                <Link href="/pcsadmin/business/listings" >Business Listings</Link>
+                </div>
             </div>
           </header>
 

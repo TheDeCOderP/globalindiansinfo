@@ -13,7 +13,7 @@ const HomeCategories = () => {
                 
                     <Link href={`/${item.link}`}>
                     <div className="category_image">
-                        <Image className="aspect-ratio" src={`/${item.imagepath}`} width={500} height={400}></Image>
+                        <Image className="aspect-ratio" src={`/${item.imagepath}`} width={500} height={400} alt="categories"></Image>
                     </div>
                     <div className="category_body box-shadow">
                         <h3 className="text-center">{item.title}</h3>

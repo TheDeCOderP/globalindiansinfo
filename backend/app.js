@@ -1,8 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors'); 
+ const cors = require('cors'); 
 const port = process.env.PORT || 5001;
 const db = require('./db.js');
 const fs = require('fs');
@@ -10,15 +9,23 @@ const fs = require('fs');
 const app = express();
 
 
-app.use(cors());
+// Allow requests from 'http://localhost:3000'
+app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://globalindiansinfo.com' }));
+
+// Middleware to parse JSON requests
+app.use(express.json());
+
 
 app.use('/uploads', express.static('uploads'));
-app.use(cors({
-  origin: "*"
-}));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
-
+// Enable CORS for all origins (you can restrict it to specific origins)
+ app.use((req, res, next) => {
+   res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com',);
+   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000',);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+ });
 
 
 
@@ -640,16 +647,44 @@ app.put('/api/business/:businessId', async (req, res) => {
   }
 });
 
-// DELETE route to delete a business listing by businessId
+
+
+
+// Endpoint to get a specific business by ID for editing
+app.get('/api/business/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Query the database to find the business by its ID
+    const [results] = await db.query('SELECT * FROM business_listings WHERE id = ?', [id]);
+
+    // Check if a business with the given ID exists
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Business not found' });
+    }
+
+    // If a business with the ID exists, return it for editing
+    const business = results[0];
+    res.status(200).json(business);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+// DELETE route to delete a business listing by businessId with confirmation
 app.delete('/api/business/:businessId', async (req, res) => {
   try {
     const { businessId } = req.params; // Get the businessId from the URL parameter
+    const { confirm } = req.query; // Get the confirmation query parameter
 
 
     // Delete the business listing from the database based on businessId
     const [results] = await db.execute('DELETE FROM business_listings WHERE id = ?', [businessId]);
-
-
 
     if (results.affectedRows === 1) {
       res.status(204).send(); // No Content
@@ -662,6 +697,24 @@ app.delete('/api/business/:businessId', async (req, res) => {
   }
 });
 
+
+
+// Endpoint to update a business listing by businessId
+app.put('/api/businessedit/:businessId', businessupload.single('image'), async (req, res) => {
+  try {
+    const { businessId } = req.params;
+    const { name, type, location, status } = req.body;
+    const businessimagepath = req.file ? req.file.filename : null;
+
+    // Update the business listing in the database based on businessId
+    await db.execute('UPDATE business_listings SET name = ?, type = ?, location = ?, status = ?, imagepath = ? WHERE id = ?', [name, type, location, status, businessimagepath, businessId]);
+
+    res.status(200).json({ message: 'Business listing updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 
 
