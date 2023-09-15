@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import globalConfig from '@/config';
 const port = globalConfig.port;
 import Link from 'next/link';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 
@@ -36,10 +37,10 @@ const BusinessDetails = () => {
         <img src={`${port}/uploads/business/${business.imagepath}`} alt={business.name}  className=" contain"/>
         </div>
       <h3>{business.name}</h3>
-      <p>Email: </p><Link href={`mailto:${business.email}`} ><p>{business.email}</p></Link>
-     <p>Mobile: </p> <Link href={`tel:${business.mobile}`} >{business.mobile}</Link>
-      <p>Type: {business.type}</p>
-      <p>Location: {business.location}</p>
+      <p> Email:<Link href={`mailto:${business.email}`} >{business.email}</Link></p>
+      <p> Mobile: <Link href={`tel:${business.mobile}`} >{business.mobile}</Link></p>
+      <p> Type: {business.type}</p>
+      <p><FaMapMarkerAlt className="p-2" /> Location: {business.location}</p>
       
       {/* Add more details as needed */}
     </div>
