@@ -5,6 +5,7 @@ module.exports = {
   
   // Customize the build output directory
   distDir: 'build',
+  pageDataCollectionTimeout: 120000,
 };
 
 
