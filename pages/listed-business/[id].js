@@ -33,7 +33,7 @@ const BusinessDetails = () => {
     <div className="section">
     <div className="row d-flex p-4 justify-content-center ">
         <div className="col-sm-12 col-md-10 p-4 box-shadow">
-        <div className="col-3">
+        <div className="col-sm-12 col-md-3">
         <img src={`${port}/uploads/business/${business.imagepath}`} alt={business.name}  className=" contain"/>
         </div>
       <h3>{business.name}</h3>
