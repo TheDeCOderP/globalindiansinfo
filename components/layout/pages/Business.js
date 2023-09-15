@@ -55,8 +55,8 @@ const BusinessLayout  = () => {
     
       <div className="row">
         <div className="col-12 m-5">
-        <a href="/listed-business" className="button m-3">View All Listed Businesses</a>
-      <a href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</a>
+        <Link href="/listed-business" className="button m-3">View All Listed Businesses</Link>
+      <Link href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</Link>
 
         </div>
         <div className="col-md-12">
