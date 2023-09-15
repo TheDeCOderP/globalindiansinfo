@@ -36,9 +36,9 @@ const BusinessDetails = () => {
         <div className="col-sm-12 col-md-3">
         <img src={`${port}/uploads/business/${business.imagepath}`} alt={business.name}  className=" contain"/>
         </div>
-      <h3>{business.name}</h3>
-      <p> Email:<Link href={`mailto:${business.email}`} >{business.email}</Link></p>
-      <p> Mobile: <Link href={`tel:${business.mobile}`} >{business.mobile}</Link></p>
+      <h3 className="mt-3">{business.name}</h3>
+      <p> Email : <Link href={`mailto:${business.email}`} > {business.email}</Link></p>
+      <p> Mobile :  <Link href={`tel:${business.mobile}`} > {business.mobile}</Link></p>
       <p> Type: {business.type}</p>
       <p><FaMapMarkerAlt className="p-2" /> Location: {business.location}</p>
       
