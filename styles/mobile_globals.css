@@ -249,9 +249,9 @@ section.banner_section::before {
 
 .mobile_menu {
   font-family: raleway;
-  padding: 5px 0px;
+  padding: 8px 0px;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .founders_social a {

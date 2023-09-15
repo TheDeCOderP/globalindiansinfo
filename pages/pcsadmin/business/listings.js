@@ -128,5 +128,6 @@ const BusinessListing = () => {
     </div>
   );
 };
+BusinessListing.layout = "admin";
 
 export default BusinessListing;

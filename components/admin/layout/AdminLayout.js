@@ -18,7 +18,7 @@ const AdminLayout = ({ children }) => {
           <header className="bg-primary text-light p-4">
             <div className="row admin_header">
               <div className="col-3"><SideBar/></div>
-              <div className="col-9 menu_links">
+              <div className="col-9 menu_links hide_on_mobile">
                 <Link href="/pcsadmin/blogs" >Blogs</Link>
                 <Link href="/pcsadmin/articles" >Articles</Link>
                 <Link href="/pcsadmin/business/listings" >Business Listings</Link>
