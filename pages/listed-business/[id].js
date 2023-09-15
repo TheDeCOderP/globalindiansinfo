@@ -39,8 +39,8 @@ const BusinessDetails = () => {
       <h3 className="mt-3">{business.name}</h3>
       <p> Email : <Link href={`mailto:${business.email}`} > {business.email}</Link></p>
       <p> Mobile :  <Link href={`tel:${business.mobile}`} > {business.mobile}</Link></p>
-      <p> Type: {business.type}</p>
-      <p><FaMapMarkerAlt className="p-2" /> Location: {business.location}</p>
+      <p> Type : {business.type}</p>
+      <p> <FaMapMarkerAlt className="mr-2 " /> Location: {business.location}</p>
       
       {/* Add more details as needed */}
     </div>
