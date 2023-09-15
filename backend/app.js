@@ -9,16 +9,11 @@ const cors = require('cors');
 
 const app = express();
 
-const corsOptions = {
-  origin: 'https://globalindiansinfo.com', // Replace with your client's origin
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // If you're using cookies or authentication headers
-  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
-app.use(cors(corsOptions));
 
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 
@@ -26,9 +21,6 @@ app.use('/uploads', express.static('uploads'));
 
 
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 
 
