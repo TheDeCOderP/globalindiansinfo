@@ -1,25 +1,29 @@
 const express = require('express');
 const multer = require('multer');
+const bodyParser = require('body-parser');
 const path = require('path');
-const port = process.env.PORT || 8190;
+const port = 8190;
 const db = require('./db.js');
 const fs = require('fs');
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
-
-// Middleware to parse JSON requests
-app.use(express.json());
 
 
 app.use('/uploads', express.static('uploads'));
 
+
+// Enable CORS for all origins (you can restrict it to specific origins)
+ app.use((req, res, next) => {
+   res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+ });
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 
