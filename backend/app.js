@@ -5,21 +5,16 @@ const path = require('path');
 const port = 8190;
 const db = require('./db.js');
 const fs = require('fs');
+const cors = require('cors');
 
 const app = express();
 
-
+// Allow requests from all origins (adjust as needed)
+app.use(cors());
 
 app.use('/uploads', express.static('uploads'));
 
 
-// Enable CORS for all origins (you can restrict it to specific origins)
- app.use((req, res, next) => {
-   res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
- });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
