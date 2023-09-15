@@ -52,7 +52,13 @@ const BusinessLayout  = () => {
 
   return (
     <div className=" text-center">
+    
       <div className="row">
+        <div className="col-12 m-5">
+        <a href="/listed-business" className="button m-3">View All Listed Businesses</a>
+      <a href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</a>
+
+        </div>
         <div className="col-md-12">
           <section className="mb-5">
             <h1 className="text-center">Globalizing Your Business Ventures</h1>

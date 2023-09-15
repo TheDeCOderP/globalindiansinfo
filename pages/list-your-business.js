@@ -104,8 +104,9 @@ export default function Business() {
        <title> List Your Business Now</title>
     
     </Head>
-    <div className="container mt-5">
-      <h1 className="mb-4">Business Listing Form</h1>
+    <div className="section row d-flex justify-content-center mt-4 mb-4 ">
+    <div className="col-sm-12 col-md-10 box-shadow  p-4 ">
+      <h1 className="mb-4 text-center">Business Listing Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -196,7 +197,7 @@ export default function Business() {
       </form>
       <hr />
      
-      
+      </div>
     </div>
     </>
   );

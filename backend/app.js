@@ -622,6 +622,7 @@ app.get('/api/business', async (req, res) => {
 
 
 
+
 // PUT route to update the status of a business listing by businessId
 app.put('/api/business/:businessId', async (req, res) => {
   try {
