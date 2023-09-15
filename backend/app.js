@@ -585,14 +585,18 @@ const businessupload = multer({ storage : businessStorage });
 app.use(express.json());
 app.use(express.static('public'));
 
-// Endpoint to post a new blog
+
+
+
+
+
 app.post('/api/business', businessupload.single('image'), async (req, res) => {
   try {
-    const { name, type , location } = req.body;
+    const { name,email , mobile, type , location } = req.body;
     const status  = false;
     const businessimagepath = req.file ? req.file.filename : null;
 
-    const [results] = await db.query('INSERT INTO business_listings ( name, type,location, status , imagepath) VALUES ( ?, ?, ?, ? , ?)', [name,type, location, status,  businessimagepath,]);
+    const [results] = await db.query('INSERT INTO business_listings ( name,email , mobile, type,location, status , imagepath) VALUES ( ?, ? , ? ,?, ?, ? , ?)', [name,email ,mobile,type, location, status,  businessimagepath,]);
     const businessId = results.id;
     res.status(201).json({ message: 'Business Listing Uploaded Successfully ', businessId });
   } catch (error) {

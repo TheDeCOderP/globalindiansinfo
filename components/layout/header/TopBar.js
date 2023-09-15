@@ -24,6 +24,7 @@ function TopBar() {
       </div>
     </a>
     </div>
+   <a href="/list-your-business" className="bg-light text-dark p-2">List Your Business Now</a>
     </div>
    
     </>

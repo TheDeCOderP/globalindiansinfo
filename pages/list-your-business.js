@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-
+import Head from "next/head";
 import globalConfig from '@/config';
 const port = globalConfig.port;
 
 export default function Business() {
   const [formData, setFormData] = useState({
     name: '',
+    mobile: '',
+    email: '',
     type: '',
     location: '',
     image: null,
@@ -36,6 +38,8 @@ export default function Business() {
     try {
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
+      formDataToSend.append('mobile', formData.mobile);
+      formDataToSend.append('email', formData.email);
       formDataToSend.append('type', formData.type);
       formDataToSend.append('location', formData.location);
       formDataToSend.append('image', formData.image);
@@ -47,13 +51,15 @@ export default function Business() {
         // Reset the form
         setFormData({
           name: '',
+          mobile:'',
+          email:'',
           type: '',
           location: '',
           image: null,
         });
 
       // Display success toast after the database request is complete
-      toast.success('Your Listing is added successfully', {
+      toast.success('Listing Added SuccessFully , Our Team will review it and contact you Soon', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -93,6 +99,11 @@ export default function Business() {
 };
 
   return (
+<>
+    <Head>
+       <title> List Your Business Now</title>
+    
+    </Head>
     <div className="container mt-5">
       <h1 className="mb-4">Business Listing Form</h1>
       <form onSubmit={handleSubmit}>
@@ -111,6 +122,35 @@ export default function Business() {
           />
         </div>
         <div className="mb-3">
+          <label htmlFor="mobile" className="form-label">
+            Mobile Number
+          </label>
+          <input
+            type="number"
+            id="mobile"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleInputChange}
+            className="form-control"
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <div className="mb-3">
           <label htmlFor="type" className="form-label">
             Business Type
           </label>
@@ -121,7 +161,6 @@ export default function Business() {
             value={formData.type}
             onChange={handleInputChange}
             className="form-control"
-            required
           />
         </div>
         <div className="mb-3">
@@ -135,7 +174,7 @@ export default function Business() {
             value={formData.location}
             onChange={handleInputChange}
             className="form-control"
-            required
+
           />
         </div>
         <div className="mb-3">
@@ -149,7 +188,6 @@ export default function Business() {
             accept="image/*"
             onChange={handleImageChange}
             className="form-control"
-            required
           />
         </div>
         <button type="submit" className="btn btn-primary">
@@ -160,5 +198,6 @@ export default function Business() {
      
       
     </div>
+    </>
   );
 }
