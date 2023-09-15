@@ -9,10 +9,16 @@ const cors = require('cors');
 
 const app = express();
 
-// Allow requests from all origins (adjust as needed)
-app.use(cors());
 
 
+const corsOptions = {
+  origin: 'https://globalindiansinfo.com', // Replace with your client's origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you're using cookies or authentication headers
+  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 
 
