@@ -1,0 +1,21 @@
+{
+    "apps" :  [
+      {
+        "name": "my-app",
+        "script": "app.js",
+        "watch": true,
+        "ignore_watch": ["node_modules", "logs"],
+        "instances": "max",
+        "exec_mode": "cluster",
+        "max_memory_restart": "1G",
+        "max_restarts": 10,
+        "autorestart": true,
+        "env": {
+          "NODE_ENV": "production",
+          "PORT": 8190
+          
+        }
+      }
+    ]
+  }
+  
