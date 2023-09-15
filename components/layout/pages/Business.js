@@ -87,7 +87,7 @@ const BusinessLayout  = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="prabisha_description text-center body text-dark mb-4 p-5">
+          <div className="prabisha_description text-center body text-dark mb-4 p-2">
        <p className="text-center">Having a dependable and trusted partner for essential business growth services is paramount in today's competitive landscape. Whether it's Website Development, Mobile App Development, SEO, Digital Marketing, Video Production, Book Cover Design, Book Publication, or HR Solutions like Talent Acquisition and Corporate Training, the right partner brings expertise, efficiency, and strategic insights. Their specialized knowledge ensures high-quality outcomes aligned with industry trends. By entrusting these tasks to experts, businesses can focus on core competencies, enhance efficiency, and achieve scalability. Reliable partners also save time, reduce costs, and provide comprehensive solutions under one roof. Moreover, their guidance fosters informed decision-making, helping businesses reach their goals effectively. Long-term partnerships cultivate trust and loyalty, facilitating seamless collaboration on future initiatives. Ultimately, a dependable partner isn't just a vendor; they're a key driver of growth, enabling businesses to thrive in the dynamic marketplace.</p>
          <h4>For all these services, you can get in touch with Prabisha Consulting</h4>
           <div className="container mt-5">

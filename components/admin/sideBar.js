@@ -14,7 +14,7 @@ function SideBar() {
 
 
   return (
-    <>
+    <> 
       <Button variant="light" onClick={handleShow} className='admin_sidebar_button'>
     <img src='/menu-icon.png' style={{width:30}}></img>
       </Button>
@@ -30,6 +30,7 @@ function SideBar() {
         <Offcanvas.Body className="text-dark">
        <Link href="/pcsadmin/blogs" onClick={handleClose}>Blogs</Link>
        <Link href="/pcsadmin/articles" onClick={handleClose}>Articles</Link>
+       <Link href="/pcsadmin/business/listings" onClick={handleClose}>Articles</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
