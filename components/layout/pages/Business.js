@@ -52,13 +52,16 @@ const BusinessLayout  = () => {
 
   return (
     <div className=" text-center">
+      <div className="row">
+        <div className="col-sm-12 col-md-6 mt-4">
+        <Link href="/listed-business" className="button m-3">View All Listed Businesses</Link></div>
+        <div className="col-sm-12 col-md-6  mt-4 mb-4">
+      <Link href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</Link>
+      </div>
+      </div>
     
       <div className="row">
-        <div className="col-12 m-5">
-        <Link href="/listed-business" className="button m-3">View All Listed Businesses</Link>
-      <Link href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</Link>
-
-        </div>
+       
         <div className="col-md-12">
           <section className="mb-5">
             <h1 className="text-center">Globalizing Your Business Ventures</h1>
