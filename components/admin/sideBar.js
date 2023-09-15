@@ -30,7 +30,7 @@ function SideBar() {
         <Offcanvas.Body className="text-dark">
        <Link href="/pcsadmin/blogs" onClick={handleClose}>Blogs</Link>
        <Link href="/pcsadmin/articles" onClick={handleClose}>Articles</Link>
-       <Link href="/pcsadmin/business/listings" onClick={handleClose}>Articles</Link>
+       <Link href="/pcsadmin/business/listings" onClick={handleClose}>Business List</Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
