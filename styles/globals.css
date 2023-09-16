@@ -1161,6 +1161,10 @@ span.rounded-circle {
   }
 }
 
+.business_image {
+  padding: 15px;
+}
+
 
 
 .business_listings_single svg {
