@@ -1163,6 +1163,22 @@ span.rounded-circle {
 
 
 
+.business_listings_single svg {
+  font-size: 24px;
+  margin: 5px;
+  color: var(--primary);
+}
+.business_listings_single p {
+ text-align: left;
+}
+
+.section.business_listings_single a {
+  font-weight: 700;
+  font-family: 'League Spartan';
+  font-size: 15px;
+  letter-spacing: 1px;
+
+}
 
 
 

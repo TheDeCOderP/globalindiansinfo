@@ -84,7 +84,7 @@ const BusinessListing = () => {
               <div className="business_card_body">
                 <h5 className="card-title">{item.name}</h5>
                 <span className="card-text">{item.type}</span>
-                <div className="buttons d-flex justify-content-around">
+                <div className="buttons d-flex justify-content-around mt-3">
                   <button
                     className="btn btn-danger mr-2"
                     onClick={() => handleDelete(item.id)}

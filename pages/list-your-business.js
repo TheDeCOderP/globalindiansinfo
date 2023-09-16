@@ -12,6 +12,7 @@ export default function Business() {
     email: '',
     type: '',
     location: '',
+    website: '',
     image: null,
   });
 
@@ -42,6 +43,7 @@ export default function Business() {
       formDataToSend.append('email', formData.email);
       formDataToSend.append('type', formData.type);
       formDataToSend.append('location', formData.location);
+      formDataToSend.append('website', formData.website);
       formDataToSend.append('image', formData.image);
 
       const response = await axios.post(`${port}/api/business`, formDataToSend);
@@ -55,6 +57,7 @@ export default function Business() {
           email:'',
           type: '',
           location: '',
+          website: '',
           image: null,
         });
 
@@ -108,7 +111,8 @@ export default function Business() {
     <div className="col-sm-12 col-md-10 box-shadow  p-4 ">
       <h1 className="mb-4 text-center">Business Listing Form</h1>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="row">
+        <div className="mb-3 col-sm-12 col-md-6">
           <label htmlFor="name" className="form-label">
             Business Name
           </label>
@@ -122,7 +126,7 @@ export default function Business() {
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 col-sm-12 col-md-6">
           <label htmlFor="mobile" className="form-label">
             Mobile Number
           </label>
@@ -136,7 +140,9 @@ export default function Business() {
             required
           />
         </div>
-        <div className="mb-3">
+        </div>
+        <div className="row">
+        <div className="mb-3 col-sm-12 col-md-6">
           <label htmlFor="email" className="form-label">
             Email Address
           </label>
@@ -151,7 +157,24 @@ export default function Business() {
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 col-sm-12 col-md-6">
+          <label htmlFor="website" className="form-label">
+            Business Website Link
+          </label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            value={formData.website}
+            onChange={handleInputChange}
+            className="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        </div>
+        <div className="row">
+        <div className="mb-3 col-sm-12 col-md-6">
           <label htmlFor="type" className="form-label">
             Business Type
           </label>
@@ -164,7 +187,7 @@ export default function Business() {
             className="form-control"
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 col-sm-12 col-md-6">
           <label htmlFor="location" className="form-label">
             Location
           </label>
@@ -178,7 +201,9 @@ export default function Business() {
 
           />
         </div>
-        <div className="mb-3">
+        </div>
+        <div className="row">
+        <div className="mb-3 col-sm-12 col-md-12">
           <label htmlFor="image" className="form-label">
             Business Image
           </label>
@@ -191,9 +216,13 @@ export default function Business() {
             className="form-control"
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        </div>
+        <div className="row">
+        <div className="mb-3 col-sm-12 col-md-12">
+        <button type="submit " className="button">
           Submit
         </button>
+        </div></div>
       </form>
       <hr />
      

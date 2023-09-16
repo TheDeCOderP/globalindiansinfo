@@ -52,11 +52,11 @@ const BusinessLayout  = () => {
 
   return (
     <div className=" text-center">
-      <div className="row">
-        <div className="col-sm-12 col-md-6 mt-4">
-        <Link href="/listed-business" className="button m-3">View All Listed Businesses</Link></div>
-        <div className="col-sm-12 col-md-6  mt-4 mb-4">
-      <Link href="/list-your-business" className="button m-3 bg-success">List Your Business Now!</Link>
+      <div className="row m-4 ">
+      <div className="col-sm-12 col-md-12  mb-4 d-flex justify-content-center mobile_column">
+        <Link href="/listed-business" className="button m-2 ">View All Listed Businesses</Link>
+       
+      <Link href="/list-your-business" className="button m-2  bg-success">List Your Business Now!</Link>
       </div>
       </div>
     

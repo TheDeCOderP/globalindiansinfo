@@ -64,6 +64,24 @@ h3.text-center {
   display:none!important;
 }
 
+.mobile_column {
+  flex-direction: column;
+}
+
+.business_listings_single p {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.website_button.mb-4.mt-4 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .searchBar {
   padding-bottom: 10px;
 }

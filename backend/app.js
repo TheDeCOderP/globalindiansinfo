@@ -12,6 +12,7 @@ const app = express();
 // Enable CORS for all origins (you can restrict it to specific origins)
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
  next();
@@ -603,11 +604,11 @@ app.use(express.static('public'));
 
 app.post('/api/business', businessupload.single('image'), async (req, res) => {
   try {
-    const { name,email , mobile, type , location } = req.body;
+    const { name,email , mobile, type , location  , website} = req.body;
     const status  = false;
     const businessimagepath = req.file ? req.file.filename : null;
 
-    const [results] = await db.query('INSERT INTO business_listings ( name,email , mobile, type,location, status , imagepath) VALUES ( ?, ? , ? ,?, ?, ? , ?)', [name,email ,mobile,type, location, status,  businessimagepath,]);
+    const [results] = await db.query('INSERT INTO business_listings ( name,email , mobile, type,location, status , imagepath ,website) VALUES ( ?, ? , ? ,?, ?, ? , ? , ?)', [name,email ,mobile,type, location, status,  businessimagepath,website]);
     const businessId = results.id;
     res.status(201).json({ message: 'Business Listing Uploaded Successfully ', businessId });
   } catch (error) {

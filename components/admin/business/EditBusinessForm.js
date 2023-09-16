@@ -33,6 +33,9 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
     formData.append('type', businessData.type);
     formData.append('location', businessData.location);
     formData.append('status', businessData.status);
+    formData.append('email', businessData.email);
+    formData.append('mobile', businessData.mobile);
+    formData.append('website', businessData.website);
 
     // Check if a file is selected
     if (businessData.selectedFile) {
@@ -78,6 +81,39 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
                 value={businessData.name}
                 onChange={(e) =>
                   setBusinessData({ ...businessData, name: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                className="form-control"
+                value={businessData.email}
+                onChange={(e) =>
+                  setBusinessData({ ...businessData, email: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-group">
+              <label>Mobile Number:</label>
+              <input
+                type="number"
+                className="form-control"
+                value={businessData.mobile}
+                onChange={(e) =>
+                  setBusinessData({ ...businessData, mobile: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-group">
+              <label>Website Link</label>
+              <input
+                type="text"
+                className="form-control"
+                value={businessData.website}
+                onChange={(e) =>
+                  setBusinessData({ ...businessData, website: e.target.value })
                 }
               />
             </div>
