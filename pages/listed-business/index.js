@@ -33,7 +33,7 @@ const BusinessList = () => {
           <div className="p-4 box-shadow">
             <div className="card-body">
               <Link href={`/listed-business/${item.id}`}>
-                <img src={`${port}/uploads/business/${item.imagepath}`}
+                <img src={`${port}/uploads/business/${item.logoimage}`}
                   alt={item.name} className='contain '/></Link>
               <h5 className="card-title mt-4 mb-4">{item.name}</h5>
               <Link href={`/listed-business/${item.id}`} className="button">

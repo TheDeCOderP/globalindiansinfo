@@ -77,7 +77,7 @@ const BusinessListing = () => {
             <div className="business_card box-shadow">
               <div className="business_logo">
                 <img
-                  src={`${port}/uploads/business/${item.imagepath}`}
+                  src={`${port}/uploads/business/${item.logoimage}`}
                   alt={item.name}
                 ></img>
               </div>

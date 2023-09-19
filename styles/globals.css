@@ -1184,6 +1184,16 @@ span.rounded-circle {
 
 }
 
+.business_banners {
+  width:100%;
+  max-width:1600px;
+  object-fit: contain;
+  height:400px;
+
+}
+.red {
+  color:red;
+}
 
 
 

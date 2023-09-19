@@ -9,15 +9,6 @@ const fs = require('fs');
 
 const app = express();
 
-// Enable CORS for all origins (you can restrict it to specific origins)
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
- res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
- res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
- next();
-});
-
 
 
 
@@ -25,6 +16,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/uploads', express.static('uploads'));
+
+// Enable CORS for all origins (you can restrict it to specific origins)
+app.use((req, res, next) => {
+ res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
+ // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+ res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+ res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+ next();
+});
+
+
 
 
 
@@ -581,41 +583,39 @@ app.get('/api/articles/:slug', async (req, res) => {
 /* business listing api start */
 
 
-// Multer configuration for handling image uploads
-let businessStorage = multer.diskStorage({
+let BusinessStorage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, 'uploads/business'); // Specify your image upload folder
+    callback(null, 'uploads/business');
   },
   filename: (req, file, callback) => {
-    const uniqueSuffix2 = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    callback(null, file.fieldname + '-' + uniqueSuffix2 + path.extname(file.originalname));
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
   },
 });
 
-const businessupload = multer({ storage : businessStorage });
+const businessuploads = multer({ storage: BusinessStorage });
 
 app.use(express.json());
 app.use(express.static('public'));
 
-
-
-
-
-
-app.post('/api/business', businessupload.single('image'), async (req, res) => {
+app.post('/api/business', businessuploads.fields([{ name: 'image', maxCount: 1 }, { name: 'bannerimage', maxCount: 1 }]), async (req, res) => {
   try {
-    const { name,email , mobile, type , location  , website} = req.body;
-    const status  = false;
-    const businessimagepath = req.file ? req.file.filename : null;
+    const { name, email, mobile, type, location, website } = req.body;
+    const status = false;
+    const logoPath = req.files['image'] ? req.files['image'][0].filename : null;
+    const bannerImagePath = req.files['bannerimage'] ? req.files['bannerimage'][0].filename : null;
 
-    const [results] = await db.query('INSERT INTO business_listings ( name,email , mobile, type,location, status , imagepath ,website) VALUES ( ?, ? , ? ,?, ?, ? , ? , ?)', [name,email ,mobile,type, location, status,  businessimagepath,website]);
-    const businessId = results.id;
-    res.status(201).json({ message: 'Business Listing Uploaded Successfully ', businessId });
+    const [results] = await db.query('INSERT INTO business_listings (name, email, mobile, type, location, status, logoimage, bannerimage, website) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [name, email, mobile, type, location, status, logoPath, bannerImagePath, website]);
+
+    const businessId = results.insertId;
+    res.status(201).json({ message: 'Business Listing Uploaded Successfully', businessId });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
 
 
 app.get('/api/business', async (req, res) => {
@@ -713,7 +713,7 @@ app.delete('/api/business/:businessId', async (req, res) => {
 
 
 // Endpoint to update a business listing by businessId
-app.put('/api/businessedit/:businessId', businessupload.single('image'), async (req, res) => {
+app.put('/api/businessedit/:businessId', businessuploads.single('image'), async (req, res) => {
   try {
     const { businessId } = req.params;
     const { name, type, location, status } = req.body;
