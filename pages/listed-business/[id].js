@@ -37,7 +37,7 @@ const BusinessDetails = () => {
     <div className="row d-flex p-4 justify-content-center  ">
         <div className="col-sm-12 col-md-10  d-flex mobile_column box-shadow  align-items-center">
         <div className="col-sm-12 col-md-6 business_image text-center">
-        <img src={`${port}/uploads/business/${business.logoimage}`} alt={business.name}  width={250} height={250}/>
+        <img src={`${port}/uploads/business/${business.logoimage}`} alt={business.name}  width={250} height={250} className="contain"/>
         </div>
         <div className="col-sm-12 col-md-6">
       
