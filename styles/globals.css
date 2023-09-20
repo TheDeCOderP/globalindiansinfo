@@ -842,6 +842,10 @@ button.accordion-button {
   
 }
 
+.ap4_1{
+  aspect-ratio:4/1
+}
+
 nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
   padding: 80px 10px 10px 10px;
 }

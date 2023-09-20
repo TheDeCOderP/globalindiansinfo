@@ -34,7 +34,7 @@ const BusinessList = () => {
             <div className="card-body">
               <Link href={`/listed-business/${item.id}`}>
                 <img src={`${port}/uploads/business/${item.logoimage}`}
-                  alt={item.name} className='contain '/></Link>
+                  alt={item.name} className='contain ap4_1 '/></Link>
               <h5 className="card-title mt-4 mb-4">{item.name}</h5>
               <Link href={`/listed-business/${item.id}`} className="button">
                Know More </Link>
