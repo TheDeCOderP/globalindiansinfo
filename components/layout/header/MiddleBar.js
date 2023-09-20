@@ -17,14 +17,14 @@ function Header() {
     <Navbar collapseOnSelect expand="lg" variant="dark"  className="header_nav topbar hide_on_small ">
       <div className="container-fluid">
        <div className="row">
-        <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
+        <div className="logo_bar col col-sm-6 col-md-3 col-lg-3">
         <Link href="/"><Image  width={200} height={100}
            className="site-logo"
           src="/uploads/images/site-logo3.png"
           alt="site_logo" priority
         /></Link>
         </div>
-         <div className="col col-sm-6 col-md-6 col-lg-6">
+         <div className="col col-sm-6 col-md-4 col-lg-4">
         <SearchComponent  />
         </div>
 
@@ -39,8 +39,8 @@ function Header() {
         </div>
        
         
-       <div className="col col-sm-6 col-md-2 col-lg-2  hide_on_mobile">
-        <Link href="/list-your-business" className="button">List Business Now</Link>
+       <div className="col col-sm-6 col-md-3 col-lg-3 list_business_header  hide_on_mobile">
+        <Link href="/list-your-business" className="button header_button">List Business Now</Link>
       </div>
         </div>
       </div>
@@ -63,6 +63,9 @@ function Header() {
       <MobileMenuBar/>
        }
  
+        </div>
+        <div className="col col-sm-12 col-md-12 col-lg-12">
+        <SearchComponent  />
         </div>
         </div></div>
      

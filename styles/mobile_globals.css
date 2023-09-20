@@ -60,9 +60,6 @@ h3.text-center {
 }
 
 
-.hide_on_mobile {
-  display:none!important;
-}
 
 .mobile_column {
   flex-direction: column;
@@ -87,11 +84,12 @@ h3.text-center {
   
   -o-object-fit: contain;
   object-fit: contain;
-  height: 300px;
+  height: 100%;
 }
 
 .searchBar {
-  padding-bottom: 10px;
+  padding: 0px;
+  margin: 20px auto;
 }
 
 .logo_bar {
@@ -361,4 +359,10 @@ button.button.search_button.btn.btn-primary {
 
 }
     }
+
+    @media only screen and (max-width:992px){
+      .hide_on_mobile {
+        display:none!important;
+      }
+      }
     

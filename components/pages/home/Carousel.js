@@ -37,8 +37,8 @@ function Carousels() {
 
   return (
     <>
-     <div className="hide_on_big m-3 text-center">
-        <Link href="/list-your-business" className="button">List Business Now</Link>
+     <div className="hide_on_big pb-4 text-center">
+        <Link href="/list-your-business" className="button ">List Business Now</Link>
       </div>
      
       <Carousel className="home_slider" fade>

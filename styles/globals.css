@@ -842,6 +842,16 @@ button.accordion-button {
   
 }
 
+.logo_bar {
+  display: flex;
+  justify-content: center;
+}
+.list_business_header {
+  display: flex;
+  justify-content: center;
+
+}
+
 .ap4_1{
   aspect-ratio:4/1
 }
@@ -1204,13 +1214,6 @@ span.rounded-circle {
 .red {
   color:red;
 }
-
-
-
-
-
-
-
 
 
 
