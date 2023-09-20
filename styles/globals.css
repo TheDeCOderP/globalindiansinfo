@@ -90,9 +90,15 @@ nav.header_nav.topbar {
 }
 
 .category_body {
-  padding: 20px;
+  padding: 10px;
   background: var(--primary);
   border-top: 0px;
+  border-radius: 0px 10px!important;
+}
+.category_body h3 {
+ font-size:18px;
+ color:#ffffff;
+ margin: 0px!important;
 }
 
 h2.page_title {
@@ -100,7 +106,7 @@ h2.page_title {
   font-size: 50px;
   font-weight: 700;
 }
-.category_body h3 , .category_body h2 {
+.category_body h2 {
   font-size:25px;
   margin: 0px!important;
   color:#ffffff;
@@ -191,7 +197,7 @@ p {
   
 }
 
-section.globe_section {
+section.globe_section , .featured_business_section {
   background: #fafafa;
 }
 
@@ -867,7 +873,7 @@ a{
 }
 .contain {
   object-fit: contain;
-  aspect-ratio:4/3;
+  
 }
 img.apsect-ratio.box-shadow {
   object-fit: cover;

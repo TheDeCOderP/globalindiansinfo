@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SearchComponent from './SearchBar';
-import GoogleTranslate from '../header/GoogleTranslate';
+
 import MobileMenuBar from '../header/mobilenav'
 import Image from 'next/image';
 
@@ -24,7 +24,7 @@ function Header() {
           alt="site_logo" priority
         /></Link>
         </div>
-         <div className="col col-sm-6 col-md-6 col-lg-6 searchBar">
+         <div className="col col-sm-6 col-md-6 col-lg-6">
         <SearchComponent  />
         </div>
 
@@ -39,8 +39,8 @@ function Header() {
         </div>
        
         
-       <div className="col col-sm-6 col-md-2 col-lg-2 google_translate hide_on_mobile">
-        <GoogleTranslate/> 
+       <div className="col col-sm-6 col-md-2 col-lg-2  hide_on_mobile">
+        <Link href="/list-your-business" className="button">List Business Now</Link>
       </div>
         </div>
       </div>

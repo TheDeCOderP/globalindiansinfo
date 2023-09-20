@@ -11,7 +11,7 @@ import AdBanner from '../components/pages/home/AdBanners'
 import Content from '../components/pages/home/Content'
 import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import HomePageBlogs from '../components/pages/blogs/home-blogs'
-
+import BusinessListings from '../components/pages/business/HomePage'
 
 const HomePage = () => {
 
@@ -30,10 +30,16 @@ const HomePage = () => {
   <h1 className="text-center"><span className="green">Featured</span> News</h1>
 	  <FeaturedNews />
     </section>
+    <section className="section featured_business_section">
+  <h1 className="text-center"><span className="green">Listed</span> Businesses</h1>
+	  <BusinessListings />
+    </section>
+  
     <section className="section categories_section">
     <h1 className="text-center pb-2"><span className="green">Important</span> Categories</h1>
     <Categories/>
     </section>
+    
     <section className="section adbanner">
      <AdBanner/>
     </section>
