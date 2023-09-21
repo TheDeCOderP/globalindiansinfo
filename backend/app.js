@@ -20,7 +20,7 @@ app.use('/uploads', express.static('uploads'));
 // Enable CORS for all origins (you can restrict it to specific origins)
 app.use((req, res, next) => {
  res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
- // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
  next();
@@ -712,15 +712,20 @@ app.delete('/api/business/:businessId', async (req, res) => {
 
 
 
+
 // Endpoint to update a business listing by businessId
-app.put('/api/businessedit/:businessId', businessuploads.single('image'), async (req, res) => {
+app.put('/api/businessedit/:businessId', businessuploads.fields([
+  { name: 'image', maxCount: 1 }, // Assuming image is a single file upload
+  { name: 'banner', maxCount: 1 }, // Assuming banner is a single file upload
+]), async (req, res) => {
   try {
     const { businessId } = req.params;
-    const { name, type, location, status } = req.body;
-    const businessimagepath = req.file ? req.file.filename : null;
+    const { name, type, location, status, email, mobile, website } = req.body;
+    const logopath = req.files && req.files.image ? req.files.image[0].filename : null;
+    const bannerpath = req.files && req.files.banner ? req.files.banner[0].filename : null;
 
     // Update the business listing in the database based on businessId
-    await db.execute('UPDATE business_listings SET name = ?, type = ?, location = ?, status = ?, imagepath = ? WHERE id = ?', [name, type, location, status, businessimagepath, businessId]);
+    await db.execute('UPDATE business_listings SET name = ?, type = ?, location = ?, status = ?, email = ?, mobile = ?, website = ?, logoimage = ?, bannerimage = ? WHERE id = ?', [name, type, location, status, email, mobile, website, logopath, bannerpath, businessId]);
 
     res.status(200).json({ message: 'Business listing updated successfully' });
   } catch (error) {
@@ -728,6 +733,7 @@ app.put('/api/businessedit/:businessId', businessuploads.single('image'), async 
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 
 
 
