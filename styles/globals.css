@@ -833,6 +833,9 @@ button.accordion-button {
   justify-content: space-around;
 
 }
+header {
+  background: #fafafa;
+}
 
 .sociallinks1 {
   background:#fafafa;
@@ -1131,6 +1134,21 @@ header .row {
     border-radius: 10px;;
 
 }
+
+.links.dropdown {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+button#dropdown-13 {
+  background: #ffffff;
+  color: var(--primary);
+  border: none;
+}
+
 
 .carousel-control-next, .carousel-control-prev {
   display:none;

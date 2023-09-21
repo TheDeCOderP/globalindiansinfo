@@ -45,14 +45,36 @@ const menus = [
     'slug': '/events'
   },
   {
-    'id': 9,
-    'name': 'Blogs',
-    'slug': '/blogs'
-  },
-  {
-    'id': 10,
-    'name': 'Partner',
-    'slug': '/partner'
+    'id': 13,
+    'name': 'Resources',
+    'slug': '#',
+    'submenu': [
+      {
+        'id': 14,
+        'name': 'Spirituality',
+        'slug': '/spirituality'
+      },
+      {
+        'id': 15,
+        'name': 'Food',
+        'slug': '/food'
+      },
+      {
+        'id': 16,
+        'name': 'Health & Wellness',
+        'slug': '/health-wellness'
+      },
+      {
+        'id': 9,
+        'name': 'Blogs',
+        'slug': '/blogs'
+      },
+      {
+        'id': 10,
+        'name': 'Partner',
+        'slug': '/partner'
+      },
+    ]
   },
   {
     'id': 11,
@@ -64,6 +86,7 @@ const menus = [
     'name': 'FAQs',
     'slug': '/faqs'
   },
+  
+];
 
-]
 export default menus;
