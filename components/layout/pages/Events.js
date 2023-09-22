@@ -119,7 +119,7 @@ const EventsLayout = () => {
       <div className="body text-dark">
       <h2>Past Events</h2>
       <p className="event_para text-center">
-        Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking  experiences that have enriched the Global Indians Info community.
+        Take a journey through the memorable events we've hosted or covered in the past. Get a glimpse of the diverse cultural, educational, and networking  experiences that have enriched the Global Indians <br />Info community.
       </p>
       </div>
     </div>
