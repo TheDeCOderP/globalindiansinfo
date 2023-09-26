@@ -273,9 +273,9 @@ section.banner_section::before {
 
 .mobile_menu {
   font-family: raleway;
-  padding: 8px 0px;
+  padding: 5px 0px;
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .founders_social a {
@@ -331,6 +331,42 @@ nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
   margin-top: 50px;
 }
 
+a.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  color: var(--primary)!important;
+  padding: 5px;
+  font-size:13px;
+}
+
+button#dropdown-13  {
+  padding: 0px;
+  font-size: 13px;
+  font-weight: 600!important;
+}
+
+button#dropdown-13 span {
+
+  color: var(--primary)!important;
+}
+
+.dropdown-menu.show {
+  padding: 0px;
+}
+
+a.dropdown-item {
+  padding: 0px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 10px!important;
+}
+
+.dropdown-menu.show {
+  position: absolute;
+  inset: -90px auto auto 90px!important;
+}
 
 
 button.accordion-button {
