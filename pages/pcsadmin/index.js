@@ -26,7 +26,7 @@ const AdminPage = () => {
     <div className="pt-3 pb-3">
      <div className="row">
       {data.map((items) => (
-        <div className="col-sm-12 col-md-4 col-lg-4">
+        <div className="col-sm-12 col-md-4 col-lg-4" key={items.id}>
           <Link href={items.slug}>
         <div className="data box-shadow p-3 text-center">
          <h4>{items.name}</h4>
