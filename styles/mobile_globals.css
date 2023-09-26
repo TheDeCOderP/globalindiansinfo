@@ -403,13 +403,13 @@ button.button.search_button.btn.btn-primary {
         justify-content: center;
         align-content: center;
         color: var(--primary)!important;
-        padding: 5px;
-        font-size:13px;
+        padding: 6px;
+        font-size:14px;
       }
       
       button#dropdown-13  {
         padding: 0px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 600!important;
       }
       
@@ -426,7 +426,7 @@ button.button.search_button.btn.btn-primary {
         padding: 0px;
         color: var(--primary);
         font-weight: 600;
-        font-size: 10px!important;
+        font-size: 14px!important;
       }
       
       .dropdown-menu.show {
@@ -437,7 +437,7 @@ button.button.search_button.btn.btn-primary {
         font-family: raleway;
         padding: 5px 0px;
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
       }
       }
     

@@ -6,31 +6,44 @@ import Link from "next/link";
 const AdminLayout = ({ children }) => {
   return (
     <>
-    <Head>
-       <title> Admin Panel</title>
-       <link rel="icon" href="/uploads/images/site-logo1.png" />
-    </Head>
-    <section className="">
-      <div className="row admin_panel">
-        
-        <div className="col-sm-12 col-lg-12 col-md-12 dashboard">
-          
-          <header className="bg-primary text-light p-4">
-            <div className="row admin_header">
-              <div className="col-3"><SideBar/></div>
-              <div className="col-9 menu_links hide_on_mobile">
-                <Link href="/pcsadmin/blogs" >Blogs</Link>
-                <Link href="/pcsadmin/articles" >Articles</Link>
-                <Link href="/pcsadmin/business/listings" >Business Listings</Link>
-                </div>
-            </div>
-          </header>
+      <Head>
+        <title> Admin Panel</title>
+        <link rel="icon" href="/uploads/images/site-logo1.png" />
+      </Head>
+      <section className="">
+        <div className="row admin_panel">
 
-          {children}
-          <footer className="bg-success text-light p-4">Admin Footer</footer>
+          <div className="col-sm-12 col-lg-2 col-md-2 sidebar">
+
+
+
+            <SideBar />
+
+</div>
+          <div className="col-sm-12 col-lg-10 col-md-10 dashboard"> 
+          <div className="row">
+            <div className="col bg-light">
+            <header className="bg-light text-dark p-4">
+              <h2 className="text-center">Global Indians Info - Admin Panel</h2>
+            </header>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col sidebar_panel">
+           {children}
+           </div></div>
+
+           <div className="row">
+            <div className="col bg-light ">
+            <footer className="bg-light text-dark p-2 text-center">
+              <b className="text-center"><Link href="https://www.prabisha.co.uk" target = "_blank">Prabisha Consulting</Link> - All Rights Reserved</b>
+            </footer>
+            </div>
+          </div>
+           </div>
+         
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

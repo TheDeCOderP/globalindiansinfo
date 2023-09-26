@@ -87,14 +87,13 @@ const AllArticles = () => {
 
       <div className="row">
         {filteredData.map((item) => (
-          <div className="col-sm-12 col-md-4 col-lg-4 products_grid" key={item.id}>
-            <Card className="products_card ">
-              <Card.Body>
+          <div className="admin_articles_list m-3 box-shadow p-3" key={item.id}>
+            
                 {editingUserId === item.id ? (
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
                   <>
-                    <img src={`${port}/uploads/articles/${item.imagepath}`}></img>
+                    <img src={`${port}/uploads/articles/${item.imagepath}`} width={60} height={60}></img>
                    
                     <Card.Title >
                      <Link href={`/blogs/${item.slug}`}>{item.title}  </Link>
@@ -107,8 +106,8 @@ const AllArticles = () => {
                    
                   </>
                 )}
-              </Card.Body>
-            </Card>
+              
+            
           </div>
         ))}
       </div>

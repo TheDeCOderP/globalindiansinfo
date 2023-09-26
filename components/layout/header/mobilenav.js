@@ -68,7 +68,7 @@ const MobileMenu = () => {
 
         <DrawerContent>
           <DrawerHeader>
-            <Link href="/">
+            <Link href="/" onClick={onClose}>
               <Image
                 className="site-menu-logo"
                 src="/uploads/images/site-logo.png"
@@ -83,7 +83,7 @@ const MobileMenu = () => {
             ele.submenu ? (
               <Dropdown key={ele.id} className="mobile_menu" >
                 <Dropdown.Toggle id={`dropdown-${ele.id}`} className='' >
-                 <Link     key={ele.id} className='mobile_links'  href={ele.slug} as={`${ele.slug}`} >{ele.icon} <span>{ele.name}</span></Link>
+                 <Link      key={ele.id} className='mobile_links'  href={ele.slug} as={`${ele.slug}`} >{ele.icon} <span>{ele.name}</span></Link>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   {ele.submenu.map((ele1) => (
@@ -94,7 +94,7 @@ const MobileMenu = () => {
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
-              <Link   key={ele.id} className={ele.name=="Apply For Jobs" || ele.name=="Hire Talent" || ele.name=="MagicA10"?'navlinks':'links'} href={ele.slug} as={`${ele.slug}`} >{ele.icon}<span className="button-content">{ele.name} </span></Link>
+              <Link   key={ele.id} className={ele.name=="Apply For Jobs" || ele.name=="Hire Talent" || ele.name=="MagicA10"?'navlinks':'links'} href={ele.slug} as={`${ele.slug}`} onClick={onClose} >{ele.icon}<span className="button-content">{ele.name} </span></Link>
             )
           )}
           </DrawerBody>
