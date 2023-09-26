@@ -12,7 +12,7 @@ const Spirituality = () => {
           <div className="row">
             <div className="  col-md-6 ">
               <img
-                src="/uploads/images/founders/spirituality.jpeg"
+                src="/uploads/images/spirituality/spirituality.jpeg"
                 alt="Spiritual Image"
              
               />
@@ -33,11 +33,11 @@ const Spirituality = () => {
             </div>
           </div>
         </div>
-        <div className="row " >
+        <div className="row pt-4 pb-4" >
           <div className="col-md-3">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/1.avif"
+                src="/uploads/images/spirituality/6.jpg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -47,7 +47,7 @@ const Spirituality = () => {
               <p>
                 Non-Resident Indians often find themselves straddling two worlds
                 - the one they've adopted in their new home and the one they
-                hail from. This duality can lead to a sense of disconnection,
+                hail from. This duality can lead to a sense of disconnection.<br/>
                 which sparks a quest for something deeper, something that
                 bridges the gap between the two worlds. 
               </p>
@@ -56,7 +56,7 @@ const Spirituality = () => {
           <div className="col-md-3">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/2.jpg"
+                src="/uploads/images/spirituality/2.jpg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -75,7 +75,7 @@ const Spirituality = () => {
           <div className="col-md-3">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/3.jpg"
+                src="/uploads/images/spirituality/3.jpg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -85,7 +85,7 @@ const Spirituality = () => {
               <p>
                 Spirituality is deeply intertwined with culture. NRIs often find
                 that reconnecting with their cultural roots is a profound way to
-                explore their spirituality. Practices such as yoga, meditation,
+                explore their spirituality.<br/> Practices such as yoga, meditation,
                 and celebrating traditional festivals can provide a sense of
                 grounding and a link to their spiritual identity.
               </p>
@@ -94,7 +94,7 @@ const Spirituality = () => {
           <div className="col-md-3">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/4.avif"
+                src="/uploads/images/spirituality/9.jpg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -120,11 +120,11 @@ const Spirituality = () => {
           <br /> These practices help them understand themselves better, manage
           stress, and gain clarity in a fast-paced world.
         </p>
-        <div className="row">
+        <div className="row pt-4 ">
           <div className="col-md-6">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/path.jpeg"
+                src="/uploads/images/spirituality/path.jpeg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -136,8 +136,7 @@ const Spirituality = () => {
                 freedom to explore various spiritual paths, from the wisdom of
                 their ancestral religions to more universal and contemporary
                 approaches. The diversity of spiritual experiences available
-                allows them to find what resonates most deeply with their
-                beliefs.
+                allows them to find what resonates most.
               </p>
             </div>
           </div>
@@ -145,7 +144,7 @@ const Spirituality = () => {
           <div className="col-md-6">
             <div className="spirituality-box">
               <Image
-                src="/uploads/images/founders/yoga.jpg"
+                src="/uploads/images/spirituality/yoga.jpg"
                 alt="Next Image"
                 width={400}
                 height={400}
@@ -154,7 +153,7 @@ const Spirituality = () => {
               <h3>Embracing Mindfulness in Everyday Life</h3>
               <p>
                 For NRIs living in bustling, high-stress environments,
-                mindfulness can be a gateway to spirituality. By being fully
+                mindfulness can be a gateway to spirituality.<br/> By being fully
                 present in the moment, they can find spiritual significance in
                 everyday activities and cultivate a sense of peace, even amidst
                 chaos.
@@ -162,10 +161,10 @@ const Spirituality = () => {
             </div>
           </div>
 
-          <h1 className="text-center">Conclusion: The Ever-Evolving Journey</h1>
+          <h1 className="text-center mt-4">Conclusion: The Ever-Evolving Journey</h1>
 
           <div className="conclusion-container">
-            <div className="conclusion-box">
+            <div className="p-4 box-shadow">
               <p className="conclusion">
                 Spirituality for NRIs is not a destination but a continuous,
                 evolving journey. It is a powerful tool for navigating the
