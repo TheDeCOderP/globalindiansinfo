@@ -79,11 +79,11 @@ const Content = () => {
 
       <div className="row align-items-center mt-4">
   <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>
-  <div className="col-sm-12 col-md-4 col-lg-4 ">
+  <div className="col-sm-12 col-md-6 col-lg-6 ">
     <div className="p-4 box-shadow">
     <p className="main">
-        Ready to make a difference and connect <br/>with Global Indians worldwide? Join us at <br/><a href="www.globalindiansinfo.com">www.globalindiansinfo.com</a> today! Let's<br/> unite, inspire, and empower each other as <br/>we proudly represent the Indian diaspora<br/>  on the global stage. Together, we'll create<br/>  a brighter future and celebrate our incredible <br/> journey.
-        Tag your friends, share this post, and <br/> let's build a global community like no other! 
+        Ready to make a difference and connect with Global Indians worldwide? Join us at <a href="www.globalindiansinfo.com">www.globalindiansinfo.com</a> today! Let's unite, inspire, and empower each other aswe proudly represent the Indian diaspora  on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
+        Tag your friends, share this post, and  let's build a global community like no other! 
       </p>
       <ul>
         <li>Network with a diverse, global community.</li>
@@ -95,17 +95,14 @@ const Content = () => {
      
     </div>
   </div>
-<div className="col-sm-12 col-md-4 col-lg-4 ">
+<div className="col-sm-12 col-md-6 col-lg-6 ">
     <div className="image-content text-center ">
     <iframe width="100%" height="370" src="https://www.youtube.com/embed/niDNEeZYDMM?si=Rm0s8GNGNnP2hEY5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
     
     </div>
    
   </div>
-  <div className="col-sm-12 col-md-4 col-lg-4">
-    <h1>trending topics</h1>
-   
-  </div>
+  
 </div>
 
 
