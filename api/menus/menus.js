@@ -25,22 +25,22 @@ const menus = [
     'slug': '/business',
   },
   {
-    'id': 5,
+    'id': 6,
     'name': 'Tech',
     'slug': '/technology',
   },
   {
-    'id': 6,
+    'id': 7,
     'name': 'Travel',
     'slug': '/travel'
   },
   {
-    'id': 7,
+    'id': 8,
     'name': 'News',
     'slug': '/news'
   },
   {
-    'id': 8,
+    'id': 9,
     'name': 'Events',
     'slug': '/events'
   },
@@ -65,24 +65,24 @@ const menus = [
         'slug': '/health-wellness'
       },
       {
-        'id': 9,
+        'id': 10,
         'name': 'Blogs',
         'slug': '/blogs'
       },
       {
-        'id': 10,
+        'id': 11,
         'name': 'Partner',
         'slug': '/partner'
       },
     ]
   },
   {
-    'id': 11,
+    'id': 12,
     'name': 'Contact',
     'slug': '/contact'
   },
   {
-    'id': 12,
+    'id': 17,
     'name': 'FAQs',
     'slug': '/faqs'
   },

@@ -1265,6 +1265,28 @@ span.rounded-circle {
 
 
 
+.searched_result {
+margin-right: 3px;
+    margin-top: 10px;
+    margin-left: 3px;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    text-decoration: bold;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 10px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+}
+
+.search-results_body {
+  width: 50%;
+  display: inline-grid;
+  text-align: center;
+}
+
+
+
 
 
 

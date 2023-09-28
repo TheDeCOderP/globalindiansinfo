@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaGlobe, FaUsers, FaBullhorn, FaUserTie } from "react-icons/fa";
+import TopSearches from '@/components/pages/home/SearchedItems';
 
 const Content = () => {
   return (
@@ -75,11 +76,12 @@ const Content = () => {
             </div>
           </div>
         </div>
+       
       </div>
 
       <div className="row align-items-center mt-4">
   <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>
-  <div className="col-sm-12 col-md-6 col-lg-6 ">
+  <div className="col-sm-12 col-md-5 col-lg-5 ">
     <div className="p-4 box-shadow">
     <p className="main">
         Ready to make a difference and connect with Global Indians worldwide? Join us at <a href="www.globalindiansinfo.com">www.globalindiansinfo.com</a> today! Let's unite, inspire, and empower each other aswe proudly represent the Indian diaspora  on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
@@ -95,13 +97,17 @@ const Content = () => {
      
     </div>
   </div>
-<div className="col-sm-12 col-md-6 col-lg-6 ">
+<div className="col-sm-12 col-md-4 col-lg-4 ">
     <div className="image-content text-center ">
     <iframe width="100%" height="370" src="https://www.youtube.com/embed/niDNEeZYDMM?si=Rm0s8GNGNnP2hEY5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
     
     </div>
    
   </div>
+  <div className="col-sm-12 col-md-3 col-lg-3 box-shadow p-4">
+          <h2 className="text-center">Top Searches</h2>
+           <TopSearches/>
+        </div>
   
 </div>
 

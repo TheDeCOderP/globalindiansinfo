@@ -29,7 +29,7 @@ app.use('/uploads', express.static('uploads'));
 // Enable CORS for all origins (you can restrict it to specific origins)
 app.use((req, res, next) => {
  res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
- // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
  next();
@@ -125,6 +125,55 @@ app.delete('/api/media/:filename', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
+
+
+
+// Create a route to store search queries
+app.post('/api/store-search', async (req, res) => {
+  const { query } = req.body;
+
+  if (!query) {
+    return res.status(400).json({ error: 'Search query cannot be empty' });
+  }
+
+  const sql = 'INSERT INTO searched_items (query) VALUES (?)';
+
+  try {
+    await db.query(sql, [query]);
+    res.status(200).json({ message: 'Search query stored successfully' });
+  } catch (error) {
+    console.error('Error storing search query:', error);
+    res.status(500).json({ error: 'Failed to store search query' });
+  }
+});
+
+// Create a route to fetch top searches using app.get
+app.get('/api/top-searches', async (req, res) => {
+  try {
+    const [results] = await db.query(
+      'SELECT query, COUNT(*) as count FROM searched_items GROUP BY query ORDER BY count DESC LIMIT 14'
+    );
+
+    const topSearches = results.map((row) => row.query);
+
+    res.status(200).json(topSearches);
+  } catch (error) {
+    console.error('Error fetching top searches:', error);
+    res.status(500).json({ error: 'Failed to fetch top searches' });
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
