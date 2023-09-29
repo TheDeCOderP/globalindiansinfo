@@ -3,9 +3,11 @@ import Head from "next/head";
 import React from "react";
 import SideBar from '@/components/admin/sideBar';
 import Link from "next/link";
+import PrivateRouter from "@/components/PrivateRouter";
 const AdminLayout = ({ children }) => {
   return (
     <>
+    <PrivateRouter>
       <Head>
         <title> Admin Panel</title>
         <link rel="icon" href="/uploads/images/site-logo1.png" />
@@ -44,6 +46,7 @@ const AdminLayout = ({ children }) => {
          
         </div>
       </section>
+      </PrivateRouter>
     </>
   );
 };
