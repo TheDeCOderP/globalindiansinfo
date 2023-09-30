@@ -11,8 +11,9 @@ function PrivateRouter({children}) {
 
     useEffect(()=>{
         if(!cookies){
-            router.push('/')
+            router.push('/pcsadmin')
         }
+       
     },[])
     
 
@@ -21,4 +22,4 @@ function PrivateRouter({children}) {
   )
 }
 
-export default PrivateRouter
+export default PrivateRouter;

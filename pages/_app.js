@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout/MainLayout'
 import AdminLayout from '@/components/admin/layout/AdminLayout';
 import OtherPageLayout from '../components/layout/OtherPagesLayout';
+import BlankLayout from '../components/layout/BlankLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
@@ -30,6 +31,9 @@ const MyApp = ({ Component, pageProps }) => {
   }
   else if (Component.layout === 'category') {
     CustomLayout = CategoryLayout;
+  }
+  else if (Component.layout === 'blank') {
+    CustomLayout = BlankLayout;
   }
  
   

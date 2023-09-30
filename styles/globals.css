@@ -1285,6 +1285,14 @@ margin-right: 3px;
   text-align: center;
 }
 
+.logout_section {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: column;
+}
+
 
 
 
