@@ -28,12 +28,20 @@ app.use('/uploads', express.static('uploads'));
 
 // Enable CORS for all origins (you can restrict it to specific origins)
 app.use((req, res, next) => {
- res.setHeader('Access-Control-Allow-Origin', 'https://globalindiansinfo.com');
- // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
- res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
- res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
- next();
+  const allowedOrigins = ['https://globalindiansinfo.com', 'http://localhost:3000', 'https://intranet.prabisha.com'];
+
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  next();
 });
+
 
 
 

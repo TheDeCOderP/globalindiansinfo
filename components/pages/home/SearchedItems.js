@@ -25,8 +25,8 @@ const YourComponent = () => {
   };
 
   return (
-    <div classname="searched_data">
-       <div classname="row">
+    <div className="searched_data">
+       <div className="row">
         {data.map((item, index) => (
           
           < Link href={`/search-results/${item}`}  key={index}>

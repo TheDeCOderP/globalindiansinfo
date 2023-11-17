@@ -11,15 +11,35 @@ const AllArticles = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchQuery1, setSearchQuery1] = useState('');
   const [searchQuery2, setSearchQuery2] = useState('');
+  const [numberOfColumns, setNumberOfColumns] = useState(null);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
+  
+
+    
     try {
       const response = await fetch(`${port}/api/articles`);
       const jsonData = await response.json();
+      // Assuming jsonData is an array of articles
+      if (jsonData.length > 0) {
+        // Get the keys (properties) of the first article
+        const firstArticleKeys = Object.keys(jsonData[0]);
+       
+        
+        // Count the number of columns
+        const numberOfColumns = firstArticleKeys.length;
+        setNumberOfColumns(numberOfColumns); 
+        
+        // Print the number of columns
+        console.log('Number of columns:', numberOfColumns);
+    } else {
+        console.log('No data found.');
+    }
+     
       setData(jsonData);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -88,7 +108,7 @@ const AllArticles = () => {
       <div className="row">
         {filteredData.map((item) => (
           <div className="admin_articles_list m-3 box-shadow p-3" key={item.id}>
-            
+        
                 {editingUserId === item.id ? (
                   <EditBlogs blog={item} updateBlogs={handleUpdate} onCancelEdit={handleCancelEdit} />
                 ) : (
