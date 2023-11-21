@@ -23,7 +23,6 @@ app.use(bodyParser.json());
 
 
 
-
 app.use('/uploads', express.static('uploads'));
 
 // Enable CORS for all origins (you can restrict it to specific origins)
@@ -778,7 +777,6 @@ app.delete('/api/business/:businessId', async (req, res) => {
 
 
 
-
 // Endpoint to update a business listing by businessId
 app.put('/api/businessedit/:businessId', businessuploads.fields([
   { name: 'image', maxCount: 1 }, // Assuming image is a single file upload
@@ -787,11 +785,26 @@ app.put('/api/businessedit/:businessId', businessuploads.fields([
   try {
     const { businessId } = req.params;
     const { name, type, location, status, email, mobile, website } = req.body;
+    
+    // Check if new images are provided
     const logopath = req.files && req.files.image ? req.files.image[0].filename : null;
     const bannerpath = req.files && req.files.banner ? req.files.banner[0].filename : null;
 
+    // Fetch the current image paths from the database
+    const [currentImages] = await db.execute('SELECT logoimage, bannerimage FROM business_listings WHERE id = ?', [businessId]);
+    const currentLogoPath = currentImages[0].logoimage;
+    const currentBannerPath = currentImages[0].bannerimage;
+
     // Update the business listing in the database based on businessId
-    await db.execute('UPDATE business_listings SET name = ?, type = ?, location = ?, status = ?, email = ?, mobile = ?, website = ?, logoimage = ?, bannerimage = ? WHERE id = ?', [name, type, location, status, email, mobile, website, logopath, bannerpath, businessId]);
+    await db.execute('UPDATE business_listings SET name = ?, type = ?, location = ?, status = ?, email = ?, mobile = ?, website = ?, logoimage = IFNULL(?, logoimage), bannerimage = IFNULL(?, bannerimage) WHERE id = ?', [name, type, location, status, email, mobile, website, logopath, bannerpath, businessId]);
+
+    // Remove old images if new images are provided
+    if (logopath && currentLogoPath) {
+      // Delete the old logo image file (implement your file deletion logic)
+    }
+    if (bannerpath && currentBannerPath) {
+      // Delete the old banner image file (implement your file deletion logic)
+    }
 
     res.status(200).json({ message: 'Business listing updated successfully' });
   } catch (error) {

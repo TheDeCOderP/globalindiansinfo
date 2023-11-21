@@ -197,7 +197,7 @@ p {
   
 }
 
-section.globe_section , .featured_business_section {
+section.globe_section , .featured_business_section ,  .faq_section{
   background: #fafafa;
 }
 
@@ -1293,6 +1293,11 @@ margin-right: 3px;
   flex-direction: column;
 }
 
+.monthly_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
