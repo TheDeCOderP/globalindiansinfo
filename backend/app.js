@@ -777,6 +777,99 @@ app.delete('/api/business/:businessId', async (req, res) => {
 
 
 
+
+
+
+
+
+let MagazineStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads/magazines');
+  },
+  filename: (req, file, callback) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    callback(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  },
+});
+
+const magazinesupload = multer({ storage: MagazineStorage });
+
+// API endpoint for uploading magazine details
+app.post('/api/magazines', magazinesupload.single('magazineImage'), (req, res) => {
+  const { title, flipbookLink } = req.body;
+  const magazineImage = req.file.filename;
+
+  const sql = 'INSERT INTO magazines (title, flipbook_link, image) VALUES (?, ?, ?)';
+  db.query(sql, [title, flipbookLink, magazineImage], (err, result) => {
+    if (err) {
+      console.error('Error inserting data into database: ', err);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    } else {
+      res.status(200).json({ success: true, message: 'Magazine uploaded successfully' });
+    }
+  });
+});
+
+
+// Endpoint to delete an existing article by ID
+app.delete('/api/magazines/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Check if the article with the given ID exists
+    const [magazines] = await db.query('SELECT * FROM magazines WHERE id = ?', [id]);
+
+    if (magazines.length === 0) {
+      return res.status(404).json({ message: 'Magazines not found' });
+    }
+
+    // Delete the article from the database
+    await db.query('DELETE FROM magazines WHERE id = ?', [id]);
+    res.status(200).json({ message: 'Magazines deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
+
+app.get('/api/magazines', async (req, res) => {
+  try {
+    
+ // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM magazines ORDER BY id DESC');
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Endpoint to update a business listing by businessId
 app.put('/api/businessedit/:businessId', businessuploads.fields([
   { name: 'image', maxCount: 1 }, // Assuming image is a single file upload

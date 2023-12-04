@@ -12,7 +12,7 @@ import Content from '../components/pages/home/Content'
 import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import HomePageBlogs from '../components/pages/blogs/home-blogs'
 import BusinessListings from '../components/pages/business/HomePage'
-import DiwaliMessage from '../components/pages/home/MonthlyMagazine'
+import MonthlyMagazine from '../components/pages/home/MonthlyMagazine'
 
 const HomePage = () => {
 
@@ -49,7 +49,7 @@ const HomePage = () => {
      <Globes/>
     </section>
     <section className="section magazine_section">
-     <DiwaliMessage/>
+    <MonthlyMagazine/>
     </section>
     <section className="section faq_section">
       <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>

@@ -920,8 +920,14 @@ a{
 }
 .contain {
   object-fit: contain;
-  
+  aspect-ratio:4/3;
 }
+
+.magazines_images{
+  aspect-ratio:4/3;
+}
+
+
 img.apsect-ratio.box-shadow {
   object-fit: cover;
 }
@@ -975,6 +981,11 @@ img.apsect-ratio.box-shadow {
 
 .card img {
   aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.cards img {
+  aspect-ratio: 4/4;
   object-fit: cover;
 }
 
@@ -1297,6 +1308,12 @@ margin-right: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+img.home_magazine {
+  height: 300px;
+  object-fit: contain;
+  background:#000000;
 }
 
 

@@ -28,6 +28,7 @@ function SideBar() {
             <Link href="/pcsadmin/articles" className=" fw-bold ">Articles</Link>
             <Link href="/pcsadmin/blogs" className=" fw-bold ">Blogs</Link>
             <Link href="/pcsadmin/business/listings" className=" fw-bold ">Business</Link>
+            <Link href="/pcsadmin/magazines" className=" fw-bold ">Magazines</Link>
           </div>
         </div>
 
