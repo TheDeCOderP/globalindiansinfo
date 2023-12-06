@@ -8,6 +8,8 @@ import BlankLayout from '../components/layout/BlankLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 
 import CategoryLayout from '../components/layout/category/DefaultLayout';
 import Head from 'next/head';

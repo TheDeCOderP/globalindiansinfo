@@ -26,6 +26,9 @@ const MonthlyMagazine = () => {
           WhatsApp Group
         </a>
       </p>
+      <div className="text-center pt-3">
+            <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT" className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Join Whatsapp Group Now</a>
+            </div>
       </div>
       <div className="box-shadow m-1  p-4">
       <p>
