@@ -13,10 +13,10 @@ function Experts() {
         <div className='col-md-6'>
 
         <div className='experts border m-3'>
-            <div className='p-3'>
-                <h2 className='mt-3' style={{color:"black"}}>Meet <span style={{fontSize:"40px",color:"#101ea9"}}>Pratyush Kumar</span> Your Trusted Coach for Career, Leadership, and Business Success</h2>
+            <div className='p-3 '>
+                <h2 className='mt-3' style={{fontSize:"22px",color:"black"}}>Meet <span style={{fontSize:"28px",color:"#101ea9"}}>Pratyush Kumar</span> Your Trusted Coach for Career, Leadership, and Business Success</h2>
                 <p className='mt-3'>Based in the vibrant city of London, Pratyush Kumar brings over 25 years of industry expertise from his distinguished career in top global investment banks. He&apos;s mastered the art of steering complex multilingual tech and non-tech projects while leading diverse teams in various leadership roles.</p>
-                <div style={{textAlign:"left",display:"flex",gap:"20px"}}>
+                <div style={{textAlign:"left",display:"flex", gap:"20px"}}>
                     <a href='https://wa.me/+44-7867090363' target='_blank'><img src="https://cdn-icons-png.flaticon.com/128/124/124034.png?ga=GA1.1.24716503.1696394622" width="50px" height="45px"/></a>
                 <a href="mailto:pratyush@prabisha.com"><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" width="50px" height="50px"/></a>
                 <a href='tel:+44-7867090363'><img src="https://cdn-icons-png.flaticon.com/128/561/561253.png" width="50px" height="45px"/></a>
@@ -36,9 +36,9 @@ function Experts() {
 
 
         
-        <div className='experts m-3 mt-5 border '>
+        <div className='experts m-3 border '>
             <div className='p-3'>
-                <h2 className='mt-3' style={{color:"black"}}>Empower Your Professional Journey with <span style={{fontSize:"40px",color:"#101ea9"}}>Bidisha Ray</span>  Your Expert in Professional Resume Writing Services in the UK</h2>
+                <h2 className='mt-3' style={{fontSize:"22px",color:"black"}}>Empower Your Professional Journey with <span style={{fontSize:"28px",color:"#101ea9"}}>Bidisha Ray</span>  Your Expert in Professional Resume Writing Services in the UK</h2>
                 <p className='mt-3'>Welcome to Bidisha Ray&apos;s World of Professional Resume Writing Services in the UK, Career Advancement, LinkedIn Excellence, and Interview Preparation. Do you wonder “how I can fix my resume and make my resume ATS Compliant?” Then look no further and reach out to Bidisha Ray, your professional resume coach - Bidisha Ray is your trusted partner in the world of professional resume writing services in the UK, career growth, LinkedIn brilliance, and interview excellence.</p>
                 <div style={{textAlign:"left",display:"flex",gap:"20px"}}>
                     <a href='https://wa.me/+447867090359' target='_blank'><img src="https://cdn-icons-png.flaticon.com/128/124/124034.png?ga=GA1.1.24716503.1696394622" width="50px" height="45px"/></a>
