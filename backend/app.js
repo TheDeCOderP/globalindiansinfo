@@ -246,7 +246,7 @@ app.post('/api/articlesupload', customUpload.single('articleImage'), async (req,
 // Send submitted data to multiple admins with HTML content
 const adminRecipients = ['developerprakash10@gmail.com', 'prakash10.prabisha@gmail.com' , 'info@prabisha.com' ]; // Add your admin email addresses
 const adminMailOptions = {
-  from: 'info@prabisha.com',
+  from: 'admin@prabisha.com',
   to: adminRecipients.join(', '), // Join the admin recipients array into a comma-separated string
   subject: 'New Article Submission',
   html: `
