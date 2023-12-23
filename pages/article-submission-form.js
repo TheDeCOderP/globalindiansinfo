@@ -4,6 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import globalConfig from '@/config';
 const port = globalConfig.port;
+import Head from 'next/head';
 
 const ArticleForm = () => {
   const [formData, setFormData] = useState({
@@ -61,12 +62,61 @@ const ArticleForm = () => {
     }
   };
 
+
+  const bannerImageUrl = '/uploads/articlebanner.png'; // Replace with the actual path
+
+  const bannerStyle = {
+    position: 'relative',
+    minHeight: '300px', // Set a minimum height for the banner
+  };
+  
+  const overlayStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'rgba(0, 0, 0, 0.6)', // Adjust the transparency as needed
+  };
+  
+  const imageStyle = {
+    backgroundImage: `url(${bannerImageUrl})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '300px', // Set a minimum height for the banner
+  };
+  
+  const titleStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    color: 'white',
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+  };
+  
+  
+  
+
   return (
     <>
-    <div className="container mt-4 flex justify-content-center">
-        <div className='row '>
-        <div className='col-md-10'>
-      <form onSubmit={handleSubmit} className='box-shadow p-4'>
+    <Head>
+    <title>Article Submission Form</title>
+    </Head>
+     <div>
+     <div style={bannerStyle}>
+    <div style={overlayStyle}></div>
+    <div style={imageStyle}></div>
+    <div style={titleStyle}>Article Submission Form</div>
+  </div>
+    </div>
+    
+    <div className="container mt-5 mb-5 flex justify-content-center">
+        <div className='row flex justify-content-center'>
+        <div className='col-md-10 box-shadow p-4'>
+      <form onSubmit={handleSubmit} className=''>
         <div className="row mb-3 ">
           <div className="col-md-6 ">
             <label htmlFor="name" className="form-label">
@@ -100,8 +150,9 @@ const ArticleForm = () => {
             />
           </div>
         </div>
-
-        <div className="mb-3">
+        <div className="row mb-3">
+        <div className="col-md-6 ">
+       
           <label htmlFor="date" className="form-label">
             Date
           </label>
@@ -114,14 +165,16 @@ const ArticleForm = () => {
             onChange={handleChange}
             required
           />
+        
         </div>
+        <div className="col-md-6 ">
 
-        <div className="mb-3">
+       
           <label htmlFor="category" className="form-label">
             Category <span className="forminator-required">*</span>
           </label>
           <select
-            className="form-control"
+            className="form-control p-2"
             id="category"
             name="category"
             value={formData.category}
@@ -147,8 +200,12 @@ const ArticleForm = () => {
             <option value="Sports">Sports</option>
           </select>
         </div>
+        </div>
+        
 
-        <div className="mb-3">
+
+        <div className="row mb-3">
+        <div className="col-md-6 ">
           <label htmlFor="title" className="form-label">
             Title
           </label>
@@ -164,21 +221,29 @@ const ArticleForm = () => {
           />
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="image" className="form-label">
-            Image
-          </label>
-          <input
-            type="file"
-            className="form-control"
-            id="image"
-            name="articleImage"
-            onChange={handleFileChange}
-            required
-          />
-        </div>
+        <div className="col-md-6 ">
+  <label htmlFor="image" className="form-label">
+    Image
+  </label>
+  <div className="input-group">
+    <input
+      type="file"
+      className="form-control"
+      id="image"
+      name="articleImage"
+      onChange={handleFileChange}
+      required
+    />
+    <label className="input-group-text bg-primary text-white" htmlFor="image">
+      Choose File
+    </label>
+  </div>
+</div>
+</div>
 
-        <div className="mb-3">
+
+
+        <div className="row mb-3">
           <label htmlFor="description" className="form-label">
             Description
           </label>
@@ -194,7 +259,7 @@ const ArticleForm = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="row mb-3">
           <label className="form-label">Do you have consent? <span className="forminator-required">*</span></label>
           <div className="form-check">
             <input
@@ -228,7 +293,7 @@ const ArticleForm = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="button">
           Submit
         </button>
       </form>
