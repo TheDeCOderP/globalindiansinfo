@@ -5,6 +5,9 @@ const path = require('path');
 const port = 8187;
 const db = require('./db.js');
 const fs = require('fs');
+const globalConfig = require('./config');
+const serverLink = globalConfig.port;
+const nodemailer = require('nodemailer');
  // const cors = require('cors');
 
 
@@ -42,6 +45,23 @@ app.use((req, res, next) => {
 });
 
 
+const transporter = nodemailer.createTransport({
+  host: 'consulting.prabisha.com',
+  port: 587,
+  secure: false,
+  auth: {
+    user: 'info@prabisha.com',
+    pass: 'ElzAeL6n',
+  },
+});
+
+transporter.verify((error) => {
+  if (error) {
+    console.error('Nodemailer verification failed:', error);
+  } else {
+    console.log('Nodemailer transporter is ready');
+  }
+});
 
 
 
@@ -173,8 +193,116 @@ app.get('/api/top-searches', async (req, res) => {
 });
 
 
+// Multer configuration for handling image uploads
+const customStorage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, 'uploads/articlesupload'); // Specify your image upload folder
+  },
+  filename: (req, file, callback) => {
+    const { title } = req.body; // Assuming the title is sent in the request body
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const modifiedFilename = title.replace(/\s+/g, '-') + '-' + uniqueSuffix + path.extname(file.originalname);
+    callback(null, modifiedFilename);
+  },
+});
+
+const customUpload = multer({ storage: customStorage });
 
 
+
+
+
+ 
+// Multer middleware to handle file uploads
+app.post('/api/articlesupload', customUpload.single('articleImage'), async (req, res) => {
+  try {
+    const { name, email, date, category, title, description, consent } = req.body;
+    const articleImagePath = req.file ? req.file.filename : null;
+
+    // Insert data into the MySQL database
+    const [results] = await db.query(
+      'INSERT INTO articles_upload (name, email, date, category, title, description, consent, image_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [name, email, date, category, title, description, consent, articleImagePath]
+    );
+    const articleId = results.insertId;
+
+    // Send thank-you email to the user
+    const userMailOptions = {
+      from: 'info@prabisha.com',
+      to: email,
+      subject: 'Article Submission Confirmation',
+      html: `<p>Thank you for submitting your article. Your article with the title "${title}" has been received.</p>`,
+    };
+
+    transporter.sendMail(userMailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending user email:', error);
+      } else {
+        console.log('User email sent: ' + info.response);
+      }
+    });
+
+
+// Send submitted data to multiple admins with HTML content
+const adminRecipients = ['developerprakash10@gmail.com', 'prakash10.prabisha@gmail.com' ]; // Add your admin email addresses
+const adminMailOptions = {
+  from: 'info@prabisha.com',
+  to: adminRecipients.join(', '), // Join the admin recipients array into a comma-separated string
+  subject: 'New Article Submission',
+  html: `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;">A new article has been submitted:</p>
+      <ul style="margin-bottom: 1rem; list-style: none; padding: 0;">
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Name:</strong> ${name}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Email:</strong> ${email}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Date:</strong> ${date}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Category:</strong> ${category}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Title:</strong> ${title}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Description:</strong> ${description}
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Image Path:</strong> <a href="${serverLink}/uploads/articlesupload/${articleImagePath}" target="_blank">View Image</a>
+        </li>
+        <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
+          <strong>Consent:</strong> ${consent}
+        </li>
+      </ul>
+      <p style="margin-top: 1rem;">Thank you for your attention.</p>
+    </div>
+  `,
+};
+
+
+
+
+
+
+    transporter.sendMail(adminMailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending admin email:', error);
+      } else {
+        console.log('Admin email sent: ' + info.response);
+      }
+    });
+
+    // Send success response
+    res.status(201).json({ message: 'Article submitted successfully', articleId });
+  } catch (error) {
+    console.error('Submission error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 
 
