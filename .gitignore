@@ -9,7 +9,7 @@ yarn.lock
 package-lock.json
 config.js
 /backend/db.js
-/backend/config.js
+
 # testing
 /coverage
 
