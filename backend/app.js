@@ -244,13 +244,14 @@ app.post('/api/articlesupload', customUpload.single('articleImage'), async (req,
 
 
 // Send submitted data to multiple admins with HTML content
-const adminRecipients = ['developerprakash10@gmail.com', 'prakash10.prabisha@gmail.com' , 'info@prabisha.com' ]; // Add your admin email addresses
+const adminRecipients = ['developerprakash10@gmail.com', 'prakash10.prabisha@gmail.com', 'info@prabisha.com'];
+
 const adminMailOptions = {
   from: 'admin@prabisha.com',
-  to: adminRecipients.join(', '), // Join the admin recipients array into a comma-separated string
+  bcc: adminRecipients.join(', '), // Use the "Bcc" field for multiple recipients
   subject: 'New Article Submission',
   html: `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <p style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;">A new article has been submitted:</p>
       <ul style="margin-bottom: 1rem; list-style: none; padding: 0;">
         <li style="padding: 0.75rem 1.25rem; border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem;">
