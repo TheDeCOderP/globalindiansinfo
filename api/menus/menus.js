@@ -74,6 +74,11 @@ const menus = [
         'name': 'Partner',
         'slug': '/partner'
       },
+      {
+        'id': 18,
+        'name': 'Submit Your Article',
+        'slug': '/article-submission-form'
+      },
     ]
   },
   {
