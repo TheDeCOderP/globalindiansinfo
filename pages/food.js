@@ -63,7 +63,7 @@ const Food = () => {
     <>
      <div className="container-fluid food_section">
         <div className="food_overlay"></div>
-     <div class="center-heading">
+     <div className="center-heading">
     <h2>Food</h2>
   
   </div>

@@ -1365,6 +1365,7 @@ img.home_magazine {
 .center-heading h2 {
   color:#fff;
   z-index:1234;
+  position: relative;
 }
 
 .food_overlay {
