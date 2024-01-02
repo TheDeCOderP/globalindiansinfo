@@ -22,7 +22,7 @@ const dishes = [
   {
     title: "Nutritional Guidance for Vibrant Health",
     // subheading: "The Heartbeat of Indian Cuisine: Spices",
-    image: "/uploads/images/health/food.jpeg",
+    image: "/uploads/images/health/food.jpg",
     description:
       "Unlock the secrets of Indian cuisine and learn how to make nutritious choices that support your well-being. Our nutrition experts provide guidance on creating a balanced and wholesome diet based on traditional Indian principles. Explore the rich tapestry of flavors and discover how to nourish your body with the right nutrients." ,
   },
@@ -90,7 +90,7 @@ const Health = () => {
               <Image
                 src={dish.image}
                 alt={dish.title}
-                width={350}
+                width={800}
                 height={350}
                 className="card-img-top image"
               />
