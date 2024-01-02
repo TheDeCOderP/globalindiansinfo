@@ -1354,6 +1354,12 @@ img.home_magazine {
   position:relative;
 }
 
+.health_section{
+  height:300px;
+  background:url('/uploads/images/health/hnw.jpg');
+  background-size:cover;
+  position:relative;
+}
 
 
 .center-heading {
@@ -1378,6 +1384,14 @@ img.home_magazine {
 }
 
 
+.health_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+}
 
 
 
