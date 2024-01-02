@@ -76,8 +76,8 @@ const Health = () => {
       transition={{ duration: 1 }}
       className="text-center container pt-4"
     >
-      <h2>Welcome to the Global Indian Wellness Hub!</h2>
-      <p className="text-center pt-2">
+      <h1 className="text-center">Welcome to the Global Indian Wellness Hub!</h1>
+      <p className=" text-dark text-center pt-2 ">
         At Global Indian Wellness, we believe in nurturing health and well-being by combining traditional wisdom with modern science. Our mission is to empower individuals of Indian origin worldwide to achieve optimal health and wellness through a holistic approach that encompasses physical, mental, and emotional well-being.
       </p>
     </motion.div>
