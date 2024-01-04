@@ -21,16 +21,11 @@ app.use(bodyParser.json());
 
 
 
-
-
-
-
-
 app.use('/uploads', express.static('uploads'));
 
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['https://globalindiansinfo.com', 'http://localhost:3000', 'https://intranet.prabisha.com'];
+  const allowedOrigins = ['https://globalindiansinfo.com'];
   const origin = req.headers.origin;
 
   if (allowedOrigins.includes(origin)) {
