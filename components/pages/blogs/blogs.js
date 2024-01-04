@@ -46,7 +46,7 @@ export default function AllBlogs() {
                           <img
                             src={`${port}/uploads/blogs/${blog.image_path}`}
                             alt={blog.title}
-                            className="contain"
+                            className="cover"
                           />
                         )}
                       </div>
