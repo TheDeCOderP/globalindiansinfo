@@ -435,6 +435,9 @@ input {
   opacity: 1;
 }
 
+.flex {
+  display: flex;
+}
 
 
 .admin_sidebar_menus {

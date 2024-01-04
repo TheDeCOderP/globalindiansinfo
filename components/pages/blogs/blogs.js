@@ -55,7 +55,7 @@ export default function AllBlogs() {
                           <h3 className="text-start mb-2">{blog.title}</h3>
                           <div className="text-white small" dangerouslySetInnerHTML={{ __html: trimHTMLContent(blog.content, 130) }} />
                           <Link href={`/blogs/${blog.slug}`} legacyBehavior>
-                            <a className="btn bg-white mt-2 small">Read More</a>
+                            <a className="btn bg-white mt-3 small">Read More</a>
                           </Link>
                         </div>
                       </div>
