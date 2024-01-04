@@ -79,6 +79,11 @@ const menus = [
         'name': 'Submit Your Article',
         'slug': '/article-submission-form'
       },
+      {
+        'id': 19,
+        'name': 'Road To Success',
+        'slug': '/road-to-success'
+      },
     ]
   },
   {

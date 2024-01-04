@@ -243,6 +243,19 @@ img.aspect-ratio {
   height:auto;
 } 
 
+
+img.experts-contain {
+  aspect-ratio:4/3;
+  object-fit: contain;
+  width:100%;
+  height:auto;
+  background:#fafafa;
+} 
+
+.experts a {
+  margin-left: 15px;
+}
+
 img.single_blog {
   aspect-ratio:4/3;
   object-fit: contain;
@@ -1376,6 +1389,8 @@ img.home_magazine {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
 }
+
+
 
 
 
