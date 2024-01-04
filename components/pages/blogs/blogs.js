@@ -50,7 +50,7 @@ export default function AllBlogs() {
                           />
                         )}
                       </div>
-                      <div className='col-md-6'>
+                      <div className='col-md-6 flex'>
                         <div className="blog_body text-start">
                           <h3 className="text-start mb-2">{blog.title}</h3>
                           <div className="text-white small" dangerouslySetInnerHTML={{ __html: trimHTMLContent(blog.content, 130) }} />
