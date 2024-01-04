@@ -172,9 +172,42 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
                   }
                   className="form-select"
                 >
-                  <option>Select Your Industry</option>
-                  {/* Add all the options for business type */}
-                </select>
+                   <option>Select Your Industry</option>
+     <option value="Accountancy & Accounting">Accountancy & Accounting</option>
+     <option value="Admin & Administration">Admin & Administration</option>
+     <option value="Automotive">Automotive</option>
+     <option value="Aviation">Aviation</option>
+     <option value="Banking">Banking</option>
+     <option value="Charity & Volunteer">Charity & Volunteer</option>
+     <option value="Cleaning">Cleaning</option>
+     <option value="Customer Services">Customer Services</option>
+     <option value="Design">Design</option>
+     <option value="Education">Education</option>
+     <option value="Engineering">Engineering</option>
+     <option value="Environmental">Environmental</option>
+     <option value="Finance">Finance</option>
+     <option value="Healthcare">Healthcare</option>
+     <option value="Hospitality">Hospitality</option>
+     <option value="IT">IT</option>
+     <option value="Legal">Legal</option>
+     <option value="Leisure & Sports">Leisure & Sports</option>
+     <option value="Logistics, Transport & Distribution">Logistics, Transport & Distribution</option>
+     <option value="Managerial">Managerial</option>
+     <option value="Manufacturing">Manufacturing</option>
+     <option value="Marketing">Marketing</option>
+     <option value="Multilingual">Multilingual</option>
+     <option value="NHS">NHS</option>
+     <option value="Procurement">Procurement</option>
+     <option value="Public Sector">Public Sector</option>
+     <option value="Recruitment">Recruitment</option>
+     <option value="Retail">Retail</option>
+     <option value="Sales">Sales</option>
+     <option value="Science">Science</option>
+     <option value="Security & Emergency">Security & Emergency</option>
+     <option value="Travel & Tourism">Travel & Tourism</option>
+     <option value="Warehouse">Warehouse</option>
+     <option value="Work from Home">Work from Home</option> 
+  </select>
               </div>
               <div className="mb-3 col-sm-12 col-md-6">
                 <label htmlFor="location" className="form-label">
