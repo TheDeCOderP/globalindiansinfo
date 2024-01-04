@@ -439,6 +439,10 @@ input {
   display: flex;
 }
 
+.cover {
+  object-fit:cover;
+}
+
 
 .admin_sidebar_menus {
   display: flex;
