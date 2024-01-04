@@ -99,7 +99,7 @@ const EventsLayout = () => {
         />
       </div>
       <div className="body text-dark ">
-      <h2>Upcoming Events</h2>
+      <h2 >Upcoming Events</h2>
       <p className="event_para text-center">
         Stay in the loop with our list of upcoming events that you won't want to miss. From celebratory festivals to thought-provoking webinars, discover exciting opportunities to connect with fellow Global Indians and engage with our vibrant community.
       </p>
