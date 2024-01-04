@@ -84,6 +84,11 @@ const menus = [
         'name': 'Road To Success',
         'slug': '/road-to-success'
       },
+      {
+        'id': 20,
+        'name': '2024 Calendar',
+        'slug': '/2024-calendar'
+      },
     ]
   },
   {

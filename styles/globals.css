@@ -118,7 +118,7 @@ h2.page_title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   margin-bottom: 20px;
   min-height: 110px;
 }
@@ -415,7 +415,7 @@ footer .row {
   text-decoration: none;
   color: #273171;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-left: 1px solid #fb9629;
   background: #ffffff;
 }
@@ -425,6 +425,16 @@ input {
   font-family: 'Raleway';
   
 }
+
+/* Add this CSS to your styles */
+.single_page {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
 
 
 .admin_sidebar_menus {

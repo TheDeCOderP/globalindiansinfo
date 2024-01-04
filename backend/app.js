@@ -277,12 +277,7 @@ const adminMailOptions = {
   `,
 };
 
-
-
-
-
-
-    transporter.sendMail(adminMailOptions, (error, info) => {
+  transporter.sendMail(adminMailOptions, (error, info) => {
       if (error) {
         console.error('Error sending admin email:', error);
       } else {
@@ -425,6 +420,8 @@ app.get('/api/blogs/:slug', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
 // Endpoint to get all blogs
 app.get('/api/blogs', async (req, res) => {
   try {
