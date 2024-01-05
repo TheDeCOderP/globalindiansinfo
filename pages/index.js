@@ -13,6 +13,7 @@ import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import HomePageBlogs from '../components/pages/blogs/home-blogs'
 import BusinessListings from '../components/pages/business/HomePage'
 import MonthlyMagazine from '../components/pages/home/MonthlyMagazine'
+import SuccessStories from '@/components/pages/home/SuccesStories';
 
 const HomePage = () => {
 
@@ -50,6 +51,9 @@ const HomePage = () => {
     </section>
     <section className="section magazine_section">
     <MonthlyMagazine/>
+    </section>
+    <section className="section successstories_section bg-fafafa">
+    <SuccessStories/>
     </section>
     <section className="section faq_section">
       <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
