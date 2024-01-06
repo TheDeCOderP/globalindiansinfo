@@ -30,7 +30,7 @@ const PdfPreview = () => {
 
   const handleDownloadPDF2 = async () => {
     try {
-      const response = await fetch('/pdf/2024-Calender.pdf');
+      const response = await fetch('/pdf/Prabisha 2024 Calendar 2.pdf');
       const blob = await response.blob();
 
       const link = document.createElement('a');
@@ -54,7 +54,7 @@ const PdfPreview = () => {
         <div className="col-md-12 col-sm-12 ">
         <div className='m-2  p-3 box-shadow'>
         <div className="text-center">
-        <Link href="/pdf/2024-Calender.pdf" target="_blank" className="m-3"> <button
+        <Link href="/pdf/Prabisha 2024 Calendar 2.pdf" target="_blank" className="m-3"> <button
               className="btn btn-success p-2"
              
             >
@@ -78,7 +78,7 @@ const PdfPreview = () => {
   <div className="embed-responsive embed-responsive-16by9">
     <iframe
       className="embed-responsive-item"
-      src="/pdf/2024-Calender.pdf"
+      src="/pdf/Prabisha 2024 Calendar 2.pdf"
       title="PDF Preview"
       allowFullScreen
       style={{ width: '100%', maxWidth: '700px', height: '400px' }}
