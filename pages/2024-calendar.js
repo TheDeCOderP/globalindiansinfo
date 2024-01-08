@@ -44,6 +44,23 @@ const PdfPreview = () => {
       console.error('Error downloading PDF:', error);
     }
   };
+  
+  const handleDownloadPDF3 = async () => {
+    try {
+      const response = await fetch('/pdf/2024-Calendar.pdf');
+      const blob = await response.blob();
+
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = '2024-Calender.pdf';
+      document.body.appendChild(link);
+
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+    }
+  };
 
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -51,7 +68,7 @@ const PdfPreview = () => {
     <div className="container mt-5">
       <div className="row">
        
-        <div className="col-md-12 col-sm-12 ">
+        <div className="col-md-6 col-sm-12 ">
         <div className='m-2  p-3 box-shadow'>
         <div className="text-center">
         <Link href="/pdf/Prabisha 2024 Calendar 2.pdf" target="_blank" className="m-3"> <button
@@ -79,6 +96,43 @@ const PdfPreview = () => {
     <iframe
       className="embed-responsive-item"
       src="/pdf/Prabisha 2024 Calendar 2.pdf"
+      title="PDF Preview"
+      allowFullScreen
+      style={{ width: '100%', maxWidth: '700px', height: '400px' }}
+    ></iframe>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div className="col-md-6 col-sm-12">
+        <div className='m-2  p-3 box-shadow'>
+        <div className="text-center">
+        <Link href="/pdf/2024-Calendar.pdf" target="_blank" className="m-3"> <button
+              className="btn btn-success p-2"
+             
+            >
+              View PDF
+            </button>
+            </Link>
+            <button
+              className="button rounded mb-3"
+              onClick={ handleDownloadPDF3}
+            >
+              Download PDF
+            </button>
+
+          
+          </div>
+          
+          
+
+          <div className="d-flex justify-content-center mb-4">
+            
+  <div className="embed-responsive embed-responsive-16by9">
+    <iframe
+      className="embed-responsive-item"
+      src="/pdf/2024-Calendar.pdf"
       title="PDF Preview"
       allowFullScreen
       style={{ width: '100%', maxWidth: '700px', height: '400px' }}
