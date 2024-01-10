@@ -1,6 +1,7 @@
 import { FaWhatsapp, FaLinkedin, FaGlobe, FaLightbulb , FaBolt,FaFlag} from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import Flipbook from '@/components/pages/jobs/flipbook';
 
 
 const JobsLayout = () => {
@@ -64,12 +65,14 @@ const JobsLayout = () => {
   ];
   return (
     <>
-    <div className="jobs_page row" 
-    >
+    <div className="jobs_page row mb-5" >
+      <div className="col-md-8">
+        <div className='row'>
+      
             {sections.map((section, index) => (
               <div className="col-md-6 text-center " key={index}>
-                <section className="mb-5">
-                  <div className="body text-dark h-165" style={{ backgroundColor: 'ffedd8' }}>
+                <section className="m-2">
+                  <div className="body text-dark p-4" style={{ backgroundColor: 'ffedd8' }}>
                   
                   <div className="text-center"
          dangerouslySetInnerHTML={{ __html: section.title }} />
@@ -77,7 +80,14 @@ const JobsLayout = () => {
                   </div>
                 </section>
               </div>
+
             ))}
+            </div>
+            </div>
+            <div className="col-md-4 box-shadow p-2">
+            
+              <Flipbook/>
+            </div>
           </div> 
     
     <div className="jobs_page text-center">

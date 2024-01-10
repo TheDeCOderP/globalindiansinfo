@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pdfjs": "npm show pdfjs-dist version"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
@@ -18,6 +19,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-aria/ssr": "^3.7.1",
     "@react-three/fiber": "^8.13.6",
+    "@react-pdf-viewer/core": "^2.11.0",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.1",
@@ -76,6 +78,7 @@
   },
   "devDependencies": {
     "@types/hoist-non-react-statics": "^3.3.2",
-    "concurrently": "^8.2.1"
+    "concurrently": "^8.2.1",
+    "pdfjs-dist": "^2.12.313"
   }
 }
