@@ -25,6 +25,16 @@ app.use('/uploads', express.static('uploads'));
 
 
 app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://www.globalindiansinfo.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+
+
+
+app.use((req, res, next) => {
   const allowedOrigins = ['https://globalindiansinfo.com'];
   const origin = req.headers.origin;
 
@@ -58,11 +68,6 @@ transporter.verify((error) => {
 
 
 
-
-
-
-
-app.use('/uploads', express.static('uploads'));
 
 
 
