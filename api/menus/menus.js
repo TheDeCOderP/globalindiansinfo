@@ -89,6 +89,11 @@ const menus = [
         'name': '2024 Calendar',
         'slug': '/2024-calendar'
       },
+      {
+        'id': 21,
+        'name': 'Ayodhya',
+        'slug': '/ayodhya'
+      },
     ]
   },
   {
