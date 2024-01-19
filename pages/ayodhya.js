@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -35,6 +36,9 @@ const PdfPreview = () => {
 
   return (
     <div className="container mt-5 mb-5">
+      <Head>
+      <title>Ayodhya - Global Indians Info</title>
+      </Head>
       <div className="row flex justify-content-center">
        
         <div className="col-md-12 col-sm-12 ">
