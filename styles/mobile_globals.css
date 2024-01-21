@@ -361,7 +361,7 @@ a.dropdown-item {
 
 .dropdown-menu.show {
   position: absolute;
-  inset: -90px auto auto 90px!important;
+  inset: -150px auto auto 90px!important;
 }
 
 

@@ -97,6 +97,11 @@ const menus = [
     ]
   },
   {
+    'id': 22,
+    'name': 'Books',
+    'slug': '/books'
+  },
+  {
     'id': 12,
     'name': 'Contact',
     'slug': '/contact'
