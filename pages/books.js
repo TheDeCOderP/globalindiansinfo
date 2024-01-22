@@ -31,12 +31,12 @@ const PdfPreview = () => {
 
   const handleDownloadPDF2 = async () => {
     try {
-      const response = await fetch('/pdf/Ayodhya-2024.pdf');
+      const response = await fetch('/pdf/AviralAvichalAnantAyodhya.pdf');
       const blob = await response.blob();
 
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.download = 'Ayodhya-2024.pdf';
+      link.download = 'AviralAvichalAnantAyodhya.pdf';
       document.body.appendChild(link);
 
       link.click();
@@ -94,8 +94,8 @@ const PdfPreview = () => {
         <div className="col-md-6 col-sm-12 ">
           <div className='m-2  p-3 pt-4 box-shadow'>
             <div className="text-center ">
-            <h5 className='text-center pb-3'>Anant Ayodhya</h5>
-              <Link href="/pdf/Ayodhya-2024.pdf" target="_blank" className="m-3"> <button
+            <h5 className='text-center pb-3'>Aviral Avichal Anant Ayodhya</h5>
+              <Link href="/pdf/AviralAvichalAnantAyodhya.pdf" target="_blank" className="m-3"> <button
                 className="btn btn-success p-2"
 
               >
@@ -116,7 +116,7 @@ const PdfPreview = () => {
 
             <div className="d-flex justify-content-center mb-4">
 
-            <Link href="/pdf/Ayodhya-2024.pdf" target="_blank" className="m-3">
+            <Link href="/pdf/AviralAvichalAnantAyodhya.pdf" target="_blank" className="m-3">
                 <img src="/pdf/ayodhya-2.jpg" className='img-fluid'></img>
               </Link>
             </div>
