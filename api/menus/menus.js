@@ -81,6 +81,11 @@ const menus = [
       },
       {
         'id': 19,
+        'name': 'Magazines',
+        'slug': '/magazines'
+      },
+      {
+        'id': 23,
         'name': 'Road To Success',
         'slug': '/road-to-success'
       },
