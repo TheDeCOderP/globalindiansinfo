@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['https://www.globalindiansinfo.com',
+  const allowedOrigins = ['https://www.globalindiansinfo.com','https://globalindiansinfo.com',
    'http://localhost:3000'];
   const origin = req.headers.origin;
 
