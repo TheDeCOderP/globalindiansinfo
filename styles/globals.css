@@ -443,10 +443,6 @@ img.site-logo {
   }
 }
 
-/* Site logo */
-.site-logo {
-  max-width: 100px; /* Adjust the size of the logo */
-}
 
 /* Eye icon for password visibility toggle */
 .site-primary {
