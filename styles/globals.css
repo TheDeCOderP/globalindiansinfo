@@ -443,6 +443,11 @@ img.site-logo {
   }
 }
 
+img.my-account {
+  width: 200px;
+  object-fit: contain;
+}
+
 
 /* Eye icon for password visibility toggle */
 .site-primary {

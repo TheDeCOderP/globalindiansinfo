@@ -30,40 +30,54 @@ function MyAccount() {
   };
 
   return (
-    <div className="section mx-auto my-8 ">
-      <div className=" flex flex-column justify-center bg-green text-center h-32 ">
-      <h1 className="text-center font-bold mb-4">My Account</h1>
-      </div>
+    <div className="section mx-auto mt-3">
+        <h1 className="text-center font-bold">My Account</h1>
+      <div className="row flex justify-content-center bg-green text-center py-4">
+      <div className="col-sm-12 col-md-8 box-shadow p-4">
+     
       {user ? (
-        <div className="flex flex-column space-y-4">
-          <div className="flex items-center">
+        <div className="mt-4">
+          <div className='col d-flex mb-3'>
+          {user.profileImage ? (
+              <img src={user.profileImage} className="my-account w-5 h-5 site-primary pl-2" />
+            ) : (
+              <img
+                src="/user.jpg"  // Replace with the path to your default image
+                className="w-2 h-2 user_logo site-primary ml-1"
+                alt="User"
+              />
+            )}
+            </div>
+          <div className="flex items-center align-items-center mb-2">
+            
             <FaUserCircle className="w-6 h-6 site-primary mr-2" />
-            <p>
-              Welcome,<b className='text-primary'> {user.name || 'Hello'}!</b>
+            <p className="text-primary font-semibold m-2">
+              Welcome, {user.name || 'Hello'}!
             </p>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center align-items-center mb-2">
             <FaEnvelope className="w-6 h-6 site-primary mr-2" />
-            <p>
-            <Link href={`mailto:${user.email}`}   > {user.email || 'No email available'} </Link>
+            <p className='m-2'>
+              Email: <Link href={`mailto:${user.email}`}>{user.email || 'No email available'}</Link>
             </p>
           </div>
-          <div className="flex items-center">
+          <div className="flex j align-items-center mb-2">
             <FaMobile className="w-6 h-6 site-primary mr-2" />
-            <p>
-           <Link href={`tel:${user.mobile}`}   >{user.mobile || 'No mobile available'}</Link>
+            <p className='m-2'>
+              Mobile: <Link href={`tel:${user.mobile}`}>{user.mobile || 'No mobile available'}</Link>
             </p>
           </div>
-          <div
-            className="w-full flex items-center p-2 button cursor-pointer hover:bg-gray-100"
+          <button
+            className=" flex align-items-center align-item-center button mt-4 mb-4"
             onClick={handleLogout}
           >
             <FaSignOutAlt className="w-6 h-6 mr-2" />
-            Logout
-          </div>
-         
+            <p className='m-0'>Logout</p>
+          </button>
         </div>
       ) : null}
+    </div>
+    </div>
     </div>
   );
 }
