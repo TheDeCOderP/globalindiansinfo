@@ -17,9 +17,10 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@heroicons/react": "^2.1.1",
     "@react-aria/ssr": "^3.7.1",
-    "@react-three/fiber": "^8.13.6",
     "@react-pdf-viewer/core": "^2.11.0",
+    "@react-three/fiber": "^8.13.6",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.1",
@@ -40,6 +41,7 @@
     "fuse.js": "^6.6.2",
     "google-translate-api": "^2.3.0",
     "gsap": "^3.12.2",
+    "html-to-image": "^1.11.11",
     "jsdom": "^23.0.1",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
@@ -48,6 +50,7 @@
     "next": "^13.5.6",
     "next-connect": "^1.0.0",
     "nodemailer": "^6.9.5",
+    "nookies": "^2.5.2",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
@@ -59,7 +62,8 @@
     "react-icons": "^4.11.0",
     "react-image-lightbox": "^5.1.4",
     "react-modal": "^3.16.1",
-    "react-pdf": "^7.6.0",
+    "react-pageflip": "^2.0.3",
+    "react-pdf": "^7.7.0",
     "react-quill": "^2.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",
@@ -79,6 +83,6 @@
   "devDependencies": {
     "@types/hoist-non-react-statics": "^3.3.2",
     "concurrently": "^8.2.1",
-    "pdfjs-dist": "^2.12.313"
+    "pdfjs-dist": "^2.16.105"
   }
 }

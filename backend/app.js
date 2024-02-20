@@ -57,11 +57,125 @@ transporter.verify((error) => {
 });
 
 
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const query = 'SELECT id, email, name , userId , mobile , profileImage FROM users WHERE email = ? AND password = ?';
+    const [results] = await db.query(query, [email, password]);
+
+    if (results.length > 0) {
+      const user = results[0];
+      res.status(200).json({ success: true, message: 'Login successful', user });
+    } else {
+      res.status(401).json({ success: false, message: 'Wrong email or password' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+
+app.post('/api/login/admin', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+const userType = 'admin'; // Assuming you want to check for 'admin' userType
+
+const query = 'SELECT id, email FROM users WHERE email = ? AND password = ? AND userType = ?';
+const [results] = await db.query(query, [email, password, userType]);
+
+
+    if (results.length > 0) {
+      const user = results[0];
+      res.status(200).json({ success: true, message: 'Login successful', user });
+    } else {
+      res.status(401).json({ success: false, message: 'Wrong email or password' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
 
 
 
 
+// Multer configuration for profile image upload
+const profileImageStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/users'); // Specify the destination path for profile images
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  },
+});
 
+const profileImageUpload = multer({ storage: profileImageStorage });
+
+
+
+// Route to check if the email or mobile already exists
+app.post('/api/check-details', async (req, res) => {
+  try {
+    const { email, mobile } = req.body;
+    const emailCheckQuery = 'SELECT id FROM users WHERE email = ?';
+    const mobileCheckQuery = 'SELECT id FROM users WHERE mobile = ?';
+
+    const [emailCheckResults] = await db.query(emailCheckQuery, [email]);
+    const [mobileCheckResults] = await db.query(mobileCheckQuery, [mobile]);
+
+    const responseData = {
+      emailExists: emailCheckResults.length > 0,
+      mobileExists: mobileCheckResults.length > 0,
+    };
+
+    res.status(200).json(responseData);
+  } catch (error) {
+    console.error('Error checking email or mobile:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+
+// Route to handle user registration
+app.post('/api/register', profileImageUpload.single('profileImage'), async (req, res) => {
+  try {
+    const { name , email, password, mobile } = req.body;
+
+    // Check if the email already exists
+    const emailCheckQuery = 'SELECT id FROM users WHERE email = ?';
+    const [emailCheckResults] = await db.query(emailCheckQuery, [email]);
+
+    if (emailCheckResults.length > 0) {
+      res.status(400).json({ success: false, message: 'Email already registered' });
+      return;
+    }
+
+    // Generate a random number
+    const randomNumber = Math.floor(1000 + Math.random() * 9000);
+
+    // Combine a static prefix with the random number
+    const userId = `AB${randomNumber}`;
+
+    const profileImagePath = req.file ? req.file.path : null;
+    const profileImageURL = req.file ? `${serverLink}/${profileImagePath}` : null;
+
+    // Insert user data into the database
+    await db.query('INSERT INTO users (userId, name, email, password, mobile, profileImage) VALUES ( ?, ? , ?, ?, ?, ?)', [
+      userId,
+      name,
+      email,
+      password,
+      mobile,
+      profileImageURL,
+    ]);
+
+    res.status(201).json({ success: true, message: 'Registration successful' });
+  } catch (error) {
+    console.error('Error during registration:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
 
 
 

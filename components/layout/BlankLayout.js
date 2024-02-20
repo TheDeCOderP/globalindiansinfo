@@ -4,7 +4,7 @@ import Footer from './footer/Footer';
 const BlankLayout = ({ children }) => {
   
   return (
-    <div className="section">
+    <div className="">
    
       {children}
     

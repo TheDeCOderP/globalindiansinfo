@@ -16,6 +16,7 @@ import Menuitems from "@/api/menus/menus";
 import Dropdown from 'react-bootstrap/Dropdown';
 import Link from "next/link";
 import Image from "next/image";
+import AdminProfile from "../UserProfile";
 
 const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -77,6 +78,7 @@ const MobileMenu = () => {
                 height={100}
               />
             </Link>
+            <AdminProfile/>
           </DrawerHeader>
           <DrawerBody>
           {Menuitems.map((ele) =>

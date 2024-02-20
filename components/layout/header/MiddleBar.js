@@ -7,6 +7,7 @@ import SearchComponent from './SearchBar';
 
 import MobileMenuBar from '../header/mobilenav'
 import Image from 'next/image';
+import AdminProfile from '../../layout/UserProfile'
 
 function Header() {
   
@@ -17,7 +18,7 @@ function Header() {
     <Navbar collapseOnSelect expand="lg" variant="dark"  className="header_nav topbar hide_on_small ">
       <div className="container-fluid">
        <div className="row">
-        <div className="logo_bar col col-sm-6 col-md-3 col-lg-3">
+        <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
         <Link href="/"><Image  width={200} height={100}
            className="site-logo"
           src="/uploads/images/site-logo3.png"
@@ -26,6 +27,7 @@ function Header() {
         </div>
          <div className="col col-sm-6 col-md-4 col-lg-4">
         <SearchComponent  />
+      
         </div>
 
         <div className="col col-sm-6 col-md-2 col-lg-2 social-icons hide_on_mobile">
@@ -33,14 +35,20 @@ function Header() {
               <a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank"> <Image  width={30} height = {30} src="/social/icons8-facebook.svg" alt="fb" /></a>
               <a href="https://www.instagram.com/global_indian_official/" target="blank"><Image  width={30} height = {30} src="/social/icons8-instagram.svg" alt="insta" /></a>
               <a href="https://twitter.com/globalindian_in" target="blank"><Image  width={30} height = {30} src="/social/icons8-twitter.svg" alt="twitter"/></a>
+             
               
             
             
         </div>
        
         
-       <div className="col col-sm-6 col-md-3 col-lg-3 list_business_header  hide_on_mobile">
+       <div className="col col-sm-6 col-md-2 col-lg-2 list_business_header  hide_on_mobile">
         <Link href="/list-your-business" className="button header_button">List Business Now</Link>
+      
+      </div>
+       <div className="col col-sm-6 col-md-2 col-lg-2 list_business_header  hide_on_mobile">
+   
+        <AdminProfile/>
       </div>
         </div>
       </div>
@@ -67,6 +75,7 @@ function Header() {
         <div className="col col-sm-12 col-md-12 col-lg-12">
         <SearchComponent  />
         </div>
+       
         </div></div>
      
      </>
