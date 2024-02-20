@@ -45,8 +45,8 @@ const Login = () => {
 
         Swal.fire({
           icon: 'success',
-          title: 'Welcome Back!',
-          text: 'Login successful. Redirecting to Dashboard...',
+          title: 'Welcome to GII!',
+          text: 'Login successful. Now you can view all the Pages',
           showConfirmButton: false,
           timer: 1500,
         });
@@ -84,8 +84,8 @@ const Login = () => {
       <div className=" p-8 rounded shadow-md  login-form ">
         
         <div className='row d-flex justify-content-center bg-white  '>
-        <div className='col-md-12 box-shadow    '>
-        <div className="text-center">
+        <div className='col-md-12 box-shadow p-2 pt-4    '>
+        <div className="text-center pb-3">
           <img src="/uploads/images/site-logo3.png" alt="Logo" className="mb-8 site-logo" />
         </div>
 

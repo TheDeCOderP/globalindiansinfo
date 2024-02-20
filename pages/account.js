@@ -25,17 +25,17 @@ function MyAccount() {
 
 
   const handleLogout = () => {
-    destroyCookie(null, 'realestate');
+    destroyCookie(null, 'gii');
     router.push('/login');
   };
 
   return (
-    <div className="container mx-auto my-8 ">
-      <div className=" flex justify-center bg-green text-center h-32 ">
-      <h1 className="text-3xl font-bold mb-4">My Account</h1>
+    <div className="section mx-auto my-8 ">
+      <div className=" flex flex-column justify-center bg-green text-center h-32 ">
+      <h1 className="text-center font-bold mb-4">My Account</h1>
       </div>
       {user ? (
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-column space-y-4">
           <div className="flex items-center">
             <FaUserCircle className="w-6 h-6 site-primary mr-2" />
             <p>
@@ -55,10 +55,10 @@ function MyAccount() {
             </p>
           </div>
           <div
-            className="flex items-center p-2 cursor-pointer hover:bg-gray-100"
+            className="w-full flex items-center p-2 button cursor-pointer hover:bg-gray-100"
             onClick={handleLogout}
           >
-            <FaSignOutAlt className="w-6 h-6 site-primary mr-2" />
+            <FaSignOutAlt className="w-6 h-6 mr-2" />
             Logout
           </div>
          

@@ -55,7 +55,7 @@ function AdminProfile({ children }) {
      
       <Link href="/account">My Account</Link>
     </div>
-    <Link href="" legacyBehavior>
+  
   <div
     className="d-flex align-items-center p-2 hover-bg-gray-100 too-small"
     onClick={handleLogout}
@@ -63,7 +63,7 @@ function AdminProfile({ children }) {
   >
     Logout
   </div>
-</Link>
+
 
   </div>
   </div>
