@@ -89,4 +89,5 @@
   "eslintConfig": {
     "extends": "next"
   }
+  
 }
