@@ -62,7 +62,7 @@ const Content = () => {
   <div className="col-sm-12 col-md-5 col-lg-5 ">
     <div className="p-4 box-shadow">
     <p className="main">
-        Ready to make a difference and connect with Global Indians worldwide? Join us at <a href="www.globalindiansinfo.com">www.globalindiansinfo.com</a> today! Let's unite, inspire, and empower each other aswe proudly represent the Indian diaspora  on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
+        Ready to make a difference and connect with Global Indians worldwide? Join us at <a href="https://globalindiansinfo.com/">www.globalindiansinfo.com</a> today! Let's unite, inspire, and empower each other aswe proudly represent the Indian diaspora  on the global stage. Together, we'll create a brighter future and celebrate our incredible journey.
         Tag your friends, share this post, and  let's build a global community like no other! 
       </p>
       <ul>
