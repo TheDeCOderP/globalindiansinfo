@@ -17,6 +17,7 @@ import '@/styles/globals.css';
 import '@/styles/aanchal.css';
 import '@/styles/sai.css';
 import '@/styles/mobile_globals.css';
+import Script from 'next/script';
 
 const MyApp = ({ Component, pageProps }) => {
   // Determine if the Component has a custom layout
@@ -37,7 +38,7 @@ const MyApp = ({ Component, pageProps }) => {
         <title>Global Indians Info - Connecting Indians Globally</title>
         <link rel="icon" href="/uploads/images/site-logo1.png" />
         {/* Google Analytics script */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></Script>
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
