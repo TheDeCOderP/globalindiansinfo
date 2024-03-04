@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useRouter } from 'next/router';
 
 import withReactContent from 'sweetalert2-react-content';
 import globalConfig from '@/config'; // Assuming you have a proper path for your config file
