@@ -25,7 +25,7 @@ const AddQuestionForm = () => {
       const userData = JSON.parse(storedUserData);
       setUser(userData);
     }
-  }, [router.asPath]);
+  }, [router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

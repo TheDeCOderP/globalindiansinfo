@@ -41,7 +41,7 @@ const QuestionList = () => {
       setUser(userData);
       fetchQuestions(); // Call fetchQuestions when user data is available
     }
-  }, [router.asPath]);
+  }, [router]);
 
   const fetchQuestions = async () => {
     try {
