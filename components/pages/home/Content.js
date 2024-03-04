@@ -45,12 +45,9 @@ const Content = () => {
       <div className="icon">
         <FaUserTie />
       </div>
-      <h2>Become an<span className="green"> Ambassador</span></h2>
+      <h2>Become an<span className="green"> <br></br>Ambassador</span></h2>
       <p>
-        Are you passionate about representing the Indian diaspora in your
-        corner of the world? We're looking for Ambassadors who will
-        proudly carry the torch of our culture and heritage in their
-        workplaces.
+      Seeking passionate Ambassadors to represent the Indian diaspora, fostering culture and heritage in their workplaces. Join us in proudly carrying the torch of our rich heritage worldwide.
       </p>
       <div className="text-center pt-3">
         <a href="mailto:info@prabisha.com" className="whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
