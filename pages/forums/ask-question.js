@@ -17,7 +17,6 @@ const AddQuestionForm = () => {
   useEffect(() => {
     const cookies = parseCookies();
     const storedUserData = cookies.gii;
-    const router = useRouter();
 
     if (!cookies.gii || !storedUserData) {
       setUser(null);
