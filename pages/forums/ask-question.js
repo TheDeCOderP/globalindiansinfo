@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+
 import { parseCookies } from 'nookies';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -16,6 +18,7 @@ const AddQuestionForm = () => {
   useEffect(() => {
     const cookies = parseCookies();
     const storedUserData = cookies.gii;
+    const router = useRouter();
 
     if (!cookies.gii || !storedUserData) {
       setUser(null);
