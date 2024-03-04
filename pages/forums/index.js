@@ -32,7 +32,6 @@ const QuestionList = () => {
   
     const cookies = parseCookies();
     const storedUserData = cookies.gii;
-    const router = useRouter();
   
     if (!storedUserData) {
       setUser(null);
