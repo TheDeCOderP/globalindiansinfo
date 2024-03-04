@@ -21,8 +21,7 @@ function MyAccount() {
       setUser(userData);
     }
     
-  }, [router.asPath]);
-
+  }, [router]); // Include router in the dependency array
 
   const handleLogout = () => {
     destroyCookie(null, 'gii');
