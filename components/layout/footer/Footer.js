@@ -31,7 +31,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><FaFacebook className="mr-2" /><a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank">Facebook</a></li>
               <li><FaTwitter className="mr-2" /><a href="https://twitter.com/globalindian_in" target="blank">Twitter</a></li>
-              <li><FaInstagram className="mr-2" /><a href="https://www.instagram.com/global_indian_official/" target="blank">Instagram</a></li>
+              <li><FaInstagram className="mr-2" /><a href="https://www.instagram.com/p/C30FvUPMMdv/?igsh=MTc5bzdxaTZrdWw3dg==" target="blank">Instagram</a></li>
               <li><FaLinkedin className="mr-2" /><a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank">Linkedin</a></li>
             </ul>
           </div>

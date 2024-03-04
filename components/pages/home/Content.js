@@ -6,78 +6,58 @@ import TopSearches from '@/components/pages/home/SearchedItems';
 const Content = () => {
   return (
     <div className="home_content_section ">
-      <div className="row">
-        <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box box-shadow">
-            <div className="icon">
-              <FaGlobe />
-            </div>
-            <h2>Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
-            <p>
-              Connecting the<span className="green"> Global Indian</span>  Diaspora across the globe! Are you a
-              proud member of the Indian diaspora, living and thriving across
-              the globe? Do you believe in the power of connection and
-              collaboration? Then we've got some exciting news for you!
-            </p>
-          </div>
-        </div>
-        <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box box-shadow">
-            <div className="icon">
-              <FaBullhorn color={'orange'} />
-            </div>
-            <h2>Welcome to <span className="green">www.GlobalIndiansInfo.com</span></h2>
-            <p>
-              Your Gateway to Connect, Network, and Grow together! Our mission
-              is clear: We want to bring together the vibrant and diverse
-              Indian diaspora like never before. Whether you're a student,
-              professional, entrepreneur, or just someone who's passionate about
-              your Indian roots, this is YOUR platform.
-            </p>
-          </div>
-        </div>
+    <div className="row">
+  <div className="col-md-4">
+    <div className="content-box2 box-shadow">
+      <div className="icon">
+        <FaGlobe />
       </div>
-      <div className="row">
-        <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box2 box-shadow">
-            <div className="icon">
-              <FaUsers />
-            </div>
-            <h2>Connect with a <span className="green">Global Network</span></h2>
-            <p>
-              Join our WhatsApp community group and engage with like-minded
-              individuals who share your background, interests, and goals. Share
-              your stories, experiences, and ideas with fellow <span className="green"> Global Indians </span>
-              from around the world. Let's foster a sense of belonging and unity
-              like never before!
-             
-            </p>
-            <div className="text-center pt-3">
-            <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Join Our Community</a>
-            </div>
-            
-          </div>
-        </div>
-        <div className="col-sm-12 col-md-6 col-lg-6">
-          <div className="content-box2 box-shadow ">
-            <div className="icon">
-              <FaUserTie />
-            </div>
-            <h2>Become an<span className="green"> Ambassador</span></h2>
-            <p>
-              Are you passionate about representing the Indian diaspora in your
-              corner of the world? We're looking for Ambassadors who will
-              proudly carry the torch of our culture and heritage in their
-              workplaces, universities, colleges, cities, and beyond. Fill in
-              this form to join us as<span className="green"> Global Indian</span> Ambassador
-            </p>
-            <div className="text-center pt-3">
-            <a href="https://forms.gle/3DRyhs1iTsJbHYdK7 " className=" whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
-            </div>
-          </div>
-        </div>
-       
+      <h2>Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
+      <p>
+        Connecting the<span className="green"> Global Indian</span>  Diaspora across the globe! Are you a
+        proud member of the Indian diaspora, living and thriving across
+        the globe?
+      </p>
+      <div className="text-center pt-3">
+        <a href="/about" className="whatsapp_button" role="button" aria-pressed="true" >More About Us</a>
       </div>
+    </div>
+  </div>
+
+  <div className="col-md-4">
+    <div className="content-box2 box-shadow">
+      <div className="icon">
+        <FaUsers />
+      </div>
+      <h2>Connect with a <span className="green">Global Network</span></h2>
+      <p>
+        Join our WhatsApp community group and engage with like-minded
+        individuals who share your background, interests, and goals.
+      </p>
+      <div className="text-center pt-3">
+        <a href="https://chat.whatsapp.com/IBD5TnnlJA5JPNy3JSylxT " className="whatsapp_button" role="button" aria-pressed="true" target="_blank">Join Our Community</a>
+      </div>
+    </div>
+  </div>
+  <div className="col-md-4">
+    <div className="content-box2 box-shadow ">
+      <div className="icon">
+        <FaUserTie />
+      </div>
+      <h2>Become an<span className="green"> Ambassador</span></h2>
+      <p>
+        Are you passionate about representing the Indian diaspora in your
+        corner of the world? We're looking for Ambassadors who will
+        proudly carry the torch of our culture and heritage in their
+        workplaces.
+      </p>
+      <div className="text-center pt-3">
+        <a href="mailto:info@prabisha.com" className="whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <div className="row align-items-center mt-4">
   <h1 className="text-center"><span className="green"> Why</span> Join Us?</h1>

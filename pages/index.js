@@ -4,7 +4,6 @@ import React from 'react';
 import Carousel from '../components/pages/home/Carousel';
 import RotatingTextBanner from '../components/pages/home/RotatingText';
 import Categories from '../components/pages/home/Categories';
-import Globes from '../components/pages/home/GlobeSection';
 import FeaturedNews from '../components/pages/articles/latest3'
 import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
@@ -46,9 +45,6 @@ const HomePage = () => {
      <AdBanner/>
     </section>
 
-    <section className="section globe_section">
-     <Globes/>
-    </section>
     <section className="section magazine_section">
     <MonthlyMagazine/>
     </section>

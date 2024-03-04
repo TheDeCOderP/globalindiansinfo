@@ -9,7 +9,7 @@ function AdminRouter({ children }) {
 
   useEffect(() => {
     // Redirect to login or register page if not authenticated
-    if (!cookies.gii && router.pathname !== '/') {
+    if (!cookies.gii && router.pathname !== '/login') {
       router.push('/login');
     }
   }, []); // <-- Add an empty dependency array

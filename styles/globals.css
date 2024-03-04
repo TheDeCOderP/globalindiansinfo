@@ -118,9 +118,18 @@ h2.page_title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   margin-bottom: 20px;
   min-height: 110px;
+}
+
+
+img.contain.ap4_1 {
+  aspect-ratio: 3 / 3;
+  width: 130px;
+}
+.w-200 {
+  width:200px;
 }
 .mission-vision {
   padding: 10px;
@@ -1001,9 +1010,13 @@ img.admin_site-logo.bg-light.p-2 {
 
 }
 
-.ap4_1{
-  aspect-ratio:4/1
+iframe {
+  border: 0;
+  width: 100%;
+  padding: 0px 20px;
+  height: 300px;
 }
+
 
 nav.header_nav.topbar.navbar.navbar-expand-lg.navbar-dark {
   padding: 80px 10px 10px 10px;

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "global-indians-info",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,7 @@
     "cookie-parser": "^1.4.6",
     "cookies-next": "^2.1.2",
     "cors": "^2.8.5",
+    "cricket-live-api": "^1.0.0",
     "draft-js": "^0.11.7",
     "embla-carousel": "^8.0.0-rc12",
     "embla-carousel-react": "^8.0.0-rc12",
@@ -73,6 +74,7 @@
     "rsuite": "^5.37.3",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.10.1",
+    "sweetalert2-react-content": "^5.0.7",
     "swiper": "^10.2.0",
     "tailwindcss": "^3.3.2",
     "three": "^0.155.0",

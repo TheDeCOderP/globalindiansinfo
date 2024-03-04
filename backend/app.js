@@ -1147,6 +1147,111 @@ app.put('/api/businessedit/:businessId', businessuploads.fields([
 
 
     
+// Route to add a new question
+app.post('/api/add-question', async (req, res) => {
+  const { name, id, question } = req.body;
+
+  if (!name || !id || !question) {
+    return res.status(400).json({ error: 'Name, ID, and question fields are required' });
+  }
+
+  const sql = 'INSERT INTO questions (user_name, user_id, question) VALUES (?, ?, ?)';
+
+  try {
+    await db.query(sql, [name, id, question]);
+    res.status(200).json({ message: 'Question added successfully' });
+  } catch (error) {
+    console.error('Error adding question:', error);
+    res.status(500).json({ error: 'Failed to add question' });
+  }
+});
+
+
+
+// Route to add an answer to a question
+app.post('/api/questions/:questionId/answers', async (req, res) => {
+  const { questionId } = req.params;
+  const { name, id, answer } = req.body;
+
+  if (!name || !id || !answer) {
+    return res.status(400).json({ error: 'User name, user id, and answer are required' });
+  }
+
+  try {
+    await db.query('INSERT INTO answers (question_id, user_name, user_id, answer) VALUES (?, ?, ?, ?)', [questionId, name, id, answer]);
+    res.status(200).json({ message: 'Answer added successfully' });
+  } catch (error) {
+    console.error('Error adding answer:', error);
+    res.status(500).json({ error: 'Failed to add answer' });
+  }
+});
+
+
+// Route to get questions and answers for a specific question
+app.get('/api/questions/:questionId', async (req, res) => {
+  const { questionId } = req.params;
+
+  try {
+    // Fetch question from the database
+    const questionSql = 'SELECT * FROM questions WHERE id = ?';
+    const questionResult = await db.query(questionSql, [questionId]);
+    const question = questionResult[0];
+
+    if (!question) {
+      return res.status(404).json({ error: 'Question not found' });
+    }
+
+    // Fetch answers for the question from the database
+    const answerSql = 'SELECT * FROM answers WHERE question_id = ?';
+    const answers = await db.query(answerSql, [questionId]);
+
+    // Combine question and answers into a single response
+    const questionWithAnswers = {
+      ...question,
+      answers
+    };
+
+    res.status(200).json(questionWithAnswers);
+  } catch (error) {
+    console.error('Error fetching question and answers:', error);
+    res.status(500).json({ error: 'Failed to fetch question and answers' });
+  }
+});
+
+// Route to get all questions
+
+app.get('/api/questions', async (req, res) => {
+  try {
+    
+ // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM questions ORDER BY id DESC');
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
+// Endpoint to get a single blog by slug
+app.get('/api/questions/:questionId/answers', async (req, res) => {
+  try {
+    const { questionId } = req.params;
+
+    
+
+    const [results] = await db.query('SELECT * FROM answers WHERE question_id = ?', [questionId]);
+
+    res.json(results);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 
 
 
