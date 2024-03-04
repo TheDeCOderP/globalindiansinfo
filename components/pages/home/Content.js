@@ -47,7 +47,7 @@ const Content = () => {
       </div>
       <h2>Become an<span className="green"> <br></br>Ambassador</span></h2>
       <p>
-      Seeking passionate Ambassadors to represent the Indian diaspora, fostering culture and heritage in their workplaces. Join us in proudly carrying the torch of our rich heritage worldwide.
+      Seeking passionate Ambassadors to represent the Indian diaspora, fostering culture and heritage in their workplaces.
       </p>
       <div className="text-center pt-3">
         <a href="mailto:info@prabisha.com" className="whatsapp_button" role="button" aria-pressed="true" target="_blank">Apply Now</a>
