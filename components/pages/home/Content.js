@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { FaGlobe, FaUsers, FaBullhorn, FaUserTie } from "react-icons/fa";
 import TopSearches from '@/components/pages/home/SearchedItems';
+import Link from "next/link";
 
 const Content = () => {
   return (
@@ -19,7 +20,7 @@ const Content = () => {
         the globe?
       </p>
       <div className="text-center pt-3">
-        <a href="/about" className="whatsapp_button" role="button" aria-pressed="true" >More About Us</a>
+        <Link href="/about" className="whatsapp_button" role="button" aria-pressed="true" >More About Us</Link>
       </div>
     </div>
   </div>
