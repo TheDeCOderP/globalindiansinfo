@@ -14,7 +14,8 @@ function PrivateRouter({children}) {
             router.push('/pcsadmin')
         }
        
-    },[router , cookies])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
     
 
   return (

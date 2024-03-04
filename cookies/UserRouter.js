@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
 
 function AdminRouter({ children }) {
-  const [val, setVal] = useState(false);
   const router = useRouter();
   const cookies = parseCookies();
 
@@ -12,8 +11,9 @@ function AdminRouter({ children }) {
     if (!cookies.gii && router.pathname !== '/login') {
       router.push('/login');
     }
-  }, []); // <-- Add an empty dependency array
-
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
   return <div>{children}</div>;
 }
 

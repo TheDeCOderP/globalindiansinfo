@@ -22,7 +22,10 @@ function AdminProfile({ children }) {
       const userData = JSON.parse(storedUserData);
       setUser(userData);
     }
-  }, [router]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   const handleLogout = () => {
     destroyCookie(null, 'gii');
