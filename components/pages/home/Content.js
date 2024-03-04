@@ -13,7 +13,7 @@ const Content = () => {
       <div className="icon">
         <FaGlobe />
       </div>
-      <h2>Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
+      <h2 className="lh-sm">Introducing <span className="green">GlobalIndiansInfo.com</span></h2>
       <p>
         Connecting the<span className="green"> Global Indian</span>  Diaspora across the globe! Are you a
         proud member of the Indian diaspora, living and thriving across
@@ -30,7 +30,7 @@ const Content = () => {
       <div className="icon">
         <FaUsers />
       </div>
-      <h2>Connect with a <span className="green">Global Network</span></h2>
+      <h2 className="lh-sm">Connect with a <span className="green">Global Network</span></h2>
       <p>
         Join our WhatsApp community group and engage with like-minded
         individuals who share your background, interests, and goals.
@@ -45,7 +45,7 @@ const Content = () => {
       <div className="icon">
         <FaUserTie />
       </div>
-      <h2>Become an<span className="green"> <br></br>Ambassador</span></h2>
+      <h2 className="lh-sm">Become an<span className="green"> <br></br>Ambassador</span></h2>
       <p>
       Seeking passionate Ambassadors to represent the Indian diaspora, fostering culture and heritage in their workplaces.
       </p>
