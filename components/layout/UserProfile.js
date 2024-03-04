@@ -22,7 +22,7 @@ function AdminProfile({ children }) {
       const userData = JSON.parse(storedUserData);
       setUser(userData);
     }
-  }, [router.asPath]);
+  }, [router]);
 
   const handleLogout = () => {
     destroyCookie(null, 'gii');
