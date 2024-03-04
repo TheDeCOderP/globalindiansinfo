@@ -12,11 +12,7 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedBanner, setSelectedBanner] = useState(null);
 
-  useEffect(() => {
-    if (isOpen) {
-      fetchBusinessData();
-    }
-  }, [isOpen]);
+  
 
   const fetchBusinessData = () => {
     axios
@@ -29,6 +25,12 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
         console.error('Error fetching business data:', error);
       });
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchBusinessData();
+    }
+  }, [isOpen]);
 
   const handleUpdate = () => {
     // Create a FormData object to handle file uploads (if a file is selected)
