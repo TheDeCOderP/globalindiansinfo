@@ -14,7 +14,7 @@ function PrivateRouter({children}) {
             router.push('/pcsadmin')
         }
        
-    },[])
+    },[router])
     
 
   return (
