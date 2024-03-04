@@ -38,7 +38,7 @@ const MyApp = ({ Component, pageProps }) => {
         <title>Global Indians Info - Connecting Indians Globally</title>
         <link rel="icon" href="/uploads/images/site-logo1.png" />
         {/* Google Analytics script */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></Script>
+       
         <script dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -48,6 +48,7 @@ const MyApp = ({ Component, pageProps }) => {
           `,
         }}></script>
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></Script>
 
       <CustomLayout>
         <Component {...pageProps} />
