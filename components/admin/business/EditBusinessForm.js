@@ -13,10 +13,15 @@ const EditBusinessForm = ({ isOpen, onRequestClose, businessId, onUpdate }) => {
   const [selectedBanner, setSelectedBanner] = useState(null);
 
   useEffect(() => {
+    const fetchBusinessData = async () => {
+      // Implementation of fetchBusinessData
+    };
+  
     if (isOpen) {
       fetchBusinessData();
     }
-  }, [isOpen, fetchBusinessData]);
+  }, [isOpen]);
+  
 
 
 
