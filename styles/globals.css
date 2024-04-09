@@ -1010,6 +1010,14 @@ img.admin_site-logo.bg-light.p-2 {
 
 }
 
+.rotate-text {
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+
+
 iframe {
   border: 0;
   width: 100%;

@@ -8,6 +8,8 @@ const fs = require('fs');
 const globalConfig = require('./config');
 const serverLink = globalConfig.port;
 const nodemailer = require('nodemailer');
+const crypto = require('crypto');
+
  // const cors = require('cors');
 
 
@@ -71,6 +73,86 @@ app.post('/api/login', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+// Generate and return reset token
+app.post('/api/get-reset-token', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Check if the email exists in the database
+    const query = 'SELECT id, email FROM users WHERE email = ?';
+    const [results] = await db.query(query, [email]);
+
+    if (results.length > 0) {
+      const user = results[0];
+
+      // Generate a unique reset token
+      const resetToken = crypto.randomBytes(20).toString('hex');
+
+      // Store the reset token in the database
+      const updateQuery = 'UPDATE users SET reset_token = ?, reset_token_expiry = DATE_ADD(NOW(), INTERVAL 1 HOUR) WHERE id = ?';
+      await db.query(updateQuery, [resetToken, user.id]);
+
+      // Send the reset token link to the user's email
+      await sendResetTokenByEmail(email, resetToken);
+
+      res.status(200).json({ success: true, message: 'Reset token sent to your email' });
+    } else {
+      res.status(404).json({ success: false, message: 'Email not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+// Function to send reset token by email
+async function sendResetTokenByEmail(email, resetToken) {
+  try {
+    const resetLink = `https://globalindiansinfo.com/reset-password/${resetToken}`;
+
+    // Configure email options
+    const mailOptions = {
+      from: 'info@prabisha.com',
+      to: email,
+      subject: 'Password Reset Request',
+      text: `Click on the following link to reset your password: ${resetLink}`,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error('Error sending email:', error);
+    throw error;
+  }
+}
+
+
+// Route handler for resetting password
+app.post('/api/reset-password', async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+
+    // Check if the token exists in the database
+    const query = 'SELECT id, reset_token_expiry FROM users WHERE reset_token = ? AND reset_token_expiry > NOW()';
+    const [results] = await db.query(query, [token]);
+
+    if (results.length > 0) {
+      const userId = results[0].id;
+
+      // Update the user's password and clear the reset token
+      const updateQuery = 'UPDATE users SET password = ?, reset_token = NULL, reset_token_expiry = NULL WHERE id = ?';
+      await db.query(updateQuery, [newPassword, userId]);
+
+      res.status(200).json({ success: true, message: 'Password reset successful' });
+    } else {
+      res.status(400).json({ success: false, message: 'Invalid or expired token' });
+    }
+  } catch (error) {
+    console.error('Error resetting password:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 });
@@ -669,14 +751,6 @@ app.get('/api/articles', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
-
-
-
-
-
-
-
 
 
  app.get('/api/articles/latest', async (req, res) => {

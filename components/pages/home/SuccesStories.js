@@ -52,7 +52,7 @@ const SuccessStories = () => {
 
                 {/* YouTube Video */}
                 <div className="embed-responsive embed-responsive-16by9 mb-2">
-                <iframe src="https://www.youtube.com/embed/pJ071gY7Tnw?si=ENGtzCNOxojkoQrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/pJ071gY7Tnw?si=ENGtzCNOxojkoQrk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
 <div className='row flex justify-content-center'>

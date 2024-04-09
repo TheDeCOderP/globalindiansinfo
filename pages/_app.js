@@ -39,14 +39,7 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" href="/uploads/images/site-logo1.png" />
         {/* Google Analytics script */}
        
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-REYQHZLHVX');
-          `,
-        }}></script>
+       
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></Script>
 
