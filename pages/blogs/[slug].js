@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import globalConfig from '@/config';
 import SideBar from '@/components/blogs_sidebar';
-import ReactHtmlParser from 'react-html-parser'; // Import the react-html-parser library
 const port = globalConfig.port;
 
 const Blog = ({ blog }) => {
@@ -44,10 +43,10 @@ const Blog = ({ blog }) => {
                 <h3 className="text-center p-4">{blog.title}</h3>
                 {showFullArticle ? (
                   // Show the full article
-                  <div>{ReactHtmlParser(blog.content)}</div>
+                  <div>{(blog.content)}</div>
                 ) : (
                   // Show a limited excerpt
-                  <div>{ReactHtmlParser(renderExcerpt(blog.content, 1000))}</div>
+                  <div>{(renderExcerpt(blog.content, 1000))}</div>
                 )}
                 {/* "Read Full Article" button */}
                 {!showFullArticle && (
