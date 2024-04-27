@@ -8,6 +8,7 @@ import FeaturedNews from '../components/pages/articles/latest3'
 import Sponsors from '../components/pages/home/Sponsers'
 import AdBanner from '../components/pages/home/AdBanners'
 import Content from '../components/pages/home/Content'
+import WhatsappCommunity from '../components/pages/home/Our-Whatsapp-Community'
 import LimitedFAQs from '@/components/pages/faqs/LimitedFAQs';
 import HomePageBlogs from '../components/pages/blogs/home-blogs'
 import BusinessListings from '../components/pages/business/HomePage'
@@ -24,8 +25,12 @@ const HomePage = () => {
 	  <Carousel />
     <RotatingTextBanner/>
     </section>
+   
     <section className='section content_section'>
       <Content />
+    </section>
+    <section className='section featured_business_section'>
+      <WhatsappCommunity />
     </section>
   <section className="section featured_blogs_section">
   <h1 className="text-center"><span className="green">Featured</span> News</h1>
