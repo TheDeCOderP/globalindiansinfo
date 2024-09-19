@@ -1,0 +1,296 @@
+.jobs_page .job {
+    background-color: var(--boxbg);
+    padding-top: 10px;
+    padding-bottom: 30px;
+    
+}
+.jobs_page .box {
+    background-color: #ffffff; 
+    border: 1px solid #ccc;
+    padding: 20px; 
+    margin: 10px; 
+    text-align: center; 
+    height: 100%;
+  }
+
+.jobs_page .box h4 {
+    margin-top: 10px; 
+  }
+
+  .jobs_page .box p {
+    margin-bottom: 10px;
+  }
+  .jobs_page  .job .container {
+    background-color: #f0f0f0;
+  }
+ .jobs_page  .page h2{
+    padding-bottom: 20px;
+   
+    
+  }
+  .jobs_page .page h4{
+    padding-top: 20px;
+  }
+  .jobs_page .button{
+    margin-top: 10px;
+  }
+
+
+
+  .event-categories-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .event-categories-section h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-boxes {
+    display: flex;
+    justify-content: space-between;
+  
+   
+  }
+  
+  .icon-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  
+  .icon-box:hover {
+    background-color: #ddd;
+  }
+  
+  .icon-box i {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .icon-box p {
+    font-size: 16px;
+  }
+  
+.main{
+  padding-left: 1pc;
+
+}
+
+
+
+
+
+.get_i p {
+
+ padding: 10px;
+margin: 8px;
+
+}
+.get_i.container .body {
+  height: 290px;
+}
+.event_icon {
+   color: #273171;
+}
+
+.event_para{
+  padding: 10px;
+}
+
+/* Content.css */
+
+@media only screen and (min-width:900px){
+  .content-box{
+    height:300px;
+  }
+}
+
+
+.content-box {
+  background-color: #fff; 
+  border-radius: 10px; 
+  padding: 30px; 
+  margin-bottom: 20px;
+  
+}
+.content-box2 {
+  background-color: #fff; 
+  border-radius: 10px; 
+  padding: 30px; 
+  margin-bottom: 20px;
+  
+}
+
+
+
+.contact .icon {
+    text-align: center;
+    font-size: 50px;
+    --secondary: #f89629;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.content-box 
+  .icon , .content-box2 
+  .icon {
+    text-align: center;
+  font-size: 50px; 
+  --secondary: #f89629; /* Replace with your desired secondary color hex value */
+  color:var(--secondary) ; 
+  margin-bottom: 10px;
+}
+.content-box 
+  p , .content-box2 
+  p {
+    text-align: center;
+}
+
+
+.content_section h2 {
+  text-align: center;
+  font-size: 24px ;
+  margin-bottom: 10px; 
+}
+
+
+.content_section p {
+   font-size: 16px;
+  line-height: 1.5; 
+}
+
+/* Optional: Add more CSS styles as needed */
+
+
+.tech h1{
+  text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+
+
+}
+.tech h3 {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  padding-top: 10px;
+padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .event_row {
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+
+  .event_content {
+    max-width: 100%; 
+    margin: 10px 0; 
+  }
+}
+
+
+   
+        .book{
+            text-align: center;
+         
+          
+  
+        }
+
+      
+        .book-image {
+            max-width: 100%;
+  
+          
+        }
+
+        .book-title {
+            font-size: 18px;
+            color: white;
+        }
+
+        .book-button {
+            background-color: white;
+            color: blue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .books_box {
+          background: var(--primary);
+          padding: 15px 10px 20px 10px;
+          border-radius: 0px 0px 10px 10px;
+      }
+   
+
+
+ 
+
+
+.spirituality-container {
+  padding: 20px;
+
+}
+
+
+.spirituality-box {
+  border: 1px solid #ccc;
+  
+  margin-bottom: 20px; 
+  text-align: center; 
+  background-color: #ffedd8;
+  display: flex;
+  flex-direction: column;
+}
+
+.spirituality-box img {
+  max-width: 100%; 
+  height: auto; 
+  margin-bottom: 10px;
+}
+
+.spirituality-box h3 {
+  font-size: 20px; 
+  margin-top: 10px; 
+  padding: 10px;
+}
+
+.spirituality-box p {
+  font-size: 16px; 
+  flex-grow: 1;
+  padding: 10px;
+}
+.spirituality-container .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.conclusion-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.conclusion-box {
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  margin-bottom: 20px;
+  
+}
+
