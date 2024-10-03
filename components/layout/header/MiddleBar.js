@@ -21,7 +21,7 @@ function Header() {
         <div className="logo_bar col col-sm-6 col-md-2 col-lg-2">
         <Link href="/"><Image  width={200} height={100}
            className="site-logo"
-          src="/uploads/images/site-logo3.png"
+          src="/uploads/images/site-logo4.png"
           alt="site_logo" priority
         /></Link>
         </div>
