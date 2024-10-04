@@ -11,6 +11,7 @@ package-lock.json
 config.js
 /backend/db.js
 
+
 # testing
 /coverage
 
@@ -43,3 +44,6 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+
+.env
