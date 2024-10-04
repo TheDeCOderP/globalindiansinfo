@@ -73,7 +73,7 @@ export async function generateText(prompt) {
       },
       {
         headers: {
-          'Authorization': `Bearer PVGjRILzKiJ095Z9eVRTSFEYiZBJ5AMuoMcNHeN7`,
+          'Authorization': `Bearer ${process.env.API_KEY}`,
           'Content-Type': 'application/json'
         }
       }
