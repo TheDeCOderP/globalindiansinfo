@@ -42,7 +42,7 @@ const API_KEY = process.env.OPENAI_API_KEY; // Store your API key securely
 //     }
 // };
 
-// const token='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'
+// const token=process.env.API_TOKEN
 
 // export const generateText = async (prompt) => {
 //   try {
