@@ -5,8 +5,12 @@
 // services/openaiService.js
 import axios from 'axios';
 
+
+
+
 const API_URL = 'https://api.openai.com/v1/chat/completions'; // Updated endpoint for GPT-4 or GPT-3.5-turbo
-const API_KEY = process.env.OPENAI_API_KEY; // Store your API key securely
+const API_KEY = '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'; // Store your API key securely
+console.log(API_KEY,"API_KEYAPI_KEY")
 
 // export const generateText = async (prompt) => {
 //     try {
