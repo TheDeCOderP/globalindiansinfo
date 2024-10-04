@@ -46,7 +46,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: 'info@prabisha.com',
-    pass: 'ElzAeL6n',
+    pass: '6PvgnEQf',
   },
 });
 
@@ -1329,6 +1329,199 @@ app.get('/api/questions/:questionId/answers', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
+
+
+//  community post  
+
+app.post('/community-post', async (req, res) => {
+  const { user_name, title, content,image,tags } = req.body;
+
+  function getFormattedDate() {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    const yyyy = today.getFullYear();
+  
+    return dd + '/' + mm + '/' + yyyy;
+  }
+  
+  const formattedDate = getFormattedDate();
+
+  // Validate the request data
+  if (!user_name || !title || !content) {
+      return res.status(400).json({ error: 'Please provide all required fields: user_id, title, and content.' });
+  }
+
+  try {
+      // // Insert the new post into the database
+      // const result = await connection.query(
+      //     `INSERT INTO posts (user_id, title, content) VALUES ($1, $2, $3) RETURNING *`,
+      //     [user_id, title, content]
+      // );
+
+      // // Send back the newly created post
+      // res.status(201).json(result.rows[0]);
+      const query = "INSERT INTO communitypost (user_name, title, content,post_image,tags,created_at) VALUES (?, ?, ?, ?,?,?)";
+
+    // Use the connection from the pool to execute the query
+    const [result] = await db.execute(query, [user_name, title, content,image,tags , formattedDate]);
+
+    res.status(201).send("Community Post Were Added")
+  } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error. Please try again later.' });
+  }
+});
+
+
+app.get('/get-community-post', async (req, res) => {
+  const { searchTerm, selectedTag } = req.query; // Get search term and selected tag from query parameters
+
+  try {
+      let query = `
+          SELECT communitypost.id, communitypost.user_name, communitypost.title, 
+                 communitypost.content, communitypost.created_at, communitypost.post_image, communitypost.tags,
+                 communitycomments.id AS comment_id, communitycomments.user_name AS comment_user_name, 
+                 communitycomments.content AS comment_content, communitycomments.created_at AS comment_created_at
+          FROM communitypost
+          LEFT JOIN communitycomments ON communitypost.id = communitycomments.post_id
+      `;
+
+      const conditions = [];
+
+      // Apply search term condition
+      if (searchTerm) {
+          conditions.push(`(communitypost.title LIKE '%${searchTerm}%' OR communitypost.content LIKE '%${searchTerm}%')`);
+      }
+
+      // Apply tag condition if a specific tag is selected
+      if (selectedTag && selectedTag !== 'All') {
+          conditions.push(`communitypost.tags LIKE '%${selectedTag}%'`);
+      }
+
+      // If there are any conditions, append them to the query
+      if (conditions.length > 0) {
+          query += ` WHERE ` + conditions.join(' AND ');
+      }
+
+      // Order by communitypost.created_at DESC to get the latest posts at the top
+      query += ` ORDER BY communitypost.id DESC`;
+
+      const result = await db.query(query);
+
+      console.log(result, "resultssss");
+
+      const rows = result[0];
+
+      if (!rows) {
+          return res.status(500).json({ error: 'Failed to retrieve posts.' });
+      }
+
+      const structuredPosts = rows.reduce((acc, row) => {
+          const { id, user_name, title, content, created_at, post_image, tags, comment_id, comment_user_name, comment_content, comment_created_at } = row;
+
+          let post = acc.find(p => p.id === id);
+
+          if (!post) {
+              post = {
+                  id,
+                  user_name,
+                  title,
+                  content,
+                  created_at,
+                  post_image,
+                  tags,
+                  comments: []
+              };
+              acc.push(post);
+          }
+
+          if (comment_id) {
+              post.comments.push({
+                  id: comment_id,
+                  user_name: comment_user_name,
+                  content: comment_content,
+                  created_at: comment_created_at
+              });
+          }
+
+          return acc;
+      }, []);
+
+      console.log(structuredPosts, "structuredPosts");
+
+      res.status(200).json(structuredPosts);
+  } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error. Please try again later.' });
+  }
+});
+
+
+
+
+// comments  
+app.post('/community-post-comments', async (req, res) => {
+  const { post_id, content, user_name } = req.body;
+  console.log(req.body,"bosyy")
+
+  function getFormattedDate() {
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+      const yyyy = today.getFullYear();
+    
+      return dd + '/' + mm + '/' + yyyy;
+  }
+  
+  const formattedDate = getFormattedDate();
+
+  if (!post_id || !content || !user_name) {
+      return res.status(400).json({ error: 'Please provide post ID, user ID, and comment content.' });
+  }
+
+  try {
+     
+    
+
+      const query = "INSERT INTO communitycomments (post_id, user_name, content, created_at) VALUES (?, ?, ?, ?)";
+
+    // Use the connection from the pool to execute the query
+    const [result] = await db.execute(query, [post_id, user_name, content, formattedDate]);
+    
+    res.status(200).json({ message: 'Comment added successfully.' });
+
+  
+  } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error. Please try again later.' });
+  }
+});
+
+
+
+//  gramerrlyy  
+
+
+app.post('/api/grammar-check', async (req, res) => {
+  const{text}=req.body
+  
+  axios.post(`https://api.languagetoolplus.com/v2/check?text=${text}&language=en-US`, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    // console.log(response.data);
+    res.status(200).send(response.data)   
+  })
+  .catch(error => {
+    console.error(error);
+    res.status(400).send("Getting error checking Text")
+});
+})
 
 
 

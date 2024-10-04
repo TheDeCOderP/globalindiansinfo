@@ -61,7 +61,7 @@ function Header() {
         <div className="col-sm-6 logo_bar ">
         <Link href="/"><Image  width={400} height = {400}
           className="site-logo"
-          src="/uploads/images/site-logo3.png"
+          src="/uploads/images/site-logo4.png"
           alt="site_logo"
         /></Link>
         </div>

@@ -45,6 +45,11 @@ const menus = [
     'slug': '/events'
   },
   {
+    'id': 23,
+    'name': 'Community',
+    'slug': '/community'
+  },
+  {
     'id': 13,
     'name': 'Resources',
     'slug': '#',

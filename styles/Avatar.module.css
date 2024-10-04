@@ -1,0 +1,15 @@
+/* styles/Avatar.module.css */
+
+.avatar {
+    width: 50px; /* Width of the avatar */
+    height: 50px; /* Height of the avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make it a circle */
+    background-color: rgb(15, 171, 224); /* Background color */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Font weight */
+  }
+  

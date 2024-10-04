@@ -1539,6 +1539,94 @@ img.home_magazine {
 }
 
 
+.container-custom {
+  display: flex;
+  margin-top: 0px;
+  position: relative;
+
+  
+}
+
+.sidebar {
+  flex: 0 0 20%;
+  max-width: 20%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-top: 100px;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  
+  background-color: #f8f9fa !important;
+ 
+  
+}
+
+.sidebar-right {
+  flex: 0 0 25%;
+  max-width: 40%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  padding-top: 100px;
+}
+
+.add-question-btn{
+  position: sticky;
+  top: 0;
+  margin: 10px;
+  font-weight: 700;
+  
+
+}
+
+.ad-contain{
+  background-image: url('https://home.prabisha.com/images/ads.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  height: 300px;
+}
+.ad-contain>button{
+  background-color: rgb(170, 155, 155);
+  border: none;
+  font-weight: 700;
+  padding: 3px 7px;
+  
+  
+
+}
+.ad-contain2{
+  background-image: url('https://prabisha.com/wp-content/uploads/2024/01/PTE-Add-Banner_300-X-450-pxl.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  height: 300px;
+}
+.ad-contain2>button{
+  background-color: rgb(170, 155, 155);
+  border: none;
+  font-weight: 700;
+  padding: 3px 7px;
+  
+
+}
+.community_card{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
 @keyframes slowMotionZoom {
   0% {
     transform: scale(1);
