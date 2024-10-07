@@ -29,29 +29,13 @@ function SideBar() {
             <Link href="/pcsadmin/blogs" className=" fw-bold ">Blogs</Link>
             <Link href="/pcsadmin/business/listings" className=" fw-bold ">Business</Link>
             <Link href="/pcsadmin/magazines" className=" fw-bold ">Magazines</Link>
+            <Link href="/pcsadmin/community" className=" fw-bold ">Community</Link>
           </div>
         </div>
 
     </div>
     
-      {/* <Button variant="light" onClick={handleShow} className='admin_sidebar_button'>
-    <img src='/menu-icon.png' style={{width:30}}></img>
-      </Button>
-
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-        <Link href="/pcsadmin" onClick={handleClose}><img
-          className="site-logo"
-          src="/uploads/images/site-logo.png"
-          alt="Third slide"
-        /></Link>
-        </Offcanvas.Header>
-        <Offcanvas.Body className="text-dark">
-       <Link href="/pcsadmin/blogs" onClick={handleClose}>Blogs</Link>
-       <Link href="/pcsadmin/articles" onClick={handleClose}>Articles</Link>
-       <Link href="/pcsadmin/business/listings" onClick={handleClose}>Business List</Link>
-        </Offcanvas.Body>
-      </Offcanvas> */}
+     
     </>
   );
 }

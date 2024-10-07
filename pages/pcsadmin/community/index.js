@@ -1,27 +1,22 @@
+import Link from "next/link";
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import globalConfig from '@/config';
-import { useCookies } from "react-cookie";
-import { useRouter } from 'next/router';
 import Avatar from '@/components/Avatar';
-import { destroyCookie } from 'nookies';
 import { parseCookies } from 'nookies';
+
+import axios from "axios";
 
 const port = globalConfig.port;
 
-const CommunityPosts = () => {
-    const [posts, setPosts] = useState([]);
-    const [filteredPosts, setFilteredPosts] = useState([]);
-    const [newComment, setNewComment] = useState({});
-    const [expandedPosts, setExpandedPosts] = useState({});
-    const [userId, setUserId] = useState('');
-    const [cookie] = useCookies(["prabishaemail"]);
+const Community = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedTag, setSelectedTag] = useState('All');
-    const [userNames, setUserNames] = useState({}); // To store user ID to username mapping
-    const router = useRouter();
+    const [posts, setPosts] = useState([]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
     const [user, setUser] = useState(null);
     const [dropdownIndex, setDropdownIndex] = useState('')
+    const [expandedPosts, setExpandedPosts] = useState({});
+    const [newComment, setNewComment] = useState({});
 
 
   useEffect(() => {
@@ -41,102 +36,6 @@ const CommunityPosts = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-
-  
-
-    const fetchUserName = async (userId) => {
-        
-        if (userNames[userId]) return; // If already fetched, skip
-
-        try {
-            const response = await axios.get(`${port}/get-username-by-id?user_id=${userId}`);
-            console.log(response.data.data.name,"response")
-            setUserNames((prev) => ({
-                ...prev,
-                [userId]: response.data.data.name,
-            }));
-        } catch (err) {
-            console.error('Error fetching username:', err);
-        }
-    };
-
-    const fetchPosts = async () => {
-        try {
-            const response = await axios.get(`${port}/get-community-post-approved`, {
-                params: {
-                    searchTerm: searchTerm,
-                    selectedTag: selectedTag
-                }
-            });
-    
-            const postsData = response.data;
-
-            console.log(postsData[0].content,"postsData")
-
-            setPosts(postsData);
-            setFilteredPosts(postsData);
-        } catch (err) {
-            console.error('Error fetching posts:', err);
-        }
-    };
-
-    
-
-    useEffect(() => {
-        fetchPosts();
-    }, [searchTerm, selectedTag]);
-
-    useEffect(() => {
-        let filtered = posts;
-
-        if (searchTerm) {
-            filtered = filtered.filter(post =>
-                post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                post.content.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-        }
-
-        if (selectedTag !== 'All') {
-            filtered = filtered.filter(post =>
-                post.tags && 
-                post.tags
-                    .toLowerCase()
-                    .split(',')
-                    .map(tag => tag.trim())
-                    .includes(selectedTag.toLowerCase())
-            );
-        }
-
-        setFilteredPosts(filtered);
-    }, [searchTerm, selectedTag, posts]);
-
-    const handleCommentChange = (postId, content) => {
-        setNewComment({
-            ...newComment,
-            [postId]: content,
-        });
-    };
-
-    const handleCommentSubmit = async (postId) => {
-        try {
-            await axios.post(`${port}/community-post-comments`, {
-                post_id: postId,
-                content: newComment[postId],
-                user_name: user.name || "Unknown user"
-            });
-
-            setNewComment({
-                ...newComment,
-                [postId]: '',
-            });
-
-            await fetchPosts();
-        } catch (err) {
-            console.error('Error submitting comment:', err);
-        }
-    };
-
     const toggleExpand = (postId) => {
         setExpandedPosts({
             ...expandedPosts,
@@ -144,79 +43,99 @@ const CommunityPosts = () => {
         });
     };
 
-    const truncateContent = (content, limit = 150) => {
-        if (content.length <= limit) return content;
-        return content.slice(0, limit) + '...';
-    };
 
+  const [numberOfColumns, setNumberOfColumns] = useState(null);
 
-    const formatDate = (inputDate) => {
-        const dateParts = inputDate.split('/'); // Split the date string by '/'
-        const formattedDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`); // Rearrange into 'YYYY-MM-DD'
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const truncateContent = (content, limit = 150) => {
+    if (content.length <= limit) return content;
+    return content.slice(0, limit) + '...';
+};
+
+  const fetchData = async () => {
+  
+
+    
+    try {
+      const response = await fetch(`${port}/api/articles`);
+      const jsonData = await response.json();
+      // Assuming jsonData is an array of articles
+      if (jsonData.length > 0) {
+        // Get the keys (properties) of the first article
+        const firstArticleKeys = Object.keys(jsonData[0]);
+       
         
-        return formattedDate.toLocaleDateString('en-GB', {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
+        // Count the number of columns
+        const numberOfColumns = firstArticleKeys.length;
+        setNumberOfColumns(numberOfColumns); 
+        
+        // Print the number of columns
+  
+    } else {
+        console.log('No data found.');
+    }
+     
+    //  setData(jsonData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const formatDate = (inputDate) => {
+    const dateParts = inputDate.split('/'); // Split the date string by '/'
+    const formattedDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`); // Rearrange into 'YYYY-MM-DD'
+    
+    return formattedDate.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
+
+  const fetchPosts = async () => {
+    try {
+        const response = await axios.get(`${port}/get-community-post`, {
+            params: {
+                searchTerm: searchTerm,
+                selectedTag: selectedTag
+            }
         });
-      };
+
+        const postsData = response.data;
 
 
-      const toggleDropdown = (index) => {
-        
-        setDropdownIndex(dropdownIndex === index ? null : index);
-      };
 
-      const handleDelete=async(id)=>{
-        try {
-            let res=await axios.delete(`${port}/community-delete/${id}`)
-            console.log(res)
-            fetchPosts()
-            toggleDropdown()
-            
-        } catch (error) {
-            console.log(error)
-            
-        }
-      }
+        setPosts(postsData);
+        setFilteredPosts(postsData);
+    } catch (err) {
+        console.error('Error fetching posts:', err);
+    }
+};
 
-    return (
-        <div className="container-custom">
-            <div className="sidebar">
-                <h5>Filters</h5>
-                
-                <select
-                    className="form-select mb-3"
-                    value={selectedTag}
-                    onChange={(e) => setSelectedTag(e.target.value)}
-                >
-                    <option value="All">All Tags</option>
-                    <option value="Tech">Tech</option>
-                    <option value="Education">Education</option>
-                    <option value="Business">Business</option>
-                    <option value="Politics">Politics</option>
-                    <option value="Health">Health</option>
-                    <option value="Science">Science</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Lifestyle">Lifestyle</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Food">Food</option>
-                    <option value="Fashion">Fashion</option>
-                    <option value="Environment">Environment</option>
-                    <option value="Art">Art</option>
-                    <option value="Culture">Culture</option>
-                    <option value="Education">Education</option>
-                </select>
+useEffect(() => {
+    fetchPosts();
+}, [searchTerm, selectedTag]);
 
-                <div>
-                    <h6>Additional Content</h6>
-                    <p>Some additional content like announcements, links, etc.</p>
-                </div>
-            </div>
 
-            <div className="content">
+const handlePostUpdate=async(id,status)=>{
+  try {
+    let res=await axios.put(`${port}/community-post-status/${id}`,{status})
+ 
+    window.location.reload()
+    
+  } catch (error) {
+    console.log(error)
+    
+  }
+}
+
+  return (
+    
+    <div className="content">
                 <div className='flex justify-content-end ' style={{height:"80px"}}>
                 <input
                     type="text"
@@ -259,7 +178,10 @@ const CommunityPosts = () => {
                                 <div style={{display:"flex",gap:"20px",justifyContent:"start",justifyItems:"center"}}><div><Avatar name={post.user_name || 'Unknown User'} /></div><div style={{width:"100%"}}><div style={{display:"flex",justifyContent:"space-between",position:"relative",width:"100%",gap:"10px"}}><div><h6 className="card-title" style={{ fontWeight: "700",lineHeight:"26px", fontSize: "20px", textTransform: "capitalize" }}>{truncateContent(post.title)}</h6><small className="text-muted" style={{ fontFamily: "monospace" }}>
                                     Posted by {post.user_name || 'Unknown User'} 
                                 </small>
-                                <p style={{ fontSize: "14px", fontWeight: "600", textTransform: "capitalize" }}>Tags - <b>{post.tags}</b>  |   {formatDate(post.created_at)}</p></div>
+                                <p style={{ fontSize: "14px", fontWeight: "600", textTransform: "capitalize" }}>Tags - <b>{post.tags}</b>  |   {formatDate(post.created_at)}</p>
+                                <h5 style={{textTransform:"capitalize"}}>Status - {post.status}</h5>
+                                <div className="flex mt-4"><button className="px-4 py-1 rounded " style={{backgroundColor:"yellow",border:"none",marginRight:"10px",fontWeight:"bold",fontSize:"20px"}} onClick={()=>handlePostUpdate(post.id,"approved")}>Approve</button><button className="px-4 py-1 rounded " style={{backgroundColor:"red",border:"none",marginRight:"10px",fontWeight:"bold",fontSize:"20px",color:"white"}}  onClick={()=>handlePostUpdate(post.id,"rejected")}>Reject</button></div>
+                                </div>
                                 {(post.user_name == user.name || user.email=="info@prabisha.com") && <div><h6 onClick={() => toggleDropdown(index)} style={{cursor:"pointer"}}>...</h6>
                                 {dropdownIndex === index && (
                       <div className='action_div'  style={{position:"absolute",right:5,width:"30px",cursor:"pointer"}}>
@@ -287,7 +209,7 @@ const CommunityPosts = () => {
                                 </p></div></div>
                                 
                                 {post.post_image && (
-                                    <img src={post.post_image} alt="image" className="img-fluid rounded mb-3" style={{ height: "400px", width: "100%" }} />
+                                    <img src={post.post_image} alt="image" className="img-fluid rounded mb-3" style={{ height: "400px", width: "60%" }} />
                                 )}
                                 <hr />
                                 <h6 style={{marginLeft:"30px"}}>Comments</h6>
@@ -342,18 +264,9 @@ const CommunityPosts = () => {
                     <p>No posts available.</p>
                 )}
             </div>
+  )
+  };
+  Community.layout = "admin";
 
-            <div className="sidebar-right">
-                <div className="ad border ad-contain">
-                   
-                </div>
-                <div className="ad border ad-contain2 mt-4">
-                   
-                </div>
-            </div>
-        </div>
-    );
-};
-
-CommunityPosts.layout = 'construction';
-export default CommunityPosts;
+export default Community;
+;

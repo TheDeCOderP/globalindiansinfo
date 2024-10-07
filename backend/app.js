@@ -1363,10 +1363,10 @@ app.post('/community-post', async (req, res) => {
 
       // // Send back the newly created post
       // res.status(201).json(result.rows[0]);
-      const query = "INSERT INTO communitypost (user_name, title, content,post_image,tags,created_at) VALUES (?, ?, ?, ?,?,?)";
+      const query = "INSERT INTO communitypost (user_name, title, content,post_image,tags,status,created_at) VALUES (?, ?, ?, ?,?,?,?)";
 
     // Use the connection from the pool to execute the query
-    const [result] = await db.execute(query, [user_name, title, content,image,tags , formattedDate]);
+    const [result] = await db.execute(query, [user_name, title, content,image,tags,'pending' , formattedDate]);
 
     res.status(201).send("Community Post Were Added")
   } catch (err) {
@@ -1375,8 +1375,94 @@ app.post('/community-post', async (req, res) => {
   }
 });
 
-
 app.get('/get-community-post', async (req, res) => {
+  const { searchTerm, selectedTag } = req.query; // Get search term and selected tag from query parameters
+
+  try {
+      let query = `
+          SELECT communitypost.id, communitypost.user_name, communitypost.title, 
+                 communitypost.content, communitypost.created_at, communitypost.post_image, communitypost.tags, communitypost.status,
+                 communitycomments.id AS comment_id, communitycomments.user_name AS comment_user_name, 
+                 communitycomments.content AS comment_content, communitycomments.created_at AS comment_created_at
+          FROM communitypost
+          LEFT JOIN communitycomments ON communitypost.id = communitycomments.post_id
+      `;
+
+      const conditions = [];
+
+      // Apply search term condition
+      if (searchTerm) {
+          conditions.push(`(communitypost.title LIKE '%${searchTerm}%' OR communitypost.content LIKE '%${searchTerm}%')`);
+      }
+
+      // Apply tag condition if a specific tag is selected
+      if (selectedTag && selectedTag !== 'All') {
+          conditions.push(`communitypost.tags LIKE '%${selectedTag}%'`);
+      }
+
+      // If there are any conditions, append them to the query
+      if (conditions.length > 0) {
+          query += ` WHERE ` + conditions.join(' AND ');
+      }
+
+      // Order by communitypost.created_at DESC to get the latest posts at the top
+      query += ` ORDER BY communitypost.id DESC`;
+
+      const result = await db.query(query);
+
+      console.log(result, "resultssss");
+
+      const rows = result[0];
+
+      if (!rows) {
+          return res.status(500).json({ error: 'Failed to retrieve posts.' });
+      }
+
+      const structuredPosts = rows.reduce((acc, row) => {
+          const { id, user_name, title, content, created_at, post_image, tags, status, comment_id, comment_user_name, comment_content, comment_created_at } = row;
+
+          let post = acc.find(p => p.id === id);
+
+          if (!post) {
+              post = {
+                  id,
+                  user_name,
+                  title,
+                  content,
+                  created_at,
+                  post_image,
+                  tags,
+                  status,
+                  comments: []
+              };
+              acc.push(post);
+          }
+
+          if (comment_id) {
+              post.comments.push({
+                  id: comment_id,
+                  user_name: comment_user_name,
+                  content: comment_content,
+                  created_at: comment_created_at
+              });
+          }
+
+          return acc;
+      }, []);
+
+      console.log(structuredPosts, "structuredPosts");
+
+      res.status(200).json(structuredPosts);
+  } catch (err) {
+      console.error(err.message);
+      res.status(500).json({ error: 'Server error. Please try again later.' });
+  }
+});
+
+
+
+
+app.get('/get-community-post-approved', async (req, res) => {
   const { searchTerm, selectedTag } = req.query; // Get search term and selected tag from query parameters
 
   try {
@@ -1389,7 +1475,7 @@ app.get('/get-community-post', async (req, res) => {
           LEFT JOIN communitycomments ON communitypost.id = communitycomments.post_id
       `;
 
-      const conditions = [];
+      const conditions = ["communitypost.status = 'approved'"]; // Add status condition
 
       // Apply search term condition
       if (searchTerm) {
@@ -1461,7 +1547,6 @@ app.get('/get-community-post', async (req, res) => {
 
 
 
-
 // comments  
 app.post('/community-post-comments', async (req, res) => {
   const { post_id, content, user_name } = req.body;
@@ -1525,7 +1610,37 @@ app.post('/api/grammar-check', async (req, res) => {
 
 
 
+app.delete('/community-delete/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
 
+    // Delete the blog from the database
+    await db.query('DELETE FROM communitypost WHERE id = ?', [id]);
+    res.status(200).json({ message: 'Community post deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+app.put('/community-post-status/:id',async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+   
+
+   
+
+    // Update the blog in the database
+    await db.query('UPDATE communitypost SET status = ? WHERE id = ?', [status, id ]);
+    res.status(200).json({ message: 'community post updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 
 

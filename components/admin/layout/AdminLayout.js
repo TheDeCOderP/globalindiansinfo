@@ -36,16 +36,16 @@ const AdminLayout = ({ children }) => {
         <link rel="icon" href="/uploads/images/site-logo1.png" />
       </Head>
       <section className="">
-        <div className="row admin_panel">
+        <div className="flex">
 
-          <div className="col-sm-12 col-lg-2 col-md-2 sidebar">
+          <div className="col-sm-12 col-lg-2 col-md-2  sidebar">
 
 
 
             <SideBar />
 
 </div>
-          <div className="col-sm-12 col-lg-10 col-md-10 dashboard"> 
+          <div className="col-sm-12 col-lg-10 col-md-10  ml-48 border"> 
           <div className="row">
             <div className="col-8 bg-light">
             <header className="bg-light text-dark p-4">
