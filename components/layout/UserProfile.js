@@ -10,21 +10,7 @@ function AdminProfile({ children }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const cookies = parseCookies();
-    const storedUserData = cookies.gii;
-
-    if (!cookies.gii || !storedUserData) {
-      setUser(null);
-      router.push('/');
-    } else {
-      // Parse the JSON string to get the complete user details
-      const userData = JSON.parse(storedUserData);
-      setUser(userData);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+ 
 
 
   const handleLogout = () => {

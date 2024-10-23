@@ -1,0 +1,33 @@
+{
+  "name": "prabisha/gii/magazines",
+  "version": "1.7.3",
+  "description": "GII Magazines",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "keywords": [
+    "3d",
+    "flipbook",
+    "pdf",
+    "flipbook",
+    "flipbook",
+    "jquery",
+    "flipbook",
+    "javascript",
+    "flipbook"
+  ],
+  "author": "prakash",
+  "license": "",
+  "bugs": {
+    "url": "#"
+  },
+  "homepage": "https:prabisha.com"
+}

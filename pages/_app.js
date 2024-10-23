@@ -1,10 +1,10 @@
 // pages/_app.js
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from '../components/layout/MainLayout';
+import Layout from '@/components/layout/MainLayout';
 import AdminLayout from '@/components/admin/layout/AdminLayout';
-import OtherPageLayout from '../components/layout/OtherPagesLayout';
-import BlankLayout from '../components/layout/BlankLayout';
+import OtherPageLayout from '@/components/layout/OtherPagesLayout';
+import BlankLayout from '@/components/layout/BlankLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-quill/dist/quill.snow.css';
@@ -16,6 +16,7 @@ import 'typeface-league-spartan';
 import '@/styles/globals.css';
 import '@/styles/aanchal.css';
 import '@/styles/sai.css';
+import UserRouter from '@/cookies/UserRouter';
 import '@/styles/mobile_globals.css';
 import Script from 'next/script';
 
@@ -42,11 +43,14 @@ const MyApp = ({ Component, pageProps }) => {
        
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-REYQHZLHVX"></Script>
-
+ 
       <CustomLayout>
+      <UserRouter>
         <Component {...pageProps} />
+        </UserRouter>
         <ToastContainer />
       </CustomLayout>
+    
     </>
   );
 };

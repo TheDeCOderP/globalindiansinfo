@@ -6,8 +6,6 @@ import TopBar from '../layout/header/TopBar';
 
 import Footer from '../layout/footer/Footer';
 import { useRouter } from 'next/router';
-import AdminRouter from '../../cookies/UserRouter'
-
 
 const OtherPageLayout = ({ children }) => {
   const router = useRouter();
@@ -16,8 +14,7 @@ const OtherPageLayout = ({ children }) => {
 const pageName = pathname.substring(1); // Remove the leading slash if needed
 
   return (
-    <>
-    <AdminRouter>
+    <> 
      <header>
       <TopBar/>
        <MiddleBar/>
@@ -31,7 +28,6 @@ const pageName = pathname.substring(1); // Remove the leading slash if needed
      </div>
       {children}
       <footer><Footer/></footer>
-      </AdminRouter>
       </>
   );
 };

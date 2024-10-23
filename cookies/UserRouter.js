@@ -1,20 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
 
-function AdminRouter({ children }) {
+function UserRouter({ children }) {
   const router = useRouter();
   const cookies = parseCookies();
 
+  // Define the public routes that do not require authentication
+  const publicRoutes = ['/login', '/register', '/', '/about', '/contact', '/forgot-password']; // Add static public routes here
+
   useEffect(() => {
-    // Redirect to login or register page if not authenticated
-    if (!cookies.gii && router.pathname !== '/login') {
-      router.push('/login');
+    const isAuthenticated = cookies.gii;
+
+    // Check if the current route is public (including dynamic reset-password routes)
+    const isPublicRoute = publicRoutes.includes(router.pathname) || router.pathname.startsWith('/reset-password');
+
+    // If the user is not authenticated and tries to access a protected route
+    if (!isAuthenticated && !isPublicRoute) {
+      // Show an alert message
+      alert('You need to log in to access this page.');
+
+      // Redirect immediately to login
+      setTimeout(() => {
+        router.replace('/login');
+      }, 0);
     }
-    
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+  }, [router.pathname]);
+
   return <div>{children}</div>;
 }
 
-export default AdminRouter;
+export default UserRouter;

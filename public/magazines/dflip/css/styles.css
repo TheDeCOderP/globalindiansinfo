@@ -1,0 +1,21 @@
+body {
+    margin:0px;
+}
+
+.flipbook-background {
+    background-image: url('/magazines/images/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.return_to_magazines {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-family: cursive;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    z-index: 999999999999999999;
+    text-decoration: none;
+}
