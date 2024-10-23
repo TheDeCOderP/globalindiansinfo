@@ -3,7 +3,7 @@ body {
 }
 
 .flipbook-background {
-    background-image: url('/magazines/images/bg-1.jpg');
+    background-image: url('/magazines/images/bg.jpg');
     background-size: cover;
     background-position: center;
 }

@@ -15,8 +15,11 @@ function UserRouter({ children }) {
     // Check if the current route is public (including dynamic reset-password routes)
     const isPublicRoute = publicRoutes.includes(router.pathname) || router.pathname.startsWith('/reset-password');
 
+    // Check if the current route is public (including dynamic reset-password routes)
+    const isAdminPath = publicRoutes.includes(router.pathname) || router.pathname.startsWith('/pcsadmin');
+
     // If the user is not authenticated and tries to access a protected route
-    if (!isAuthenticated && !isPublicRoute) {
+    if (!isAuthenticated && !isPublicRoute && !isAdminPath) {
       // Show an alert message
       alert('You need to log in to access this page.');
 

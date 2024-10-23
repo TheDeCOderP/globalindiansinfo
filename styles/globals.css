@@ -15,6 +15,12 @@
   display: block;
 }
 
+.magazines img {
+  aspect-ratio: 4 / 6!important;
+  object-fit: contain!important;
+  background: #273171;
+}
+
 .content_box {
   background-color: var(--boxbg);
   padding:10px;

@@ -25,9 +25,9 @@ const MagazineList = () => {
     <div className="container mt-5">
       <div className="row">
         {magazines.map((magazine, index) => (
-          <div key={index} className="col-md-4 mb-4">
+          <div key={index} className="col-md-3 mb-4">
             <Link href={magazine.flipbook_link} target="_blank">
-            <div className="card cards">
+            <div className="card cards magazines">
               <img src={`${port}/uploads/magazines/${magazine.image}`}  className="contain magazines_images" alt={magazine.title} />
               <div className="card-body">
                 <h5 className="card-title">{magazine.title}</h5>

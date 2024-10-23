@@ -1100,21 +1100,37 @@ let MagazineStorage = multer.diskStorage({
 
 const magazinesupload = multer({ storage: MagazineStorage });
 
-// API endpoint for uploading magazine details
-app.post('/api/magazines', magazinesupload.single('magazineImage'), (req, res) => {
-  const { title, flipbookLink } = req.body;
-  const magazineImage = req.file.filename;
-
-  const sql = 'INSERT INTO magazines (title, flipbook_link, image) VALUES (?, ?, ?)';
-  db.query(sql, [title, flipbookLink, magazineImage], (err, result) => {
-    if (err) {
-      console.error('Error inserting data into database: ', err);
-      res.status(500).json({ success: false, error: 'Internal Server Error' });
-    } else {
-      res.status(200).json({ success: true, message: 'Magazine uploaded successfully' });
-    }
+// Helper function to make db.query return a promise
+const queryAsync = (sql, params) => {
+  return new Promise((resolve, reject) => {
+    db.query(sql, params, (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
   });
+};
+
+// API endpoint for uploading magazine details
+app.post('/api/magazines', magazinesupload.single('magazineImage'), async (req, res) => {
+  try {
+    const { title, flipbookLink } = req.body;
+    const magazineImage = req.file.filename;
+
+    const sql = 'INSERT INTO magazines (title, flipbook_link, image) VALUES (?, ?, ?)';
+    
+    // Wait for the database query to complete
+    await queryAsync(sql, [title, flipbookLink, magazineImage]);
+
+    res.status(200).json({ success: true, message: 'Magazine uploaded successfully' });
+  } catch (err) {
+    console.error('Error inserting data into database: ', err);
+    res.status(500).json({ success: false, error: 'Internal Server Error' });
+  }
 });
+
 
 
 // Endpoint to delete an existing article by ID
