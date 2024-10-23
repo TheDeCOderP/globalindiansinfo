@@ -7,7 +7,7 @@ function UserRouter({ children }) {
   const cookies = parseCookies();
 
   // Define the public routes that do not require authentication
-  const publicRoutes = ['/login', '/register', '/', '/about', '/contact', '/forgot-password']; // Add static public routes here
+  const publicRoutes = ['/login', '/register', '/', '/about', '/contact', '/forgot-password', '/magazines']; // Add static public routes here
 
   useEffect(() => {
     const isAuthenticated = cookies.gii;
