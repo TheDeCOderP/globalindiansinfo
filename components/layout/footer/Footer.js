@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-md-2">
           <Link href="/"><img
           className="site-footer-logo"
-          src="/uploads/images/site-logo3.png"
+          src="/uploads/images/site-logo4.png"
           alt="site_logo"
         /></Link>
           </div>
