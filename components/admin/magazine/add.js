@@ -91,7 +91,7 @@ export default function AddMagazine() {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+        <button type="submit" className="button" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Upload Magazine'}
         </button>
       </form>

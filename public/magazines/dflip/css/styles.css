@@ -8,6 +8,11 @@ body {
     background-position: center;
 }
 
+.flipbook iframe {
+    padding: 0px!important;
+    height: 98vh!important;
+}
+
 .return_to_magazines {
     position: fixed;
     top: 20px;

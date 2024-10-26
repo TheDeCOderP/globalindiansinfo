@@ -21,6 +21,35 @@
   background: #273171;
 }
 
+
+
+body {
+  margin:0px;
+}
+
+.flipbook-background {
+  background-image: url('/magazines/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.flipbook iframe {
+  padding: 0px!important;
+  height: 98vh!important;
+}
+
+.return_to_magazines {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: cursive;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  z-index: 999999999999999999;
+  text-decoration: none;
+}
+
 .content_box {
   background-color: var(--boxbg);
   padding:10px;

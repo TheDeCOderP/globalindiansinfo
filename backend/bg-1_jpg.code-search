@@ -1,9 +1,0 @@
-# Query: bg-1.jpg
-# ContextLines: 1
-
-1 result - 1 file
-
-public\magazines\dflip\css\styles.css:
-  5  .flipbook-background {
-  6:     background-image: url('/magazines/images/bg.jpg');
-  7      background-size: cover;
