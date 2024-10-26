@@ -1679,6 +1679,44 @@ img.home_magazine {
   padding: 5px;
 }
 
+/* Card styling with hover effect */
+.magazine-card {
+  transition: transform 0.3s ease-in-out;
+  perspective: 1000px;
+}
+
+.magazine-card:hover {
+  transform: rotateY(-10deg) rotateX(5deg);
+}
+
+.magazine-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.magazine-card:hover .magazine-image {
+  transform: scale(1.05) translateY(-5%);
+}
+
+/* Sidebar ad styling */
+.sidebar-ads {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-ad {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  /* Ensure sidebar is below main content on mobile */
+  .sidebar-ads {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+}
 
 
 

@@ -8,35 +8,48 @@ const MagazineList = () => {
   const [magazines, setMagazines] = useState([]);
 
   useEffect(() => {
-    // Define the API endpoint
-    const apiUrl = `${port}/api/magazines`; // Replace with your actual API endpoint
-
-    // Fetch data using Axios
+    const apiUrl = `${port}/api/magazines`;
     axios.get(apiUrl)
       .then(response => {
-        setMagazines(response.data); // Assuming the API returns an array of magazines
+        setMagazines(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+  }, []);
 
   return (
     <div className="container mt-5">
       <div className="row">
-        {magazines.map((magazine, index) => (
-          <div key={index} className="col-md-3 mb-4">
-            <Link href={magazine.flipbook_link} target="_blank">
-            <div className="card cards magazines">
-              <img src={`${port}/uploads/magazines/${magazine.image}`}  className="contain magazines_images" alt={magazine.title} />
-              <div className="card-body">
-                <h5 className="card-title">{magazine.title}</h5>
-                
+        {/* Main Content - 75% width on desktop */}
+        <div className="col-md-9 mb-4">
+          <div className="row">
+            {magazines.map((magazine, index) => (
+              <div key={index} className="col-md-6 col-lg-3 mb-4">
+                <Link href={magazine.flipbook_link} target="_blank">
+                  <div className="magazine-card">
+                    <img
+                      src={`${port}/uploads/magazines/${magazine.image}`}
+                      className="magazine-image"
+                      alt={magazine.title}
+                    />
+                    <div className="card-body mt-2">
+                      <h5 className="card-title">{magazine.title}</h5>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </div>
-            </Link>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Sidebar - 25% width on desktop */}
+        <div className="col-md-3 mb-4">
+          <div className="sidebar-ads fixed">
+          <img src="/uploads/images/adbanners/dm.png" alt="Ad 1" className="sidebar-ad mb-4" />
+          <img src="/uploads/images/adbanners/web.jpg" alt="Ad 2" className="sidebar-ad" />
+          </div>
+        </div>
       </div>
     </div>
   );
