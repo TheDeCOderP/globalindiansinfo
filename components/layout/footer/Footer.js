@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMobileAlt, FaGlobe, FaMapMarkerAlt, FaSignInAlt } from 'react-icons/fa';
 import { FiHome, FiInfo, FiBriefcase, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
@@ -38,10 +38,11 @@ const Footer = () => {
           <div className="col-md-2">
           <h5 style={{ whiteSpace: 'nowrap' }}>Our Associates</h5>
             <ul className="list-unstyled">
-              <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.co.uk" target="_blank">Prabisha UK</a></li>
               <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.com/" target="_blank">Prabisha India</a></li>
               <li><FaGlobe className="mr-2" /><a href="https://www.pratyushkumar.co.uk/" target="_blank">Pratyush Kumar</a></li>
               <li><FaGlobe className="mr-2" /><a href="https://www.prishatheexplorer.com/" target="_blank">Prisha The Explorer</a></li>
+              <li><FaSignInAlt className="mr-2" /><a href="/pcsadmin" target="_blank">Admin Login</a></li>
+
             </ul>
           </div>
           <div className="col-md-2">
@@ -50,8 +51,7 @@ const Footer = () => {
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+44-7867090363">+44-7867090363</a></li> 
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+91-8792396989">+91-8792396989</a></li> 
             <li>  <FiMail className="mr-2" /> <a href="mailto:info@prabisha.com">info@prabisha.com</a></li>
-            <li> <FaMapMarkerAlt className="mr-2 " /> <a href="https://www.google.com/maps?q=71-75+Shelton+St.,+Covent+Garden,+London,+UK+-+WC2H9JQ" target="_blank" className="p-0">Harrow On The Hill, London, UK - HA1 1EL
-                </a></li>
+
             
             </ul>
           </div>

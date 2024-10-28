@@ -74,6 +74,12 @@ const menus = [
         'name': 'Blogs',
         'slug': '/blogs'
       },
+      
+  {
+    'id': 17,
+    'name': 'FAQs',
+    'slug': '/faqs'
+  },
       {
         'id': 11,
         'name': 'Partner',
@@ -84,11 +90,7 @@ const menus = [
         'name': 'Submit Your Article',
         'slug': '/article-submission-form'
       },
-      {
-        'id': 19,
-        'name': 'Magazines',
-        'slug': '/magazines'
-      },
+      
       {
         'id': 23,
         'name': 'Road To Success',
@@ -107,6 +109,11 @@ const menus = [
     ]
   },
   {
+    'id': 19,
+    'name': 'Magazines',
+    'slug': '/magazines'
+  },
+  {
     'id': 22,
     'name': 'Books',
     'slug': '/books'
@@ -116,11 +123,7 @@ const menus = [
     'name': 'Contact',
     'slug': '/contact'
   },
-  {
-    'id': 17,
-    'name': 'FAQs',
-    'slug': '/faqs'
-  },
+
   
 ];
 
