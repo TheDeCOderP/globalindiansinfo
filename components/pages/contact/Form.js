@@ -22,7 +22,7 @@ function ContactForm() {
     const form = useRef();
 
     async function sendEmail(e) {
-        e.preventDefault(); // Prevent the default form submission behavior
+        e.preventDefault();
 
         const payload = {
             "name": formData.from_name,
@@ -33,30 +33,26 @@ function ContactForm() {
 
         if (formData.from_name && formData.reply_to && formData.from_number && formData.message) {
             try {
-                let res = await axios.post(`${port}/contactus`, payload)
-                console.log(res, "res")
-
+                let res = await axios.post(`${port}/contactus`, payload);
                 toast.success("Thanks for contacting us", {
                     position: toast.POSITION.TOP_CENTER,
-                })
-
-                setFormSubmitted(true); // Mark the form as submitted
+                });
+                setFormSubmitted(true);
             } catch (error) {
-                console.log("Error", error);
-                toast.error("Sorry! Form Not sent", {
+                toast.error("Sorry! Form not sent", {
                     position: toast.POSITION.TOP_CENTER,
-                })
+                });
             }
         } else {
             toast.error("Please fill all the fields!", {
                 position: toast.POSITION.TOP_CENTER,
-            })
+            });
         }
     }
 
     if (formSubmitted) {
         return (
-            <div style={{ textAlign: "center" }}>
+            <div className="form-submitted">
                 <h3>Form Submitted Successfully!</h3>
                 <p>Thank you for your submission.</p>
                 <Link href="/">Go to Home Page</Link>
@@ -65,63 +61,62 @@ function ContactForm() {
     }
 
     return (
-        <div>
-            <div className="contact_banner"></div>
-            <h2 style={{ textAlign: "center", marginTop: "30px" }}>Contact Us</h2>
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-12 col-lg-12 col-md-12">
-                        <Form onSubmit={sendEmail} ref={form}>
-                            <Form.Group controlId="name">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="from_name"
-                                    onChange={handleChange}
-                                    required
-                                    className="input_resume"
-                                />
-                            </Form.Group>
+        <div className="contact-form-container text-start">
+            
+            <div className="form-wrapper">
+                <Form onSubmit={sendEmail} ref={form}>
+                    <Form.Group controlId="name">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="from_name"
+                            value={formData.from_name}
+                            onChange={handleChange}
+                            required
+                            className="input-field"
+                        />
+                    </Form.Group>
 
-                            <Form.Group controlId="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    name="reply_to"
-                                    onChange={handleChange}
-                                    required
-                                    className="input_resume"
-                                />
-                            </Form.Group>
+                    <Form.Group controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            type="email"
+                            name="reply_to"
+                            value={formData.reply_to}
+                            onChange={handleChange}
+                            required
+                            className="input-field"
+                        />
+                    </Form.Group>
 
-                            <Form.Group controlId="phone">
-                                <Form.Label>Phone</Form.Label>
-                                <Form.Control
-                                    type="tel"
-                                    name="from_number"
-                                    onChange={handleChange}
-                                    required
-                                    className="input_resume"
-                                />
-                            </Form.Group>
+                    <Form.Group controlId="phone">
+                        <Form.Label>Phone</Form.Label>
+                        <Form.Control
+                            type="tel"
+                            name="from_number"
+                            value={formData.from_number}
+                            onChange={handleChange}
+                            required
+                            className="input-field"
+                        />
+                    </Form.Group>
 
-                            <Form.Group controlId="message">
-                                <Form.Label>Message</Form.Label>
-                                <Form.Control
-                                    as="textarea"
-                                    name="message"
-                                    onChange={handleChange}
-                                    required
-                                    className="input_resume"
-                                />
-                            </Form.Group>
+                    <Form.Group controlId="message">
+                        <Form.Label>Message</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            className="input-field textarea-field"
+                        />
+                    </Form.Group>
 
-                            <Button variant="success" className="mt-3 submitform" type="submit">
-                                Submit
-                            </Button>
-                        </Form>
-                    </div>
-                </div>
+                    <Button variant="primary" className="submit-button" type="submit">
+                        Submit
+                    </Button>
+                </Form>
             </div>
         </div>
     );

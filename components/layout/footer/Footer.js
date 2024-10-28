@@ -40,7 +40,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.co.uk" target="_blank">Prabisha UK</a></li>
               <li><FaGlobe className="mr-2" /><a href="https://www.prabisha.com/" target="_blank">Prabisha India</a></li>
-              <li><FaGlobe className="mr-2" /><a href="https://bidisharay.com/" target="_blank">Bidisha Ray</a></li>
+              <li><FaGlobe className="mr-2" /><a href="https://www.pratyushkumar.co.uk/" target="_blank">Pratyush Kumar</a></li>
               <li><FaGlobe className="mr-2" /><a href="https://www.prishatheexplorer.com/" target="_blank">Prisha The Explorer</a></li>
             </ul>
           </div>
@@ -48,6 +48,7 @@ const Footer = () => {
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
              <li><FaMobileAlt className="mr-2" /> <a href="tel:+44-7867090363">+44-7867090363</a></li> 
+             <li><FaMobileAlt className="mr-2" /> <a href="tel:+91-8792396989">+91-8792396989</a></li> 
             <li>  <FiMail className="mr-2" /> <a href="mailto:info@prabisha.com">info@prabisha.com</a></li>
             <li> <FaMapMarkerAlt className="mr-2 " /> <a href="https://www.google.com/maps?q=71-75+Shelton+St.,+Covent+Garden,+London,+UK+-+WC2H9JQ" target="_blank" className="p-0">Harrow On The Hill, London, UK - HA1 1EL
                 </a></li>
