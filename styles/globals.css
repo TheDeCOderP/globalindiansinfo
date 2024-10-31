@@ -1585,14 +1585,13 @@ img.home_magazine {
 .sidebar {
   flex: 0 0 20%;
   max-width: 20%;
-  height: 100vh;
+  height: 120vh;
   position: sticky;
   top: 0;
   overflow-y: auto;
   padding: 20px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding-top: 100px;
 }
 
 .content {
@@ -1608,13 +1607,12 @@ img.home_magazine {
 .sidebar-right {
   flex: 0 0 25%;
   max-width: 40%;
-  height: 100vh;
+  height: 120vh;
   position: sticky;
   top: 0;
   overflow-y: auto;
   padding: 20px;
   background-color: #f8f9fa;
-  padding-top: 100px;
 }
 
 .add-question-btn{
