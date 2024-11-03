@@ -4,7 +4,7 @@ import axios from 'axios';
 import globalConfig from '@/config';
 const port = globalConfig.port;
 import Link from 'next/link';
-import Head from 'next-head';
+import Head from 'next/head';
 
 const MagazineList = () => {
   const [magazines, setMagazines] = useState([]);
