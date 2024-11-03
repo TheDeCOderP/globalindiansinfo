@@ -42,7 +42,7 @@ const ResetPasswordPage = () => {
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center mb-5 mt-5">
         <Col md="6">
           <h2>Reset Password</h2>
           {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
