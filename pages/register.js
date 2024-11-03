@@ -100,7 +100,7 @@ const AuthForm = ({ isLogin, onSubmit }) => {
     <Head>
       <title>Register Now - Global Indians Info</title>
     </Head>
-    <div className="login-background ">
+    <div className="login-background mt-5">
         <div className="overlay"></div>
     </div>
     
@@ -111,7 +111,9 @@ const AuthForm = ({ isLogin, onSubmit }) => {
         
         <div className='row d-flex flex-column justify-content-center bg-white  '>
         <div className='col-md-12     '>
-      
+        <div className="text-center pb-3">
+          <img src="/uploads/images/site-logo4.png" alt="Logo" className="mb-8 site-logo" />
+        </div>
 
         <h1 className="text-center font-bold mb-4">Register</h1>
 
