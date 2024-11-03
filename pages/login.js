@@ -81,12 +81,12 @@ const Login = () => {
       <div className="login-background ">
         <div className="overlay"></div>
       </div>
-      <div className=" p-8 rounded shadow-md  login-form ">
+      <div className=" p-8 rounded shadow-md  login-form pt-5">
         
-        <div className='row d-flex justify-content-center bg-white  '>
-        <div className='col-md-12 box-shadow p-2 pt-4    '>
+        <div className='row d-flex justify-content-center bg-white rounded '>
+        <div className='col-md-12 box-shadow p-2 pt-4  '>
         <div className="text-center pb-3">
-          <img src="/uploads/images/site-logo3.png" alt="Logo" className="mb-8 site-logo" />
+          <img src="/uploads/images/site-logo4.png" alt="Logo" className="mb-8 site-logo" />
         </div>
 
         <h1 className="text-center font-bold mb-4">Login</h1>

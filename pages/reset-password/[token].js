@@ -64,7 +64,7 @@ const ResetPasswordPage = () => {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className="bg-primary mt-2 w-100 p-2" type="submit">
               Reset Password
             </Button>
           </Form>
@@ -74,6 +74,5 @@ const ResetPasswordPage = () => {
   );
 };
 
-ResetPasswordPage.layout = "blank"
 
 export default ResetPasswordPage;

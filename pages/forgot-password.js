@@ -49,13 +49,13 @@ const ResetPasswordPage = () => {
 
   return (
     <Container>
-      <Row className="justify-content-md-center mt-5">
+      <Row className="justify-content-md-center mt-5 mb-5 text-center">
         <Col md="6">
           <h2 className="mb-4">Reset Password</h2>
           {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="email">
-              <Form.Label>Email Address</Form.Label>
+    
               <Form.Control
                 type="email"
                 placeholder="Enter your email"
@@ -64,7 +64,7 @@ const ResetPasswordPage = () => {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className="bg-primary mt-2 w-100 p-2" type="submit">
               Send Reset Token
             </Button>
           </Form>
@@ -74,6 +74,5 @@ const ResetPasswordPage = () => {
   );
 };
 
-ResetPasswordPage.layout = "blank"
 
 export default ResetPasswordPage;
