@@ -23,6 +23,11 @@ const ResetPasswordPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (password !== confirmPassword) {
+      setErrorMessage('Passwords do not match.');
+      return;
+    }
+
     try {
       const response = await axios.post(`${port}/api/reset-password`, {
         token,
@@ -31,6 +36,7 @@ const ResetPasswordPage = () => {
 
       if (response.data.success) {
         setSuccessMessage(response.data.message);
+        setErrorMessage('');
       } else {
         setErrorMessage(response.data.message);
       }
