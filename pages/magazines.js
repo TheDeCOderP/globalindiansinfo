@@ -4,6 +4,7 @@ import axios from 'axios';
 import globalConfig from '@/config';
 const port = globalConfig.port;
 import Link from 'next/link';
+import Head from 'next-head';
 
 const MagazineList = () => {
   const [magazines, setMagazines] = useState([]);
@@ -21,6 +22,9 @@ const MagazineList = () => {
 
   return (
     <div className="container mt-5">
+      <Head>
+        <title>GII Magazines</title>
+      </Head>
       <div className="row">
         {/* Main Content - 75% width on desktop */}
         <div className="col-md-9 mb-4">
