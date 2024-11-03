@@ -75,7 +75,7 @@ function AdminProfile({ children }) {
       ) : (
         <div className="text-center">
           <Link href="/login" legacyBehavior>
-            <a className="button rounded">Login Now</a>
+            <a className="button">Login Now</a>
           </Link>
         </div>
       )}
