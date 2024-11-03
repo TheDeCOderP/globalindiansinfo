@@ -133,7 +133,7 @@ const Login = () => {
             </Link>
           </div>
           <button onClick={handleLogin} className="w-full button text-white py-2 rounded-md">
-            Login / Sign In
+            Login Now
           </button>
           <p className="mt-4 text-center text-gray-600 text-sm">
             Do not have an account?
