@@ -14,6 +14,7 @@ import HomePageBlogs from '../components/pages/blogs/home-blogs'
 import BusinessListings from '../components/pages/business/HomePage'
 import MonthlyMagazine from '../components/pages/home/MonthlyMagazine'
 import SuccessStories from '@/components/pages/home/SuccesStories';
+import CommunitySection from '@/components/GIICommunity'
 
 const HomePage = () => {
 
@@ -25,23 +26,26 @@ const HomePage = () => {
 	  <Carousel />
     <RotatingTextBanner/>
     </section>
-   
-    <section className='section content_section'>
+    <section className="container section featured_blogs_section">
+  <h1 className="text-center"><span className="green">Featured</span> News</h1>
+	  <FeaturedNews />
+    </section>
+   <section className='container'>
+    <CommunitySection/>
+   </section>
+    <section className='container section content_section'>
       <Content />
     </section>
     <section className='section featured_business_section'>
       <WhatsappCommunity />
     </section>
-  <section className="section featured_blogs_section">
-  <h1 className="text-center"><span className="green">Featured</span> News</h1>
-	  <FeaturedNews />
-    </section>
-    <section className="section featured_business_section">
+ 
+    <section className="container section featured_business_section">
   <h1 className="text-center"><span className="green">Listed</span> Businesses</h1>
 	  <BusinessListings />
     </section>
   
-    <section className="section categories_section">
+    <section className="container section categories_section">
     <h1 className="text-center pb-2"><span className="green">Important</span> Categories</h1>
     <Categories/>
     </section>
@@ -50,17 +54,17 @@ const HomePage = () => {
      <AdBanner/>
     </section>
 
-    <section className="section magazine_section">
+    <section className="container section magazine_section">
     <MonthlyMagazine/>
     </section>
-    <section className="section successstories_section bg-fafafa">
+    <section className="container section successstories_section bg-fafafa">
     <SuccessStories/>
     </section>
-    <section className="section faq_section">
+    <section className="container section faq_section">
       <h1 className="text-center"><span className="green">Frequently</span> Asked Questions</h1>
       <LimitedFAQs />
     </section>
-    <section className="section blogs_section">
+    <section className="container section blogs_section">
     <h1 className="text-center"><span className="green">Recent</span> Blogs</h1>
       <HomePageBlogs />
     </section>

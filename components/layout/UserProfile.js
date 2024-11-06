@@ -36,7 +36,7 @@ function AdminProfile({ children }) {
       {user ? (
         <div className="d-flex align-items-center justify-content-center">
           <div
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center justify-content-center cursor-pointer"
             onClick={() => setShowDropdown(!showDropdown)}
           >
            <p className='too-small m-0 p-2'>{user.name}</p> 

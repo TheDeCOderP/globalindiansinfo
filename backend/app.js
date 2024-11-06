@@ -664,13 +664,23 @@ app.use(express.static('public'));
 // Endpoint to post a new blog
 app.post('/api/articles', articleupload.single('image1'), async (req, res) => {
   try {
-    const { title, content , categories } = req.body;
+    const { title, content, categories } = req.body;
     const articleimagePath = req.file ? req.file.filename : null;
 
-    // Generate a slug from the title
-    const slug = title.toLowerCase().replace(/ /g, '-'); // Converts spaces to hyphens
+    // Generate a sanitized slug from the title
+    const slug = title
+      .toLowerCase()
+      .replace(/[^a-z0-9 ]/g, '') // Remove non-alphanumeric characters except spaces
+      .replace(/\s+/g, '-');      // Convert spaces to hyphens
 
-    const [results] = await db.query('INSERT INTO articles ( title, description,categories, imagepath, slug) VALUES ( ?, ?, ?, ? , ?)', [title,content, categories,  articleimagePath, slug]);
+    // Get the current timestamp for uploaded_at
+    const uploadedAt = new Date();
+
+    const [results] = await db.query(
+      'INSERT INTO articles (title, description, categories, imagepath, slug, uploaded_at) VALUES (?, ?, ?, ?, ?, ?)', 
+      [title, content, categories, articleimagePath, slug, uploadedAt]
+    );
+
     const articleId = results.insertId;
     res.status(201).json({ message: 'Article created successfully', articleId });
   } catch (error) {
@@ -679,6 +689,7 @@ app.post('/api/articles', articleupload.single('image1'), async (req, res) => {
   }
 });
 
+
 // Endpoint to edit an existing blog by ID
 app.put('/api/articles/:id', articleupload.single('image'), async (req, res) => {
   try {
@@ -686,8 +697,11 @@ app.put('/api/articles/:id', articleupload.single('image'), async (req, res) => 
     const { title, content } = req.body;
     const imagePath = req.file ? req.file.filename : null;
 
-    // Generate a slug from the title (if needed)
-     const slug = title.toLowerCase().replace(/ /g, '-');
+    const slug = title
+  .toLowerCase()
+  .replace(/[^a-z0-9 ]/g, '') // Removes any non-alphanumeric characters except spaces
+  .replace(/\s+/g, '-');       // Converts spaces to hyphens
+
 
     // Update the blog in the database
     await db.query('UPDATE articles SET title = ?, description = ? , slug = ?, imagepath = ? WHERE id = ?', [title, content, imagePath, id , slug]);

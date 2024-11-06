@@ -1,10 +1,8 @@
-// pages/blogs/[slug].js
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import globalConfig from '@/config';
 import SideBar from '@/components/blogs_sidebar';
+
 const port = globalConfig.port;
 
 const Blog = ({ blog }) => {
@@ -20,10 +18,10 @@ const Blog = ({ blog }) => {
     setShowFullArticle(!showFullArticle);
   };
 
-  // Function to render a limited excerpt of the content
+  // Function to render a limited excerpt of the content with HTML support
   const renderExcerpt = (content, maxLength) => {
     const truncatedContent = content.slice(0, maxLength);
-    return truncatedContent;
+    return { __html: truncatedContent };
   };
 
   return (
@@ -40,13 +38,13 @@ const Blog = ({ blog }) => {
                 alt={blog.title}
               />
               <div className="blog_single_content mt-4">
-                <h3 className="text-center p-4">{blog.title}</h3>
+                <h3 className=" p-1">{blog.title}</h3>
                 {showFullArticle ? (
-                  // Show the full article
-                  <div>{(blog.content)}</div>
+                  // Show the full article with HTML rendering
+                  <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                 ) : (
-                  // Show a limited excerpt
-                  <div>{(renderExcerpt(blog.content, 1000))}</div>
+                  // Show a limited excerpt with HTML rendering
+                  <div dangerouslySetInnerHTML={renderExcerpt(blog.content, 1000)} />
                 )}
                 {/* "Read Full Article" button */}
                 {!showFullArticle && (
@@ -67,20 +65,16 @@ const Blog = ({ blog }) => {
     </div>
   );
 };
-// ... (rest of your code)
 
 export async function getStaticPaths() {
   try {
-    // Fetch all blog slugs from your API
     const res = await fetch(`${port}/api/blogSlugs`);
     const slugs = await res.json();
-
-    // Generate paths for all slugs
     const paths = slugs.map((slug) => ({ params: { slug } }));
 
     return {
       paths,
-      fallback: true, // Set to true to generate pages on-demand for missing slugs
+      fallback: true,
     };
   } catch (error) {
     console.error('Error fetching blog slugs:', error);
@@ -95,10 +89,7 @@ export async function getStaticProps({ params }) {
   const { slug } = params;
 
   try {
-    // Decode the slug before making the API request
     const decodedSlug = decodeURIComponent(slug);
-
-    // Fetch the individual blog by slug from your API
     const res = await fetch(`${port}/api/blogs/${decodedSlug}`);
     const blog = await res.json();
 
@@ -108,10 +99,9 @@ export async function getStaticProps({ params }) {
   } catch (error) {
     console.error(`Error fetching blog for slug ${slug}:`, error);
     return {
-      notFound: true, // Handle 404 errors gracefully
+      notFound: true,
     };
   }
 }
-
 
 export default Blog;

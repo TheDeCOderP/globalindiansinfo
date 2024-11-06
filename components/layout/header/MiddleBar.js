@@ -43,7 +43,7 @@ function Header() {
        
         
        <div className="col col-sm-6 col-md-2 col-lg-2 list_business_header  hide_on_mobile">
-        <Link href="/list-your-business" className="button header_button">List Business Now</Link>
+        <Link href="/list-your-business" className="button header_button">List Your Business Now</Link>
       
       </div>
        <div className="col col-sm-6 col-md-2 col-lg-2 list_business_header  hide_on_mobile">

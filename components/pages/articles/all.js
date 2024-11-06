@@ -39,7 +39,7 @@ const  Articles = () =>{
               <div className="blog_body latest-articles">
                 <h3 className="text-center mb-2">{article.title}</h3>
                 {/* <div dangerouslySetInnerHTML={{ __html: article.description }} /> */}
-                <button className="button">Read More</button>
+                <button className="button rounded">Read More</button>
               </div>
             </Link>
           </div>
