@@ -35,7 +35,7 @@ const AdminLayout = ({ children }) => {
         <title> Admin Panel</title>
         <link rel="icon" href="/uploads/images/site-logo1.png" />
       </Head>
-      <section className="">
+      <>
         <div className="flex">
 
           <div className="col-sm-12 col-lg-2 col-md-2  sidebar">
@@ -72,7 +72,7 @@ const AdminLayout = ({ children }) => {
            </div>
          
         </div>
-      </section>
+      </>
       </PrivateRouter>
     </>
   );

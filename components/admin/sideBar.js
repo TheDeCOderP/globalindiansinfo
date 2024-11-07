@@ -30,6 +30,7 @@ function SideBar() {
             <Link href="/pcsadmin/business/listings" className=" fw-bold ">Business</Link>
             <Link href="/pcsadmin/magazines" className=" fw-bold ">Magazines</Link>
             <Link href="/pcsadmin/community" className=" fw-bold ">Community</Link>
+            <Link href="/pcsadmin/important-links" className=" fw-bold ">Important Links</Link>
           </div>
         </div>
 

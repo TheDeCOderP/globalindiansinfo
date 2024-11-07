@@ -9,6 +9,7 @@ const globalConfig = require('./config');
 const serverLink = globalConfig.port;
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
+const importantLinksRouter = require('./routes/importantLinks.js');
 
  // const cors = require('cors');
 
@@ -58,6 +59,7 @@ transporter.verify((error) => {
   }
 });
 
+app.use('/api/important-links', importantLinksRouter);
 
 app.post('/api/login', async (req, res) => {
   try {

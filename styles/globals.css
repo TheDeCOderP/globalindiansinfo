@@ -363,7 +363,13 @@ section.featured_blogs_section .row {
 
 }
 
+li.list-group-item.primary-bg.active {
+  background: var(--primary);
+}
 
+.primary-bg {
+  background: var(--primary);
+}
 .carousel-caption h3 {
   background:rgba(0, 0, 0, 0.263);
   padding:20px 10px;
