@@ -3,7 +3,7 @@ import NewsArticle from '@/components/pages/articles/categories/news'
 const News = () => {
     
   return (
-      <section className="section">
+      <section className="section container">
      <NewsArticle/>
      
     </section>
