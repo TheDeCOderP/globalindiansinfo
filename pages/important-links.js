@@ -97,10 +97,10 @@ const ImportantLinks = () => {
                         {filteredLinks.length > 0 ? (
                             filteredLinks.map(link => (
                                 <div key={link.id} className="col-12 col-sm-6 col-md-4 mb-3">
-                                    <div className="card shadow-sm h-100">
+                                    <div className="card flex justify-content-between shadow-sm h-100">
                                         <div className="p-2 pt-3 text-center d-flex flex-column justify-content-between">
                                           
-                                                <h5 className="card-title font-weight-bold">{link.title}</h5>
+                                                <h6 className="card-title font-weight-bold">{link.title}</h6>
                                                 <p className="text-center card-text text-muted">{link.country}</p>
                                             </div>
                                             <a
