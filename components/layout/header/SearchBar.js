@@ -37,7 +37,7 @@ const SearchBar = () => {
 
   return (
     <Form inline="true" onSubmit={handleSearch}>
-      <div className="searchBar">
+      <div className="searchBar hide_on_mobile">
         <Form.Control
           type="text"
           placeholder="Search..."

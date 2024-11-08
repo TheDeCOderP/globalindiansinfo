@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><FiHome className="mr-2" /><Link href="/">Home</Link></li>
               <li><FiInfo className="mr-2" /><Link href="/about">About Us</Link></li>
-              <li><FiBriefcase className="mr-2" /><Link href="/blogs">Blogs</Link></li>
+              <li><FiBriefcase className="mr-2" /><Link href="/important-links">Important Links</Link></li>
               <li><FiMail className="mr-2" /><Link href="/contact">Contact</Link></li>
             </ul>
           </div>

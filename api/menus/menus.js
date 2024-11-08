@@ -90,22 +90,19 @@ const menus = [
         'name': 'Submit Your Article',
         'slug': '/article-submission-form'
       },
-      
       {
-        'id': 23,
-        'name': 'Road To Success',
-        'slug': '/road-to-success'
+        'id': 81,
+        'name': 'Important Links',
+        'slug': '/important-links'
       },
+      
+     
       {
         'id': 20,
         'name': '2024 Calendar',
         'slug': '/2024-calendar'
       },
-      {
-        'id': 21,
-        'name': 'Ayodhya',
-        'slug': '/ayodhya'
-      },
+      
     ]
   },
   {
@@ -114,9 +111,31 @@ const menus = [
     'slug': '/magazines'
   },
   {
-    'id': 22,
+    'id': 13,
     'name': 'Books',
-    'slug': '/books'
+    'slug': '#',
+    'submenu': [
+      {
+        'id': 91,
+        'name': 'Books',
+        'slug': '/books'
+      },
+      {
+        'id': 92,
+        'name': 'Books For Children',
+        'slug': 'https://prishatheexplorer.com/books'
+      },
+      {
+        'id': 23,
+        'name': 'Road To Success',
+        'slug': '/road-to-success'
+      },
+      {
+        'id': 21,
+        'name': 'Ayodhya',
+        'slug': '/ayodhya'
+      },
+    ]
   },
   {
     'id': 12,

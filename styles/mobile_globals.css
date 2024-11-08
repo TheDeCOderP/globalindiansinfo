@@ -432,7 +432,7 @@ button.button.search_button.btn.btn-primary {
       
       .dropdown-menu.show {
         position: absolute;
-        inset: -90px auto auto 90px!important;
+        inset: -230px auto auto 140px!important;
       }
       .mobile_menu {
         font-family: raleway;
