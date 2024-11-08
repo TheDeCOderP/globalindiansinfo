@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import globalConfig from '@/config';
 import Head from 'next/head';
-
+import Banner from '../components/Banner';
 const port = globalConfig.port;
+
 
 const ImportantLinks = () => {
     const [links, setLinks] = useState([]);
@@ -43,6 +44,12 @@ const ImportantLinks = () => {
         : links;
 
     return (
+        <>
+        
+        <Banner 
+                title="Welcome to Our Website" 
+                description="Discover insightful content and services tailored for you." 
+            />
         <div className="container my-5">
             <Head>
                 <title>Important Links</title>
@@ -116,6 +123,7 @@ const ImportantLinks = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

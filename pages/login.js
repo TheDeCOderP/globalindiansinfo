@@ -34,15 +34,13 @@ const Login = () => {
         email,
         password,
       });
-
+  
       if (response.data.success) {
         const userData = response.data.user || {};
         const serializedUserData = JSON.stringify(userData);
-
-       // console.log('Serialized User Data:', serializedUserData);
-
+  
         setCookie(null, 'gii', serializedUserData, { path: '/' });
-
+  
         Swal.fire({
           icon: 'success',
           title: 'Welcome to GII!',
@@ -50,8 +48,12 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-
-        router.push('/');
+  
+        // Get the redirect path from the query parameter or default to home page
+        const redirectPath = router.query.redirect || '/';
+  
+        // Redirect to the intended page or homepage
+        router.push(redirectPath);
       } else {
         Swal.fire({
           icon: 'error',
@@ -68,6 +70,7 @@ const Login = () => {
       });
     }
   };
+  
 
   const handleForgotPassword = () => {
     console.log('Forgot Password Clicked');
