@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import globalConfig from '@/config';
+import Head from 'next/head';
+
 const port = globalConfig.port;
 
 const ImportantLinks = () => {
@@ -15,7 +17,6 @@ const ImportantLinks = () => {
         fetchLinks();
     }, []);
 
-    // Fetch all links
     const fetchLinks = async () => {
         setLoading(true);
         try {
@@ -28,29 +29,30 @@ const ImportantLinks = () => {
         }
     };
 
-    // Fetch unique countries from API
     const fetchCountries = async () => {
         try {
             const response = await axios.get(`${port}/api/important-links/countries`);
-            setCountries(response.data); // Assume response.data is an array of country names
+            setCountries(response.data);
         } catch (error) {
             console.error('Error fetching countries:', error);
         }
     };
 
-    // Filter links based on selected country
     const filteredLinks = selectedCountry
         ? links.filter(link => link.country === selectedCountry)
         : links;
 
     return (
-        <div className="container my-4">
+        <div className="container my-5">
+            <Head>
+                <title>Important Links</title>
+            </Head>
             <div className="row">
-                <div className="col-md-3">
-                    <h5 className='mb-3'>Filter by Country</h5>
+                <div className="col-md-3 mb-4">
+                    <h4 className="mb-4">Filter by Country</h4>
                     <ul className="list-group">
                         <li
-                            className={`list-group-item ${!selectedCountry ? 'primary-bg active' : ''}`}
+                            className={`list-group-item ${!selectedCountry ? 'primary-bg active text-white' : ''}`}
                             onClick={() => setSelectedCountry('')}
                             style={{ cursor: 'pointer' }}
                         >
@@ -58,8 +60,8 @@ const ImportantLinks = () => {
                         </li>
                         {countries.map(country => (
                             <li
-                                key={country}  // Assuming country is a simple string
-                                className={`list-group-item ${selectedCountry === country ? 'primary-bg active' : ''}`}
+                                key={country}
+                                className={`list-group-item ${selectedCountry === country ? 'primary-bg active text-white' : ''}`}
                                 onClick={() => setSelectedCountry(country)}
                                 style={{ cursor: 'pointer' }}
                             >
@@ -76,29 +78,41 @@ const ImportantLinks = () => {
                         </div>
                     )}
                     {message && (
-                        <div className={`alert ${message.includes('Failed') ? 'alert-danger' : 'alert-success'} my-2`}>
+                        <div className={`alert ${message.includes('Failed') ? 'alert-danger' : 'alert-success'} my-3`}>
                             {message}
                         </div>
                     )}
-                    <h5 className="mb-3">
-                        {selectedCountry ? `Links for ${selectedCountry}` : 'All Important Links'}
-                    </h5>
-                    <ul className="list-group">
+                    <h4 className="mb-4 text-center">
+                        {selectedCountry ? `Important Links for ${selectedCountry}` : 'All Important Links'}
+                    </h4>
+                    <div className="row">
                         {filteredLinks.length > 0 ? (
                             filteredLinks.map(link => (
-                                <li key={link.id} className="list-group-item d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <strong>{link.title}</strong> ({link.country})
-                                        <a href={link.link} target="_blank" rel="noopener noreferrer" className="ms-2">
-                                            Visit
-                                        </a>
+                                <div key={link.id} className="col-12 col-sm-6 col-md-4 mb-3">
+                                    <div className="card shadow-sm h-100">
+                                        <div className="p-2 pt-3 text-center d-flex flex-column justify-content-between">
+                                          
+                                                <h5 className="card-title font-weight-bold">{link.title}</h5>
+                                                <p className="text-center card-text text-muted">{link.country}</p>
+                                            </div>
+                                            <a
+                                                href={link.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-center button pt-1 pb-1 "
+                                            >
+                                                Visit Website
+                                            </a>
+                                    
                                     </div>
-                                </li>
+                                </div>
                             ))
                         ) : (
-                            <li className="list-group-item">No links available for this country.</li>
+                            <div className="col-12">
+                                <div className="alert alert-warning text-center">No links available for this country.</div>
+                            </div>
                         )}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
