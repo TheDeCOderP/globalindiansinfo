@@ -7,7 +7,7 @@ import Experts from '@/components/Experts';
 const Jobs = () => {
     
     return (
-        <section className="section">
+        <section className="section container">
         <JobsLayout/>
        
         <Experts/>

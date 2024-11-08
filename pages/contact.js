@@ -3,7 +3,7 @@ import ContactPage from '@/components/pages/contact/Contact'
 const Contact = () => {
 
     return (
-    <section className="section contact_details">
+    <section className="section contact_details container">
       <ContactPage/>
       </section>
     )

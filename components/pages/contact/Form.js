@@ -113,8 +113,8 @@ function ContactForm() {
                         />
                     </Form.Group>
 
-                    <Button variant="primary" className="submit-button" type="submit">
-                        Submit
+                    <Button className="primary-bg submit-button" type="submit">
+                        Submit Now
                     </Button>
                 </Form>
             </div>

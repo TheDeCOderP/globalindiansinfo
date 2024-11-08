@@ -6,7 +6,7 @@ import TravelArticle from '@/components/pages/articles/categories/travel'
 const Travel = () => {
     
     return (
-        <section className="section">
+        <section className="section container">
         <TravelLayout/>
        <TravelArticle/>
       </section>

@@ -7,7 +7,7 @@ import EducationArticle from '@/components/pages/articles/categories/education'
 const Education = () => {
     
     return (
-        <section className="section">
+        <section className="section container">
         <EducationLayout/>
         <EducationArticle/>
         

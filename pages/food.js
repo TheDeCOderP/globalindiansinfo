@@ -61,7 +61,7 @@ const dishes = [
 const Food = () => {
   return (
     <>
-     <div className="container-fluid food_section">
+     <div className="container food_section">
         <div className="food_overlay"></div>
      <div className="center-heading">
     <h2>Food</h2>
@@ -70,7 +70,7 @@ const Food = () => {
        
      </div>
 
-    <Container className="mt-4 mb-4">
+    <Container className="mt-4 mb-4 container">
     
       {dishes.map((dish, dishIndex) => (
         <Row key={dishIndex} className={`justify-content-center ${dishIndex % 2 !== 0 ? 'flex-row-reverse' : ''}`}>

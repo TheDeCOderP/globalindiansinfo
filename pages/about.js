@@ -4,7 +4,7 @@ import AboutUs from '../components/pages/about/about';
 
 const About = () => {
   return (
-    <div>
+    <div className='container'>
      <AboutUs/>
     </div>
   );

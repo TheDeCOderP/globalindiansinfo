@@ -10,7 +10,7 @@ const Tech = () => {
  
 
     return (
-        <section className="section">
+        <section className="section container">
          <div className="row">
          <div className="col-md-12">
             <p className="text-center"> Welcome to the Technology Connect Page for the vibrant and diverse Indian Diaspora spread across the globe. Explore the fusion of cutting-edge innovation and our rich cultural heritage. Stay updated on tech trends, job opportunities, and cultural preservation. Join us on this digital journey that connects the world while celebrating our roots.
@@ -87,7 +87,7 @@ const Tech = () => {
         />      <div className='content_box'>
           <h3>Entrepreneurial Resources</h3>
           <p className="text-center">
-            If you're an aspiring entrepreneur, discover resources to help you turn your tech startup dreams into reality. Explore funding options, mentorship programs, and success stories from fellow Indian diaspora <br/>entrepreneurs.
+            If you're an aspiring entrepreneur, discover resources to help you turn your tech startup dreams into reality. Explore funding options, mentorship programs, and success stories from fellow Indian diaspora entrepreneurs.
           </p></div>
         </Col>
       </Row>
@@ -170,7 +170,7 @@ const Tech = () => {
         /> <div className='content_box'>
           <h3>Forums and Discussion Boards</h3>
           <p className='text-center'>
-            Connect with fellow members of the Indian diaspora who share your tech <br/>interests. Discuss the latest gadgets, programming languages,<br/>  and more.
+            Connect with fellow members of the Indian diaspora who share your tech interests. Discuss the latest gadgets, programming languages, and more.
           </p> </div>
         </Col>
         <Col md={6}>

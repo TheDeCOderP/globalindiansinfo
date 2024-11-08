@@ -8,7 +8,7 @@ const Events = () => {
 
     
     return (
-        <section className="section">
+        <section className="section container">
         <EventsLayout />
         <EventsArticles/>
      

@@ -28,7 +28,7 @@ const Contact =() => {
         <div className="">
             <div className="row mt-4 mb-4">
               
-                <div className="col-sm-12 col-lg-6 col-md-6 box-shadow p-4 ">
+                <div className="col-sm-12 col-lg-6 col-md-6 p-4 ">
                  <ContactForm className="box-shadow"/>  
                 </div>
                
