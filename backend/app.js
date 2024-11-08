@@ -1025,16 +1025,19 @@ app.get('/api/business', async (req, res) => {
 // PUT route to update the status of a business listing by businessId
 app.put('/api/business/:businessId', async (req, res) => {
   try {
-    const { businessId } = req.params; // Get the businessId from the URL parameter
-    const { status } = req.body; // Get the new status from the request body
+    const { businessId } = req.params;
+    const { status } = req.body;
 
-    // You can add validation logic here to ensure the status is either 'Active' or 'Inactive'
-
+    // Validate that status is defined and is either 0 or 1
+    if (status === undefined || (status !== 0 && status !== 1)) {
+      return res.status(400).json({ message: 'Invalid status. Status must be 0 or 1.' });
+    }
 
     // Update the status in the database based on businessId
-    const [results] = await db.execute('UPDATE business_listings SET status = ? WHERE id = ?', [status, businessId]);
-
-   // Release the connection back to the pool
+    const [results] = await db.execute(
+      'UPDATE business_listings SET status = ? WHERE id = ?',
+      [status, businessId]
+    );
 
     if (results.affectedRows === 1) {
       res.status(200).json({ message: 'Business listing status updated successfully' });
@@ -1042,10 +1045,12 @@ app.put('/api/business/:businessId', async (req, res) => {
       res.status(404).json({ message: 'Business listing not found' });
     }
   } catch (error) {
-    console.error(error);
+    console.error('Database update error:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
 
 
 
