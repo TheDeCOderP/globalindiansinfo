@@ -5,7 +5,7 @@ const Banner = ({ title, description }) => {
         <div className="bg-light text-dark py-5">
             <div className="container text-center">
                 <h2 className=" fw-bold mb-3">{title}</h2>
-                <span className="lead ">{description}</span>
+                <span className="fw-normal text-xl ">{description}</span>
             </div>
         </div>
     );

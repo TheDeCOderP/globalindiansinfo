@@ -47,8 +47,9 @@ const ImportantLinks = () => {
         <>
         
         <Banner 
-                title="Welcome to Our Website" 
-                description="Discover insightful content and services tailored for you." 
+                title="🌍 Important Links 🌍" 
+                description="📚 Explore essential resources, government websites, and key services for Indians worldwide.
+🔗 This page consolidates important links from various countries, offering quick access to the most reliable and up-to-date information." 
             />
         <div className="container my-5">
             <Head>
