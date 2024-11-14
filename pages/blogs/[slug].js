@@ -13,12 +13,10 @@ const Blog = ({ blog }) => {
     return <div>Loading...</div>;
   }
 
-  // Function to toggle showing the full article
   const toggleFullArticle = () => {
     setShowFullArticle(!showFullArticle);
   };
 
-  // Function to render a limited excerpt of the content with HTML support
   const renderExcerpt = (content, maxLength) => {
     const truncatedContent = content.slice(0, maxLength);
     return { __html: truncatedContent };
@@ -38,15 +36,12 @@ const Blog = ({ blog }) => {
                 alt={blog.title}
               />
               <div className="blog_single_content mt-4">
-                <h3 className=" p-1">{blog.title}</h3>
+                <h3 className="p-1">{blog.title}</h3>
                 {showFullArticle ? (
-                  // Show the full article with HTML rendering
                   <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                 ) : (
-                  // Show a limited excerpt with HTML rendering
                   <div dangerouslySetInnerHTML={renderExcerpt(blog.content, 1000)} />
                 )}
-                {/* "Read Full Article" button */}
                 {!showFullArticle && (
                   <div className="text-center mt-4">
                     <button onClick={toggleFullArticle} className="button">
@@ -66,32 +61,17 @@ const Blog = ({ blog }) => {
   );
 };
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`${port}/api/blogSlugs`);
-    const slugs = await res.json();
-    const paths = slugs.map((slug) => ({ params: { slug } }));
-
-    return {
-      paths,
-      fallback: true,
-    };
-  } catch (error) {
-    console.error('Error fetching blog slugs:', error);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { slug } = params;
 
   try {
     const decodedSlug = decodeURIComponent(slug);
     const res = await fetch(`${port}/api/blogs/${decodedSlug}`);
     const blog = await res.json();
+
+    if (!blog) {
+      return { notFound: true };
+    }
 
     return {
       props: { blog },
