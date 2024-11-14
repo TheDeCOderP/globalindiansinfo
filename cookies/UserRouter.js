@@ -7,13 +7,26 @@ function UserRouter({ children }) {
   const cookies = parseCookies();
 
   // Define the public routes that do not require authentication
-  const publicRoutes = ['/login', '/register', '/', '/about', '/contact', '/forgot-password', '/magazines'];
+  const publicRoutes = [
+    '/login', 
+    '/register', 
+    '/', 
+    '/about', 
+    '/contact', 
+    '/forgot-password', 
+    '/magazines'
+  ];
 
   useEffect(() => {
     const isAuthenticated = cookies.gii;
 
-    // Check if the current route is public (including dynamic reset-password routes)
-    const isPublicRoute = publicRoutes.includes(router.pathname) || router.pathname.startsWith('/reset-password');
+    // Check if the current route is public (including dynamic reset-password, blogs, and articles routes)
+    const isPublicRoute = 
+      publicRoutes.includes(router.pathname) ||
+      router.pathname.startsWith('/reset-password') ||
+      router.pathname.startsWith('/blogs') ||
+      router.pathname.startsWith('/articles');
+
     const isAdminPath = router.pathname.startsWith('/pcsadmin');
 
     // If the user is not authenticated and tries to access a protected route
@@ -27,8 +40,6 @@ function UserRouter({ children }) {
       // Redirect to login with the redirect path
       router.replace(`/login?redirect=${router.pathname}`);
     }
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.pathname]);
 
   return <div>{children}</div>;
