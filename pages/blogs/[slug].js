@@ -9,16 +9,20 @@ const Blog = ({ blog }) => {
   const router = useRouter();
   const [showFullArticle, setShowFullArticle] = useState(false);
 
+  console.log("Rendered Blog component with blog data:", blog);
+
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
 
   const toggleFullArticle = () => {
+    console.log("Toggled full article view:", !showFullArticle);
     setShowFullArticle(!showFullArticle);
   };
 
   const renderExcerpt = (content, maxLength) => {
     const truncatedContent = content.slice(0, maxLength);
+    console.log("Rendering excerpt of content:", truncatedContent);
     return { __html: truncatedContent };
   };
 
@@ -63,13 +67,27 @@ const Blog = ({ blog }) => {
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
+  console.log("getServerSideProps - Received slug:", slug);
 
   try {
     const decodedSlug = decodeURIComponent(slug);
-    const res = await fetch(`${port}/api/blogs/${decodedSlug}`);
+    console.log("Decoded slug:", decodedSlug);
+
+    const url = `${port}/api/blogs/${decodedSlug}`;
+    console.log("Fetching blog data from:", url);
+
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      console.error("Failed to fetch blog data:", res.status, res.statusText);
+      return { notFound: true };
+    }
+
     const blog = await res.json();
+    console.log("Fetched blog data:", blog);
 
     if (!blog) {
+      console.log("No blog found for slug:", slug);
       return { notFound: true };
     }
 
@@ -77,7 +95,7 @@ export async function getServerSideProps({ params }) {
       props: { blog },
     };
   } catch (error) {
-    console.error(`Error fetching blog for slug ${slug}:`, error);
+    console.error(`Error fetching blog for slug ${slug}:`, error.message);
     return {
       notFound: true,
     };
