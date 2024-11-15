@@ -67,7 +67,7 @@ const menus = [
       {
         'id': 16,
         'name': 'Health & Wellness',
-        'slug': '/health-wellness'
+        'slug': '/health'
       },
       {
         'id': 10,
