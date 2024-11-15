@@ -9,20 +9,18 @@ const Blog = ({ blog }) => {
   const router = useRouter();
   const [showFullArticle, setShowFullArticle] = useState(false);
 
-  console.log("Rendered Blog component with blog data:", blog);
-
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
 
+  // Function to toggle showing the full article
   const toggleFullArticle = () => {
-    console.log("Toggled full article view:", !showFullArticle);
     setShowFullArticle(!showFullArticle);
   };
 
+  // Function to render a limited excerpt of the content with HTML support
   const renderExcerpt = (content, maxLength) => {
     const truncatedContent = content.slice(0, maxLength);
-    console.log("Rendering excerpt of content:", truncatedContent);
     return { __html: truncatedContent };
   };
 
@@ -40,12 +38,15 @@ const Blog = ({ blog }) => {
                 alt={blog.title}
               />
               <div className="blog_single_content mt-4">
-                <h3 className="p-1">{blog.title}</h3>
+                <h3 className=" p-1">{blog.title}</h3>
                 {showFullArticle ? (
+                  // Show the full article with HTML rendering
                   <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                 ) : (
+                  // Show a limited excerpt with HTML rendering
                   <div dangerouslySetInnerHTML={renderExcerpt(blog.content, 1000)} />
                 )}
+                {/* "Read Full Article" button */}
                 {!showFullArticle && (
                   <div className="text-center mt-4">
                     <button onClick={toggleFullArticle} className="button">
@@ -65,37 +66,38 @@ const Blog = ({ blog }) => {
   );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  try {
+    const res = await fetch(`${port}/api/blogSlugs`);
+    const slugs = await res.json();
+    const paths = slugs.map((slug) => ({ params: { slug } }));
+
+    return {
+      paths,
+      fallback: true,
+    };
+  } catch (error) {
+    console.error('Error fetching blog slugs:', error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
+}
+
+export async function getStaticProps({ params }) {
   const { slug } = params;
-  console.log("getServerSideProps - Received slug:", slug);
 
   try {
     const decodedSlug = decodeURIComponent(slug);
-    console.log("Decoded slug:", decodedSlug);
-
-    const url = `${port}/api/blogs/${decodedSlug}`;
-    console.log("Fetching blog data from:", url);
-
-    const res = await fetch(url);
-
-    if (!res.ok) {
-      console.error("Failed to fetch blog data:", res.status, res.statusText);
-      return { notFound: true };
-    }
-
+    const res = await fetch(`${port}/api/blogs/${decodedSlug}`);
     const blog = await res.json();
-    console.log("Fetched blog data:", blog);
-
-    if (!blog) {
-      console.log("No blog found for slug:", slug);
-      return { notFound: true };
-    }
 
     return {
       props: { blog },
     };
   } catch (error) {
-    console.error(`Error fetching blog for slug ${slug}:`, error.message);
+    console.error(`Error fetching blog for slug ${slug}:`, error);
     return {
       notFound: true,
     };

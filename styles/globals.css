@@ -1226,6 +1226,11 @@ h3.one-line-heading {
   padding: 40px 20px;
 }
 
+a.btn.btn-primary {
+  background: #273171;
+  border: 1px solid #273171;
+}
+
 .slick-next {
   right: 0px!important;;
 }
