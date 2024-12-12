@@ -759,6 +759,19 @@ app.get('/api/articleSlugs', async (req, res) => {
 
 
 
+app.get('/api/users', async (req, res) => {
+  try {
+    
+ // Use the SQL LIKE operator to search for the category within the categories column
+    const [rows] = await db.query('SELECT * FROM users ORDER BY id DESC');
+
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 app.get('/api/articles', async (req, res) => {
   try {
     
