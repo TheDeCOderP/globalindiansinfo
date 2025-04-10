@@ -31,13 +31,16 @@ export default function AddMagazine() {
       });
 
       if (response.status === 200) {
-        // If successful, reset the form fields and provide feedback
-        setTitle('');
-        setFlipbookLink('');
-        setMagazineImage(null);
+        // Show success message before resetting the form
         alert('Magazine Uploaded Successfully!');
+
+        // Use setTimeout to ensure alert is shown before resetting state
+        setTimeout(() => {
+          setTitle('');
+          setFlipbookLink('');
+          setMagazineImage(null);
+        }, 100);
       } else {
-        // Handle unexpected response codes
         alert('Unexpected response from the server.');
       }
     } catch (error) {
@@ -91,7 +94,7 @@ export default function AddMagazine() {
             required
           />
         </div>
-        <button type="submit" className="button" disabled={isSubmitting}>
+        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Upload Magazine'}
         </button>
       </form>
