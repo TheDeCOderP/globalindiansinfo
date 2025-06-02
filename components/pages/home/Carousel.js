@@ -4,34 +4,20 @@ import Link from 'next/link';
 function Carousels() {
   const CarouselList = [
     {
-      'slug': '/uploads/images/carousel/slide3.jpg',
+      'slug': '/uploads/images/carousel/new-slide-1.jpg',
       
     },
     {
-      'slug': '/uploads/images/carousel/slide4.jpg',
+      'slug': '/uploads/images/carousel/new-slide-2.jpg',
       
     },
     {
-      'slug': '/uploads/images/carousel/slide6.jpg',
+      'slug': '/uploads/images/carousel/new-slide-3.jpg',
       
     },
     {
-      'slug': '/uploads/images/carousel/slide7.jpg',
+      'slug': '/uploads/images/carousel/new-slide-4.jpg',
       
-    },
-    {
-      'slug': '/uploads/images/carousel/slide8.jpg',
-      
-    },
-    {
-      'slug': '/uploads/images/carousel/slide9.jpg',
-      
-    },
-    {
-      'slug': '/uploads/images/carousel/slide10.jpg',
-    },
-    {
-      'slug': '/uploads/images/carousel/slide11.jpg',
     },
   ];
 

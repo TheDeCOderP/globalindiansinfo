@@ -31,7 +31,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><FaFacebook className="mr-2" /><a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank">Facebook</a></li>
               <li><FaTwitter className="mr-2" /><a href="https://twitter.com/globalindian_in" target="blank">Twitter</a></li>
-              <li><FaInstagram className="mr-2" /><a href="https://www.instagram.com/p/C30FvUPMMdv/?igsh=MTc5bzdxaTZrdWw3dg==" target="blank">Instagram</a></li>
+              <li><FaInstagram className="mr-2" /><a href="https://www.instagram.com/globalindiansinfo/" target="blank">Instagram</a></li>
               <li><FaLinkedin className="mr-2" /><a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank">Linkedin</a></li>
             </ul>
           </div>
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrights">
-       <h4>Global Indians Info © 2023 . All Rights Reserved . || Powered by <a href="https://prabisha.com" target='blank'  style={{ color: 'orange' }}> Prabisha Consulting</a></h4>
+       <h4>Global Indians Info © 2025 . All Rights Reserved . || Powered by <a href="https://prabisha.com" target='blank'  style={{ color: 'orange' }}> Prabisha Consulting</a></h4>
       </div>
       <div className="whatsapp-container">
     <a href={`https://api.whatsapp.com/send?phone=+44-7867090363&text=I%20want%20to%20find%20out%20about%20your%20support%20and%20services`} target="_blank" rel="noopener noreferrer">

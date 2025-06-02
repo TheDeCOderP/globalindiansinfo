@@ -48,5 +48,3 @@ const ImageCarousel = () => {
 };
 
 export default ImageCarousel;
-
-// ... SamplePrevArrow and SampleNextArrow components ...

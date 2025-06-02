@@ -33,7 +33,7 @@ function Header() {
         <div className="col col-sm-6 col-md-2 col-lg-2 social-icons hide_on_mobile">
         <a href="https://www.linkedin.com/in/global-indians-info-b87034259/?originalSubdomain=in" target="blank"> <Image  width={30} height = {30} src="/social/icons8-linkedin.svg" alt="linkedin" /></a>
               <a href="https://www.facebook.com/groups/globalindiansinfo/" target="blank"> <Image  width={30} height = {30} src="/social/icons8-facebook.svg" alt="fb" /></a>
-              <a href="https://www.instagram.com/global_indian_official/" target="blank"><Image  width={30} height = {30} src="/social/icons8-instagram.svg" alt="insta" /></a>
+              <a href="https://www.instagram.com/globalindiansinfo/" target="blank"><Image  width={30} height = {30} src="/social/icons8-instagram.svg" alt="insta" /></a>
               <a href="https://twitter.com/globalindian_in" target="blank"><Image  width={30} height = {30} src="/social/icons8-twitter.svg" alt="twitter"/></a>
              
               
