@@ -30,6 +30,8 @@ app.use((req, res, next) => {
   const allowedOrigins = ['https://www.globalindiansinfo.com',
     'https://globalindiansinfo.com',
     'https://intranet.prabisha.com',
+    'https://prabisha.com',
+    'https://www.prabisha.com',
    'http://localhost:3000'];
   const origin = req.headers.origin;
 
